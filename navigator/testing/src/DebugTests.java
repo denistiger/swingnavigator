@@ -1,4 +1,5 @@
-import com.sun.deploy.util.StringUtils;
+import org.apache.commons.net.ftp.FTPClient;
+import org.apache.commons.net.ftp.FTPFile;
 
 import java.io.File;
 import java.util.List;
@@ -17,8 +18,11 @@ public class DebugTests implements Runnable {
     }
 
     public void drawFolderTree(IFolder iFolder, int level) {
-        for (int i = 0; i < level; ++i) {
-            System.out.print('-');
+        for (int i = 0; i < level - 1; ++i) {
+            System.out.print("| ");
+        }
+        if (level > 0) {
+            System.out.print("|-");
         }
         System.out.println(iFolder.getName() + " " + iFolder.getType());
         List<IFolder> list = iFolder.getItems();
