@@ -1,7 +1,9 @@
 import java.io.File;
 import java.util.List;
 
-public class CommonFile extends IFolder {
+public class CommonFile implements IFolder {
+
+    private File file;
 
     public class NotACommonFileException extends Exception {
 
@@ -23,4 +25,9 @@ public class CommonFile extends IFolder {
     public FolderTypes getType() {
         return FolderTypes.FILE;
     }
+
+    public String getName() {
+        return file.getName();
+    }
+
 }

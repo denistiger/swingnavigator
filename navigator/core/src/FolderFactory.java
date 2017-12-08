@@ -13,7 +13,7 @@ public class FolderFactory {
 
         }
         try {
-            return new ZipFile(file);
+            return new ZipFileFolder(file);
         } catch (Exception er) {
 
         }

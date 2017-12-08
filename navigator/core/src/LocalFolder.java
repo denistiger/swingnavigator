@@ -2,7 +2,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.List;
 
-public class LocalFolder extends IFolder {
+public class LocalFolder implements IFolder {
+
+    private File file;
+
 
     public class NotALocalFolderException extends Exception {
 
@@ -30,5 +33,9 @@ public class LocalFolder extends IFolder {
     @Override
     public FolderTypes getType() {
         return FolderTypes.FOLDER;
+    }
+
+    public String getName() {
+        return file.getName();
     }
 }
