@@ -8,5 +8,6 @@ public interface IFolder {
     }
     List<IFolder> getItems();
     FolderTypes getType();
+    String getName();
 
 }
