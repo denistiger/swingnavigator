@@ -1,0 +1,572 @@
+[ INFO] 2017-12-07 17:52:15,884 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3: display name [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]; startup date [Thu Dec 07 17:52:15 MSK 2017]; root of context hierarchy
+[ INFO] 2017-12-07 17:52:15,905 [] [] Loading XML bean definitions from file [/home/denis/IdeaProjects/swingnavigator/navigator/testing/apache-ftpserver-1.1.1/res/conf/ftpd-typical.xml]
+[ INFO] 2017-12-07 17:52:16,009 [] [] Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]: org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480
+[ INFO] 2017-12-07 17:52:16,016 [] [] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480: defining beans [org.apache.ftpserver.listener.ListenerFactory#0,org.apache.ftpserver.usermanager.PropertiesUserManagerFactory#0,org.apache.ftpserver.FtpServerFactory#0,myServer]; root of factory hierarchy
+[ INFO] 2017-12-07 17:52:16,106 [] [] FTP server started
+[ INFO] 2017-12-07 17:52:38,819 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:52:38,821 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:52:38,825 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-07 17:52:38,826 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:52:38,826 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:52:38,826 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:52:38,826 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:52:38,827 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:52:38,828 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:52:38,828 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:52:38,829 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,190 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:10,194 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:10,195 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:10,195 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:10,197 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:10,198 [] [127.0.0.1] RECEIVED: GET /favicon.ico HTTP/1.1
+[ INFO] 2017-12-07 17:53:10,198 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:10,198 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:10,198 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:10,198 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:10,199 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:10,200 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,201 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,202 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,202 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,202 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:10,206 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:11,960 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] RECEIVED: GET /favicon.ico HTTP/1.1
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:11,962 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,963 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,964 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,964 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,964 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,964 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:11,965 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,966 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,967 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:11,971 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:15,044 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:15,055 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:15,056 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:15,057 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:15,061 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:15,061 [] [127.0.0.1] RECEIVED: GET /favicon.ico HTTP/1.1
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:15,062 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,063 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,064 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,064 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,064 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,064 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:15,072 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:16,904 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:16,907 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] RECEIVED: GET /favicon.ico HTTP/1.1
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:16,908 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,909 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,910 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:16,916 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:36,662 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:36,665 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:36,665 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] RECEIVED: GET /favicon.ico HTTP/1.1
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-07 17:53:36,666 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,667 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-07 17:53:36,668 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-07 17:53:36,668 [anonymous] [127.0.0.1] RECEIVED: PASS *****
+[ INFO] 2017-12-07 17:53:36,670 [anonymous] [127.0.0.1] Anonymous login success - mozilla@example.com
+[ INFO] 2017-12-07 17:53:36,670 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-07 17:53:36,670 [anonymous] [127.0.0.1] RECEIVED: SYST
+[ INFO] 2017-12-07 17:53:36,670 [anonymous] [127.0.0.1] SENT: 215 UNIX Type: Apache FtpServer
+
+[ INFO] 2017-12-07 17:53:36,670 [anonymous] [127.0.0.1] RECEIVED: FEAT
+[ INFO] 2017-12-07 17:53:36,671 [anonymous] [127.0.0.1] SENT: 211-Extensions supported
+ SIZE
+ MDTM
+ REST STREAM
+ LANG en;zh-tw;ja;is
+ MLST Size;Modify;Type;Perm
+ AUTH SSL
+ AUTH TLS
+ MODE Z
+ UTF8
+ TVFS
+ MD5
+ MMD5
+ MFMT
+211 End
+
+[ INFO] 2017-12-07 17:53:36,671 [anonymous] [127.0.0.1] RECEIVED: OPTS UTF8 ON
+[ INFO] 2017-12-07 17:53:36,671 [anonymous] [127.0.0.1] SENT: 200 Command OPTS okay.
+
+[ INFO] 2017-12-07 17:53:36,671 [anonymous] [127.0.0.1] RECEIVED: PWD
+[ INFO] 2017-12-07 17:53:36,672 [anonymous] [127.0.0.1] SENT: 257 "/" is current directory.
+
+[ INFO] 2017-12-07 17:53:36,672 [anonymous] [127.0.0.1] RECEIVED: TYPE I
+[ INFO] 2017-12-07 17:53:36,673 [anonymous] [127.0.0.1] SENT: 200 Command TYPE okay.
+
+[ INFO] 2017-12-07 17:53:36,673 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:53:36,673 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,141,197)
+
+[ INFO] 2017-12-07 17:53:36,674 [anonymous] [127.0.0.1] RECEIVED: CWD /
+[ INFO] 2017-12-07 17:53:36,674 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-07 17:53:36,674 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:53:36,678 [anonymous] [127.0.0.1] Releasing unreserved passive port: 36293
+[ INFO] 2017-12-07 17:53:36,678 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:53:36,678 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:53:36,687 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:53:44,700 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:55:25,989 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3: display name [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]; startup date [Thu Dec 07 17:55:25 MSK 2017]; root of context hierarchy
+[ INFO] 2017-12-07 17:55:26,016 [] [] Loading XML bean definitions from file [/home/denis/IdeaProjects/swingnavigator/navigator/testing/apache-ftpserver-1.1.1/res/conf/ftpd-typical.xml]
+[ INFO] 2017-12-07 17:55:26,145 [] [] Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]: org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480
+[ INFO] 2017-12-07 17:55:26,152 [] [] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480: defining beans [org.apache.ftpserver.listener.ListenerFactory#0,org.apache.ftpserver.usermanager.PropertiesUserManagerFactory#0,org.apache.ftpserver.FtpServerFactory#0,myServer]; root of factory hierarchy
+[ INFO] 2017-12-07 17:55:26,263 [] [] FTP server started
+[ INFO] 2017-12-07 17:55:32,359 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:55:32,361 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:55:32,365 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:55:32,366 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-07 17:55:32,367 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-07 17:55:32,367 [anonymous] [127.0.0.1] RECEIVED: PASS *****
+[ INFO] 2017-12-07 17:55:32,369 [anonymous] [127.0.0.1] Anonymous login success - mozilla@example.com
+[ INFO] 2017-12-07 17:55:32,369 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-07 17:55:32,369 [anonymous] [127.0.0.1] RECEIVED: SYST
+[ INFO] 2017-12-07 17:55:32,370 [anonymous] [127.0.0.1] SENT: 215 UNIX Type: Apache FtpServer
+
+[ INFO] 2017-12-07 17:55:32,371 [anonymous] [127.0.0.1] RECEIVED: FEAT
+[ INFO] 2017-12-07 17:55:32,372 [anonymous] [127.0.0.1] SENT: 211-Extensions supported
+ SIZE
+ MDTM
+ REST STREAM
+ LANG en;zh-tw;ja;is
+ MLST Size;Modify;Type;Perm
+ AUTH SSL
+ AUTH TLS
+ MODE Z
+ UTF8
+ TVFS
+ MD5
+ MMD5
+ MFMT
+211 End
+
+[ INFO] 2017-12-07 17:55:32,372 [anonymous] [127.0.0.1] RECEIVED: OPTS UTF8 ON
+[ INFO] 2017-12-07 17:55:32,372 [anonymous] [127.0.0.1] SENT: 200 Command OPTS okay.
+
+[ INFO] 2017-12-07 17:55:32,372 [anonymous] [127.0.0.1] RECEIVED: PWD
+[ INFO] 2017-12-07 17:55:32,373 [anonymous] [127.0.0.1] SENT: 257 "/" is current directory.
+
+[ INFO] 2017-12-07 17:55:32,373 [anonymous] [127.0.0.1] RECEIVED: TYPE I
+[ INFO] 2017-12-07 17:55:32,374 [anonymous] [127.0.0.1] SENT: 200 Command TYPE okay.
+
+[ INFO] 2017-12-07 17:55:32,374 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:55:32,375 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,176,45)
+
+[ INFO] 2017-12-07 17:55:32,376 [anonymous] [127.0.0.1] RECEIVED: CWD /
+[ INFO] 2017-12-07 17:55:32,376 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-07 17:55:32,376 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:55:32,380 [anonymous] [127.0.0.1] Releasing unreserved passive port: 45101
+[ INFO] 2017-12-07 17:55:32,380 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:55:32,380 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:55:36,568 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:55:36,570 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,131,205)
+
+[ INFO] 2017-12-07 17:55:36,570 [anonymous] [127.0.0.1] RECEIVED: CWD /folder/
+[ INFO] 2017-12-07 17:55:36,572 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /folder
+
+[ INFO] 2017-12-07 17:55:36,572 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:55:36,576 [anonymous] [127.0.0.1] Releasing unreserved passive port: 33741
+[ INFO] 2017-12-07 17:55:36,577 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:55:36,577 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:56:05,808 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:56:05,809 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,180,169)
+
+[ INFO] 2017-12-07 17:56:05,809 [anonymous] [127.0.0.1] RECEIVED: CWD /../
+[ INFO] 2017-12-07 17:56:05,809 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-07 17:56:05,809 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:56:05,810 [anonymous] [127.0.0.1] Releasing unreserved passive port: 46249
+[ INFO] 2017-12-07 17:56:05,810 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:56:05,810 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:56:07,616 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:56:07,617 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,176,75)
+
+[ INFO] 2017-12-07 17:56:07,618 [anonymous] [127.0.0.1] RECEIVED: CWD /../../
+[ INFO] 2017-12-07 17:56:07,619 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-07 17:56:07,620 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:56:07,622 [anonymous] [127.0.0.1] Releasing unreserved passive port: 45131
+[ INFO] 2017-12-07 17:56:07,622 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:56:07,623 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:56:08,177 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:56:08,177 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,143,247)
+
+[ INFO] 2017-12-07 17:56:08,178 [anonymous] [127.0.0.1] RECEIVED: CWD /../../../
+[ INFO] 2017-12-07 17:56:08,178 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-07 17:56:08,178 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:56:08,179 [anonymous] [127.0.0.1] Releasing unreserved passive port: 36855
+[ INFO] 2017-12-07 17:56:08,179 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:56:08,179 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-07 17:56:09,561 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:56:09,561 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,145,33)
+
+[ INFO] 2017-12-07 17:56:09,562 [anonymous] [127.0.0.1] RECEIVED: SIZE /../../../folder.zip
+[ INFO] 2017-12-07 17:56:09,562 [anonymous] [127.0.0.1] SENT: 213 2317800
+
+[ INFO] 2017-12-07 17:56:09,562 [anonymous] [127.0.0.1] RECEIVED: MDTM /../../../folder.zip
+[ INFO] 2017-12-07 17:56:09,563 [anonymous] [127.0.0.1] SENT: 213 20171207140422.000
+
+[ INFO] 2017-12-07 17:56:09,563 [anonymous] [127.0.0.1] RECEIVED: RETR /../../../folder.zip
+[ INFO] 2017-12-07 17:56:13,208 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-07 17:56:13,209 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-07 17:56:13,211 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-07 17:56:13,211 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-07 17:56:13,211 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-07 17:56:13,211 [anonymous] [127.0.0.1] RECEIVED: PASS *****
+[ INFO] 2017-12-07 17:56:13,211 [anonymous] [127.0.0.1] Anonymous login success - mozilla@example.com
+[ INFO] 2017-12-07 17:56:13,212 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-07 17:56:13,212 [anonymous] [127.0.0.1] RECEIVED: SYST
+[ INFO] 2017-12-07 17:56:13,212 [anonymous] [127.0.0.1] SENT: 215 UNIX Type: Apache FtpServer
+
+[ INFO] 2017-12-07 17:56:13,212 [anonymous] [127.0.0.1] RECEIVED: FEAT
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] SENT: 211-Extensions supported
+ SIZE
+ MDTM
+ REST STREAM
+ LANG en;zh-tw;ja;is
+ MLST Size;Modify;Type;Perm
+ AUTH SSL
+ AUTH TLS
+ MODE Z
+ UTF8
+ TVFS
+ MD5
+ MMD5
+ MFMT
+211 End
+
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] RECEIVED: OPTS UTF8 ON
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] SENT: 200 Command OPTS okay.
+
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] RECEIVED: PWD
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] SENT: 257 "/" is current directory.
+
+[ INFO] 2017-12-07 17:56:13,213 [anonymous] [127.0.0.1] RECEIVED: TYPE I
+[ INFO] 2017-12-07 17:56:13,214 [anonymous] [127.0.0.1] SENT: 200 Command TYPE okay.
+
+[ INFO] 2017-12-07 17:56:13,214 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-07 17:56:13,214 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,153,27)
+
+[ INFO] 2017-12-07 17:56:13,214 [anonymous] [127.0.0.1] RECEIVED: CWD /../../../folder/
+[ INFO] 2017-12-07 17:56:13,214 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /folder
+
+[ INFO] 2017-12-07 17:56:13,215 [anonymous] [127.0.0.1] RECEIVED: LIST
+[ WARN] 2017-12-07 17:56:13,216 [anonymous] [127.0.0.1] Releasing unreserved passive port: 39195
+[ INFO] 2017-12-07 17:56:13,216 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:56:13,216 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ WARN] 2017-12-07 17:56:16,427 [anonymous] [127.0.0.1] Exception during data transfer, closing data connection socket
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:126)
+	at org.apache.ftpserver.impl.IODataConnection.transfer(IODataConnection.java:289)
+	at org.apache.ftpserver.impl.IODataConnection.transferToClient(IODataConnection.java:161)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:169)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ WARN] 2017-12-07 17:56:16,432 [anonymous] [127.0.0.1] Releasing unreserved passive port: 37153
+[ INFO] 2017-12-07 17:56:16,432 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-07 17:56:16,432 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-07 17:56:27,371 [anonymous] [127.0.0.1] CLOSED

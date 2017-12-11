@@ -127,12 +127,13 @@ public class ZipFileFolder implements IFolder {
         try {
             InputStream stream = zipFile.getInputStream(zipFile.getEntry(inZipPath));
             ZipInputStream zipStream = new ZipInputStream(stream);
-            ZipEntry inZipEntry = zipStream.getNextEntry();
+//            ZipEntry inZipEntry = zipStream.getNextEntry();
 //            while (inZipEntry != null) {
 //                System.out.println(inZipEntry.getName());
 //                inZipEntry = zipStream.getNextEntry();
 //            }
             if (zipStream.getNextEntry() != null) {
+                zipStream.
                 return FolderTypes.ZIP_FILE;
             }
         } catch (Exception er) {
