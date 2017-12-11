@@ -1,0 +1,26 @@
+.:
+folder  folder.zip
+
+./folder:
+1.jpg  2.jpg  3.jpg  4.jpg  folder_in.zip  top0  top2
+
+./folder/top0:
+2.jpg  4.jpg  6.jpg  sub0  sub1  sub2
+
+./folder/top0/sub0:
+1.jpg  2.jpg  3.jpg
+
+./folder/top0/sub1:
+4.jpg  5.jpg  6.jpg  7.jpg
+
+./folder/top0/sub2:
+1.jpg  7.jpg
+
+./folder/top2:
+2.jpg  3.jpg  sub0  sub1  top2.zip
+
+./folder/top2/sub0:
+2.jpg  3.jpg
+
+./folder/top2/sub1:
+1.jpg  2.jpg  3.jpg  4.jpg

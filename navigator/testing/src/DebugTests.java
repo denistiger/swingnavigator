@@ -34,6 +34,21 @@ public class DebugTests implements Runnable {
         }
     }
 
+    public String drawFolderTreeTest(IFolder iFolder) {
+        String res = "(" + iFolder.getName() + " : " + iFolder.getType() + ")";
+        List<IFolder> list = iFolder.getItems();
+        if (list == null || list.size() == 0) {
+            return res;
+        }
+        String inner = "{";
+        for (IFolder folder : list) {
+            inner += " " + drawFolderTreeTest(folder);
+        }
+        inner += " }";
+        return "[ " + res + " has " + inner + " ]";
+    }
+
+
     public void run() {
         try {
             if (path == null) {
@@ -42,8 +57,12 @@ public class DebugTests implements Runnable {
             }
             File file = new File(path);
             IFolder iFolder = FolderFactory.createIFolder(file);
-            drawFolderTree(iFolder, 0);
+            List<IFolder> items = iFolder.getItems();
+            items.sort((o1, o2)->o1.getName().compareTo(o2.getName()));
 
+            drawFolderTree(iFolder, 0);
+//            String res = drawFolderTreeTest(iFolder);
+//            System.out.println(res);
         } catch (Exception er) {
             er.printStackTrace();
         }
@@ -52,4 +71,5 @@ public class DebugTests implements Runnable {
     public static void main(String[] args){
         (new Thread(new DebugTests(args))).start();
     }
+
 }

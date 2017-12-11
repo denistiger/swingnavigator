@@ -70,6 +70,7 @@ public class ZipFileFolder implements IFolder {
 //        print(entries);
         Iterator<String[]> iter = entries.iterator();
         String[] itemName = iter.next();
+        boolean forgotLast = false;
         while (iter.hasNext()) {
             if (itemName.length > 1) {
                 throw new Exception("init Children - lead name not a parent!");
@@ -79,6 +80,9 @@ public class ZipFileFolder implements IFolder {
             while (iter.hasNext()) {
                 currentItemName = iter.next();
                 if (currentItemName.length == 1) {
+                    if (!iter.hasNext()) {
+                        forgotLast = true;
+                    }
                     break;
                 }
                 String[] cutPath = new String[currentItemName.length - 1];
@@ -93,6 +97,11 @@ public class ZipFileFolder implements IFolder {
                     inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + itemName[0],
                     localChildren));
             itemName = currentItemName;
+        }
+        if (forgotLast) {
+            children.add(new ZipFileFolder(zipFile,
+                    inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + itemName[0],
+                    new ArrayList<>()));
         }
 //        System.out.println("init children done for " + inZipPath + (name != null ? name : ""));
     }
