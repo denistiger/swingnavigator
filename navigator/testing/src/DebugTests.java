@@ -55,13 +55,12 @@ public class DebugTests implements Runnable {
                 System.out.println("No path!");
                 return;
             }
-            File file = new File(path);
-            IFolder iFolder = FolderFactory.createIFolder(file);
-            List<IFolder> items = iFolder.getItems();
-            items.sort((o1, o2)->o1.getName().compareTo(o2.getName()));
-
+//            File file = new File(path);
+//            IFolder iFolder = FolderFactory.createIFolder(file);
+//            List<IFolder> items = iFolder.getItems();
+            IFolder iFolder = new FTPFolder("127.0.0.1");
             drawFolderTree(iFolder, 0);
-//            String res = drawFolderTreeTest(iFolder);
+            //            String res = drawFolderTreeTest(iFolder);
 //            System.out.println(res);
         } catch (Exception er) {
             er.printStackTrace();

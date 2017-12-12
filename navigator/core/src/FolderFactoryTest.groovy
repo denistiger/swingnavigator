@@ -73,6 +73,19 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         return origin;
     }
 
+    void testFTPNonZip() {
+        IFolder iFolder = new FTPFolder("127.0.0.1");
+        String res = linuxFormat(iFolder, "");
+        String origin = getTestFile("../../testOutput/folder.txt");
+        assertEquals("Check folder structure no Zip", origin, res);
+    }
+
+    void testFTPZip() {
+        IFolder iFolder = new FTPFolder("127.0.0.1");
+        String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
+        String origin = getTestFile("../../testOutput/folderZip.txt");
+        assertEquals("Check folder structure in folder.zip", origin, res);
+    }
 
     void testFolderNonZip() {
         File file = new File("../../testData");

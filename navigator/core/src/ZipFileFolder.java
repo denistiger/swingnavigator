@@ -133,7 +133,6 @@ public class ZipFileFolder implements IFolder {
 //                inZipEntry = zipStream.getNextEntry();
 //            }
             if (zipStream.getNextEntry() != null) {
-                zipStream.
                 return FolderTypes.ZIP_FILE;
             }
         } catch (Exception er) {
