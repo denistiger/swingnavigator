@@ -109,6 +109,10 @@ public class ZipFileFolder implements IFolder {
 
     @Override
     public List<IFolder> getItems() {
+        if (getType() == FolderTypes.FILE) {
+            assert children == null || children.size() == 0;
+            return null;
+        }
         return children;
     }
 

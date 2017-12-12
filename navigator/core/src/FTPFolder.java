@@ -27,6 +27,29 @@ public class FTPFolder implements IFolder {
         this.name = name;
     }
 
+    public boolean authenticated() {
+        try {
+            ftp.listFiles(localFTPPath);
+            int code = ftp.getReplyCode();
+            if (FTPReply.isNegativePermanent(code) || FTPReply.isPositiveIntermediate(code)){
+                return false;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public boolean login(String login, String pass) {
+        try {
+            return ftp.login(login, pass);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
     private void init(String ftpPath) {
         ftp = new FTPClient();
         FTPClientConfig config = new FTPClientConfig();
@@ -37,7 +60,7 @@ public class FTPFolder implements IFolder {
         try {
             int reply;
             ftp.connect(ftpPath);
-            ftp.login("anonymous","");
+//            ftp.login("anonymous","");
 //            System.out.println("Connected to " + ftpPath + ".");
 //            System.out.print(ftp.getReplyString());
 
@@ -79,6 +102,11 @@ public class FTPFolder implements IFolder {
         try {
             List<IFolder> items = new ArrayList<>();
             FTPFile[] files = ftp.listFiles(localFTPPath);
+            if (files.length == 1){
+                if (files[0].getName().compareTo(getName()) == 0) {
+                    return null;
+                }
+            }
             for (FTPFile file : files) {
                 items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                         file.isDirectory() ? FolderTypes.FOLDER : FolderTypes.FILE, file.getName()));

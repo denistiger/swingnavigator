@@ -20,6 +20,9 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
     String linuxFormat(IFolder folder, String prefix) {
         String res = "." + prefix + ":\n";
         List<IFolder> items = folder.getItems();
+        if (items == null) {
+            return res;
+        }
         items.sort(new Comparator<IFolder>(){
             @Override
             int compare(IFolder iFolder, IFolder t1) {
@@ -73,17 +76,42 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         return origin;
     }
 
+    boolean checkFileHasNoChildren(IFolder folder) {
+        if (folder.getType() == IFolder.FolderTypes.FILE) {
+            if (folder.getItems() != null) {
+                return false;
+            }
+            return true;
+        }
+        for (IFolder item : folder.getItems()) {
+            if (!checkFileHasNoChildren(item)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     void testFTPNonZip() {
-        IFolder iFolder = new FTPFolder("127.0.0.1");
+        FTPFolder iFolder = new FTPFolder("127.0.0.1");
+        if (!iFolder.authenticated()) {
+            iFolder.login("anonymous","");
+        }
+        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(iFolder, "");
         String origin = getTestFile("../../testOutput/folder.txt");
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
         assertEquals("Check folder structure no Zip", origin, res);
     }
 
     void testFTPZip() {
-        IFolder iFolder = new FTPFolder("127.0.0.1");
+        FTPFolder iFolder = new FTPFolder("127.0.0.1");
+        if (!iFolder.authenticated()) {
+            iFolder.login("anonymous","");
+        }
+        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
         String origin = getTestFile("../../testOutput/folderZip.txt");
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
         assertEquals("Check folder structure in folder.zip", origin, res);
     }
 
@@ -92,6 +120,7 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         IFolder iFolder = FolderFactory.createIFolder(file);
         String res = linuxFormat(iFolder, "");
         String origin = getTestFile("../../testOutput/folder.txt");
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
         assertEquals("Check folder structure no Zip", origin, res);
     }
 
@@ -100,12 +129,14 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         IFolder iFolder = FolderFactory.createIFolder(file);
         String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
         String origin = getTestFile("../../testOutput/folderZip.txt");
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
         assertEquals("Check folder structure in folder.zip", origin, res);
     }
 
     void testCreateIFolderList() {
         File file = new File("../../testData");
         IFolder iFolder = FolderFactory.createIFolder(file);
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
         IFolder sub0 = getByName(getByName(getByName(getByName(iFolder, "folder.zip"), "folder"), "top0"), "sub0");
         assertEquals("Sub0 contains three folders", 3, sub0.getItems().size());
 //        String res = drawFolderTreeTest(iFolder);
