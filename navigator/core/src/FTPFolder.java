@@ -71,8 +71,6 @@ public class FTPFolder implements IFolder {
                 System.err.println("FTP server refused connection.");
                 System.exit(1);
             }
-            // TODO check if password needed.
-//            ftp.login(username, password);
         }
         catch(IOException e){
             e.printStackTrace();
