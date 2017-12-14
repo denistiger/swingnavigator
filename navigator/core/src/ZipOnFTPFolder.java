@@ -1,6 +1,7 @@
 import org.apache.commons.net.ftp.FTPClient;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.zip.ZipInputStream;
 
 public class ZipOnFTPFolder extends ZipStreamFolder {
@@ -8,13 +9,14 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
     FTPClient ftpClient;
     String path;
 
-    public ZipOnFTPFolder(FTPClient ftpClient, String path) throws IOException {
+    public ZipOnFTPFolder(FTPClient ftpClient, String path, String name) throws IOException {
         this.ftpClient = ftpClient;
         this.path = path;
-        resetStream();
+        this.name = name;
     }
     @Override
     void resetStream() throws IOException {
-        zipStream = new ZipInputStream(ftpClient.retrieveFileStream(path));
+        InputStream inputStream = ftpClient.retrieveFileStream(path);
+        zipStream = new ZipInputStream(inputStream);
     }
 }

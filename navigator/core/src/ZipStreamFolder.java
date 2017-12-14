@@ -11,7 +11,13 @@ public abstract class ZipStreamFolder implements IFolder{
     abstract void resetStream() throws IOException;
 
     @Override
-    List<IFolder> getItems() {
+    public List<IFolder> getItems() {
+        try {
+            resetStream();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
         List<IFolder> list = new ArrayList<>();
         try {
             while (zipStream.available() == 1) {
@@ -25,12 +31,12 @@ public abstract class ZipStreamFolder implements IFolder{
     }
 
     @Override
-    FolderTypes getType() {
+    public FolderTypes getType() {
         return FolderTypes.ZIP_FILE;
     }
 
     @Override
-    String getName() {
+    public String getName() {
         return name;
     }
 

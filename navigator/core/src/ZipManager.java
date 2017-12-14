@@ -14,8 +14,4 @@ public class ZipManager {
         return true;
     }
 
-    //TODO implement
-    public IFolder createZipReader(File file) {
-        return null;
-    }
 }

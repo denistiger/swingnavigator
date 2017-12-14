@@ -106,8 +106,16 @@ public class FTPFolder implements IFolder {
                 }
             }
             for (FTPFile file : files) {
-                items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
-                        file.isDirectory() ? FolderTypes.FOLDER : FolderTypes.FILE, file.getName()));
+                if (file.isDirectory()) {
+                    items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
+                            FolderTypes.FOLDER, file.getName()));
+                }else if (file.getName().toLowerCase().contains(".zip")) {
+                    items.add(new ZipOnFTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
+                            file.getName()));
+                }else {
+                    items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
+                            FolderTypes.FILE, file.getName()));
+                }
             }
             return  items;
         } catch (IOException e) {

@@ -4408,3 +4408,2995 @@ java.net.SocketException: Connection reset
 [ INFO] 2017-12-12 20:37:40,009 [anonymous] [127.0.0.1] IDLE
 [ INFO] 2017-12-12 20:37:40,009 [anonymous] [127.0.0.1] Session idle, closing
 [ INFO] 2017-12-12 20:37:40,009 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:41:49,146 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:41:49,147 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:41:49,147 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:41:49,161 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,173,185
+[ INFO] 2017-12-14 16:41:49,161 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:41:49,164 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:41:49,164 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:41:49,165 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:41:49,165 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:41:49,165 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:41:49,166 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,145,235
+[ INFO] 2017-12-14 16:41:49,166 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:41:49,166 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:41:49,168 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:41:49,168 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:41:57,089 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,89
+[ INFO] 2017-12-14 16:41:57,091 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:41:57,091 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:41:57,094 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:41:57,094 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,470 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,160,221
+[ INFO] 2017-12-14 16:42:10,473 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,474 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-14 16:42:10,475 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,476 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,526 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,141,143
+[ INFO] 2017-12-14 16:42:10,527 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,527 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:42:10,529 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,529 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,572 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,132,51
+[ INFO] 2017-12-14 16:42:10,573 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,573 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-14 16:42:10,576 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,576 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,619 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,233
+[ INFO] 2017-12-14 16:42:10,620 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,620 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-14 16:42:10,621 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,621 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,667 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,169,131
+[ INFO] 2017-12-14 16:42:10,667 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,667 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-14 16:42:10,667 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,668 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,711 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,67
+[ INFO] 2017-12-14 16:42:10,711 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,711 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/1.jpg
+[ INFO] 2017-12-14 16:42:10,712 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,712 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,759 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,165,15
+[ INFO] 2017-12-14 16:42:10,760 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,760 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/2.jpg
+[ INFO] 2017-12-14 16:42:10,762 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,762 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,806 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,233
+[ INFO] 2017-12-14 16:42:10,806 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,806 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/3.jpg
+[ INFO] 2017-12-14 16:42:10,807 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,807 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,850 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,156,179
+[ INFO] 2017-12-14 16:42:10,851 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,852 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-14 16:42:10,853 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,854 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,895 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,159
+[ INFO] 2017-12-14 16:42:10,896 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,896 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/4.jpg
+[ INFO] 2017-12-14 16:42:10,897 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,897 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,942 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,249
+[ INFO] 2017-12-14 16:42:10,942 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,943 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/5.jpg
+[ INFO] 2017-12-14 16:42:10,943 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,943 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:10,987 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,129,5
+[ INFO] 2017-12-14 16:42:10,988 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:10,988 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/6.jpg
+[ INFO] 2017-12-14 16:42:10,990 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:10,990 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,031 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,21
+[ INFO] 2017-12-14 16:42:11,031 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,032 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/7.jpg
+[ INFO] 2017-12-14 16:42:11,033 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,033 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,075 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,152,77
+[ INFO] 2017-12-14 16:42:11,076 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,076 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-14 16:42:11,077 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,078 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,119 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,128,185
+[ INFO] 2017-12-14 16:42:11,120 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,120 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/1.jpg
+[ INFO] 2017-12-14 16:42:11,122 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,122 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,163 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,182,199
+[ INFO] 2017-12-14 16:42:11,163 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,164 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/7.jpg
+[ INFO] 2017-12-14 16:42:11,165 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,165 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,207 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,101
+[ INFO] 2017-12-14 16:42:11,207 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,208 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/2.jpg
+[ INFO] 2017-12-14 16:42:11,209 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,209 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,251 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,141,171
+[ INFO] 2017-12-14 16:42:11,251 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,252 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/4.jpg
+[ INFO] 2017-12-14 16:42:11,253 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,253 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,295 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,157,163
+[ INFO] 2017-12-14 16:42:11,296 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,296 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/6.jpg
+[ INFO] 2017-12-14 16:42:11,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,339 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,163,57
+[ INFO] 2017-12-14 16:42:11,340 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,340 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-14 16:42:11,343 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,343 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,389 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,77
+[ INFO] 2017-12-14 16:42:11,390 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,391 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-14 16:42:11,392 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,393 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,439 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,161,179
+[ INFO] 2017-12-14 16:42:11,440 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,441 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/2.jpg
+[ INFO] 2017-12-14 16:42:11,442 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,442 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,487 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,31
+[ INFO] 2017-12-14 16:42:11,487 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,488 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/3.jpg
+[ INFO] 2017-12-14 16:42:11,489 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,489 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,531 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,35
+[ INFO] 2017-12-14 16:42:11,532 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,532 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-14 16:42:11,534 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,534 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,576 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,180,135
+[ INFO] 2017-12-14 16:42:11,577 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,578 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/1.jpg
+[ INFO] 2017-12-14 16:42:11,579 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,579 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,623 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,69
+[ INFO] 2017-12-14 16:42:11,624 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,624 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/2.jpg
+[ INFO] 2017-12-14 16:42:11,625 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,626 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,667 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,132,191
+[ INFO] 2017-12-14 16:42:11,667 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,668 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/3.jpg
+[ INFO] 2017-12-14 16:42:11,669 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,669 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,711 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,132,83
+[ INFO] 2017-12-14 16:42:11,711 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,712 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/4.jpg
+[ INFO] 2017-12-14 16:42:11,713 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,713 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,755 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,148,39
+[ INFO] 2017-12-14 16:42:11,756 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,756 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/2.jpg
+[ INFO] 2017-12-14 16:42:11,758 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,758 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,798 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,31
+[ INFO] 2017-12-14 16:42:11,798 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,798 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/3.jpg
+[ INFO] 2017-12-14 16:42:11,799 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,799 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,847 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,175,155
+[ INFO] 2017-12-14 16:42:11,847 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,847 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/top2.zip
+[ INFO] 2017-12-14 16:42:11,849 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,849 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,891 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,37
+[ INFO] 2017-12-14 16:42:11,892 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,893 [anonymous] [127.0.0.1] RECEIVED: LIST folder/1.jpg
+[ INFO] 2017-12-14 16:42:11,895 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,895 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,943 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,5
+[ INFO] 2017-12-14 16:42:11,944 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,944 [anonymous] [127.0.0.1] RECEIVED: LIST folder/2.jpg
+[ INFO] 2017-12-14 16:42:11,946 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,946 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:11,986 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,205
+[ INFO] 2017-12-14 16:42:11,986 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:11,986 [anonymous] [127.0.0.1] RECEIVED: LIST folder/3.jpg
+[ INFO] 2017-12-14 16:42:11,987 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:11,987 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,030 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,163,147
+[ INFO] 2017-12-14 16:42:12,030 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,030 [anonymous] [127.0.0.1] RECEIVED: LIST folder/4.jpg
+[ INFO] 2017-12-14 16:42:12,031 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,031 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,074 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,165,33
+[ INFO] 2017-12-14 16:42:12,075 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,076 [anonymous] [127.0.0.1] RECEIVED: LIST folder/folder_in.zip
+[ INFO] 2017-12-14 16:42:12,077 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,078 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,123 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,170,141
+[ INFO] 2017-12-14 16:42:12,123 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,124 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-14 16:42:12,125 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,125 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,188 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:42:12,189 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:42:12,191 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:42:12,193 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,138,135
+[ INFO] 2017-12-14 16:42:12,194 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:42:12,194 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:42:12,195 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:42:12,195 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:42:12,196 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:42:12,197 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:42:12,197 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,235
+[ INFO] 2017-12-14 16:42:12,198 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,199 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:42:12,201 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,201 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,243 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,155
+[ INFO] 2017-12-14 16:42:12,244 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,245 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:42:12,246 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,246 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,291 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,235
+[ INFO] 2017-12-14 16:42:12,292 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,292 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-14 16:42:12,295 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,295 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,337 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,149,191
+[ INFO] 2017-12-14 16:42:12,338 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,339 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-14 16:42:12,342 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,342 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,385 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,166,99
+[ INFO] 2017-12-14 16:42:12,386 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,386 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-14 16:42:12,388 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,389 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,430 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,168,49
+[ INFO] 2017-12-14 16:42:12,430 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,430 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-14 16:42:12,431 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,431 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,474 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,145,99
+[ INFO] 2017-12-14 16:42:12,474 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,474 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-14 16:42:12,475 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,475 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,519 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,37
+[ INFO] 2017-12-14 16:42:12,520 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,520 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-14 16:42:12,522 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,522 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,564 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,174,79
+[ INFO] 2017-12-14 16:42:12,565 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,566 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-14 16:42:12,568 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,568 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,611 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,175,37
+[ INFO] 2017-12-14 16:42:12,612 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,612 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-14 16:42:12,615 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,615 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,661 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,229
+[ INFO] 2017-12-14 16:42:12,661 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,661 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:42:12,663 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,663 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,707 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,160,37
+[ INFO] 2017-12-14 16:42:12,708 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,708 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-14 16:42:12,710 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,711 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,752 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,130,85
+[ INFO] 2017-12-14 16:42:12,753 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,753 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-14 16:42:12,756 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,756 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,798 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,164,209
+[ INFO] 2017-12-14 16:42:12,798 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,799 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-14 16:42:12,799 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,799 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,842 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,41
+[ INFO] 2017-12-14 16:42:12,843 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,843 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/1.jpg
+[ INFO] 2017-12-14 16:42:12,844 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,844 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,886 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,151,45
+[ INFO] 2017-12-14 16:42:12,887 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,887 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/2.jpg
+[ INFO] 2017-12-14 16:42:12,889 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,889 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,930 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,132,141
+[ INFO] 2017-12-14 16:42:12,930 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,930 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/3.jpg
+[ INFO] 2017-12-14 16:42:12,930 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,930 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:12,978 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,128,49
+[ INFO] 2017-12-14 16:42:12,978 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:12,978 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-14 16:42:12,978 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:12,978 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,022 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,171,23
+[ INFO] 2017-12-14 16:42:13,022 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,022 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/4.jpg
+[ INFO] 2017-12-14 16:42:13,023 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,023 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,067 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,165,25
+[ INFO] 2017-12-14 16:42:13,067 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,068 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/5.jpg
+[ INFO] 2017-12-14 16:42:13,069 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,069 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,110 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,167
+[ INFO] 2017-12-14 16:42:13,111 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,111 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/6.jpg
+[ INFO] 2017-12-14 16:42:13,113 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,113 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,154 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,174,153
+[ INFO] 2017-12-14 16:42:13,155 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,155 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/7.jpg
+[ INFO] 2017-12-14 16:42:13,157 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,157 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,198 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,47
+[ INFO] 2017-12-14 16:42:13,199 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,200 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-14 16:42:13,202 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,202 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,243 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,141
+[ INFO] 2017-12-14 16:42:13,243 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,243 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/1.jpg
+[ INFO] 2017-12-14 16:42:13,244 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,245 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,286 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,150,125
+[ INFO] 2017-12-14 16:42:13,287 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,287 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/7.jpg
+[ INFO] 2017-12-14 16:42:13,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,330 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,137,85
+[ INFO] 2017-12-14 16:42:13,331 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,331 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/2.jpg
+[ INFO] 2017-12-14 16:42:13,332 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,332 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,374 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,7
+[ INFO] 2017-12-14 16:42:13,375 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,375 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/4.jpg
+[ INFO] 2017-12-14 16:42:13,376 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,376 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,418 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,125
+[ INFO] 2017-12-14 16:42:13,419 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,419 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/6.jpg
+[ INFO] 2017-12-14 16:42:13,420 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,420 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,462 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,197
+[ INFO] 2017-12-14 16:42:13,463 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,463 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-14 16:42:13,465 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,465 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,507 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,181,103
+[ INFO] 2017-12-14 16:42:13,508 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,508 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-14 16:42:13,509 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,509 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,551 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,157
+[ INFO] 2017-12-14 16:42:13,551 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,551 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/2.jpg
+[ INFO] 2017-12-14 16:42:13,553 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,553 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,594 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,181,73
+[ INFO] 2017-12-14 16:42:13,595 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,595 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/3.jpg
+[ INFO] 2017-12-14 16:42:13,596 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,596 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,638 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,9
+[ INFO] 2017-12-14 16:42:13,639 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,640 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-14 16:42:13,641 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,642 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,683 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,99
+[ INFO] 2017-12-14 16:42:13,684 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,684 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/1.jpg
+[ INFO] 2017-12-14 16:42:13,685 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,686 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,726 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,154,95
+[ INFO] 2017-12-14 16:42:13,727 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,727 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/2.jpg
+[ INFO] 2017-12-14 16:42:13,728 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,729 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,770 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,170,35
+[ INFO] 2017-12-14 16:42:13,771 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,771 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/3.jpg
+[ INFO] 2017-12-14 16:42:13,773 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,773 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,814 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,181,213
+[ INFO] 2017-12-14 16:42:13,814 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,814 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/4.jpg
+[ INFO] 2017-12-14 16:42:13,814 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,814 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,858 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,175
+[ INFO] 2017-12-14 16:42:13,859 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,859 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/2.jpg
+[ INFO] 2017-12-14 16:42:13,860 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,860 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,902 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,142,61
+[ INFO] 2017-12-14 16:42:13,903 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,903 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/3.jpg
+[ INFO] 2017-12-14 16:42:13,904 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,904 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,950 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,69
+[ INFO] 2017-12-14 16:42:13,951 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,951 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/top2.zip
+[ INFO] 2017-12-14 16:42:13,952 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,952 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:13,994 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,142,147
+[ INFO] 2017-12-14 16:42:13,995 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:13,995 [anonymous] [127.0.0.1] RECEIVED: LIST folder/1.jpg
+[ INFO] 2017-12-14 16:42:13,996 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:13,996 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,038 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,223
+[ INFO] 2017-12-14 16:42:14,039 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:14,040 [anonymous] [127.0.0.1] RECEIVED: LIST folder/2.jpg
+[ INFO] 2017-12-14 16:42:14,041 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:14,041 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,082 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,181,151
+[ INFO] 2017-12-14 16:42:14,083 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:14,083 [anonymous] [127.0.0.1] RECEIVED: LIST folder/3.jpg
+[ INFO] 2017-12-14 16:42:14,084 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:14,085 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,126 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,161,23
+[ INFO] 2017-12-14 16:42:14,127 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:14,127 [anonymous] [127.0.0.1] RECEIVED: LIST folder/4.jpg
+[ INFO] 2017-12-14 16:42:14,128 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:14,128 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,170 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,149
+[ INFO] 2017-12-14 16:42:14,171 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:14,171 [anonymous] [127.0.0.1] RECEIVED: LIST folder/folder_in.zip
+[ INFO] 2017-12-14 16:42:14,173 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:14,173 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,214 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,138,223
+[ INFO] 2017-12-14 16:42:14,215 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:42:14,215 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-14 16:42:14,216 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:42:14,216 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:42:14,282 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:42:14,282 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:48:32,575 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:48:32,575 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:48:32,575 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:48:32,576 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:50:02,551 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:50:12,023 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:50:12,023 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:50:12,023 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:50:12,037 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,153,139
+[ INFO] 2017-12-14 16:50:12,038 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:50:12,041 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:50:12,041 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:50:12,041 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:50:12,042 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:50:12,042 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:50:12,042 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,97
+[ INFO] 2017-12-14 16:50:12,042 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:50:12,042 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:50:12,043 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:50:12,043 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:50:14,746 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,151,13
+[ INFO] 2017-12-14 16:50:14,747 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:50:14,747 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:50:14,749 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:50:14,749 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:50:14,791 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,171,11
+[ INFO] 2017-12-14 16:50:14,792 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:50:14,792 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:50:40,192 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:50:40,192 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:50:40,192 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:50:40,193 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] RECEIVED: PASS *****
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] Anonymous login success - gvfsd-ftp-1.28.2@example.com
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] RECEIVED: TYPE I
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] SENT: 200 Command TYPE okay.
+
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] RECEIVED: OPTS UTF8 ON
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] SENT: 200 Command OPTS okay.
+
+[ INFO] 2017-12-14 16:50:40,193 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:50:40,194 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,141,29)
+
+[ INFO] 2017-12-14 16:50:40,194 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/folder_in.zip
+[ WARN] 2017-12-14 16:51:09,207 [anonymous] [127.0.0.1] Exception during data transfer, closing data connection socket
+java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:115)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:126)
+	at org.apache.ftpserver.impl.IODataConnection.transfer(IODataConnection.java:289)
+	at org.apache.ftpserver.impl.IODataConnection.transferToClient(IODataConnection.java:161)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:169)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ WARN] 2017-12-14 16:51:09,208 [anonymous] [127.0.0.1] Releasing unreserved passive port: 36125
+[ INFO] 2017-12-14 16:51:09,209 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:51:09,209 [anonymous] [127.0.0.1] SENT: 426 Data connection error.
+
+[ INFO] 2017-12-14 16:51:31,078 [anonymous] [127.0.0.1] RECEIVED: CWD /folder
+[ INFO] 2017-12-14 16:51:31,079 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /folder
+
+[ INFO] 2017-12-14 16:51:31,085 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:51:31,085 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,175,113)
+
+[ INFO] 2017-12-14 16:51:31,086 [anonymous] [127.0.0.1] RECEIVED: LIST -a
+[ WARN] 2017-12-14 16:51:31,087 [anonymous] [127.0.0.1] Releasing unreserved passive port: 44913
+[ INFO] 2017-12-14 16:51:31,087 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:51:31,087 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:51:31,129 [anonymous] [127.0.0.1] RECEIVED: CWD /folder/top2
+[ INFO] 2017-12-14 16:51:31,130 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /folder/top2
+
+[ INFO] 2017-12-14 16:51:31,130 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:51:31,130 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,138,59)
+
+[ INFO] 2017-12-14 16:51:31,131 [anonymous] [127.0.0.1] RECEIVED: LIST -a
+[ WARN] 2017-12-14 16:51:31,132 [anonymous] [127.0.0.1] Releasing unreserved passive port: 35387
+[ INFO] 2017-12-14 16:51:31,132 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:51:31,132 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:51:32,386 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:51:32,386 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,159,145)
+
+[ INFO] 2017-12-14 16:51:32,386 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/top2/top2.zip
+[ WARN] 2017-12-14 16:51:42,659 [anonymous] [127.0.0.1] Exception during data transfer, closing data connection socket
+java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:115)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:126)
+	at org.apache.ftpserver.impl.IODataConnection.transfer(IODataConnection.java:289)
+	at org.apache.ftpserver.impl.IODataConnection.transferToClient(IODataConnection.java:161)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:169)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ WARN] 2017-12-14 16:51:42,660 [anonymous] [127.0.0.1] Releasing unreserved passive port: 40849
+[ INFO] 2017-12-14 16:51:42,661 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:51:42,661 [anonymous] [127.0.0.1] SENT: 426 Data connection error.
+
+[ INFO] 2017-12-14 16:51:42,661 [anonymous] [127.0.0.1] RECEIVED: NOOP
+[ INFO] 2017-12-14 16:51:42,662 [anonymous] [127.0.0.1] SENT: 200 Command NOOP okay.
+
+[ INFO] 2017-12-14 16:51:42,662 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:51:42,662 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,159,141)
+
+[ INFO] 2017-12-14 16:51:42,664 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/top2/top2.zip
+[ WARN] 2017-12-14 16:52:23,655 [anonymous] [127.0.0.1] Exception during data transfer, closing data connection socket
+java.net.SocketException: Broken pipe (Write failed)
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:111)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:126)
+	at org.apache.ftpserver.impl.IODataConnection.transfer(IODataConnection.java:289)
+	at org.apache.ftpserver.impl.IODataConnection.transferToClient(IODataConnection.java:161)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:169)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ WARN] 2017-12-14 16:52:23,655 [anonymous] [127.0.0.1] Releasing unreserved passive port: 40845
+[ INFO] 2017-12-14 16:52:23,656 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:52:23,656 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:52:36,363 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 16:52:36,363 [anonymous] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:52:36,364 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:54:06,345 [] [127.0.0.1] CLOSED
+[ WARN] 2017-12-14 16:54:11,998 [anonymous] [127.0.0.1] Exception during data transfer, closing data connection socket
+java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:115)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:155)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:95)
+	at org.apache.ftpserver.impl.IODataConnection.transfer(IODataConnection.java:268)
+	at org.apache.ftpserver.impl.IODataConnection.transferToClient(IODataConnection.java:161)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:169)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:54:11,998 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:11,998 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,249
+[ INFO] 2017-12-14 16:54:11,998 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:54:13,259 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3: display name [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]; startup date [Thu Dec 14 16:54:13 MSK 2017]; root of context hierarchy
+[ INFO] 2017-12-14 16:54:13,280 [] [] Loading XML bean definitions from file [/home/denis/IdeaProjects/swingnavigator/navigator/testing/apache-ftpserver-1.1.1/res/conf/ftpd-typical.xml]
+[ INFO] 2017-12-14 16:54:13,384 [] [] Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]: org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480
+[ INFO] 2017-12-14 16:54:13,390 [] [] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480: defining beans [org.apache.ftpserver.listener.ListenerFactory#0,org.apache.ftpserver.usermanager.PropertiesUserManagerFactory#0,org.apache.ftpserver.FtpServerFactory#0,myServer]; root of factory hierarchy
+[ INFO] 2017-12-14 16:54:13,474 [] [] FTP server started
+[ INFO] 2017-12-14 16:54:21,173 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:54:21,176 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:54:21,181 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:54:21,195 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,148,169
+[ INFO] 2017-12-14 16:54:21,196 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:54:21,198 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:54:21,199 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:54:21,199 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:54:21,201 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:54:21,203 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:54:21,203 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,89
+[ INFO] 2017-12-14 16:54:21,204 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,204 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:54:21,209 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,209 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:54:21,251 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,166,13
+[ INFO] 2017-12-14 16:54:21,252 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,252 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:54:21,253 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,253 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:54:21,299 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,177,109
+[ INFO] 2017-12-14 16:54:21,299 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,299 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:54:21,808 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 16:54:21,809 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,810 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,164,135
+[ INFO] 2017-12-14 16:54:21,810 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:54:21,811 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ WARN] 2017-12-14 16:54:21,813 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.LIST.execute(LIST.java:115)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:54:21,819 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,819 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,819 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 16:54:21,829 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:54:21,830 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:54:21,832 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:54:21,835 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,137,249
+[ INFO] 2017-12-14 16:54:21,836 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:54:21,837 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:54:21,838 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:54:21,839 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:54:21,839 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:54:21,840 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:54:21,841 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,143,77
+[ INFO] 2017-12-14 16:54:21,842 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,842 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:54:21,845 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,845 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:54:21,886 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,121
+[ INFO] 2017-12-14 16:54:21,887 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,887 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:54:21,888 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:21,888 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:54:21,931 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,143,209
+[ INFO] 2017-12-14 16:54:21,931 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:21,931 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:54:22,425 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 16:54:22,426 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:22,426 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,107
+[ INFO] 2017-12-14 16:54:22,427 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:54:22,427 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ WARN] 2017-12-14 16:54:22,428 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.LIST.execute(LIST.java:115)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:54:22,431 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:54:22,431 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:22,431 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,217
+[ INFO] 2017-12-14 16:54:22,431 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 16:54:22,431 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ WARN] 2017-12-14 16:54:22,446 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:54:22,446 [anonymous] [127.0.0.1] CLOSED
+[ERROR] 2017-12-14 16:54:22,446 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:54:22,447 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:54:51,283 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:54:51,283 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:54:51,283 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:54:51,284 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:54:51,284 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:54:51,284 [anonymous] [127.0.0.1] RECEIVED: PASS *****
+[ INFO] 2017-12-14 16:54:51,284 [anonymous] [127.0.0.1] Anonymous login success - gvfsd-ftp-1.28.2@example.com
+[ INFO] 2017-12-14 16:54:51,284 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] RECEIVED: TYPE I
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] SENT: 200 Command TYPE okay.
+
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] RECEIVED: OPTS UTF8 ON
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] SENT: 200 Command OPTS okay.
+
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:54:51,285 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,141,13)
+
+[ INFO] 2017-12-14 16:54:51,286 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/top2/top2.zip
+[ INFO] 2017-12-14 16:54:51,387 [anonymous] [127.0.0.1] File downloaded /folder/top2/top2.zip
+[ WARN] 2017-12-14 16:54:51,388 [anonymous] [127.0.0.1] Releasing unreserved passive port: 36109
+[ INFO] 2017-12-14 16:54:51,388 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:54:51,389 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:55:01,615 [anonymous] [127.0.0.1] RECEIVED: CWD /
+[ INFO] 2017-12-14 16:55:01,617 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /
+
+[ INFO] 2017-12-14 16:55:01,617 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:55:01,619 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,159,87)
+
+[ INFO] 2017-12-14 16:55:01,620 [anonymous] [127.0.0.1] RECEIVED: LIST -a
+[ WARN] 2017-12-14 16:55:01,622 [anonymous] [127.0.0.1] Releasing unreserved passive port: 40791
+[ INFO] 2017-12-14 16:55:01,622 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:55:01,622 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:55:01,662 [anonymous] [127.0.0.1] RECEIVED: CWD /folder
+[ INFO] 2017-12-14 16:55:01,663 [anonymous] [127.0.0.1] SENT: 250 Directory changed to /folder
+
+[ INFO] 2017-12-14 16:55:01,663 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:55:01,664 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,173,209)
+
+[ INFO] 2017-12-14 16:55:01,666 [anonymous] [127.0.0.1] RECEIVED: LIST -a
+[ WARN] 2017-12-14 16:55:01,668 [anonymous] [127.0.0.1] Releasing unreserved passive port: 44497
+[ INFO] 2017-12-14 16:55:01,669 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:55:01,669 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:55:03,264 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:55:03,265 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,153,243)
+
+[ INFO] 2017-12-14 16:55:03,265 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/folder_in.zip
+[ INFO] 2017-12-14 16:55:03,519 [anonymous] [127.0.0.1] File downloaded /folder/folder_in.zip
+[ WARN] 2017-12-14 16:55:03,520 [anonymous] [127.0.0.1] Releasing unreserved passive port: 39411
+[ INFO] 2017-12-14 16:55:03,520 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:55:03,520 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:55:36,752 [anonymous] [127.0.0.1] RECEIVED: PASV
+[ INFO] 2017-12-14 16:55:36,752 [anonymous] [127.0.0.1] SENT: 227 Entering Passive Mode (127,0,0,1,133,61)
+
+[ INFO] 2017-12-14 16:55:36,753 [anonymous] [127.0.0.1] RECEIVED: RETR /folder/folder_in.zip
+[ INFO] 2017-12-14 16:55:37,007 [anonymous] [127.0.0.1] File downloaded /folder/folder_in.zip
+[ WARN] 2017-12-14 16:55:37,007 [anonymous] [127.0.0.1] Releasing unreserved passive port: 34109
+[ INFO] 2017-12-14 16:55:37,007 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:55:37,007 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:56:56,860 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:56:56,860 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:56:56,861 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:56:56,872 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,174,15
+[ INFO] 2017-12-14 16:56:56,872 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:56:56,875 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:56:56,875 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:56:56,875 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:56:56,876 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:56:56,877 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:56:56,880 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,175
+[ INFO] 2017-12-14 16:56:56,882 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:56:56,882 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:56:56,883 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:56:56,883 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:56:56,927 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,150,219
+[ INFO] 2017-12-14 16:56:56,927 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:56:56,927 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:56:56,928 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:56:56,928 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:57:01,123 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,174,23
+[ INFO] 2017-12-14 16:57:01,124 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:57:01,124 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:57:01,611 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 16:57:01,611 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:57:01,611 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:58:26,725 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:58:26,726 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:58:26,727 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:58:26,737 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,180,23
+[ INFO] 2017-12-14 16:58:26,737 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:58:26,739 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:58:26,740 [anonymous] [127.0.0.1] SENT: 421 Maximum login limit has been reached.
+
+[ INFO] 2017-12-14 16:58:26,740 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:58:26,745 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:58:26,745 [anonymous] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:58:26,746 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:58:26,747 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,15
+[ INFO] 2017-12-14 16:58:26,747 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:58:26,747 [anonymous] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:58:26,750 [anonymous] [127.0.0.1] SENT: 421 Maximum login limit has been reached.
+
+[ INFO] 2017-12-14 16:58:26,750 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:58:36,784 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:58:36,784 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:58:36,784 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:58:36,800 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,175,107
+[ INFO] 2017-12-14 16:58:36,801 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:58:36,804 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:58:36,804 [anonymous] [127.0.0.1] SENT: 421 Maximum login limit has been reached.
+
+[ INFO] 2017-12-14 16:58:36,804 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:58:36,811 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:58:36,811 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:58:36,811 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:58:36,813 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,152,27
+[ INFO] 2017-12-14 16:58:36,813 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:58:36,813 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:58:36,813 [anonymous] [127.0.0.1] SENT: 421 Maximum login limit has been reached.
+
+[ INFO] 2017-12-14 16:58:36,813 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:59:18,329 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:59:18,330 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:59:19,792 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3: display name [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]; startup date [Thu Dec 14 16:59:19 MSK 2017]; root of context hierarchy
+[ INFO] 2017-12-14 16:59:19,814 [] [] Loading XML bean definitions from file [/home/denis/IdeaProjects/swingnavigator/navigator/testing/apache-ftpserver-1.1.1/res/conf/ftpd-typical.xml]
+[ INFO] 2017-12-14 16:59:19,922 [] [] Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@3581c5f3]: org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480
+[ INFO] 2017-12-14 16:59:19,930 [] [] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@17f6480: defining beans [org.apache.ftpserver.listener.ListenerFactory#0,org.apache.ftpserver.usermanager.PropertiesUserManagerFactory#0,org.apache.ftpserver.FtpServerFactory#0,myServer]; root of factory hierarchy
+[ INFO] 2017-12-14 16:59:20,023 [] [] FTP server started
+[ INFO] 2017-12-14 16:59:26,571 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:59:26,573 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:59:26,579 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:59:26,595 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,251
+[ INFO] 2017-12-14 16:59:26,595 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:59:26,598 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:59:26,600 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:59:26,600 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:59:26,602 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:59:26,603 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:59:26,605 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,69
+[ INFO] 2017-12-14 16:59:26,607 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:26,607 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:26,612 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:26,613 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:59:26,662 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,75
+[ INFO] 2017-12-14 16:59:26,663 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:26,664 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:26,666 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:26,666 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:59:26,713 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,140,237
+[ INFO] 2017-12-14 16:59:26,714 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:26,715 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:59:27,203 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 16:59:27,204 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,204 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,231
+[ INFO] 2017-12-14 16:59:27,205 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:59:27,206 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ WARN] 2017-12-14 16:59:27,208 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:153)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:59:27,214 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:27,215 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,215 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 16:59:27,221 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:59:27,221 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:59:27,224 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:59:27,225 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,201
+[ INFO] 2017-12-14 16:59:27,229 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:59:27,229 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:59:27,230 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:59:27,230 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:59:27,231 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:59:27,231 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:59:27,231 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,237
+[ INFO] 2017-12-14 16:59:27,232 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:27,232 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:27,233 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,233 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:59:27,275 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,173,145
+[ INFO] 2017-12-14 16:59:27,276 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:27,276 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:27,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:59:27,324 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,138,23
+[ INFO] 2017-12-14 16:59:27,326 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:27,326 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 16:59:27,814 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 16:59:27,815 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,815 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,158,43
+[ INFO] 2017-12-14 16:59:27,816 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 16:59:27,816 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ WARN] 2017-12-14 16:59:27,817 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.LIST.execute(LIST.java:115)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:59:27,818 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:27,819 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:27,819 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,176,121
+[ INFO] 2017-12-14 16:59:27,820 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 16:59:27,820 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ WARN] 2017-12-14 16:59:27,837 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:59:27,837 [anonymous] [127.0.0.1] CLOSED
+[ERROR] 2017-12-14 16:59:27,837 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 16:59:27,837 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 16:59:54,723 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 16:59:54,723 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 16:59:54,724 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 16:59:54,739 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,23
+[ INFO] 2017-12-14 16:59:54,739 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 16:59:54,742 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 16:59:54,743 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 16:59:54,743 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 16:59:54,743 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 16:59:54,743 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 16:59:54,744 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,129,81
+[ INFO] 2017-12-14 16:59:54,744 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:54,744 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:54,745 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:54,745 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 16:59:54,787 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,152,97
+[ INFO] 2017-12-14 16:59:54,788 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 16:59:54,788 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 16:59:54,788 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 16:59:54,789 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:00:19,945 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,155,145
+[ INFO] 2017-12-14 17:00:19,946 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:19,947 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 17:00:20,476 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 17:00:20,476 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:20,477 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:00:42,110 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,185
+[ INFO] 2017-12-14 17:00:42,110 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:42,110 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ WARN] 2017-12-14 17:00:42,111 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:153)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:00:42,111 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:42,111 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 17:00:42,137 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:00:42,138 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:00:42,138 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:00:42,142 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,182,91
+[ INFO] 2017-12-14 17:00:42,142 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:00:42,142 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:00:42,142 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:00:42,142 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:00:42,143 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:00:42,143 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:00:42,143 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,79
+[ INFO] 2017-12-14 17:00:42,143 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:42,143 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:00:42,144 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:42,144 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:00:42,189 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,154,133
+[ INFO] 2017-12-14 17:00:42,189 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:42,190 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:00:42,190 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:42,191 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:00:43,440 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,128,131
+[ INFO] 2017-12-14 17:00:43,441 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:43,442 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 17:00:43,972 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 17:00:43,972 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:43,972 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:00:46,119 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,129,51
+[ INFO] 2017-12-14 17:00:46,119 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:00:46,119 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ WARN] 2017-12-14 17:00:46,120 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.LIST.execute(LIST.java:115)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:00:46,120 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:00:46,121 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 17:00:46,121 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,159
+[ INFO] 2017-12-14 17:00:46,121 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ WARN] 2017-12-14 17:00:46,140 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:00:46,140 [anonymous] [127.0.0.1] CLOSED
+[ERROR] 2017-12-14 17:00:46,140 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:00:46,140 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:01:37,199 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:01:37,200 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:01:37,200 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:01:37,215 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,157,111
+[ INFO] 2017-12-14 17:01:37,215 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:01:37,218 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:01:37,218 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:01:37,218 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:01:37,218 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:01:37,222 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:01:37,224 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,69
+[ INFO] 2017-12-14 17:01:37,224 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:37,224 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:01:37,226 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:37,226 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:01:37,271 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,83
+[ INFO] 2017-12-14 17:01:37,271 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:37,271 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:01:37,272 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:37,272 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:01:37,316 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,131
+[ INFO] 2017-12-14 17:01:37,316 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:37,317 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 17:01:37,808 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 17:01:37,809 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:37,809 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:01:39,613 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,197
+[ INFO] 2017-12-14 17:01:39,613 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:39,613 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ WARN] 2017-12-14 17:01:39,614 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:153)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:01:39,614 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:39,614 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ INFO] 2017-12-14 17:01:39,618 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:01:39,618 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:01:39,618 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:01:39,619 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,247
+[ INFO] 2017-12-14 17:01:39,620 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:01:39,620 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:01:39,620 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:01:39,620 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:01:39,620 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,147,185
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:39,621 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ WARN] 2017-12-14 17:01:39,676 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:01:39,676 [anonymous] [127.0.0.1] CLOSED
+[ERROR] 2017-12-14 17:01:39,677 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:01:39,677 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:01:44,921 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:01:44,921 [anonymous] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:01:44,921 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:01:44,933 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,167,67
+[ INFO] 2017-12-14 17:01:44,933 [anonymous] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:01:44,936 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:01:44,937 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:01:44,937 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:01:44,937 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:01:44,937 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:01:44,938 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,83
+[ INFO] 2017-12-14 17:01:44,938 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:44,938 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:01:44,939 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:44,939 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:01:44,983 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,179,189
+[ INFO] 2017-12-14 17:01:44,983 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:44,983 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:01:44,984 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:44,984 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:01:45,029 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,167,239
+[ INFO] 2017-12-14 17:01:45,029 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:01:45,029 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 17:01:45,557 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 17:01:45,557 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:01:45,558 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:03:32,024 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,167,215
+[ INFO] 2017-12-14 17:03:32,025 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:03:32,026 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ WARN] 2017-12-14 17:03:32,027 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.RETR.execute(RETR.java:153)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:03:32,028 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:03:32,029 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ WARN] 2017-12-14 17:03:32,062 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2017-12-14 17:03:32,062 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:03:32,063 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:03:36,550 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:03:36,551 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:03:36,551 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:03:36,565 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,133,153
+[ INFO] 2017-12-14 17:03:36,566 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:03:36,568 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,181,193
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:03:36,569 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:03:36,570 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:03:36,570 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:03:36,615 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,133,213
+[ INFO] 2017-12-14 17:03:36,615 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:03:36,615 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:03:36,616 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:03:36,616 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:03:36,664 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,138,231
+[ INFO] 2017-12-14 17:03:36,664 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:03:36,664 [anonymous] [127.0.0.1] RECEIVED: RETR folder.zip
+[ INFO] 2017-12-14 17:03:37,196 [anonymous] [127.0.0.1] File downloaded /folder.zip
+[ INFO] 2017-12-14 17:03:37,196 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:03:37,197 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:08:37,514 [anonymous] [127.0.0.1] IDLE
+[ INFO] 2017-12-14 17:08:37,514 [anonymous] [127.0.0.1] Session idle, closing
+[ INFO] 2017-12-14 17:08:37,515 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:40:21,063 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:40:21,063 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:40:21,064 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:40:21,065 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,172,127
+[ INFO] 2017-12-14 17:40:21,065 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:40:21,065 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-14 17:40:21,065 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-14 17:40:21,065 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-14 17:40:21,065 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-14 17:40:21,066 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-14 17:40:21,066 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,140,97
+[ INFO] 2017-12-14 17:40:21,067 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,067 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:40:21,067 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,067 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,110 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,59
+[ INFO] 2017-12-14 17:40:21,111 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,111 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:40:21,112 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,112 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,156 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,43
+[ INFO] 2017-12-14 17:40:21,156 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,157 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-14 17:40:21,161 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,161 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,206 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,113
+[ INFO] 2017-12-14 17:40:21,207 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,207 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-14 17:40:21,208 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,208 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,251 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,152,147
+[ INFO] 2017-12-14 17:40:21,251 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,251 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-14 17:40:21,252 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,252 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,294 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,142,209
+[ INFO] 2017-12-14 17:40:21,294 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,294 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-14 17:40:21,295 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,295 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,339 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,153,81
+[ INFO] 2017-12-14 17:40:21,339 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,339 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-14 17:40:21,340 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,340 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,383 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,138,41
+[ INFO] 2017-12-14 17:40:21,384 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,384 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-14 17:40:21,386 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,386 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,429 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,165,211
+[ INFO] 2017-12-14 17:40:21,430 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,430 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-14 17:40:21,432 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,432 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,475 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,174,109
+[ INFO] 2017-12-14 17:40:21,476 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,476 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-14 17:40:21,478 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,478 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,522 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,93
+[ INFO] 2017-12-14 17:40:21,523 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,523 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-14 17:40:21,524 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,524 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,566 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,154,29
+[ INFO] 2017-12-14 17:40:21,567 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,567 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-14 17:40:21,568 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,568 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,611 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,147
+[ INFO] 2017-12-14 17:40:21,611 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,612 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-14 17:40:21,613 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,613 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,657 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,161,139
+[ INFO] 2017-12-14 17:40:21,658 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,658 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-14 17:40:21,660 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,660 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,704 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,175,177
+[ INFO] 2017-12-14 17:40:21,705 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,705 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/1.jpg
+[ INFO] 2017-12-14 17:40:21,706 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,706 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,751 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,135,77
+[ INFO] 2017-12-14 17:40:21,752 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,752 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/2.jpg
+[ INFO] 2017-12-14 17:40:21,753 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,754 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,794 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,144,79
+[ INFO] 2017-12-14 17:40:21,794 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,794 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/3.jpg
+[ INFO] 2017-12-14 17:40:21,795 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,795 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,838 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,169,207
+[ INFO] 2017-12-14 17:40:21,839 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,839 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-14 17:40:21,840 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,841 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,884 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,161,97
+[ INFO] 2017-12-14 17:40:21,884 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,885 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/4.jpg
+[ INFO] 2017-12-14 17:40:21,886 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,887 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,934 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,163,203
+[ INFO] 2017-12-14 17:40:21,935 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,935 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/5.jpg
+[ INFO] 2017-12-14 17:40:21,937 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,937 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:21,978 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,182,243
+[ INFO] 2017-12-14 17:40:21,979 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:21,979 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/6.jpg
+[ INFO] 2017-12-14 17:40:21,981 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:21,981 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,023 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,166,3
+[ INFO] 2017-12-14 17:40:22,024 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,024 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/7.jpg
+[ INFO] 2017-12-14 17:40:22,025 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,025 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,066 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,167,31
+[ INFO] 2017-12-14 17:40:22,067 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,067 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-14 17:40:22,069 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,069 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,111 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,59
+[ INFO] 2017-12-14 17:40:22,112 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,112 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/1.jpg
+[ INFO] 2017-12-14 17:40:22,114 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,114 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,155 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,132,151
+[ INFO] 2017-12-14 17:40:22,156 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,156 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/7.jpg
+[ INFO] 2017-12-14 17:40:22,157 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,157 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,198 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,140,51
+[ INFO] 2017-12-14 17:40:22,199 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,199 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/2.jpg
+[ INFO] 2017-12-14 17:40:22,201 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,201 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,242 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,139,229
+[ INFO] 2017-12-14 17:40:22,243 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,243 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/4.jpg
+[ INFO] 2017-12-14 17:40:22,245 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,245 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,286 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,158,53
+[ INFO] 2017-12-14 17:40:22,287 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,287 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/6.jpg
+[ INFO] 2017-12-14 17:40:22,289 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,289 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,334 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,166,137
+[ INFO] 2017-12-14 17:40:22,335 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,335 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-14 17:40:22,337 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,338 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,380 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,148,181
+[ INFO] 2017-12-14 17:40:22,381 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,381 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-14 17:40:22,383 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,383 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,431 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,146,3
+[ INFO] 2017-12-14 17:40:22,431 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,432 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/2.jpg
+[ INFO] 2017-12-14 17:40:22,433 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,433 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,474 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,89
+[ INFO] 2017-12-14 17:40:22,475 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,475 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/3.jpg
+[ INFO] 2017-12-14 17:40:22,477 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,477 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,518 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,160,231
+[ INFO] 2017-12-14 17:40:22,519 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,519 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-14 17:40:22,521 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,521 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,567 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,136,33
+[ INFO] 2017-12-14 17:40:22,567 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,567 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/1.jpg
+[ INFO] 2017-12-14 17:40:22,568 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,568 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,610 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,178,49
+[ INFO] 2017-12-14 17:40:22,610 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,610 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/2.jpg
+[ INFO] 2017-12-14 17:40:22,611 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,611 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,654 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,157,129
+[ INFO] 2017-12-14 17:40:22,655 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,655 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/3.jpg
+[ INFO] 2017-12-14 17:40:22,657 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,657 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,698 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,182,99
+[ INFO] 2017-12-14 17:40:22,699 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,699 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/4.jpg
+[ INFO] 2017-12-14 17:40:22,701 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,701 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,747 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,157,107
+[ INFO] 2017-12-14 17:40:22,747 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,748 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/2.jpg
+[ INFO] 2017-12-14 17:40:22,749 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,749 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,790 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,134,17
+[ INFO] 2017-12-14 17:40:22,791 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,791 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/3.jpg
+[ INFO] 2017-12-14 17:40:22,793 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,793 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-14 17:40:22,834 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,167,1
+[ INFO] 2017-12-14 17:40:22,835 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:22,835 [anonymous] [127.0.0.1] RECEIVED: RETR folder/top2/top2.zip
+[ INFO] 2017-12-14 17:40:22,940 [anonymous] [127.0.0.1] File downloaded /folder/top2/top2.zip
+[ INFO] 2017-12-14 17:40:22,940 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:22,940 [anonymous] [127.0.0.1] SENT: 226 Transfer complete.
+
+[ INFO] 2017-12-14 17:40:29,488 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,142,35
+[ INFO] 2017-12-14 17:40:29,488 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-14 17:40:29,488 [anonymous] [127.0.0.1] RECEIVED: LIST folder/1.jpg
+[ WARN] 2017-12-14 17:40:29,489 [anonymous] [127.0.0.1] FtpDataConnection.getDataSocket()
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.createDataSocket(IODataConnectionFactory.java:311)
+	at org.apache.ftpserver.impl.IODataConnectionFactory.openConnection(IODataConnectionFactory.java:257)
+	at org.apache.ftpserver.command.impl.LIST.execute(LIST.java:115)
+	at org.apache.ftpserver.impl.DefaultFtpHandler.messageReceived(DefaultFtpHandler.java:211)
+	at org.apache.ftpserver.listener.nio.FtpHandlerAdapter.messageReceived(FtpHandlerAdapter.java:62)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$TailFilter.messageReceived(DefaultIoFilterChain.java:858)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.ftpserver.listener.nio.FtpLoggingFilter.messageReceived(FtpLoggingFilter.java:85)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.filter.logging.MdcInjectionFilter.filter(MdcInjectionFilter.java:135)
+	at org.apache.mina.filter.util.CommonEventFilter.messageReceived(CommonEventFilter.java:70)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter$ProtocolDecoderOutputImpl.flush(ProtocolCodecFilter.java:398)
+	at org.apache.mina.filter.codec.ProtocolCodecFilter.messageReceived(ProtocolCodecFilter.java:234)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.callNextMessageReceived(DefaultIoFilterChain.java:542)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain.access$1300(DefaultIoFilterChain.java:48)
+	at org.apache.mina.core.filterchain.DefaultIoFilterChain$EntryImpl$1.messageReceived(DefaultIoFilterChain.java:947)
+	at org.apache.mina.core.filterchain.IoFilterEvent.fire(IoFilterEvent.java:74)
+	at org.apache.mina.core.session.IoEvent.run(IoEvent.java:63)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTask(OrderedThreadPoolExecutor.java:770)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.runTasks(OrderedThreadPoolExecutor.java:762)
+	at org.apache.mina.filter.executor.OrderedThreadPoolExecutor$Worker.run(OrderedThreadPoolExecutor.java:704)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:40:29,489 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-14 17:40:29,489 [anonymous] [127.0.0.1] SENT: 425 Can't open data connection.
+
+[ WARN] 2017-12-14 17:40:29,503 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ERROR] 2017-12-14 17:40:29,503 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Connection reset by peer
+	at sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:39)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223)
+	at sun.nio.ch.IOUtil.read(IOUtil.java:197)
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+[ INFO] 2017-12-14 17:40:29,503 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:42:43,359 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:42:43,360 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:42:43,360 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 17:42:43,360 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 17:42:43,360 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:42:43,361 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:44:13,339 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 17:46:59,013 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 17:46:59,013 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:46:59,014 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 17:48:29,001 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:08:21,305 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:08:21,305 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:08:21,306 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:09:51,284 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:15:38,778 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,779 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:15:38,780 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:17:08,750 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:18:55,244 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:18:55,244 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:18:55,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:25,219 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:19:31,165 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:19:31,166 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:19:31,166 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:19:31,166 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:19:31,167 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:21:01,170 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:33:53,179 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,180 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:33:53,181 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:34:23,162 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:35:09,238 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:35:09,244 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:35:09,245 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:36:39,245 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:40:35,021 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:40:35,021 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:40:35,022 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,505 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 18:42:00,517 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 18:42:00,517 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 18:42:00,517 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:42:00,518 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 18:43:30,495 [] [127.0.0.1] CLOSED
+[ INFO] 2017-12-14 19:03:01,184 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-14 19:03:01,184 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: GET / HTTP/1.1
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Host: 127.0.0.1:2121
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:56.0) Gecko/20100101 Firefox/56.0
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Accept-Language: en-US,en;q=0.5
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Accept-Encoding: gzip, deflate
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Connection: keep-alive
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Upgrade-Insecure-Requests: 1
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Pragma: no-cache
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: Cache-Control: no-cache
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] RECEIVED: 
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:03:01,185 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-14 19:04:31,167 [] [127.0.0.1] CLOSED
