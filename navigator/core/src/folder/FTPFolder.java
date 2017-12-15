@@ -120,6 +120,8 @@ public class FTPFolder implements IFolder {
             return  items;
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }

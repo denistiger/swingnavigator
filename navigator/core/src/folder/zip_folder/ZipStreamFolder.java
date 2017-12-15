@@ -1,11 +1,9 @@
 package folder.zip_folder;
 
 import folder.IFolder;
-import folder.UnimplementedFolder;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -15,41 +13,50 @@ public abstract class ZipStreamFolder extends AbstractZipFolder {
 
     abstract void resetStream() throws IOException;
 
-    @Override
-    public List<IFolder> getItems() {
-        try {
-            resetStream();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
-        List<IFolder> list = new ArrayList<>();
+    protected void initChildren() throws Exception {
+        resetStream();
         List<String> listNames = new ArrayList<>();
-        try {
-            while (zipStream.available() == 1) {
-                ZipEntry entry = zipStream.getNextEntry();
-                if (entry == null) {
-                    break;
-                }
-                listNames.add(entry.getName());
-                list.add(new UnimplementedFolder(entry.getName()));
+        while (zipStream.available() == 1) {
+            ZipEntry entry = zipStream.getNextEntry();
+            if (entry == null) {
+                break;
             }
-            listNames.sort(Comparator.naturalOrder());
-        } catch (IOException er) {
-            System.out.println("folder.zip_folder.ZipStreamFolder getItems error");
-            er.printStackTrace();
+            listNames.add(entry.getName());
         }
-        return list;
+        initChildren(prepareEntriesList(listNames));
     }
 
     @Override
     public IFolder.FolderTypes getType() {
-        return IFolder.FolderTypes.ZIP_FILE;
+        if (type == null) {
+            ZipEntry entry = getZipEntry();
+            if (entry.isDirectory()) {
+                type = FolderTypes.FOLDER;
+            }
+            // TODO return for zip files.
+            type = FolderTypes.FILE;
+        }
+        return type;
     }
 
-    @Override
-    public String getName() {
-        return name;
+
+    protected ZipEntry getZipEntry() {
+        try {
+            resetStream();
+            while (zipStream.available() == 1) {
+                ZipEntry entry = zipStream.getNextEntry();
+                if (entry == null) {
+                    return null;
+                }
+                if (entry.getName() == inZipPath) {
+                    return entry;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
     }
 
 }

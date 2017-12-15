@@ -13,7 +13,6 @@ import java.util.zip.ZipInputStream;
 public class ZipFileFolder extends AbstractZipFolder {
 
     private ZipFile zipFile = null;
-    private FolderTypes type;
 
     public ZipFileFolder(File file) throws Exception {
         inZipPath = "";
@@ -27,12 +26,7 @@ public class ZipFileFolder extends AbstractZipFolder {
             ZipEntry entry = entries.nextElement();
             entriesStr.add(entry.getName());
         }
-        entriesStr.sort(Comparator.naturalOrder());
-        List<String[]> entriesNames = new ArrayList<>();
-        for (String st : entriesStr) {
-            entriesNames.add(splitPath(st));
-        }
-        initChildren(entriesNames);
+        initChildren(prepareEntriesList(entriesStr));
     }
 
 
@@ -44,6 +38,7 @@ public class ZipFileFolder extends AbstractZipFolder {
         type = checkType();
     }
 
+    // TODO remove
     private void print(List<String[]> list) {
         for (String[] str : list) {
             for (String st : str) {
@@ -51,25 +46,9 @@ public class ZipFileFolder extends AbstractZipFolder {
             }
             System.out.println();
         }
-
     }
 
 
-    @Override
-    public List<IFolder> getItems() {
-        if (getType() == IFolder.FolderTypes.FILE) {
-            assert children == null || children.size() == 0;
-            return null;
-        }
-        return children;
-    }
-
-    @Override
-    public String getName() {
-        if (name != null)
-            return name;
-        return getLastName(inZipPath);
-    }
 
     private IFolder.FolderTypes checkType() {
         ZipEntry entry = zipFile.getEntry(inZipPath);
@@ -92,8 +71,4 @@ public class ZipFileFolder extends AbstractZipFolder {
         return IFolder.FolderTypes.FILE;
     }
 
-    @Override
-    public IFolder.FolderTypes getType() {
-        return type;
-    }
 }

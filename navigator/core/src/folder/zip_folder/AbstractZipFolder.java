@@ -12,8 +12,9 @@ public abstract class AbstractZipFolder implements IFolder {
 
     protected String name = null;
     protected String inZipPath = null;
-    protected ZipFolderFactory factory = null;
+    protected IFolderFactory factory = null;
     protected List<IFolder> children = null;
+    protected FolderTypes type;
 
     protected String[] splitPath(String path) {
         return path.split(String.valueOf(zipPathSeparator));
@@ -25,6 +26,36 @@ public abstract class AbstractZipFolder implements IFolder {
             return list[list.length - 1];
         }
         return "";
+    }
+
+    @Override
+    public List<IFolder> getItems() {
+        if (getType() == IFolder.FolderTypes.FILE) {
+            assert children == null || children.size() == 0;
+            return null;
+        }
+        return children;
+    }
+
+    @Override
+    public String getName() {
+        if (name != null)
+            return name;
+        return getLastName(inZipPath);
+    }
+
+    @Override
+    public IFolder.FolderTypes getType() {
+        return type;
+    }
+
+    protected List<String[]> prepareEntriesList(List<String> entriesStr){
+        entriesStr.sort(Comparator.naturalOrder());
+        List<String[]> entriesNames = new ArrayList<>();
+        for (String st : entriesStr) {
+            entriesNames.add(splitPath(st));
+        }
+        return entriesNames;
     }
 
     protected void initChildren(List<String[]> entries) throws Exception {
