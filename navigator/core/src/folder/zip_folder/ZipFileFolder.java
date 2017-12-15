@@ -1,50 +1,45 @@
 package folder.zip_folder;
 
 import folder.IFolder;
+import folder.IFolderFactory;
 
 import java.io.File;
 import java.io.InputStream;
-import java.nio.file.FileSystem;
-import java.nio.file.FileSystems;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
-public class ZipFileFolder extends AbstractZipfolder{
+public class ZipFileFolder extends AbstractZipFolder {
 
-    ZipFile zipFile = null;
-    private String inZipPath = null;
-    List<IFolder> children = null;
-    private FileSystem fileSystem = null;
-    IFolder.FolderTypes type;
+    private ZipFile zipFile = null;
+    private FolderTypes type;
 
     public ZipFileFolder(File file) throws Exception {
-        fileSystem = FileSystems.newFileSystem(Paths.get(file.getPath()), null);
         inZipPath = "";
+        type = IFolder.FolderTypes.ZIP_FILE;
         name = file.getName();
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
+        factory = new ZipFolderFactory(zipFile);
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         List<String> entriesStr = new ArrayList<>();
-        List<String[]> entriesNames = new ArrayList<>();
         while (entries.hasMoreElements()) {
             ZipEntry entry = entries.nextElement();
             entriesStr.add(entry.getName());
         }
         entriesStr.sort(Comparator.naturalOrder());
+        List<String[]> entriesNames = new ArrayList<>();
         for (String st : entriesStr) {
             entriesNames.add(splitPath(st));
         }
         initChildren(entriesNames);
-        type = IFolder.FolderTypes.ZIP_FILE;
     }
 
 
-    public ZipFileFolder(ZipFile file, FileSystem fileSystem1, String path, List<String[]> entries ) throws Exception {
-        fileSystem = fileSystem1;
+    public ZipFileFolder(ZipFile file, String path, List<String[]> entries, ZipFolderFactory factory ) throws Exception {
         inZipPath = path;
         zipFile = file;
+        this.factory = factory;
         initChildren(entries);
         type = checkType();
     }
@@ -59,41 +54,6 @@ public class ZipFileFolder extends AbstractZipfolder{
 
     }
 
-    private void initChildren(List<String[]> entries) throws Exception {
-        children = new ArrayList<>();
-        if (entries.isEmpty()) {
-            return;
-        }
-        Iterator<String[]> iter = entries.iterator();
-        String[] itemName = iter.next();
-        while (iter.hasNext()) {
-            if (itemName.length > 1) {
-                throw new Exception("init Children - lead name not a parent!");
-            }
-            List<String[]> localChildren = new ArrayList<>();
-            String[] currentItemName = null;
-            while (iter.hasNext()) {
-                currentItemName = iter.next();
-                if (currentItemName.length == 1) {
-                    break;
-                }
-                String[] cutPath = new String[currentItemName.length - 1];
-                for (int i = 1; i < currentItemName.length; ++i) {
-                    cutPath[i - 1] = currentItemName[i];
-                }
-                localChildren.add(cutPath);
-            }
-            children.add(new ZipFileFolder(zipFile, fileSystem,
-                    inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + itemName[0],
-                    localChildren));
-            if (!iter.hasNext() && currentItemName.length == 1) {
-                children.add(new ZipFileFolder(zipFile, fileSystem,
-                        inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + currentItemName[0],
-                        new ArrayList<>()));
-            }
-            itemName = currentItemName;
-        }
-    }
 
     @Override
     public List<IFolder> getItems() {

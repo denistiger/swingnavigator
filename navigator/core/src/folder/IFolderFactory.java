@@ -4,5 +4,9 @@ import java.util.Map;
 
 public interface IFolderFactory {
 
-    IFolder createIFolder(Map<String, Object> params);
+    String INZIPPATHSTRING = "InFolderPath";
+    String ENTRIESLISTSTRING = "EntriesStrings";
+    String FILESTRING = "File";
+
+    IFolder createIFolder(Map<String, Object> params) throws Exception;
 }

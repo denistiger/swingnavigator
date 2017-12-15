@@ -33,8 +33,8 @@ public class FolderFactory implements IFolderFactory {
         List<IFolder> list = new ArrayList<>();
         // TODO learn lambda
         for (File file : files) {
-            Map<String, Object> params = new HashMap<String, Object>();
-            params.put("File", file);
+            Map<String, Object> params = new HashMap<>();
+            params.put(IFolderFactory.FILESTRING, file);
             IFolder folder = createIFolder(params);
             if (folder != null) {
                 list.add(folder);

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public abstract class ZipStreamFolder extends AbstractZipfolder {
+public abstract class ZipStreamFolder extends AbstractZipFolder {
     ZipInputStream zipStream = null;
 
     abstract void resetStream() throws IOException;
