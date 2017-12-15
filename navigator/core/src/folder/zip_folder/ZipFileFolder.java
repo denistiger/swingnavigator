@@ -1,36 +1,24 @@
-import javax.swing.plaf.synth.SynthTextAreaUI;
+package folder.zip_folder;
+
+import folder.IFolder;
+
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.*;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
-public class ZipFileFolder implements IFolder {
+public class ZipFileFolder extends AbstractZipfolder{
 
     ZipFile zipFile = null;
-    String name = null;
-    String inZipPath = null;
+    private String inZipPath = null;
     List<IFolder> children = null;
-    FileSystem fileSystem = null;
-    FolderTypes type;
-
-    // TODO remove
-    static final Character zipPathSeparator = '/';
-
-    private String getLastName(String path) {
-        String[] list = splitPath(path);
-        if (list.length > 0) {
-            return list[list.length - 1];
-        }
-        return "";
-    }
-
-    private String[] splitPath(String path) {
-        return path.split(String.valueOf(zipPathSeparator));
-    }
+    private FileSystem fileSystem = null;
+    IFolder.FolderTypes type;
 
     public ZipFileFolder(File file) throws Exception {
         fileSystem = FileSystems.newFileSystem(Paths.get(file.getPath()), null);
@@ -49,7 +37,7 @@ public class ZipFileFolder implements IFolder {
             entriesNames.add(splitPath(st));
         }
         initChildren(entriesNames);
-        type = FolderTypes.ZIP_FILE;
+        type = IFolder.FolderTypes.ZIP_FILE;
     }
 
 
@@ -109,7 +97,7 @@ public class ZipFileFolder implements IFolder {
 
     @Override
     public List<IFolder> getItems() {
-        if (getType() == FolderTypes.FILE) {
+        if (getType() == IFolder.FolderTypes.FILE) {
             assert children == null || children.size() == 0;
             return null;
         }
@@ -123,10 +111,10 @@ public class ZipFileFolder implements IFolder {
         return getLastName(inZipPath);
     }
 
-    private FolderTypes checkType() {
+    private IFolder.FolderTypes checkType() {
         ZipEntry entry = zipFile.getEntry(inZipPath);
         if (entry.isDirectory()) {
-            return FolderTypes.FOLDER;
+            return IFolder.FolderTypes.FOLDER;
         }
         try {
             InputStream stream = zipFile.getInputStream(zipFile.getEntry(inZipPath));
@@ -137,15 +125,15 @@ public class ZipFileFolder implements IFolder {
 //                inZipEntry = zipStream.getNextEntry();
 //            }
             if (zipStream.getNextEntry() != null) {
-                return FolderTypes.ZIP_FILE;
+                return IFolder.FolderTypes.ZIP_FILE;
             }
         } catch (Exception er) {
         }
-        return FolderTypes.FILE;
+        return IFolder.FolderTypes.FILE;
     }
 
     @Override
-    public FolderTypes getType() {
+    public IFolder.FolderTypes getType() {
         return type;
     }
 }

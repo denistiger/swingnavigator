@@ -1,7 +1,7 @@
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPClientConfig;
-import org.apache.commons.net.ftp.FTPFile;
-import org.apache.commons.net.ftp.FTPReply;
+package folder;
+
+import org.apache.commons.net.ftp.*;
+import folder.zip_folder.ZipOnFTPFolder;
 
 import java.io.IOException;
 import java.util.ArrayList;

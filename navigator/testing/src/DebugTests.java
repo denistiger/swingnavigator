@@ -1,7 +1,6 @@
-import org.apache.commons.net.ftp.FTPClient;
-import org.apache.commons.net.ftp.FTPFile;
+import folder.FTPFolder;
+import folder.IFolder;
 
-import java.io.File;
 import java.util.List;
 
 public class DebugTests implements Runnable {
@@ -56,8 +55,8 @@ public class DebugTests implements Runnable {
                 return;
             }
 //            File file = new File(path);
-//            IFolder iFolder = FolderFactory.createIFolder(file);
-//            List<IFolder> items = iFolder.getItems();
+//            folder.IFolder iFolder = folder.FolderFactory.createIFolder(file);
+//            List<folder.IFolder> items = iFolder.getItems();
             FTPFolder ftpFolder = new FTPFolder("127.0.0.1");
             if (!ftpFolder.authenticated()) {
                 ftpFolder.login("anonymous","");

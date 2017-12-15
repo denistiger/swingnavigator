@@ -1,12 +1,16 @@
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+package folder;
 
-public class FolderFactory {
+import folder.zip_folder.ZipFileFolder;
+
+import java.io.File;
+import java.util.*;
+
+public class FolderFactory implements IFolderFactory {
 
     // TODO may be not so cynical?
-    public static IFolder createIFolder(File file) {
+    public IFolder createIFolder(Map<String, Object> params) {
+        Object fileObj = params.get("File");
+        File file = (File) fileObj;
         try {
             return new LocalFolder(file);
         } catch (Exception er) {
@@ -25,11 +29,13 @@ public class FolderFactory {
         return null;
     }
 
-    public static List<IFolder> createIFolderList(File[] files) {
+    public List<IFolder> createIFolderList(File[] files) {
         List<IFolder> list = new ArrayList<>();
         // TODO learn lambda
         for (File file : files) {
-            IFolder folder = createIFolder(file);
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("File", file);
+            IFolder folder = createIFolder(params);
             if (folder != null) {
                 list.add(folder);
             }
@@ -48,4 +54,5 @@ public class FolderFactory {
         });
         return list;
     }
+
 }
