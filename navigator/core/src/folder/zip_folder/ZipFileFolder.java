@@ -31,7 +31,7 @@ public class ZipFileFolder extends AbstractZipFolder {
     }
 
 
-    public ZipFileFolder(ZipFile file, String path, List<String[]> entries, ZipFolderFactory factory ) throws Exception {
+    public ZipFileFolder(ZipFile file, String path, List<ZipEntryData> entries, ZipFolderFactory factory ) throws Exception {
         inZipPath = path;
         zipFile = file;
         this.factory = factory;

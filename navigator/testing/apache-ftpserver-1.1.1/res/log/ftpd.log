@@ -15660,3 +15660,864 @@ java.net.ConnectException: Connection refused (Connection refused)
 
 [ INFO] 2017-12-19 20:55:06,920 [anonymous] [127.0.0.1] CLOSED
 [ INFO] 2017-12-19 20:55:06,920 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-19 22:13:51,601 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@deb6432: display name [org.springframework.context.support.FileSystemXmlApplicationContext@deb6432]; startup date [Tue Dec 19 22:13:51 EET 2017]; root of context hierarchy
+[ INFO] 2017-12-19 22:13:52,921 [] [] Loading XML bean definitions from file [C:\Users\rodikov\IdeaProjects\swingnavigator\navigator\testing\apache-ftpserver-1.1.1\..\res\conf\ftpd-typical.xml]
+[ INFO] 2017-12-19 22:16:56,348 [] [] Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@deb6432: display name [org.springframework.context.support.FileSystemXmlApplicationContext@deb6432]; startup date [Tue Dec 19 22:16:56 EET 2017]; root of context hierarchy
+[ INFO] 2017-12-19 22:16:56,388 [] [] Loading XML bean definitions from file [C:\Users\rodikov\IdeaProjects\swingnavigator\navigator\testing\apache-ftpserver-1.1.1\res\conf\ftpd-typical.xml]
+[ INFO] 2017-12-19 22:16:57,318 [] [] Bean factory for application context [org.springframework.context.support.FileSystemXmlApplicationContext@deb6432]: org.springframework.beans.factory.support.DefaultListableBeanFactory@1b604f19
+[ INFO] 2017-12-19 22:16:57,388 [] [] Pre-instantiating singletons in org.springframework.beans.factory.support.DefaultListableBeanFactory@1b604f19: defining beans [org.apache.ftpserver.listener.ListenerFactory#0,org.apache.ftpserver.usermanager.PropertiesUserManagerFactory#0,org.apache.ftpserver.FtpServerFactory#0,myServer]; root of factory hierarchy
+[ INFO] 2017-12-19 22:16:57,978 [] [] FTP server started
+[ INFO] 2017-12-19 22:17:11,888 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-19 22:17:11,918 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-19 22:17:11,948 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-19 22:17:11,978 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,26
+[ INFO] 2017-12-19 22:17:11,978 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-19 22:17:11,998 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-19 22:17:11,998 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-19 22:17:11,998 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-19 22:17:12,008 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-19 22:17:12,008 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-19 22:17:12,008 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,27
+[ INFO] 2017-12-19 22:17:12,008 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,008 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,028 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,028 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,29
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,31
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,058 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,33
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,35
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,068 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,37
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,39
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,41
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,078 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/1.jpg
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,43
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/2.jpg
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,45
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/3.jpg
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,47
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,49
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,088 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/4.jpg
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,51
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/5.jpg
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,53
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/6.jpg
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,55
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/7.jpg
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,57
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,59
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,098 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/1.jpg
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,61
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/7.jpg
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,63
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/2.jpg
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,65
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/4.jpg
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,67
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/6.jpg
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,69
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top1
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,71
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,108 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,73
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,75
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/2.jpg
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,118 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,77
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/3.jpg
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,79
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,81
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/1.jpg
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,83
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/2.jpg
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,128 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,85
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/3.jpg
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,87
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/4.jpg
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,89
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub2
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,91
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/2.jpg
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,93
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/3.jpg
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,138 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,95
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/top2.zip
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,97
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top3
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,99
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: LIST folder/1.jpg
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,101
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: LIST folder/2.jpg
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,103
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] RECEIVED: LIST folder/3.jpg
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,148 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,105
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: LIST folder/4.jpg
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,107
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: LIST folder/folder_in.zip
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,109
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,158 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] CREATED
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] OPENED
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] SENT: 220 Service ready for new user.
+
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,112
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] SENT: 530 Access denied.
+
+[ INFO] 2017-12-19 22:17:12,168 [] [127.0.0.1] RECEIVED: USER anonymous
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] SENT: 331 Guest login okay, send your complete e-mail address as password.
+
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] RECEIVED: PASS 
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] Anonymous login success - null
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] SENT: 230 User logged in, proceed.
+
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,113
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,168 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,115
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,117
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,178 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,119
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,121
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,188 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,123
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,125
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-19 22:17:12,198 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,127
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top1
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,129
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,131
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,133
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,208 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,135
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub2
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,137
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top3
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,139
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: LIST 
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,141
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,218 [anonymous] [127.0.0.1] RECEIVED: LIST folder
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,143
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,228 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,145
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,147
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/1.jpg
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,149
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/2.jpg
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,151
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub0/3.jpg
+[ INFO] 2017-12-19 22:17:12,238 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,153
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,155
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/4.jpg
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,157
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/5.jpg
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,159
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,248 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/6.jpg
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,161
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub1/7.jpg
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,163
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,165
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/1.jpg
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,167
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/sub2/7.jpg
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,169
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/2.jpg
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,171
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,258 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/4.jpg
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,173
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top0/6.jpg
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,175
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top1
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,177
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,179
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,268 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,181
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/2.jpg
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,183
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub0/3.jpg
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,185
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,187
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/1.jpg
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,189
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,278 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/2.jpg
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,191
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/3.jpg
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,193
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub1/4.jpg
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,195
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/sub2
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,197
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/2.jpg
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,199
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/3.jpg
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,201
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top2/top2.zip
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,288 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,203
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/top3
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,205
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/1.jpg
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,207
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/2.jpg
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,209
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/3.jpg
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,211
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/4.jpg
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,213
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder/folder_in.zip
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: PORT 127,0,0,1,196,215
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 200 Command PORT okay.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] RECEIVED: LIST folder.zip
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 150 File status okay; about to open data connection.
+
+[ INFO] 2017-12-19 22:17:12,298 [anonymous] [127.0.0.1] SENT: 226 Closing data connection.
+
+[ WARN] 2017-12-19 22:17:12,328 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Удаленный хост принудительно разорвал существующее подключение
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[ WARN] 2017-12-19 22:17:12,328 [anonymous] [127.0.0.1] EXCEPTION :
+java.io.IOException: Удаленный хост принудительно разорвал существующее подключение
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[ERROR] 2017-12-19 22:17:12,338 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Удаленный хост принудительно разорвал существующее подключение
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[ERROR] 2017-12-19 22:17:12,338 [anonymous] [127.0.0.1] Exception caught, closing session
+java.io.IOException: Удаленный хост принудительно разорвал существующее подключение
+	at sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at sun.nio.ch.IOUtil.read(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:317)
+	at org.apache.mina.transport.socket.nio.NioProcessor.read(NioProcessor.java:45)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.read(AbstractPollingIoProcessor.java:683)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:659)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.process(AbstractPollingIoProcessor.java:648)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor.access$600(AbstractPollingIoProcessor.java:68)
+	at org.apache.mina.core.polling.AbstractPollingIoProcessor$Processor.run(AbstractPollingIoProcessor.java:1120)
+	at org.apache.mina.util.NamePreservingRunnable.run(NamePreservingRunnable.java:64)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+[ INFO] 2017-12-19 22:17:12,338 [anonymous] [127.0.0.1] CLOSED
+[ INFO] 2017-12-19 22:17:12,338 [anonymous] [127.0.0.1] CLOSED

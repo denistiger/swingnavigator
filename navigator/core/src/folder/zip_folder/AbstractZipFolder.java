@@ -8,26 +8,14 @@ import java.util.*;
 
 public abstract class AbstractZipFolder implements IFolder {
 
-    // TODO remove
-    static final Character zipPathSeparator = '/';
+    protected ZipEntryData zipEntryData;
 
-    protected String name = null;
-    protected String inZipPath = null;
+//    protected String name = null;
+//    protected String inZipPath = null;
     protected IFolderFactory factory = null;
     protected List<IFolder> children = null;
-    protected FolderTypes type;
+//    protected FolderTypes type;
 
-    protected String[] splitPath(String path) {
-        return path.split(String.valueOf(zipPathSeparator));
-    }
-
-    protected String getLastName(String path) {
-        String[] list = splitPath(path);
-        if (list.length > 0) {
-            return list[list.length - 1];
-        }
-        return "";
-    }
 
     @Override
     public List<IFolder> getItems() {
@@ -40,14 +28,12 @@ public abstract class AbstractZipFolder implements IFolder {
 
     @Override
     public String getName() {
-        if (name != null)
-            return name;
-        return getLastName(inZipPath);
+        return zipEntryData.getName();
     }
 
     @Override
     public IFolder.FolderTypes getType() {
-        return type;
+        return zipEntryData.getType();
     }
 
     protected List<String[]> prepareEntriesList(List<String> entriesStr){
@@ -59,40 +45,36 @@ public abstract class AbstractZipFolder implements IFolder {
         return entriesNames;
     }
 
-    protected void initChildren(List<String[]> entries) throws Exception {
+    protected void initChildren(List<ZipEntryData> entries) throws Exception {
         children = new ArrayList<>();
         if (entries.isEmpty()) {
             return;
         }
-        Iterator<String[]> iter = entries.iterator();
-        String[] itemName = iter.next();
+        Iterator<ZipEntryData> iter = entries.iterator();
+        ZipEntryData zipEntry = iter.next();
         while (iter.hasNext()) {
-            if (itemName.length > 1) {
+            if (zipEntry.getInZipSplitPath().length > 1 + zipEntryData.getInZipSplitPath().length) {
                 throw new Exception("init Children - lead name not a parent!");
             }
-            List<String[]> localChildren = new ArrayList<>();
-            String[] currentItemName = null;
+            List<ZipEntryData> localChildren = new ArrayList<>();
+            ZipEntryData currentZipEntry = null;
             while (iter.hasNext()) {
-                currentItemName = iter.next();
-                if (currentItemName.length == 1) {
+                currentZipEntry = iter.next();
+                if (currentZipEntry.getInZipSplitPath().length == 1 + zipEntryData.getInZipSplitPath().length) {
                     break;
                 }
-                String[] cutPath = new String[currentItemName.length - 1];
-                for (int i = 1; i < currentItemName.length; ++i) {
-                    cutPath[i - 1] = currentItemName[i];
-                }
-                localChildren.add(cutPath);
+                localChildren.add(currentZipEntry);
             }
             Map<String, Object> params = new HashMap<>();
-            params.put(IFolderFactory.INZIPPATHSTRING, inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + itemName[0]);
-            params.put(IFolderFactory.ENTRIESLISTSTRING, localChildren);
+            params.put(IFolderFactory.PARENTENTRY, zipEntry);
+            params.put(IFolderFactory.CHILDENTRIES, localChildren);
             children.add(factory.createIFolder(params));
-            if (!iter.hasNext() && currentItemName.length == 1) {
-                params.put(IFolderFactory.INZIPPATHSTRING, inZipPath == "" ? itemName[0] : inZipPath + String.valueOf(zipPathSeparator) + currentItemName[0]);
-                params.put(IFolderFactory.ENTRIESLISTSTRING, new ArrayList<String[]>());
+            if (!iter.hasNext() && currentZipEntry.getInZipSplitPath().length == 1 + zipEntryData.getInZipSplitPath().length) {
+                params.put(IFolderFactory.PARENTENTRY, currentZipEntry);
+                params.put(IFolderFactory.CHILDENTRIES, new ArrayList<ZipEntryData>());
                 children.add(factory.createIFolder(params));
             }
-            itemName = currentItemName;
+            zipEntry = currentZipEntry;
         }
     }
 
