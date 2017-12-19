@@ -21,7 +21,7 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
         this.inZipPath = "";
         this.name = name;
         this.factory = new ZipOnFTPFactory(ftpClient, ftpPath);
-        this.type = FolderTypes.ZIP_FILE;
+        this.type = FolderTypes.ZIP;
         initChildren();
     }
 
@@ -38,10 +38,15 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
     void resetStream() throws IOException {
         try {
             ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
+            InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
+            zipStream = new ZipInputStream(inputStream);
         } catch (IOException e) {
             e.printStackTrace();
+            throw e;
         }
-        InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
-        zipStream = new ZipInputStream(inputStream);
+        catch (NullPointerException e) {
+            e.printStackTrace();
+            throw e;
+        }
     }
 }

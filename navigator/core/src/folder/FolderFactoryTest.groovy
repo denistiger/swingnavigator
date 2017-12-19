@@ -79,7 +79,7 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
     }
 
     boolean checkFileHasNoChildren(IFolder folder) {
-        if (folder.getType() == IFolder.FolderTypes.FILE) {
+        if (!FileTypeGetter.isFolderType(folder.getType())) {
             if (folder.getItems() != null) {
                 return false;
             }

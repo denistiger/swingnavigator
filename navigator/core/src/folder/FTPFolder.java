@@ -109,12 +109,12 @@ public class FTPFolder implements IFolder {
                 if (file.isDirectory()) {
                     items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                             FolderTypes.FOLDER, file.getName()));
-                }else if (file.getName().toLowerCase().contains(".zip")) {
+                }else if (FileTypeGetter.getFileType(file.getName()) == FolderTypes.ZIP) {
                     items.add(new ZipOnFTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                             file.getName()));
                 }else {
                     items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
-                            FolderTypes.FILE, file.getName()));
+                            FileTypeGetter.getFileType(file.getName()), file.getName()));
                 }
             }
             return  items;

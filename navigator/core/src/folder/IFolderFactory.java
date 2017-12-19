@@ -1,5 +1,6 @@
 package folder;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public interface IFolderFactory {
@@ -9,4 +10,5 @@ public interface IFolderFactory {
     String FILESTRING = "File";
 
     IFolder createIFolder(Map<String, Object> params) throws Exception;
+
 }

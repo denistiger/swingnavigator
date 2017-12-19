@@ -1,5 +1,6 @@
 package folder.zip_folder;
 
+import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.IFolderFactory;
 
@@ -30,7 +31,7 @@ public abstract class AbstractZipFolder implements IFolder {
 
     @Override
     public List<IFolder> getItems() {
-        if (getType() == IFolder.FolderTypes.FILE) {
+        if (!FileTypeGetter.isFolderType(getType())) {
             assert children == null || children.size() == 0;
             return null;
         }

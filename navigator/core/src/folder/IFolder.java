@@ -5,9 +5,13 @@ import java.util.List;
 public interface IFolder {
     enum FolderTypes {
         FOLDER,
-        ZIP_FILE,
-        FILE
+        ZIP,
+        TEXT_FILE,
+        IMAGE,
+        OTHER_FILE,
+        UNKNOWN
     }
+
     List<IFolder> getItems();
     FolderTypes getType();
     String getName();

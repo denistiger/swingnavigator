@@ -1,5 +1,6 @@
 package folder.zip_folder;
 
+import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.IFolderFactory;
 
@@ -16,7 +17,7 @@ public class ZipFileFolder extends AbstractZipFolder {
 
     public ZipFileFolder(File file) throws Exception {
         inZipPath = "";
-        type = IFolder.FolderTypes.ZIP_FILE;
+        type = IFolder.FolderTypes.ZIP;
         name = file.getName();
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
         factory = new ZipFolderFactory(zipFile);
@@ -38,37 +39,12 @@ public class ZipFileFolder extends AbstractZipFolder {
         type = checkType();
     }
 
-    // TODO remove
-    private void print(List<String[]> list) {
-        for (String[] str : list) {
-            for (String st : str) {
-                System.out.print(st + " ");
-            }
-            System.out.println();
-        }
-    }
-
-
-
     private IFolder.FolderTypes checkType() {
         ZipEntry entry = zipFile.getEntry(inZipPath);
         if (entry.isDirectory()) {
             return IFolder.FolderTypes.FOLDER;
         }
-        try {
-            InputStream stream = zipFile.getInputStream(zipFile.getEntry(inZipPath));
-            ZipInputStream zipStream = new ZipInputStream(stream);
-//            ZipEntry inZipEntry = zipStream.getNextEntry();
-//            while (inZipEntry != null) {
-//                System.out.println(inZipEntry.getName());
-//                inZipEntry = zipStream.getNextEntry();
-//            }
-            if (zipStream.getNextEntry() != null) {
-                return IFolder.FolderTypes.ZIP_FILE;
-            }
-        } catch (Exception er) {
-        }
-        return IFolder.FolderTypes.FILE;
+        return FileTypeGetter.getFileType(getName());
     }
 
 }

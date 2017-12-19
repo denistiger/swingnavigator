@@ -25,7 +25,7 @@ public class CommonFile implements IFolder {
 
     @Override
     public FolderTypes getType() {
-        return FolderTypes.FILE;
+        return FileTypeGetter.getFileType(file.getName());
     }
 
     public String getName() {

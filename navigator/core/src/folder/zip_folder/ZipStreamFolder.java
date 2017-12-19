@@ -1,5 +1,6 @@
 package folder.zip_folder;
 
+import folder.FileTypeGetter;
 import folder.IFolder;
 
 import java.io.IOException;
@@ -13,6 +14,14 @@ public abstract class ZipStreamFolder extends AbstractZipFolder {
 
     abstract void resetStream() throws IOException;
 
+    public void closeStream() {
+        try {
+            zipStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     protected void initChildren() throws Exception {
         resetStream();
         List<String> listNames = new ArrayList<>();
@@ -24,6 +33,7 @@ public abstract class ZipStreamFolder extends AbstractZipFolder {
             listNames.add(entry.getName());
         }
         initChildren(prepareEntriesList(listNames));
+        closeStream();
     }
 
     @Override
@@ -32,9 +42,9 @@ public abstract class ZipStreamFolder extends AbstractZipFolder {
             ZipEntry entry = getZipEntry();
             if (entry.isDirectory()) {
                 type = FolderTypes.FOLDER;
+            } else {
+                type = FileTypeGetter.getFileType(getName());
             }
-            // TODO return for zip files.
-            type = FolderTypes.FILE;
         }
         return type;
     }
