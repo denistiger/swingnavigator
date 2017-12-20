@@ -19,8 +19,8 @@ public class ZipOnFTPFactory implements IFolderFactory {
 
     @Override
     public IFolder createIFolder(Map<String, Object> params) throws Exception {
-        String inZipPath = (String) params.get(INZIPPATHSTRING);
-        List<String[]> entries = (List<String[]>) params.get(CHILDENTRIES);
-        return new ZipOnFTPFolder(ftpClient, ftpPath, inZipPath, entries, this);
+        ZipEntryData thisEntry = (ZipEntryData) params.get(THISENTRY);
+        List<ZipEntryData> entries = (List<ZipEntryData>) params.get(CHILDENTRIES);
+        return new ZipOnFTPFolder(ftpClient, ftpPath, thisEntry, entries, this);
     }
 }

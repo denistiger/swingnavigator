@@ -18,8 +18,8 @@ public class ZipFolderFactory implements IFolderFactory {
 
     @Override
     public IFolder createIFolder(Map<String, Object> params) throws Exception {
-        String inZipPath = (String) params.get(INZIPPATHSTRING);
-        List<String[]> entries = (List<String[]>) params.get(CHILDENTRIES);
-        return new ZipFileFolder(zipFile, inZipPath, entries, this);
+        ZipEntryData thisEntry = (ZipEntryData) params.get(THISENTRY);
+        List<ZipEntryData> entries = (List<ZipEntryData>) params.get(CHILDENTRIES);
+        return new ZipFileFolder(zipFile, thisEntry, entries, this);
     }
 }

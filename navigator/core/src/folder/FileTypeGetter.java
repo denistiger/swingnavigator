@@ -22,7 +22,11 @@ public class FileTypeGetter {
     }
 
     public static IFolder.FolderTypes getFileType(String name) {
-        return typesMap.getOrDefault(name.toLowerCase(), IFolder.FolderTypes.OTHER_FILE);
+        int dotIndex = name.lastIndexOf('.');
+        if (dotIndex == -1 || dotIndex == name.length() - 1) {
+            return IFolder.FolderTypes.UNKNOWN;
+        }
+        return typesMap.getOrDefault(name.substring(dotIndex + 1).toLowerCase(), IFolder.FolderTypes.OTHER_FILE);
     }
 
     public static boolean isFolderType(IFolder.FolderTypes type) {

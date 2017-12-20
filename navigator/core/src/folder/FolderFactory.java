@@ -7,24 +7,19 @@ import java.util.*;
 
 public class FolderFactory implements IFolderFactory {
 
-    // TODO may be not so cynical?
     public IFolder createIFolder(Map<String, Object> params) {
         Object fileObj = params.get("File");
         File file = (File) fileObj;
         try {
-            return new LocalFolder(file);
-        } catch (Exception er) {
-
-        }
-        try {
-            return new ZipFileFolder(file);
-        } catch (Exception er) {
-
-        }
-        try {
+            if (file.isDirectory()) {
+                return new LocalFolder(file);
+            }
+            if (FileTypeGetter.getFileType(file.getName()) == IFolder.FolderTypes.ZIP) {
+                return new ZipFileFolder(file);
+            }
             return new CommonFile(file);
         } catch (Exception er) {
-
+            er.printStackTrace();
         }
         return null;
     }

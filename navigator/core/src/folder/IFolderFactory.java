@@ -6,7 +6,7 @@ import java.util.Map;
 public interface IFolderFactory {
 
     String INZIPPATHSTRING = "InFolderPath";
-    String PARENTENTRY = "ParentEntry";
+    String THISENTRY = "ParentEntry";
     String CHILDENTRIES = "ChildEntries";
     String FILESTRING = "File";
 

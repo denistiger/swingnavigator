@@ -1,5 +1,7 @@
 package folder.zip_folder;
 
+import folder.FileTypeGetter;
+
 import java.io.IOException;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -11,7 +13,7 @@ public class ZipInZipFolder extends ZipStreamFolder {
     private ZipEntry entry;
 
     public ZipInZipFolder(ZipFile file, ZipEntry entry) {
-        this.name = entry.getName();
+        this.zipEntryData = new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName()));
         this.file = file;
         this.entry = entry;
     }

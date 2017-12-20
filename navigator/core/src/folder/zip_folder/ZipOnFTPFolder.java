@@ -18,17 +18,15 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
     public ZipOnFTPFolder(FTPClient ftpClient, String ftpPath, String name) throws Exception {
         this.ftpClient = ftpClient;
         this.ftpPath = ftpPath;
-        this.inZipPath = "";
-        this.name = name;
+        this.zipEntryData = new ZipEntryData("", name, FolderTypes.ZIP);
         this.factory = new ZipOnFTPFactory(ftpClient, ftpPath);
-        this.type = FolderTypes.ZIP;
         initChildren();
     }
 
-    public ZipOnFTPFolder(FTPClient ftpClient, String ftpPath, String inZipPath, List<String[]> entries, IFolderFactory factory) throws Exception {
+    public ZipOnFTPFolder(FTPClient ftpClient, String ftpPath, ZipEntryData zipEntryData, List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
         this.ftpClient = ftpClient;
         this.factory = factory;
-        this.inZipPath = inZipPath;
+        this.zipEntryData = zipEntryData;
         this.ftpPath = ftpPath;
         initChildren(entries);
     }
