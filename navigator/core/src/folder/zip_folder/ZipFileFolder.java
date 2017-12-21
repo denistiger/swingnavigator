@@ -17,7 +17,7 @@ public class ZipFileFolder extends AbstractZipFolder {
 
     public ZipFileFolder(File file) throws Exception {
         zipEntryData = new ZipEntryData("", file.getName(), FolderTypes.ZIP);
-        zipFile = new ZipFile(file, ZipFile.OPEN_READ);
+        ZipFile zipFile = new ZipFile(file, ZipFile.OPEN_READ);
         factory = new ZipFolderFactory(zipFile);
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         List<ZipEntryData> zipEntries = new ArrayList<>();
@@ -30,7 +30,7 @@ public class ZipFileFolder extends AbstractZipFolder {
     }
 
 
-    public ZipFileFolder(ZipFile file, ZipEntryData entry, List<ZipEntryData> zipEntries, ZipFolderFactory factory ) throws Exception {
+    public ZipFileFolder(ZipFile file, ZipEntryData entry, List<ZipEntryData> zipEntries, IFolderFactory factory ) throws Exception {
         this.zipEntryData = entry;
         zipFile = file;
         this.factory = factory;

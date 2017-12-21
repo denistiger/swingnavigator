@@ -2,7 +2,9 @@ package folder.zip_folder;
 
 import folder.IFolder;
 import folder.IFolderFactory;
+import sun.misc.IOUtils;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 import java.util.zip.ZipFile;
@@ -20,6 +22,13 @@ public class ZipFolderFactory implements IFolderFactory {
     public IFolder createIFolder(Map<String, Object> params) throws Exception {
         ZipEntryData thisEntry = (ZipEntryData) params.get(THISENTRY);
         List<ZipEntryData> entries = (List<ZipEntryData>) params.get(CHILDENTRIES);
-        return new ZipFileFolder(zipFile, thisEntry, entries, this);
+        if (thisEntry.getType() != IFolder.FolderTypes.ZIP) {
+            return new ZipFileFolder(zipFile, thisEntry, entries, this);
+        }
+        else {
+            InputStream stream = zipFile.getInputStream(zipFile.getEntry(thisEntry.getInZipPath()));
+            byte[] zipData = IOUtils.readFully(stream, -1, true);
+            return new ZipInMemoryFolder(zipData, thisEntry);
+        }
     }
 }
