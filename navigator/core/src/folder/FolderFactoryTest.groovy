@@ -6,166 +6,168 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
     }
 
     String drawFolderTreeTest(IFolder iFolder) {
-        String res = "(" + iFolder.getName() + " : " + iFolder.getType() + ")";
-        List<IFolder> list = iFolder.getItems();
+        String res = "(" + iFolder.getName() + " : " + iFolder.getType() + ")"
+        List<IFolder> list = iFolder.getItems()
         if (list == null || list.size() == 0) {
-            return res;
+            return res
         }
-        String inner = "{";
+        String inner = "{"
         for (IFolder folder : list) {
-            inner += " " + drawFolderTreeTest(folder);
+            inner += " " + drawFolderTreeTest(folder)
         }
-        inner += " }";
-        return "[ " + res + " has " + inner + " ]";
+        inner += " }"
+        return "[ " + res + " has " + inner + " ]"
     }
 
-    String linuxFormat(IFolder folder, String prefix) {
-        String res = "." + prefix + ":\n";
-        List<IFolder> items = folder.getItems();
+    String linuxFormat(IFolder folder, String prefix, boolean iterateInZip) {
+        String res = "." + prefix + ":\n"
+        List<IFolder> items = folder.getItems()
         if (items == null) {
-            return res;
+            return res
         }
         items.sort(new Comparator<IFolder>(){
             @Override
             int compare(IFolder iFolder, IFolder t1) {
-                return iFolder.getName().compareTo(t1.getName());
+                return iFolder.getName().compareTo(t1.getName())
             }
-        });
-        boolean first = true;
+        })
+        boolean first = true
         for (IFolder item : items) {
             if (first) {
-                res += item.getName();
-                first = false;
+                res += item.getName()
+                first = false
             }
             else {
-                res += "  " + item.getName();
+                res += "  " + item.getName()
             }
         }
-        res += "\n";
+        res += "\n"
         if (items.size() > 0) {
-            res += "\n";
+            res += "\n"
         }
         for (IFolder item : items) {
-            if (item.getType() == IFolder.FolderTypes.FOLDER) {
-                res += linuxFormat(item, prefix + "/" + item.getName());
+            if (iterateInZip ? FileTypeGetter.isFolderType(item.getType()) : item.getType() == IFolder.FolderTypes.FOLDER) {
+                res += linuxFormat(item, prefix + "/" + item.getName(), iterateInZip)
             }
         }
-        return res;
+        return res
     }
 
     IFolder getByName(IFolder folder, String name) {
         List<IFolder> inner = folder.getItems();
         if (inner == null || inner.size() == 0) {
-            return null;
+            return null
         }
         for (IFolder fold : inner) {
             if (fold.getName() == name) {
-                return fold;
+                return fold
             }
         }
-        return null;
+        return null
     }
 
     String getTestFile(String path){
-        File base = new File(path);
-        Scanner in_data = new Scanner(base);
-        String origin = "";
+        File base = new File(path)
+        Scanner in_data = new Scanner(base)
+        String origin = ""
         while (in_data.hasNext()) {
-            String tmp = in_data.nextLine();
-            origin += tmp + "\n";
+            String tmp = in_data.nextLine()
+            origin += tmp + "\n"
         }
-        origin += "\n";
-        return origin;
+        origin += "\n"
+        return origin
     }
 
     boolean checkFileHasNoChildren(IFolder folder) {
         if (!FileTypeGetter.isFolderType(folder.getType())) {
             if (folder.getItems() != null) {
-                return false;
+                return false
             }
-            return true;
+            return true
         }
         for (IFolder item : folder.getItems()) {
             if (!checkFileHasNoChildren(item)) {
-                return false;
+                return false
             }
         }
-        return true;
+        return true
     }
 
     void testFTPNonZip() {
-        FTPFolder iFolder = new FTPFolder("127.0.0.1");
-        iFolder.setCredentials("anonymous","");
-        iFolder.connect();
-//        iFolder.login("anonymous","");
-//        if (!iFolder.authenticated()) {
-//            iFolder.login("anonymous","");
-//        }
-//        assertTrue("FTP connection and authentication success", iFolder.authenticated());
-        String res = linuxFormat(iFolder, "");
-        String origin = getTestFile("../../testOutput/folder.txt");
+        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        iFolder.setCredentials("anonymous","")
+        iFolder.connect()
+        String res = linuxFormat(iFolder, "", false)
+        String origin = getTestFile("../../testOutput/folder.txt")
         try {
-            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-            assertEquals("Check folder structure no Zip", origin, res);
+            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
+            assertEquals("Check folder structure no Zip", origin, res)
         }catch (Error er) {}
         finally {
-            iFolder.disconnect();
+            iFolder.disconnect()
         }
     }
 
     void testFTPZip() {
-        FTPFolder iFolder = new FTPFolder("127.0.0.1");
-        iFolder.setCredentials("anonymous","");
-        iFolder.connect();
-//        iFolder.login("anonymous","");
-//        if (!iFolder.authenticated()) {
-//            iFolder.login("anonymous","");
-//        }
-//        assertTrue("FTP connection and authentication success", iFolder.authenticated());
-        String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
-        String origin = getTestFile("../../testOutput/folderZip.txt");
+        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        iFolder.setCredentials("anonymous","")
+        iFolder.connect()
+        String res = linuxFormat(getByName(iFolder, "folder.zip"), "", false)
+        String origin = getTestFile("../../testOutput/folderZip.txt")
         try {
-            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-            assertEquals("Check folder structure in folder.zip", origin, res);
+            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
+            assertEquals("Check folder structure in folder.zip", origin, res)
         }catch (Error er) {}
         finally {
-            iFolder.disconnect();
+            iFolder.disconnect()
         }
     }
 
     void testFolderNonZip() {
-        File file = new File("../../testData");
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put(IFolderFactory.FILESTRING, file);
-        IFolder iFolder = new FolderFactory().createIFolder(params);
-        String res = linuxFormat(iFolder, "");
-        String origin = getTestFile("../../testOutput/folder.txt");
-        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-        assertEquals("Check folder structure no Zip", origin, res);
+        File file = new File("../../testData")
+        Map<String, Object> params = new HashMap<String, Object>()
+        params.put(IFolderFactory.FILESTRING, file)
+        IFolder iFolder = new FolderFactory().createIFolder(params)
+        String res = linuxFormat(iFolder, "", false)
+        String origin = getTestFile("../../testOutput/folder.txt")
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
+        assertEquals("Check folder structure no Zip", origin, res)
+    }
+
+    void testFolderNonZipArch() {
+        File file = new File("../../testData/folder")
+        File file1 = new File("../../testOutput/folder_un_zip")
+        Map<String, Object> params = new HashMap<String, Object>()
+        Map<String, Object> params1 = new HashMap<String, Object>()
+        params.put(IFolderFactory.FILESTRING, file)
+        params1.put(IFolderFactory.FILESTRING, file1)
+        IFolder iFolder = new FolderFactory().createIFolder(params)
+        IFolder iFolder1 = new FolderFactory().createIFolder(params1)
+        String res = linuxFormat(iFolder, "", true)
+        String origin = linuxFormat(iFolder1, "", true)
+        assertTrue("There are no files in files for res.", checkFileHasNoChildren(iFolder))
+        assertTrue("There are no files in files for origin.", checkFileHasNoChildren(iFolder1))
+        assertEquals("Check folder structure with Zip", origin, res)
     }
 
     void testFolderZip() {
-        File file = new File("../../testData");
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put(IFolderFactory.FILESTRING, file);
-        IFolder iFolder = new FolderFactory().createIFolder(params);
-        String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
-        String origin = getTestFile("../../testOutput/folderZip.txt");
-        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-        assertEquals("Check folder structure in folder.zip", origin, res);
+        File file = new File("../../testData")
+        Map<String, Object> params = new HashMap<String, Object>()
+        params.put(IFolderFactory.FILESTRING, file)
+        IFolder iFolder = new FolderFactory().createIFolder(params)
+        String res = linuxFormat(getByName(iFolder, "folder.zip"), "", false)
+        String origin = getTestFile("../../testOutput/folderZip.txt")
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
+        assertEquals("Check folder structure in folder.zip", origin, res)
     }
 
     void testCreateIFolderList() {
-        File file = new File("../../testData");
-        Map<String, Object> params = new HashMap<String, Object>();
-        params.put(IFolderFactory.FILESTRING, file);
-        IFolder iFolder = new FolderFactory().createIFolder(params);
-        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-        IFolder sub0 = getByName(getByName(getByName(getByName(iFolder, "folder.zip"), "folder"), "top0"), "sub0");
-        assertEquals("Sub0 contains three folders", 3, sub0.getItems().size());
-//        String res = drawFolderTreeTest(iFolder);
-//        assertEquals("Check if folder structure ok. No recursive zip", testFolderStr, res);
+        File file = new File("../../testData")
+        Map<String, Object> params = new HashMap<String, Object>()
+        params.put(IFolderFactory.FILESTRING, file)
+        IFolder iFolder = new FolderFactory().createIFolder(params)
+        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
+        IFolder sub0 = getByName(getByName(getByName(getByName(iFolder, "folder.zip"), "folder"), "top0"), "sub0")
+        assertEquals("Sub0 contains three folders", 3, sub0.getItems().size())
     }
-    String testFolderStr = "[ (testData : FOLDER) has { [ (folder : FOLDER) has { [ (top0 : FOLDER) has { [ (sub0 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) } ] [ (sub1 : FOLDER) has { (4.jpg : FILE) (5.jpg : FILE) (6.jpg : FILE) (7.jpg : FILE) } ] [ (sub2 : FOLDER) has { (1.jpg : FILE) (7.jpg : FILE) } ] (2.jpg : FILE) (4.jpg : FILE) (6.jpg : FILE) } ] [ (top2 : FOLDER) has { [ (sub0 : FOLDER) has { (2.jpg : FILE) (3.jpg : FILE) } ] [ (sub1 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) (4.jpg : FILE) } ] (2.jpg : FILE) (3.jpg : FILE) [ (top2.zip : ZIP_FILE) has { (2.jpg : FILE) (3.jpg : FILE) [ (sub0 : FOLDER) has { (2.jpg : FILE) } ] [ (sub1 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) } ] } ] } ] (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) (4.jpg : FILE) [ (folder_in.zip : ZIP_FILE) has { (2.jpg : FILE) (3.jpg : FILE) [ (top0 : FOLDER) has { (2.jpg : FILE) (4.jpg : FILE) (6.jpg : FILE) [ (sub0 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) } ] [ (sub1 : FOLDER) has { (4.jpg : FILE) (5.jpg : FILE) (6.jpg : FILE) } ] [ (sub2 : FOLDER) has { (1.jpg : FILE) } ] } ] (top1 : FOLDER) [ (top2 : FOLDER) has { (2.jpg : FILE) (3.jpg : FILE) [ (sub0 : FOLDER) has { (2.jpg : FILE) } ] [ (sub1 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) } ] (sub2 : FOLDER) } ] } ] } ] [ (folder.zip : ZIP_FILE) has { [ (folder : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) (4.jpg : FILE) (folder_in.zip : FILE) [ (top0 : FOLDER) has { (2.jpg : FILE) (4.jpg : FILE) (6.jpg : FILE) [ (sub0 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) } ] [ (sub1 : FOLDER) has { (4.jpg : FILE) (5.jpg : FILE) (6.jpg : FILE) } ] [ (sub2 : FOLDER) has { (1.jpg : FILE) } ] } ] (top1 : FOLDER) [ (top2 : FOLDER) has { (2.jpg : FILE) (3.jpg : FILE) [ (sub0 : FOLDER) has { (2.jpg : FILE) } ] [ (sub1 : FOLDER) has { (1.jpg : FILE) (2.jpg : FILE) (3.jpg : FILE) } ] (sub2 : FOLDER) } ] } ] } ] } ]";
-
 }
