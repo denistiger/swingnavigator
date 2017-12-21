@@ -58,9 +58,7 @@ public class DebugTests implements Runnable {
 //            folder.IFolder iFolder = folder.FolderFactory.createIFolder(file);
 //            List<folder.IFolder> items = iFolder.getItems();
             FTPFolder ftpFolder = new FTPFolder("127.0.0.1");
-            if (!ftpFolder.authenticated()) {
-                ftpFolder.login("anonymous","");
-            }
+            ftpFolder.setCredentials("anonymous","");
             drawFolderTree(ftpFolder, 0);
             //            String res = drawFolderTreeTest(iFolder);
 //            System.out.println(res);

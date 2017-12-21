@@ -95,10 +95,12 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
 
     void testFTPNonZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1");
-        if (!iFolder.authenticated()) {
-            iFolder.login("anonymous","");
-        }
-        assertTrue("FTP connection and authentication success", iFolder.authenticated());
+        iFolder.setCredentials("anonymous","");
+//        iFolder.login("anonymous","");
+//        if (!iFolder.authenticated()) {
+//            iFolder.login("anonymous","");
+//        }
+//        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(iFolder, "");
         String origin = getTestFile("../../testOutput/folder.txt");
         assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
@@ -107,10 +109,12 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
 
     void testFTPZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1");
-        if (!iFolder.authenticated()) {
-            iFolder.login("anonymous","");
-        }
-        assertTrue("FTP connection and authentication success", iFolder.authenticated());
+        iFolder.setCredentials("anonymous","");
+//        iFolder.login("anonymous","");
+//        if (!iFolder.authenticated()) {
+//            iFolder.login("anonymous","");
+//        }
+//        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
         String origin = getTestFile("../../testOutput/folderZip.txt");
         assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));

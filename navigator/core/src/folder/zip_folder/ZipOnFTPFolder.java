@@ -1,21 +1,19 @@
 package folder.zip_folder;
 
+import folder.FTPClientWrapper;
 import folder.IFolderFactory;
-import org.apache.commons.net.ftp.FTP;
-import org.apache.commons.net.ftp.FTPClient;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
-import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipOnFTPFolder extends ZipStreamFolder {
 
-    FTPClient ftpClient;
+    FTPClientWrapper ftpClient;
     String ftpPath;
 
-    public ZipOnFTPFolder(FTPClient ftpClient, String ftpPath, String name) throws Exception {
+    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) throws Exception {
         this.ftpClient = ftpClient;
         this.ftpPath = ftpPath;
         this.zipEntryData = new ZipEntryData("", name, FolderTypes.ZIP);
@@ -23,7 +21,7 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
         initChildren();
     }
 
-    public ZipOnFTPFolder(FTPClient ftpClient, String ftpPath, ZipEntryData zipEntryData, List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
+    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, ZipEntryData zipEntryData, List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
         this.ftpClient = ftpClient;
         this.factory = factory;
         this.zipEntryData = zipEntryData;
@@ -35,7 +33,6 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
     @Override
     void resetStream() throws IOException {
         try {
-            ftpClient.setFileType(FTP.BINARY_FILE_TYPE);
             InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
             zipStream = new ZipInputStream(inputStream);
         } catch (IOException e) {

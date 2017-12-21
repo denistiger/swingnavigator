@@ -1,5 +1,6 @@
 package folder.zip_folder;
 
+import folder.FTPClientWrapper;
 import folder.IFolder;
 import folder.IFolderFactory;
 import org.apache.commons.net.ftp.FTPClient;
@@ -9,10 +10,10 @@ import java.util.Map;
 
 public class ZipOnFTPFactory implements IFolderFactory {
 
-    private FTPClient ftpClient;
+    private FTPClientWrapper ftpClient;
     private String ftpPath;
 
-    public ZipOnFTPFactory(FTPClient ftpClient, String ftpPath) {
+    public ZipOnFTPFactory(FTPClientWrapper ftpClient, String ftpPath) {
         this.ftpClient = ftpClient;
         this.ftpPath = ftpPath;
     }
