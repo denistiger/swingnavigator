@@ -31,13 +31,14 @@ public class FTPFolder implements IFolder {
         ftp.setCredentials(login, pass);
     }
 
+    public void connect() {ftp.connect();}
+    public void disconnect() {ftp.disconnect();}
+
 
     @Override
     public List<IFolder> getItems() {
         List<IFolder> items = new ArrayList<>();
         try {
-            boolean result = ftp.connect();
-            System.out.println("Connected status " + result);
             FTPFile[] files = ftp.listFiles("//" + localFTPPath);
             if (files.length == 0) {
                 System.out.println("No FTP files. Reply code is: " + ftp.getReplyCode());
@@ -64,7 +65,6 @@ public class FTPFolder implements IFolder {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        ftp.disconnect();
         return items;
     }
 

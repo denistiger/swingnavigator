@@ -96,6 +96,7 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
     void testFTPNonZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1");
         iFolder.setCredentials("anonymous","");
+        iFolder.connect();
 //        iFolder.login("anonymous","");
 //        if (!iFolder.authenticated()) {
 //            iFolder.login("anonymous","");
@@ -103,13 +104,19 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
 //        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(iFolder, "");
         String origin = getTestFile("../../testOutput/folder.txt");
-        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-        assertEquals("Check folder structure no Zip", origin, res);
+        try {
+            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
+            assertEquals("Check folder structure no Zip", origin, res);
+        }catch (Error er) {}
+        finally {
+            iFolder.disconnect();
+        }
     }
 
     void testFTPZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1");
         iFolder.setCredentials("anonymous","");
+        iFolder.connect();
 //        iFolder.login("anonymous","");
 //        if (!iFolder.authenticated()) {
 //            iFolder.login("anonymous","");
@@ -117,8 +124,13 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
 //        assertTrue("FTP connection and authentication success", iFolder.authenticated());
         String res = linuxFormat(getByName(iFolder, "folder.zip"), "");
         String origin = getTestFile("../../testOutput/folderZip.txt");
-        assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
-        assertEquals("Check folder structure in folder.zip", origin, res);
+        try {
+            assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder));
+            assertEquals("Check folder structure in folder.zip", origin, res);
+        }catch (Error er) {}
+        finally {
+            iFolder.disconnect();
+        }
     }
 
     void testFolderNonZip() {

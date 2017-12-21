@@ -51,11 +51,14 @@ public class FTPClientWrapper {
             ftp.connect(ftpPath);
             ftp.login(login, pass);
 
+            assert authenticated();
+
             reply = ftp.getReplyCode();
 
             if (!FTPReply.isPositiveCompletion(reply)) {
                 disconnect();
                 System.err.println("FTP server refused connection.");
+                return false;
             }
         }
         catch(IOException e){
@@ -89,14 +92,14 @@ public class FTPClientWrapper {
         this.pass = pass;
     }
 
-    private boolean login() {
-        try {
-            return ftp.login(login, pass);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+//    private boolean login() {
+//        try {
+//            return ftp.login(login, pass);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return false;
+//        }
+//    }
 
     public boolean authenticated() {
         try {
