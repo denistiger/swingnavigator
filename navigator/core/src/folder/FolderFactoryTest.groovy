@@ -21,6 +21,9 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
 
     String linuxFormat(IFolder folder, String prefix, boolean iterateInZip) {
         String res = "." + prefix + ":\n"
+        if (folder == null) {
+            return res + "null\n";
+        }
         List<IFolder> items = folder.getItems()
         if (items == null) {
             return res
@@ -99,12 +102,18 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         iFolder.connect()
         String res = linuxFormat(iFolder, "", false)
         String origin = getTestFile("../../testOutput/folder.txt")
+        Error e = null
         try {
             assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
             assertEquals("Check folder structure no Zip", origin, res)
-        }catch (Error er) {}
+        }catch (Error er) {
+            e = er
+        }
         finally {
             iFolder.disconnect()
+            if (e != null) {
+                throw e
+            }
         }
     }
 
@@ -114,12 +123,18 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         iFolder.connect()
         String res = linuxFormat(getByName(iFolder, "folder.zip"), "", false)
         String origin = getTestFile("../../testOutput/folderZip.txt")
+        Error e = null
         try {
             assertTrue("There are no files in files.", checkFileHasNoChildren(iFolder))
             assertEquals("Check folder structure in folder.zip", origin, res)
-        }catch (Error er) {}
+        }catch (Error er) {
+            e = er
+        }
         finally {
             iFolder.disconnect()
+            if (e != null) {
+                throw e
+            }
         }
     }
 
@@ -134,21 +149,58 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         assertEquals("Check folder structure no Zip", origin, res)
     }
 
+    IFolder getUnZipFolder() {
+        File file1 = new File("../../testOutput/folder_un_zip")
+        Map<String, Object> params1 = new HashMap<String, Object>()
+        params1.put(IFolderFactory.FILESTRING, file1)
+        return new FolderFactory().createIFolder(params1)
+    }
+
     void testFolderNonZipArch() {
         File file = new File("../../testData/folder")
-        File file1 = new File("../../testOutput/folder_un_zip")
         Map<String, Object> params = new HashMap<String, Object>()
-        Map<String, Object> params1 = new HashMap<String, Object>()
         params.put(IFolderFactory.FILESTRING, file)
-        params1.put(IFolderFactory.FILESTRING, file1)
         IFolder iFolder = new FolderFactory().createIFolder(params)
-        IFolder iFolder1 = new FolderFactory().createIFolder(params1)
         String res = linuxFormat(iFolder, "", true)
+        IFolder iFolder1 = getUnZipFolder()
         String origin = linuxFormat(iFolder1, "", true)
         assertTrue("There are no files in files for res.", checkFileHasNoChildren(iFolder))
         assertTrue("There are no files in files for origin.", checkFileHasNoChildren(iFolder1))
         assertEquals("Check folder structure with Zip", origin, res)
     }
+
+    void testTele2FTP() {
+        FTPFolder iFolder = new FTPFolder("speedtest.tele2.net", 21)
+        iFolder.setCredentials("anonymous","")
+        iFolder.connect()
+        String res = linuxFormat(iFolder, "", true)
+        System.out.println(res)
+        iFolder.disconnect()
+    }
+
+    void testFTPNonZipArch() {
+        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        iFolder.setCredentials("anonymous","")
+        iFolder.connect()
+        String res = linuxFormat(getByName(iFolder, "folder"), "", true)
+        IFolder iFolder1 = getUnZipFolder()
+        String origin = linuxFormat(iFolder1, "", false)
+        Error e = null
+        try {
+            assertTrue("There are no files in files for res.", checkFileHasNoChildren(iFolder))
+            assertTrue("There are no files in files for origin.", checkFileHasNoChildren(iFolder1))
+            assertEquals("Check folder structure no Zip", origin, res)
+        }catch (Error er) {
+            e = er
+        }
+        finally {
+            iFolder.disconnect()
+            if (e != null) {
+                throw e
+            }
+        }
+    }
+
 
     void testFolderZip() {
         File file = new File("../../testData")

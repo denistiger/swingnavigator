@@ -36,10 +36,12 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
             InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
             zipStream = new ZipInputStream(inputStream);
         } catch (IOException e) {
+            System.out.println("Fail with path: " + ftpPath);
             e.printStackTrace();
             throw e;
         }
         catch (NullPointerException e) {
+            System.out.println("Fail with path: " + ftpPath);
             e.printStackTrace();
             throw e;
         }

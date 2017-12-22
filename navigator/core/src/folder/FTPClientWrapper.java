@@ -14,11 +14,18 @@ public class FTPClientWrapper {
 
     public FTPClientWrapper(String ftpPath) {
         this.ftpPath = ftpPath;
-        init(this.ftpPath);
+        init();
+    }
+
+    public FTPClientWrapper(String ftpPath, int ftpPort) {
+        this.ftpPath = ftpPath;
+        this.ftpPort = ftpPort;
+        init();
     }
 
     public FTPFile[] listFiles(String onFtpPath) {
         try {
+            connect();
             return ftp.listFiles(onFtpPath);
         } catch (IOException e) {
             e.printStackTrace();
@@ -27,6 +34,7 @@ public class FTPClientWrapper {
     }
 
     public InputStream retrieveFileStream(String onFtpPath) throws IOException {
+        connect();
         ftp.setFileType(FTP.BINARY_FILE_TYPE);
         return ftp.retrieveFileStream(onFtpPath);
     }
@@ -35,23 +43,25 @@ public class FTPClientWrapper {
         return ftp.getReplyCode();
     }
 
-    private void init(String ftpPath) {
+    private void init() {
         ftp = new FTPClient();
         FTPClientConfig config = new FTPClientConfig();
 //        config.setXXX(YYY); // change required options
         // for example config.setServerTimeZoneId("Pacific/Pitcairn")
         ftp.configure(config);
         ftp.setDefaultPort(ftpPort);
-        connect();
+//        connect();
     }
 
     public boolean connect() {
         int reply;
+        disconnect();
         try {
             ftp.connect(ftpPath);
             ftp.login(login, pass);
+//            ftp.enterLocalPassiveMode();
 
-            assert authenticated();
+//            assert authenticated();
 
             reply = ftp.getReplyCode();
 
@@ -75,7 +85,7 @@ public class FTPClientWrapper {
         try {
             ftp.logout();
         } catch(IOException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         } finally {
             if(ftp.isConnected()) {
                 try {
