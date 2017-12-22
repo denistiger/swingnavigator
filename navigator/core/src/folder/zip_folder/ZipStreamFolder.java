@@ -60,7 +60,7 @@ public abstract class ZipStreamFolder extends AbstractZipFolder {
                 if (entry == null) {
                     return null;
                 }
-                if (entry.getName() == zipEntryData.getInZipPath()) {
+                if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0) {
                     return entry;
                 }
             }

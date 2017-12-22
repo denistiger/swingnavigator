@@ -2,10 +2,12 @@ package folder.zip_folder;
 
 import folder.FTPClientWrapper;
 import folder.IFolderFactory;
+import sun.misc.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipOnFTPFolder extends ZipStreamFolder {
@@ -45,5 +47,22 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    public byte[] getEntryData() {
+        byte[] data = null;
+        try {
+            ZipEntry entry = getZipEntry();
+            if (entry == null) {
+                return null;
+            }
+            data = IOUtils.readFully(zipStream, -1, true);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+            closeStream();
+        }
+        return data;
     }
 }
