@@ -1,6 +1,7 @@
-package folder.zip_folder
+package folder.testing
 
 import folder.IFolder
+import folder.zip_folder.ZipEntryData
 
 class ZipEntryDataTest extends GroovyTestCase {
     void testGetInZipSplitPathSimpleSlash() {
