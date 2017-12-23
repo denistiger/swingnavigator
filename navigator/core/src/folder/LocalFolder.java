@@ -2,6 +2,7 @@ package folder;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 public class LocalFolder implements IFolder {
@@ -41,4 +42,10 @@ public class LocalFolder implements IFolder {
     public String getName() {
         return file.getName();
     }
+
+    @Override
+    public InputStream getInputStream() {
+        return null;
+    }
+
 }

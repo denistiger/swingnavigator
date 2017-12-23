@@ -17,4 +17,5 @@ public interface IFolder {
     FolderTypes getType();
     String getName();
 
+    InputStream getInputStream();
 }

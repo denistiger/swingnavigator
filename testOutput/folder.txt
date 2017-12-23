@@ -30,3 +30,4 @@ folder  folder.zip
 ./folder/top2/sub2:
 
 ./folder/top3:
+test.txt

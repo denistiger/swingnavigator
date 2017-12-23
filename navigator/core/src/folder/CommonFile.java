@@ -1,6 +1,9 @@
 package folder;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 
 public class CommonFile implements IFolder {
@@ -30,6 +33,17 @@ public class CommonFile implements IFolder {
 
     public String getName() {
         return file.getName();
+    }
+
+    @Override
+    public InputStream getInputStream() {
+        try {
+            InputStream inputStream = new FileInputStream(file);
+            return inputStream;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

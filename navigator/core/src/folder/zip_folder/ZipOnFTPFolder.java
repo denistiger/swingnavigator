@@ -65,6 +65,17 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
         return zipEntryData.getType();
     }
 
+    @Override
+    public InputStream getInputStream() {
+        try {
+            resetStream();
+            return zipStream;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     void resetStream() throws IOException {
         try {

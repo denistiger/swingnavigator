@@ -4,12 +4,13 @@ import org.apache.commons.net.ftp.*;
 import folder.zip_folder.ZipOnFTPFolder;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FTPFolder implements IFolder {
 
-    FTPClientWrapper ftp = null;
+    FTPClientWrapper ftp;
     String localFTPPath;
     FolderTypes type;
     String name;
@@ -82,5 +83,10 @@ public class FTPFolder implements IFolder {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public InputStream getInputStream() {
+        return null;
     }
 }

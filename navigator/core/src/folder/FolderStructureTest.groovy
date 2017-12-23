@@ -1,6 +1,6 @@
 package folder
 
-class FolderFactoryTest extends groovy.util.GroovyTestCase {
+class FolderStructureTest extends groovy.util.GroovyTestCase {
     void setUp() {
         super.setUp()
     }

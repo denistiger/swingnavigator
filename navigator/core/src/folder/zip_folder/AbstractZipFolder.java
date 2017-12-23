@@ -40,7 +40,7 @@ public abstract class AbstractZipFolder implements IFolder {
         }
         Iterator<ZipEntryData> iter = entries.iterator();
         ZipEntryData zipEntry = iter.next();
-        while (iter.hasNext()) {
+        do {
             if (zipEntry.getInZipSplitPath().length != 1 + zipEntryData.getInZipSplitPath().length) {
                 throw new Exception("init Children - lead name not a parent!");
             }
@@ -57,13 +57,13 @@ public abstract class AbstractZipFolder implements IFolder {
             params.put(IFolderFactory.THISENTRY, zipEntry);
             params.put(IFolderFactory.CHILDENTRIES, localChildren);
             children.add(factory.createIFolder(params));
-            if (!iter.hasNext() && currentZipEntry.getInZipSplitPath().length == zipEntry.getInZipSplitPath().length) {
+            if (!iter.hasNext() && currentZipEntry != null && currentZipEntry.getInZipSplitPath().length == zipEntry.getInZipSplitPath().length) {
                 params.put(IFolderFactory.THISENTRY, currentZipEntry);
                 params.put(IFolderFactory.CHILDENTRIES, new ArrayList<ZipEntryData>());
                 children.add(factory.createIFolder(params));
             }
             zipEntry = currentZipEntry;
-        }
+        } while (iter.hasNext());
     }
 
 

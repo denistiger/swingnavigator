@@ -3,6 +3,7 @@ package folder.zip_folder;
 import folder.FileTypeGetter;
 import folder.IFolderFactory;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -40,4 +41,12 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
         initChildren(zipEntries);
     }
 
+    @Override
+    public InputStream getInputStream() {
+        if (zipData == null) {
+            return null;
+        }
+        InputStream inputStream = new ByteArrayInputStream(zipData);
+        return inputStream;
+    }
 }
