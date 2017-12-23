@@ -1,5 +1,6 @@
 package folder;
 
+import java.io.InputStream;
 import java.util.List;
 
 public interface IFolder {
@@ -15,4 +16,5 @@ public interface IFolder {
     List<IFolder> getItems();
     FolderTypes getType();
     String getName();
+
 }

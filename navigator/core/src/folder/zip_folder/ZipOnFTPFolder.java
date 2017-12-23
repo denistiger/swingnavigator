@@ -1,19 +1,25 @@
 package folder.zip_folder;
 
 import folder.FTPClientWrapper;
+import folder.FileTypeGetter;
+import folder.IFolder;
 import folder.IFolderFactory;
 import sun.misc.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class ZipOnFTPFolder extends ZipStreamFolder {
+public class ZipOnFTPFolder extends AbstractZipFolder {
 
     FTPClientWrapper ftpClient;
     String ftpPath;
+    ZipInputStream zipStream = null;
+
 
     public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) throws Exception {
         this.ftpClient = ftpClient;
@@ -31,8 +37,35 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
         initChildren(entries);
     }
 
+    public void closeStream() {
+        try {
+            zipStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void initChildren() throws Exception {
+        resetStream();
+        List<ZipEntryData> listNames = new ArrayList<>();
+        while (zipStream.available() == 1) {
+            ZipEntry entry = zipStream.getNextEntry();
+            if (entry == null) {
+                break;
+            }
+            listNames.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
+        }
+        listNames.sort(Comparator.naturalOrder());
+        initChildren(listNames);
+        closeStream();
+    }
 
     @Override
+    public IFolder.FolderTypes getType() {
+        return zipEntryData.getType();
+    }
+
+
     void resetStream() throws IOException {
         try {
             InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
@@ -47,6 +80,25 @@ public class ZipOnFTPFolder extends ZipStreamFolder {
             e.printStackTrace();
             throw e;
         }
+    }
+
+    protected ZipEntry getZipEntry() {
+        try {
+            resetStream();
+            while (zipStream.available() == 1) {
+                ZipEntry entry = zipStream.getNextEntry();
+                if (entry == null) {
+                    return null;
+                }
+                if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0) {
+                    return entry;
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+        return null;
     }
 
     public byte[] getEntryData() {

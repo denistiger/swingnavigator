@@ -169,14 +169,14 @@ class FolderFactoryTest extends groovy.util.GroovyTestCase {
         assertEquals("Check folder structure with Zip", origin, res)
     }
 
-    void testTele2FTP() {
-        FTPFolder iFolder = new FTPFolder("speedtest.tele2.net", 21)
-        iFolder.setCredentials("anonymous","")
-        iFolder.connect()
-        String res = linuxFormat(iFolder, "", true)
-        System.out.println(res)
-        iFolder.disconnect()
-    }
+//    void testTele2FTP() {
+//        FTPFolder iFolder = new FTPFolder("speedtest.tele2.net", 21)
+//        iFolder.setCredentials("anonymous","")
+//        iFolder.connect()
+//        String res = linuxFormat(iFolder, "", true)
+//        System.out.println(res)
+//        iFolder.disconnect()
+//    }
 
     void testFTPNonZipArch() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1")

@@ -6,6 +6,7 @@ import folder.IFolderFactory;
 
 import java.util.*;
 
+
 public abstract class AbstractZipFolder implements IFolder {
 
     protected ZipEntryData zipEntryData;

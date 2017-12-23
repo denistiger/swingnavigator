@@ -3,10 +3,7 @@ package folder.zip_folder;
 import folder.FTPClientWrapper;
 import folder.IFolder;
 import folder.IFolderFactory;
-import org.apache.commons.net.ftp.FTPClient;
-import sun.misc.IOUtils;
 
-import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 

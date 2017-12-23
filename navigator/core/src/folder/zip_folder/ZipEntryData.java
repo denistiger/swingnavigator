@@ -2,10 +2,11 @@ package folder.zip_folder;
 
 import folder.IFolder;
 
-public class ZipEntryData implements Comparable<ZipEntryData>{
-    // TODO remove
-    private static final Character zipPathSeparator = '/';
+import java.util.ArrayList;
+import java.util.List;
 
+public class ZipEntryData implements Comparable<ZipEntryData>{
+    private static final String[] zipPathSeparator = {"/", "\\\\"};
 
     private String inZipPath;
     private String[] inZipSplitPath;
@@ -16,7 +17,17 @@ public class ZipEntryData implements Comparable<ZipEntryData>{
         if (path.length() == 0) {
             return new String[0];
         }
-        return path.split(String.valueOf(zipPathSeparator));
+        String[] split1 = path.split(String.valueOf(zipPathSeparator[0]));
+        List<String> res = new ArrayList<>();
+        for (String st : split1) {
+            String[] splitSt = st.split(String.valueOf(zipPathSeparator[1]));
+            for (String st1 : splitSt) {
+                res.add(st1);
+            }
+        }
+        String[] split = new String[res.size()];
+        res.toArray(split);
+        return split;
     }
 
     private String getLastName() {

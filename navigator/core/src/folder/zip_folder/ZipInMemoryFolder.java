@@ -4,14 +4,11 @@ import folder.FileTypeGetter;
 import folder.IFolderFactory;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.Enumeration;
 import java.util.List;
 import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
 public class ZipInMemoryFolder extends AbstractZipFolder {
