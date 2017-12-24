@@ -3,8 +3,8 @@ package folder.zip_folder;
 import folder.FileTypeGetter;
 import folder.IFolderFactory;
 
-import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -47,6 +47,24 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
             return null;
         }
         InputStream inputStream = new ByteArrayInputStream(zipData);
-        return inputStream;
+        if (zipEntryData.getInZipPath().length() == 0) {
+            return inputStream;
+        }
+        ZipInputStream zipInputStream = new ZipInputStream(inputStream);
+        try {
+            while (zipInputStream.available() == 1) {
+                ZipEntry entry = zipInputStream.getNextEntry();
+                if (entry == null) {
+                    return null;
+                }
+                if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0){
+                    return zipInputStream;
+                }
+            }
+        } catch (IOException er) {
+            er.printStackTrace();
+            return null;
+        }
+        return null;
     }
 }

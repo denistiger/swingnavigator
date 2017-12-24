@@ -2,15 +2,50 @@ package folder.testing;
 
 import folder.FileTypeGetter;
 import folder.IFolder;
+import folder.file_preview.FilePreviewGenerator;
+import sun.awt.image.ToolkitImage;
+import sun.misc.IOUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.RenderedImage;
+import java.io.*;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
 public class TestUtils {
+
+    public static void savePreview(IFolder file, String path) throws Exception {
+        FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
+        if (path.compareTo("../../Output/__testData__folder__folder_in.zip__top2__top2.zip__2.jpg") == 0){
+            InputStream inputStream = file.getInputStream();
+            byte[] data = IOUtils.readFully(inputStream, -1, true);
+            FileOutputStream fileOutput = new FileOutputStream(new File("../../image.jpg"));
+            fileOutput.write(data);
+            fileOutput.close();
+        }
+        ImageIcon imageIcon = previewGenerator.getFilePreview(file);
+        File outputfile = new File(path + ".png");
+        try {
+            Image image = imageIcon.getImage();
+            RenderedImage imageToSave;
+            if (image instanceof  RenderedImage) {
+                imageToSave = (RenderedImage) image;
+            }
+            else if (image instanceof ToolkitImage) {
+                imageToSave = ((ToolkitImage) image).getBufferedImage();
+            }
+            else {
+                throw new Exception("Unimplemented image type");
+            }
+            ImageIO.write(imageToSave, "png", outputfile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static String drawFolderTreeTest(IFolder iFolder) {
         String res = "(" + iFolder.getName() + " : " + iFolder.getType() + ")";

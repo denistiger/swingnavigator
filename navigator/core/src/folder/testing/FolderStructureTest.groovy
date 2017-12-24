@@ -99,7 +99,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
         iFolder.connect()
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder"), "", true)
         IFolder iFolder1 = getUnZipFolder()
-        String origin = linuxFormat(iFolder1, "", false)
+        String origin = TestUtils.linuxFormat(iFolder1, "", false)
         Error e = null
         try {
             assertTrue("There are no files in files for res.", TestUtils.checkFileHasNoChildren(iFolder))
