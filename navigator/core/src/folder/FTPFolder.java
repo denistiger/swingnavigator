@@ -14,6 +14,7 @@ public class FTPFolder implements IFolder {
     String localFTPPath;
     FolderTypes type;
     String name;
+    List<IFolder> items = null;
 
     public FTPFolder(String ftpPath) {
         localFTPPath = "";
@@ -41,10 +42,17 @@ public class FTPFolder implements IFolder {
     public void connect() {ftp.connect();}
     public void disconnect() {ftp.disconnect();}
 
+    public void dropCache() {
+        items = null;
+    }
+
 
     @Override
     public List<IFolder> getItems() {
-        List<IFolder> items = new ArrayList<>();
+        if (items != null) {
+            return items;
+        }
+        items = new ArrayList<>();
         try {
             FTPFile[] files = ftp.listFiles("//" + localFTPPath);
             if (files.length == 0) {
