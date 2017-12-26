@@ -12,6 +12,15 @@ public class ZipEntryData implements Comparable<ZipEntryData>{
     private String[] inZipSplitPath;
     private String name;
     private IFolder.FolderTypes type;
+    private byte[] data = null;
+
+    public byte[] getData() {
+        return data;
+    }
+
+    public void setData(byte[] data) {
+        this.data = data;
+    }
 
     private String[] splitPath(String path) {
         if (path.length() == 0) {
@@ -35,6 +44,11 @@ public class ZipEntryData implements Comparable<ZipEntryData>{
             return inZipSplitPath[inZipSplitPath.length - 1];
         }
         return "";
+    }
+
+    public ZipEntryData(String inZipPath, String name, IFolder.FolderTypes type, byte[] data) {
+        this(inZipPath, name, type);
+        setData(data);
     }
 
     public ZipEntryData(String inZipPath, String name, IFolder.FolderTypes type) {

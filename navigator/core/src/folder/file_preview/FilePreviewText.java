@@ -1,8 +1,6 @@
 package folder.file_preview;
 
 import folder.IFolder;
-import javafx.util.Pair;
-import sun.misc.IOUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,6 +12,14 @@ import java.util.Arrays;
 import java.util.List;
 
 public class FilePreviewText implements IFilePreview {
+
+    private class Point2i {
+        public int width, height;
+        Point2i (int width, int height) {
+            this.width = width;
+            this.height = height;
+        }
+    }
 
     private String[] getText(IFolder file) {
         InputStream inputStream = file.getInputStream();
@@ -46,7 +52,7 @@ public class FilePreviewText implements IFilePreview {
         return res;
     }
 
-    private Pair<Integer, Integer> getMaxTextDimensions(String[] text, Font font) {
+    private Point2i getMaxTextDimensions(String[] text, Font font) {
         int maxWidth = 1;
         BufferedImage imgTmp = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = imgTmp.createGraphics();
@@ -58,16 +64,16 @@ public class FilePreviewText implements IFilePreview {
             maxWidth = Math.max(maxWidth, width);
         }
         g2d.dispose();
-        return new Pair<>(maxWidth, maxHeight);
+        return new Point2i(maxWidth, maxHeight);
     }
 
     @Override
     public ImageIcon getFilePreview(IFolder file) {
         String[] text = getText(file);
         Font font = new Font("Arial", Font.PLAIN, 12);
-        Pair<Integer, Integer> maxLineSize = getMaxTextDimensions(text, font);
-        int lineHeight = maxLineSize.getValue();
-        int lineWidth = maxLineSize.getKey();
+        Point2i maxLineSize = getMaxTextDimensions(text, font);
+        int lineHeight = maxLineSize.height;
+        int lineWidth = maxLineSize.width;
         int heightInterval = 1 + lineHeight / 4;
         int widthBorder = heightInterval;
         int heightStep = heightInterval + lineHeight;

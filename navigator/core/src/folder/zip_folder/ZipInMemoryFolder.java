@@ -17,13 +17,13 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
     private final byte[] zipData;
 
     public ZipInMemoryFolder(byte[] zipData, ZipEntryData zipEntryData) throws Exception {
-        this.zipEntryData = new ZipEntryData("", zipEntryData.getName(), FolderTypes.ZIP);
+        this.zipEntryData = new ZipEntryData("", zipEntryData.getName(), FolderTypes.ZIP, zipData);
         this.zipData = zipData;
         factory = new ZipInMemoryFactory(this.zipData);
         InputStream stream = new ByteArrayInputStream(this.zipData);
         ZipInputStream zipInputStream = new ZipInputStream(stream);
         List<ZipEntryData> zipEntries = new ArrayList<>();
-        while (zipInputStream.available() == 1) {
+        while (true) {
             ZipEntry entry = zipInputStream.getNextEntry();
             if (entry == null) {
                 break;
@@ -52,7 +52,7 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
         }
         ZipInputStream zipInputStream = new ZipInputStream(inputStream);
         try {
-            while (zipInputStream.available() == 1) {
+            while (true) {
                 ZipEntry entry = zipInputStream.getNextEntry();
                 if (entry == null) {
                     return null;
@@ -65,6 +65,5 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
             er.printStackTrace();
             return null;
         }
-        return null;
     }
 }

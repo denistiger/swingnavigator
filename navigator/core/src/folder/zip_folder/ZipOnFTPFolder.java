@@ -20,7 +20,6 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
     String ftpPath;
     ZipInputStream zipStream = null;
 
-
     public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) throws Exception {
         this.ftpClient = ftpClient;
         this.ftpPath = ftpPath;
@@ -45,15 +44,20 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
         }
     }
 
-    protected void initChildren() throws Exception {
+    private void initChildren() throws Exception {
         resetStream();
         List<ZipEntryData> listNames = new ArrayList<>();
-        while (zipStream.available() == 1) {
+        while (true) {
             ZipEntry entry = zipStream.getNextEntry();
             if (entry == null) {
                 break;
             }
-            listNames.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
+            byte[] data = null;
+            if (!entry.isDirectory() && FileTypeGetter.getFileType(entry.getName()) == FolderTypes.ZIP) {
+                data = IOUtils.readFully(zipStream, -1, true);
+            }
+            listNames.add(new ZipEntryData(entry.getName(), null,
+                    entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName()), data));
         }
         listNames.sort(Comparator.naturalOrder());
         initChildren(listNames);
@@ -93,10 +97,10 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
         }
     }
 
-    protected ZipEntry getZipEntry() {
+    private ZipEntry getZipEntry() {
         try {
             resetStream();
-            while (zipStream.available() == 1) {
+            while (true) {
                 ZipEntry entry = zipStream.getNextEntry();
                 if (entry == null) {
                     return null;
@@ -109,23 +113,24 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
             e.printStackTrace();
             return null;
         }
-        return null;
     }
 
     public byte[] getEntryData() {
-        byte[] data = null;
+        if (zipEntryData.getData() != null) {
+            return zipEntryData.getData();
+        }
         try {
             ZipEntry entry = getZipEntry();
             if (entry == null) {
                 return null;
             }
-            data = IOUtils.readFully(zipStream, -1, true);
+            zipEntryData.setData(IOUtils.readFully(zipStream, -1, true));
         } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
             closeStream();
         }
-        return data;
+        return zipEntryData.getData();
     }
 }

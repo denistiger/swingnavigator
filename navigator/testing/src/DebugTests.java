@@ -1,5 +1,6 @@
 import folder.FTPFolder;
 import folder.IFolder;
+import folder.testing.TestUtils;
 
 import java.util.List;
 
@@ -54,12 +55,24 @@ public class DebugTests implements Runnable {
                 System.out.println("No path!");
                 return;
             }
+            for (int i = 0; i < 10; ++i) {
+                FTPFolder iFolder = new FTPFolder("127.0.0.1");
+                iFolder.setCredentials("anonymous","");
+                iFolder.connect();
+                String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder"), "", true);
+                System.out.println(res);
+//            String origin = TestUtils.getTestFile("../../testOutput/folder.txt");
+                iFolder.disconnect();
+            }
+
 //            File file = new File(path);
 //            folder.IFolder iFolder = folder.FolderFactory.createIFolder(file);
 //            List<folder.IFolder> items = iFolder.getItems();
-            FTPFolder ftpFolder = new FTPFolder("127.0.0.1");
-            ftpFolder.setCredentials("anonymous","");
-            drawFolderTree(ftpFolder, 0);
+
+//            FTPFolder ftpFolder = new FTPFolder("127.0.0.1");
+//            ftpFolder.setCredentials("anonymous","");
+//            drawFolderTree(ftpFolder, 0);
+
             //            String res = drawFolderTreeTest(iFolder);
 //            System.out.println(res);
         } catch (Exception er) {
