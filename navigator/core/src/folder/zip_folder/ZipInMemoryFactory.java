@@ -2,7 +2,7 @@ package folder.zip_folder;
 
 import folder.IFolder;
 import folder.IFolderFactory;
-import sun.misc.IOUtils;
+import thirdparty.IOUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;

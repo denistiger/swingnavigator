@@ -4,7 +4,8 @@ import folder.FTPClientWrapper;
 import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.IFolderFactory;
-import sun.misc.IOUtils;
+
+import thirdparty.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

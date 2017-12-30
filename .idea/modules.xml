@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/navigator/navigator.iml" filepath="$PROJECT_DIR$/navigator/navigator.iml" />
       <module fileurl="file://$PROJECT_DIR$/swingnavigator.iml" filepath="$PROJECT_DIR$/swingnavigator.iml" />
       <module fileurl="file://$PROJECT_DIR$/navigator/testing/testing.iml" filepath="$PROJECT_DIR$/navigator/testing/testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/navigator/thirdparty/thirdparty.iml" filepath="$PROJECT_DIR$/navigator/thirdparty/thirdparty.iml" />
       <module fileurl="file://$PROJECT_DIR$/navigator/ui/ui.iml" filepath="$PROJECT_DIR$/navigator/ui/ui.iml" />
     </modules>
   </component>

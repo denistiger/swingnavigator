@@ -1,10 +1,9 @@
 package folder.file_preview;
 
 import folder.IFolder;
-import sun.misc.IOUtils;
+import thirdparty.IOUtils;
 
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 

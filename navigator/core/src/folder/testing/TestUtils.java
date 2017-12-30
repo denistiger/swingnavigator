@@ -4,12 +4,11 @@ import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
 import sun.awt.image.ToolkitImage;
-import sun.misc.IOUtils;
+import thirdparty.IOUtils;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
 import java.util.Comparator;
