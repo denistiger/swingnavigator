@@ -3,7 +3,7 @@ package folder.testing;
 import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
-import sun.awt.image.ToolkitImage;
+//import sun.awt.image.ToolkitImage;
 import thirdparty.IOUtils;
 
 import javax.imageio.ImageIO;
@@ -34,9 +34,10 @@ public class TestUtils {
             if (image instanceof  RenderedImage) {
                 imageToSave = (RenderedImage) image;
             }
-            else if (image instanceof ToolkitImage) {
-                imageToSave = ((ToolkitImage) image).getBufferedImage();
-            }
+//  TODO fix ToolkitImage
+//            else if (image instanceof ToolkitImage) {
+//                imageToSave = ((ToolkitImage) image).getBufferedImage();
+//            }
             else {
                 throw new Exception("Unimplemented image type");
             }

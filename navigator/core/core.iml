@@ -5,8 +5,8 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="inheritedJdk" />
-    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="jdk" jdkName="9.0" jdkType="JavaSDK" />
+    <orderEntry type="module" module-name="thirdparty" />
     <orderEntry type="library" name="groovy-2.4.13" level="application" />
     <orderEntry type="module-library">
       <library>
@@ -18,6 +18,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="groovy-2.4" level="project" />
-    <orderEntry type="module" module-name="third-party" />
+    <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
