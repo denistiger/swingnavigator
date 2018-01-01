@@ -19,7 +19,7 @@ public class UniversalFolderFactory implements IFolderFactory {
                 URL url = new URL(filePath);
                 if (url.getProtocol().compareTo("ftp") == 0) {
                     int port = url.getPort() == -1 ? 21 : url.getPort();
-                    FTPFolder folder = new FTPFolder(url.getHost(), port);
+                    FTPFolder folder = new FTPFolder(url.getHost(), port, url.getPath());
                     String userInfo = url.getUserInfo();
                     String[] userInfoSplit = userInfo.split(":", 2);
                     if (userInfoSplit.length > 0) {

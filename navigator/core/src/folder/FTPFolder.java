@@ -28,6 +28,12 @@ public class FTPFolder implements IFolder {
         ftp = new FTPClientWrapper(ftpPath, ftpPort);
     }
 
+    public FTPFolder(String ftpPath, int ftpPort, String localFTPPath) {
+        this.localFTPPath = localFTPPath;
+        type = FolderTypes.FOLDER;
+        ftp = new FTPClientWrapper(ftpPath, ftpPort);
+    }
+
     public FTPFolder(FTPClientWrapper client, String prefix, FolderTypes type, String name) {
         ftp = client;
         localFTPPath = prefix;
