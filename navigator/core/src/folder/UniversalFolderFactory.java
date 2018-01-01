@@ -15,16 +15,20 @@ public class UniversalFolderFactory implements IFolderFactory {
         }
         if (params.containsKey(FILEPATH)) {
             String filePath = (String) params.get(FILEPATH);
-            URL url = new URL(filePath);
-            if (url.getProtocol().compareTo("ftp") == 0) {
-                int port = url.getPort() == -1 ? 21 : url.getPort();
-                FTPFolder folder = new FTPFolder(url.getHost(), port);
-                String userInfo = url.getUserInfo();
-                String[] userInfoSplit = userInfo.split(":", 2);
-                if (userInfoSplit.length > 0) {
-                    folder.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
+            try {
+                URL url = new URL(filePath);
+                if (url.getProtocol().compareTo("ftp") == 0) {
+                    int port = url.getPort() == -1 ? 21 : url.getPort();
+                    FTPFolder folder = new FTPFolder(url.getHost(), port);
+                    String userInfo = url.getUserInfo();
+                    String[] userInfoSplit = userInfo.split(":", 2);
+                    if (userInfoSplit.length > 0) {
+                        folder.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
+                    }
+                    return folder;
                 }
-                return folder;
+            } catch (Exception er){
+//                er.printStackTrace();
             }
             File file = new File(filePath);
             Map<String, Object> fileParams = new HashMap<>();

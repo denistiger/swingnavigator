@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40de342f-4a3b-4b46-a1d4-1674ad85d84c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/navigator/core/src/folder/FolderManager.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/navigator/core/src/folder/testing/FolderManagerTest.groovy" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/navigator/core/src/folder/FolderFactory.java" afterPath="$PROJECT_DIR$/navigator/core/src/folder/FolderFactory.java" />
-      <change beforePath="$PROJECT_DIR$/navigator/core/src/folder/IFolderFactory.java" afterPath="$PROJECT_DIR$/navigator/core/src/folder/IFolderFactory.java" />
-      <change beforePath="$PROJECT_DIR$/navigator/core/src/folder/testing/FolderStructureTest.groovy" afterPath="$PROJECT_DIR$/navigator/core/src/folder/testing/FolderStructureTest.groovy" />
-      <change beforePath="$PROJECT_DIR$/navigator/core/src/folder/testing/IFolderFileDataTest.groovy" afterPath="$PROJECT_DIR$/navigator/core/src/folder/testing/IFolderFileDataTest.groovy" />
+      <change beforePath="$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java" afterPath="$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java" />
       <change beforePath="$PROJECT_DIR$/navigator/testing/apache-ftpserver-1.1.1/res/log/ftpd.log" afterPath="$PROJECT_DIR$/navigator/testing/apache-ftpserver-1.1.1/res/log/ftpd.log" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,14 +20,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TestUtils.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/TestUtils.java">
+      <file leaf-file-name="FolderManagerTest.groovy" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/FolderManagerTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="144">
+              <caret line="9" column="59" lean-forward="true" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#24#51#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestCase.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/junit/framework/TestCase.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -39,18 +45,18 @@
       <file leaf-file-name="FolderStructureTest.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/FolderStructureTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="121" selection-end-column="45" />
+            <state relative-caret-position="-16">
+              <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FolderManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FolderManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/FolderManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+            <state relative-caret-position="320">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding>
                 <element signature="e#172#173#0" expanded="true" />
                 <element signature="e#222#223#0" expanded="true" />
@@ -61,11 +67,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="JUnit38ClassRunner.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JUnitCore.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UniversalFolderFactory.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="128">
+              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,44 +99,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IFolderFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/IFolderFactory.java">
+      <file leaf-file-name="URL.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/net/URL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FTPFolder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/FTPFolder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FileTypeGetter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/FileTypeGetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZipFolderFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/zip_folder/ZipFolderFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="185">
+              <caret line="626" column="33" lean-forward="true" selection-start-line="626" selection-start-column="33" selection-end-line="626" selection-end-column="33" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#32514#32515#0" expanded="true" />
+                <element signature="e#32545#32546#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MalformedURLException.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/net/MalformedURLException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="427">
+              <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+              <folding>
+                <element signature="e#949#950#0" expanded="true" />
+                <element signature="e#975#976#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IOException.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/io/IOException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,7 +209,9 @@
         <option value="$PROJECT_DIR$/navigator/core/src/folder/FolderFactory.java" />
         <option value="$PROJECT_DIR$/navigator/core/src/folder/IFolderFactory.java" />
         <option value="$PROJECT_DIR$/navigator/core/src/folder/FolderManager.java" />
+        <option value="$PROJECT_DIR$/navigator/core/src/folder/FolderManagerTest.groovy" />
         <option value="$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java" />
+        <option value="$PROJECT_DIR$/navigator/core/src/folder/testing/FolderManagerTest.groovy" />
       </list>
     </option>
   </component>
@@ -217,9 +239,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,12 +276,23 @@
             <path>
               <item name="swingnavigator" type="b2602c69:ProjectViewProjectNode" />
               <item name="swingnavigator" type="462c0819:PsiDirectoryNode" />
+              <item name="navigator" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="folder" type="462c0819:PsiDirectoryNode" />
+              <item name="testing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="swingnavigator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="swingnavigator" type="462c0819:PsiDirectoryNode" />
               <item name="third-party" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -280,6 +311,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="folder" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -301,7 +333,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.IFolderFileDataTest">
+  <component name="RunManager" selected="JUnit.FolderManagerTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -340,13 +372,18 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="FolderFactoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <configuration name="FolderManagerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="folder.testing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <module name="core" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="folder" />
-      <option name="MAIN_CLASS_NAME" value="folder.FolderFactoryTest" />
+      <option name="PACKAGE_NAME" value="folder.testing" />
+      <option name="MAIN_CLASS_NAME" value="folder.testing.FolderManagerTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -500,18 +537,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.DebugTests" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.FolderFactoryTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.FolderStructureTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ZipEntryDataTest" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.IFolderFileDataTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.FolderStructureTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.ZipEntryDataTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.IFolderFileDataTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FolderManagerTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.IFolderFileDataTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FolderManagerTest" />
         <item index="1" class="java.lang.String" itemvalue="JUnit.ZipEntryDataTest" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.FolderStructureTest" />
-        <item index="3" class="java.lang.String" itemvalue="Application.DebugTests" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FolderFactoryTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.IFolderFileDataTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.FolderStructureTest" />
+        <item index="4" class="java.lang.String" itemvalue="Application.DebugTests" />
       </list>
     </recent_temporary>
   </component>
@@ -694,38 +731,45 @@
       <option name="project" value="LOCAL" />
       <updated>1514667044328</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Switched to Java 9. Fixed build errors">
+      <created>1514811324027</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1514811324027</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FolderStructureTest - 2017.12.26 at 21h 20m 38s.xml">
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 26m 31s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 27m 38s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 30m 02s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 30m 11s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 31m 28s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderManagerTest - 2018.01.01 at 16h 36m 25s.xml">
+      <configuration name="FolderManagerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FolderStructureTest - 2018.01.01 at 16h 16m 46s.xml">
       <configuration name="FolderStructureTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.26 at 21h 26m 33s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.26 at 21h 28m 12s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.26 at 21h 35m 38s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.30 at 23h 29m 28s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.30 at 23h 30m 55s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.30 at 23h 32m 42s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="FolderStructureTest - 2017.12.30 at 23h 49m 50s.xml">
-      <configuration name="FolderStructureTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="IFolderFileDataTest - 2017.12.30 at 23h 50m 14s.xml">
+    <history-entry file="IFolderFileDataTest - 2018.01.01 at 16h 16m 53s.xml">
       <configuration name="IFolderFileDataTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="ZipEntryDataTest - 2017.12.30 at 23h 50m 08s.xml">
+      <configuration name="ZipEntryDataTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ZipEntryDataTest - 2018.01.01 at 16h 17m 03s.xml">
       <configuration name="ZipEntryDataTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -734,6 +778,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -742,20 +787,19 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40469483" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.457277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.457277" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957748" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40469483" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32991612" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -800,7 +844,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="82" />
+      <option name="time" value="83" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -866,24 +910,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/nio/charset/Charset.class" />
-    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/zip_folder/ZipManager.java" />
-    <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/groovy-2.4.13.jar!/org/codehaus/groovy/runtime/callsite/CallSiteArray.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/third-party/commons-net-3.6/commons-net-3.6.jar!/org/apache/commons/net/ftp/FTPFile.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/UnimplementedFolder.java" />
-    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/zip_folder/ZipInZipFolder.java" />
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/io/FilterInputStream.class" />
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/zip/InflaterInputStream.class" />
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/HashMap.class" />
@@ -891,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="25" column="44" lean-forward="false" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -899,10 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-          <folding>
-            <element signature="e#619#620#0" expanded="false" />
-            <element signature="e#684#685#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -954,11 +975,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
           <caret line="36" column="18" lean-forward="false" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1028#1029#0" expanded="false" />
-            <element signature="e#1069#1070#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,7 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1017,7 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
           <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1025,7 +1039,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1040,7 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
           <caret line="31" column="39" lean-forward="true" selection-start-line="31" selection-start-column="39" selection-end-line="31" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1048,9 +1060,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="973">
           <caret line="61" column="47" lean-forward="false" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,7 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1066,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,10 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
           <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#1672#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1085,11 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2227#2228#0" expanded="false" />
-            <element signature="e#2272#2273#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,13 +1103,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="256">
           <caret line="17" column="11" lean-forward="false" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/TestUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
+        <state relative-caret-position="368">
           <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1119,19 +1116,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/FolderStructureTest.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="121" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/util/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6668">
           <caret line="86" column="13" lean-forward="false" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,16 +1127,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/zip_folder/ZipFolderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="80">
           <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1165,7 +1152,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="128">
           <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1179,16 +1165,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/FTPFolder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
+        <state relative-caret-position="288">
           <caret line="24" column="11" lean-forward="false" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/FolderStructureTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="65" column="12" lean-forward="false" selection-start-line="65" selection-start-column="12" selection-end-line="65" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/io/IOException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="38" column="6" lean-forward="false" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/net/MalformedURLException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="52" column="11" lean-forward="false" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding>
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#975#976#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://C:/Program Files/Java/jdk-9.0.1/lib/src.zip!/java.base/java/net/URL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="828" column="18" lean-forward="false" selection-start-line="828" selection-start-column="18" selection-end-line="828" selection-end-column="18" />
+        <state relative-caret-position="185">
+          <caret line="626" column="33" lean-forward="true" selection-start-line="626" selection-start-column="33" selection-end-line="626" selection-end-column="33" />
           <folding>
             <element signature="e#32514#32515#0" expanded="true" />
             <element signature="e#32545#32546#0" expanded="true" />
@@ -1196,10 +1209,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/org/junit/runner/JUnitCore.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/UniversalFolderFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="128">
+          <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1208,13 +1237,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/FolderManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="320">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding>
             <element signature="e#172#173#0" expanded="true" />
             <element signature="e#222#223#0" expanded="true" />
             <element signature="e#734#735#0" expanded="true" />
             <element signature="e#781#782#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/third-party/groovy-2.4.13/lib/junit-4.12.jar!/junit/framework/TestCase.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="121" column="23" lean-forward="false" selection-start-line="121" selection-start-column="23" selection-end-line="121" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/navigator/core/src/folder/testing/FolderManagerTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="9" column="59" lean-forward="true" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+          <folding>
+            <element signature="e#24#51#0" expanded="true" />
           </folding>
         </state>
       </provider>
