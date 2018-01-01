@@ -3,12 +3,6 @@ package folder.testing
 import folder.FolderFactory
 import folder.IFolder
 import folder.IFolderFactory
-import folder.file_preview.FilePreviewGenerator
-import junit.framework.Test
-
-import javax.imageio.ImageIO
-import javax.swing.ImageIcon
-import java.awt.image.BufferedImage
 
 class IFolderFileDataTest extends GroovyTestCase {
 
@@ -25,7 +19,7 @@ class IFolderFileDataTest extends GroovyTestCase {
     void testPreview() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file);
+        params.put(IFolderFactory.FILE, file);
         IFolder iFolder = new FolderFactory().createIFolder(params);
 
         printIFolderPreview(iFolder, "../../Output/");
@@ -40,7 +34,7 @@ class IFolderFileDataTest extends GroovyTestCase {
     void testSimpleFile() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         IFolder test_txt = TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(iFolder, "folder"), "top3"), "test.txt")
         String file_data = TestUtils.getFromStream(test_txt.getInputStream())
@@ -51,7 +45,7 @@ class IFolderFileDataTest extends GroovyTestCase {
     void testSimpleFileInZip() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         IFolder test_txt = TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(iFolder, "folder.zip"),"folder"), "top3"), "test.txt")
         String file_data = TestUtils.getFromStream(test_txt.getInputStream())

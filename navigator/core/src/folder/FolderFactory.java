@@ -8,7 +8,7 @@ import java.util.*;
 public class FolderFactory implements IFolderFactory {
 
     public IFolder createIFolder(Map<String, Object> params) {
-        Object fileObj = params.get("File");
+        Object fileObj = params.get(FILE);
         File file = (File) fileObj;
         try {
             if (file.isDirectory()) {
@@ -29,7 +29,7 @@ public class FolderFactory implements IFolderFactory {
         // TODO learn lambda
         for (File file : files) {
             Map<String, Object> params = new HashMap<>();
-            params.put(IFolderFactory.FILESTRING, file);
+            params.put(FILE, file);
             IFolder folder = createIFolder(params);
             if (folder != null) {
                 list.add(folder);

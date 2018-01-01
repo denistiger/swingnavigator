@@ -1,7 +1,6 @@
 package folder.testing
 
 import folder.FTPFolder
-import folder.FileTypeGetter
 import folder.FolderFactory
 import folder.IFolder
 import folder.IFolderFactory
@@ -56,7 +55,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     void testFolderNonZip() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         String res = TestUtils.linuxFormat(iFolder, "", false)
         String origin = TestUtils.getTestFile("../../testOutput/folder.txt")
@@ -67,14 +66,14 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     IFolder getUnZipFolder() {
         File file1 = new File("../../testOutput/folder_un_zip")
         Map<String, Object> params1 = new HashMap<String, Object>()
-        params1.put(IFolderFactory.FILESTRING, file1)
+        params1.put(IFolderFactory.FILE, file1)
         return new FolderFactory().createIFolder(params1)
     }
 
     void testFolderNonZipArch() {
         File file = new File("../../testData/folder")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         String res = TestUtils.linuxFormat(iFolder, "", true)
         IFolder iFolder1 = getUnZipFolder()
@@ -120,7 +119,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     void testFolderZip() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder.zip"), "", false)
         String origin = TestUtils.getTestFile("../../testOutput/folderZip.txt")
@@ -131,7 +130,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     void testCreateIFolderList() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
-        params.put(IFolderFactory.FILESTRING, file)
+        params.put(IFolderFactory.FILE, file)
         IFolder iFolder = new FolderFactory().createIFolder(params)
         assertTrue("There are no files in files.", TestUtils.checkFileHasNoChildren(iFolder))
         IFolder sub0 = TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(iFolder, "folder.zip"), "folder"), "top0"), "sub0")

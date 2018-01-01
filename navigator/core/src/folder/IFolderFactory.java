@@ -5,10 +5,11 @@ import java.util.Map;
 
 public interface IFolderFactory {
 
-    String INZIPPATHSTRING = "InFolderPath";
+    String INZIPPATH = "InFolderPath";
     String THISENTRY = "ParentEntry";
     String CHILDENTRIES = "ChildEntries";
-    String FILESTRING = "File";
+    String FILE = "File";
+    String FILEPATH = "FilePath";
 
     IFolder createIFolder(Map<String, Object> params) throws Exception;
 
