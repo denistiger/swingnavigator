@@ -9,7 +9,7 @@ import java.util.Map;
 public class UniversalFolderFactory implements IFolderFactory {
 
     @Override
-    public IFolder createIFolder(Map<String, Object> params) throws Exception {
+    public IFolder createIFolder(Map<String, Object> params) {
         if (params.containsKey(FILE)) {
             return new FolderFactory().createIFolder(params);
         }
@@ -21,14 +21,19 @@ public class UniversalFolderFactory implements IFolderFactory {
                     int port = url.getPort() == -1 ? 21 : url.getPort();
                     FTPFolder folder = new FTPFolder(url.getHost(), port, url.getPath());
                     String userInfo = url.getUserInfo();
-                    String[] userInfoSplit = userInfo.split(":", 2);
-                    if (userInfoSplit.length > 0) {
-                        folder.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
+                    if (userInfo != null) {
+                        String[] userInfoSplit = userInfo.split(":", 2);
+                        if (userInfoSplit.length > 0) {
+                            folder.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
+                        }
                     }
                     return folder;
                 }
-            } catch (Exception er){
-//                er.printStackTrace();
+            } catch (MalformedURLException er) {
+
+            }
+            catch (Exception er){
+                er.printStackTrace();
             }
             File file = new File(filePath);
             Map<String, Object> fileParams = new HashMap<>();

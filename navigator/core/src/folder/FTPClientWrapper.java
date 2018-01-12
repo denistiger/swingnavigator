@@ -4,8 +4,24 @@ import org.apache.commons.net.ftp.*;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class FTPClientWrapper {
+
+    public enum FTPStatus {
+        SUCCESS,
+        ERROR,
+        WRONG_CREDENTIALS
+    }
+
+    private static Map<Integer, FTPStatus> ftpCodeToStatus;
+
+    static {
+        ftpCodeToStatus = new TreeMap<>();
+        ftpCodeToStatus.put(530, FTPStatus.WRONG_CREDENTIALS);
+    }
+
     private FTPClient ftp = null;
     private String login = "anonymous";
     private String pass = "";
@@ -26,6 +42,9 @@ public class FTPClientWrapper {
     public FTPFile[] listFiles(String onFtpPath) {
         try {
             connect();
+            if (!ftp.changeWorkingDirectory(onFtpPath)) {
+                return null;
+            }
             return ftp.listFiles(onFtpPath);
         } catch (IOException e) {
             e.printStackTrace();
@@ -46,36 +65,33 @@ public class FTPClientWrapper {
     private void init() {
         ftp = new FTPClient();
         FTPClientConfig config = new FTPClientConfig();
-//        config.setXXX(YYY); // change required options
-        // for example config.setServerTimeZoneId("Pacific/Pitcairn")
         ftp.configure(config);
         ftp.setDefaultPort(ftpPort);
-//        connect();
     }
 
-    public boolean connect() {
+    public FTPStatus connect() {
         int reply;
         disconnect();
         try {
             ftp.connect(ftpPath);
             ftp.login(login, pass);
-//            ftp.enterLocalPassiveMode();
-
-//            assert authenticated();
 
             reply = ftp.getReplyCode();
 
             if (!FTPReply.isPositiveCompletion(reply)) {
                 disconnect();
                 System.err.println("FTP server refused connection.");
-                return false;
+                if (ftpCodeToStatus.containsKey(reply)) {
+                    return ftpCodeToStatus.get(reply);
+                }
+                return FTPStatus.ERROR;
             }
         }
         catch(IOException e){
             e.printStackTrace();
-            return false;
+            return FTPStatus.ERROR;
         }
-        return true;
+        return FTPStatus.SUCCESS;
     }
 
     public void disconnect() {

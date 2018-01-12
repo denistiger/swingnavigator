@@ -49,10 +49,7 @@ class FolderManagerTest extends GroovyTestCase {
         assertEquals("Go one level deeper", origin, res);
     }
 
-    void testOpenFTPPathWithFolder() {
-        FolderManager manager = new FolderManager();
-        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
-
+    void checkOpenFTPPathWithFolder(FolderManager manager) {
         List<IFolder> folders = manager.getFoldersAtPath();
         String res = "";
         for (IFolder folder : folders) {
@@ -69,5 +66,47 @@ class FolderManagerTest extends GroovyTestCase {
         }
         origin = "sub0 sub1 sub2 2.jpg 3.jpg top2.zip ";
         assertEquals("Go one level deeper", origin, res);
+    }
+
+    void testFTPErrors() {
+        FolderManager manager = new FolderManager();
+        FolderManager.OpenFolderStatus status = manager.openPath("ftp://127.0.0.1:2122/folder");
+        assertEquals("Return status for closed port", FolderManager.OpenFolderStatus.FTP_CONNECTION_ERROR, status);
+        status = manager.openPath("ftp://127.0.0.1:2121/folder123");
+        assertEquals("Return status for wrong folder", FolderManager.OpenFolderStatus.SUCCESS, status);
+        List<IFolder> folders = manager.getFoldersAtPath();
+        assertEquals("Folders list for missing folder should be null", null, folders);
+        status = manager.openPath("ftp://127.0.0.1:2121/folder");
+        assertEquals("Return status for correct folder", FolderManager.OpenFolderStatus.SUCCESS, status);
+        status = manager.openPath("ftp://user:123213@127.0.0.1:2121/folder");
+        assertEquals("Return status for wrong credentials", FolderManager.OpenFolderStatus.FTP_CREDENTIALS_NEEDED, status);
+    }
+
+    void testFTPNoCredentials() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
+    }
+
+    void testOpenFTPPathMultiple() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
+        manager.openPath("../../testData");
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
+        manager.openPath("../../testData/folder");
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
+        manager.openPath("../../testData/folder");
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
+    }
+
+    void testOpenFTPPathWithFolder() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
+        checkOpenFTPPathWithFolder(manager);
     }
 }

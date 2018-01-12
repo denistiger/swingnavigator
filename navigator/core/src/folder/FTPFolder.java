@@ -45,22 +45,28 @@ public class FTPFolder implements IFolder {
         ftp.setCredentials(login, pass);
     }
 
-    public void connect() {ftp.connect();}
-    public void disconnect() {ftp.disconnect();}
+    public FTPClientWrapper.FTPStatus connect() {
+        return ftp.connect();
+    }
+    public void disconnect() {
+        ftp.disconnect();
+    }
 
     public void dropCache() {
         items = null;
     }
-
 
     @Override
     public List<IFolder> getItems() {
         if (items != null) {
             return items;
         }
-        items = new ArrayList<>();
         try {
             FTPFile[] files = ftp.listFiles("//" + localFTPPath);
+            if (files == null) {
+                return null;
+            }
+            items = new ArrayList<>();
             if (files.length == 0) {
                 System.out.println("No FTP files. Reply code is: " + ftp.getReplyCode());
             }
