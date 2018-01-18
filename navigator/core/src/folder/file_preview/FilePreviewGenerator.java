@@ -13,6 +13,10 @@ public class FilePreviewGenerator implements IFilePreview {
         FILE_PREVIEW_MAP = new HashMap<>();
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.IMAGE, new FilePreviewImage());
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.TEXT_FILE, new FilePreviewText());
+        FILE_PREVIEW_MAP.put(IFolder.FolderTypes.ZIP,
+                new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/ZipIcon512.png")));
+        FILE_PREVIEW_MAP.put(IFolder.FolderTypes.FOLDER,
+                new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/FolderIcon512.png")));
         defaultPreview = new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/Question512.png"));
     }
 

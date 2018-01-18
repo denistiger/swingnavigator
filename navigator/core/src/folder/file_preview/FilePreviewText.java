@@ -91,6 +91,8 @@ public class FilePreviewText implements IFilePreview {
         g2d.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
         g2d.setFont(font);
         FontMetrics fm = g2d.getFontMetrics();
+        g2d.setColor(Color.WHITE);
+        g2d.fill(new Rectangle(0, 0, img.getWidth(), img.getHeight()));
         g2d.setColor(Color.BLACK);
         for (int i = 0; i < text.length; ++i) {
             g2d.drawString(text[i], widthBorder, fm.getAscent() + heightInterval + heightStep * i);
