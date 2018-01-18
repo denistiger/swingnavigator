@@ -20,7 +20,8 @@ public class FolderManager {
     }
 
     private Stack<IFolder> inDepthFolderStack;
-    private String basePath;
+
+    private String basePath = "";
 
     public FolderManager() {
         inDepthFolderStack = new Stack<>();

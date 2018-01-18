@@ -11,6 +11,7 @@ public class FilePreviewNoPreview implements IFilePreview {
 
     public FilePreviewNoPreview(URL fileName) {
         imageIcon = new ImageIcon(fileName);
+        ImageUtils.resizeImageIcon(imageIcon, ICON_WIDTH, ICON_HEIGHT);
     }
     @Override
     public ImageIcon getFilePreview(IFolder file) {

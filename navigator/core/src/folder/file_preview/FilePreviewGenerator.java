@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class FilePreviewGenerator implements IFilePreview {
     private static final Map<IFolder.FolderTypes, IFilePreview> FILE_PREVIEW_MAP;
-    private static final IFilePreview defaultPreview;
+    private static final IFilePreview DEFAULT_PREVIEW;
     static {
         FILE_PREVIEW_MAP = new HashMap<>();
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.IMAGE, new FilePreviewImage());
@@ -17,7 +17,7 @@ public class FilePreviewGenerator implements IFilePreview {
                 new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/ZipIcon512.png")));
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.FOLDER,
                 new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/FolderIcon512.png")));
-        defaultPreview = new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/Question512.png"));
+        DEFAULT_PREVIEW = new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/Question512.png"));
     }
 
     @Override
@@ -26,10 +26,11 @@ public class FilePreviewGenerator implements IFilePreview {
         if (filePreview != null) {
             ImageIcon imageIcon = filePreview.getFilePreview(file);
             if (imageIcon != null) {
+                ImageUtils.resizeImageIcon(imageIcon, ICON_WIDTH, ICON_HEIGHT);
                 return imageIcon;
             }
         }
-        return defaultPreview.getFilePreview(file);
+        return DEFAULT_PREVIEW.getFilePreview(file);
     }
 
 }
