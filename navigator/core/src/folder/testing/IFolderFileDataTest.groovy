@@ -6,23 +6,13 @@ import folder.IFolderFactory
 
 class IFolderFileDataTest extends GroovyTestCase {
 
-    void printIFolderPreview(IFolder iFolder, String name_prefix) {
-        TestUtils.savePreview(iFolder, name_prefix + "__" + iFolder.getName());
-        for (IFolder folder : iFolder.getItems()) {
-//            if (folder.getType() == IFolder.FolderTypes.ZIP) {
-//                continue;
-//            }
-            printIFolderPreview(folder, name_prefix + "__" + iFolder.getName());
-        }
-    }
-
     void testPreview() {
         File file = new File("../../testData")
         Map<String, Object> params = new HashMap<String, Object>()
         params.put(IFolderFactory.FILE, file);
         IFolder iFolder = new FolderFactory().createIFolder(params);
 
-        printIFolderPreview(iFolder, "../../Output/");
+        TestUtils.printIFolderPreview(iFolder, "../../Output/");
 
 //        IFolder test_txt = TestUtils.getByName(TestUtils.getByName(TestUtils.getByName(iFolder, "folder"), "top3"), "test.txt");
 //        TestUtils.savePreview(test_txt, "../../Output/test_txt.png");

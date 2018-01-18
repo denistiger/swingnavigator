@@ -3,12 +3,12 @@ package folder.testing;
 import folder.FileTypeGetter;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
-//import sun.awt.image.ToolkitImage;
 import thirdparty.IOUtils;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.awt.image.RenderedImage;
 import java.io.*;
 import java.util.Comparator;
@@ -16,6 +16,17 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TestUtils {
+
+    private static BufferedImage toBufferedImage(Image src) {
+        int w = src.getWidth(null);
+        int h = src.getHeight(null);
+        int type = BufferedImage.TYPE_INT_RGB;  // other options
+        BufferedImage dest = new BufferedImage(w, h, type);
+        Graphics2D g2 = dest.createGraphics();
+        g2.drawImage(src, 0, 0, null);
+        g2.dispose();
+        return dest;
+    }
 
     public static void savePreview(IFolder file, String path) throws Exception {
         FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
@@ -30,18 +41,8 @@ public class TestUtils {
         File outputfile = new File(path + ".png");
         try {
             Image image = imageIcon.getImage();
-            RenderedImage imageToSave;
-            if (image instanceof  RenderedImage) {
-                imageToSave = (RenderedImage) image;
-            }
-//  TODO fix ToolkitImage
-//            else if (image instanceof ToolkitImage) {
-//                imageToSave = ((ToolkitImage) image).getBufferedImage();
-//            }
-            else {
-                throw new Exception("Unimplemented image type");
-            }
-            ImageIO.write(imageToSave, "png", outputfile);
+            BufferedImage bufImage = toBufferedImage(image);
+            ImageIO.write(bufImage, "png", outputfile);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,6 +98,25 @@ public class TestUtils {
         }
         return res;
     }
+
+    public static void printIFolderPreview(IFolder iFolder, String name_prefix) {
+        if (iFolder == null) {
+            return;
+        }
+        try {
+            savePreview(iFolder, name_prefix + "__" + iFolder.getName());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        List<IFolder> folders = iFolder.getItems();
+        if (folders == null) {
+            return;
+        }
+        for (IFolder folder : folders) {
+            printIFolderPreview(folder, name_prefix + "__" + iFolder.getName());
+        }
+    }
+
 
     public static IFolder getByName(IFolder folder, String name) {
         List<IFolder> inner = folder.getItems();
