@@ -99,10 +99,11 @@ public class FolderManager {
     }
 
     public String getFullPath() {
-        if (inDepthFolderStack.empty()) {
-            return basePath;
-        }
-        return basePath + "/" + getRelativePath();
+        return getRelativePath();
+//        if (inDepthFolderStack.empty()) {
+//            return basePath;
+//        }
+//        return basePath + "/" + getRelativePath();
     }
 
 

@@ -60,33 +60,40 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Folder Navigator");
 
-        BorderLayout layout = new BorderLayout();
-        getContentPane().setLayout(layout);
+        getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
-        add(pathLabel, BorderLayout.LINE_START);
-        add(pathText, BorderLayout.CENTER);
-        add(levelUpButton, BorderLayout.LINE_END);
+        JPanel upPanel = new JPanel();
+        upPanel.setLayout(new BoxLayout(upPanel, BoxLayout.X_AXIS));
+        upPanel.add(pathLabel);
+        upPanel.add(pathText);
+        upPanel.add(levelUpButton);
+        pathLabel.setMaximumSize(new Dimension(150, 50));
+        pathText.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
+        levelUpButton.setMaximumSize(new Dimension(150, 50));
+
+        add(upPanel);
+
+//        add(pathLabel, BorderLayout.LINE_START);
+//        add(pathText, BorderLayout.CENTER);
+//        add(levelUpButton, BorderLayout.LINE_END);
 
         JScrollPane scrollPane = new JScrollPane(foldersPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-//        scrollPane.setPreferredSize(new Dimension(600, 500));
-        scrollPane.setBounds(0, 0, 800, 600);
-        foldersPanel.setPreferredSize(new Dimension(780, 0));
-        JPanel contentPane = new JPanel(null);
-        contentPane.setPreferredSize(new Dimension(850, 630));
-        contentPane.add(scrollPane);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollPane.setPreferredSize(new Dimension(800, 600));
+//        scrollPane.setBounds(0, 0, 800, 600);
+//        foldersPanel.setPreferredSize(new Dimension(780, 0));
+//        JPanel contentPane = new JPanel(null);
+//        contentPane.setPreferredSize(new Dimension(850, 630));
+//        contentPane.add(scrollPane);
 
-        add(contentPane, BorderLayout.PAGE_END);
-        pathLabel.setPreferredSize(new Dimension(100, 50));
-        pathText.setPreferredSize(new Dimension(200, 50));
-        levelUpButton.setPreferredSize(new Dimension(200, 50));
+        add(scrollPane);
 
         pack();
     }
 
     private void setNewAddress(ActionEvent e) {
-        System.out.println("Commnand: " + e.getActionCommand() + " Text: " + pathText.getText());
+        foldersPanel.openPath(pathText.getText());
     }
 
     public static void main(String[] args) {
@@ -100,5 +107,6 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
     @Override
     public void setPath(String path) {
         pathText.setText(path);
+        repaint();
     }
 }

@@ -7,6 +7,8 @@ import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,6 +28,8 @@ public class FoldersPanel extends JPanel {
         setLayout(flowLayout);
 
         folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
+        setMaximumSize(new Dimension(800, Integer.MAX_VALUE));
+        setPreferredSize(new Dimension(800, 700));
         processNewPath();
     }
 
@@ -39,21 +43,45 @@ public class FoldersPanel extends JPanel {
         removeAll();
         if (folders != null) {
             for (IFolder folder : folders) {
-                FolderButton folderButton = new FolderButton(folder);
-                folderButton.setText(folder.getName());
-                folderButton.setIcon(previewGenerator.getFilePreview(folder));
-                folderButton.addActionListener(new ActionListener() {
+                FolderButton folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
+//                folderButton.setIcon(previewGenerator.getFilePreview(folder));
+//                folderButton.setHorizontalAlignment(JLabel.CENTER);
+//                folderButton.setVerticalAlignment(JLabel.CENTER);
+                folderButton.addMouseListener(new MouseListener() {
                     @Override
-                    public void actionPerformed(ActionEvent e) {
-                        openFolder(folderButton.getFolder());
+                    public void mouseClicked(MouseEvent e) {
+                        if (e.getClickCount() == 2) {
+                            openFolder(folderButton.getFolder());
+                        }
+                    }
+
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseReleased(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+
                     }
                 });
+                System.out.println(folderButton.getPreferredSize());
                 add(folderButton);
             }
         }
         setPreferredSize(getPreferredSize());
-        notifyOnPathChange();
         revalidate();
+        notifyOnPathChange();
     }
 
     private void notifyOnPathChange() {
