@@ -9,6 +9,8 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
     private JTextField pathText;
     private JButton levelUpButton;
     private FoldersPanel foldersPanel;
+    private JPanel stretchPanel, internalStretchPanel;
+
 
 
     public FolderNavigatorUI() {
@@ -77,10 +79,19 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
 //        add(pathText, BorderLayout.CENTER);
 //        add(levelUpButton, BorderLayout.LINE_END);
 
-        JScrollPane scrollPane = new JScrollPane(foldersPanel);
+        stretchPanel = new JPanel(new BorderLayout());
+        internalStretchPanel = new JPanel();
+        stretchPanel.add(foldersPanel, BorderLayout.PAGE_START);
+        stretchPanel.add(internalStretchPanel, BorderLayout.PAGE_END);
+
+
+        JScrollPane scrollPane = new JScrollPane(stretchPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setPreferredSize(new Dimension(800, 600));
+
+//        scrollPane.add(foldersPanel);
+//        scrollPane.add(stretchPanel);
 //        scrollPane.setBounds(0, 0, 800, 600);
 //        foldersPanel.setPreferredSize(new Dimension(780, 0));
 //        JPanel contentPane = new JPanel(null);

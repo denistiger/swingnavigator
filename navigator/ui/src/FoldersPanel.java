@@ -5,31 +5,35 @@ import folder.file_preview.FilePreviewGenerator;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
-public class FoldersPanel extends JPanel {
+public class FoldersPanel extends JPanel implements ComponentListener {
     private FolderManager folderManager;
     private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
     private FlowLayout flowLayout;
+    private Vector<FolderButton> folderButtons;
+
+    private GridLayout layout;
+    private List<JPanel> emptyItems;
 
 
     public FoldersPanel() {
         folderManager = new FolderManager();
         previewGenerator = new FilePreviewGenerator();
         pathListenerList = new LinkedList<>();
+        folderButtons = new Vector<>();
 
-        flowLayout = new FlowLayout();
-        setLayout(flowLayout);
+        layout = new GridLayout(1, 1);
+        setLayout(layout);
 
-        folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
         setMaximumSize(new Dimension(800, Integer.MAX_VALUE));
         setPreferredSize(new Dimension(800, 700));
+        folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
+        addComponentListener(this);
         processNewPath();
     }
 
@@ -40,13 +44,10 @@ public class FoldersPanel extends JPanel {
 
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
-        removeAll();
-        if (folders != null) {
+        if (folders != null && folders.size() > 0) {
+            folderButtons = new Vector<>();
             for (IFolder folder : folders) {
                 FolderButton folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
-//                folderButton.setIcon(previewGenerator.getFilePreview(folder));
-//                folderButton.setHorizontalAlignment(JLabel.CENTER);
-//                folderButton.setVerticalAlignment(JLabel.CENTER);
                 folderButton.addMouseListener(new MouseListener() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -76,12 +77,10 @@ public class FoldersPanel extends JPanel {
                     }
                 });
                 System.out.println(folderButton.getPreferredSize());
-                add(folderButton);
+                folderButtons.add(folderButton);
             }
         }
-        setPreferredSize(getPreferredSize());
-        revalidate();
-        notifyOnPathChange();
+        updateData();
     }
 
     private void notifyOnPathChange() {
@@ -111,5 +110,95 @@ public class FoldersPanel extends JPanel {
     public void openPath(String path) {
         folderManager.openPath(path);
         processNewPath();
+    }
+
+    private void updateData1() {
+        removeAll();
+        JList list = new JList(folderButtons);
+        list.setLayoutOrientation(JList.HORIZONTAL_WRAP);
+        list.setVisibleRowCount(-1);
+        list.setPrototypeCellValue("DATADATADATA");
+
+        JScrollPane listScroller = new JScrollPane(list);
+        listScroller.setPreferredSize(new Dimension(250, 80));
+        listScroller.setAlignmentX(LEFT_ALIGNMENT);
+        add(listScroller);
+
+        setPreferredSize(getPreferredSize());
+        revalidate();
+        notifyOnPathChange();
+    }
+
+    private void updateData() {
+        removeAll();
+
+        double maxWidth = 10, maxHeight = 10;
+        for (FolderButton folderButton : folderButtons) {
+            if (folderButton.getPreferredSize().getWidth() > maxWidth) {
+                maxWidth = folderButton.getPreferredSize().getWidth();
+            }
+            if (folderButton.getPreferredSize().getHeight() > maxHeight) {
+                maxHeight = folderButton.getPreferredSize().getHeight();
+            }
+        }
+
+        int actualWidth = Math.max(getWidth(), 100);
+        int actualHeight = Math.max(getHeight(), 100);
+        int colsCount = (int)(actualWidth / maxWidth);
+        int rowsCountByButtonsCount = folderButtons.size() / colsCount + (folderButtons.size() % colsCount == 0 ? 0 : 1);
+        int rowsCountByButtonsHeight = (int)(actualHeight / maxHeight + 1);
+        int rowsCount = Math.max(rowsCountByButtonsCount, rowsCountByButtonsHeight);
+//        JPanel internalPanel = new JPanel();
+
+//        internalPanel.setLayout(layout);
+
+
+//        BorderLayout boxLayout = new BorderLayout();
+//        setLayout(boxLayout);
+//        add(internalPanel);
+
+        int count = 0;
+        for (FolderButton folderButton : folderButtons) {
+            add(folderButton);
+            count++;
+        }
+
+        emptyItems = new LinkedList<>();
+
+        while (count < layout.getColumns() * layout.getRows()) {
+            JPanel empty = new JPanel();
+            emptyItems.add(empty);
+            add(empty);
+            count++;
+        }
+        layout.setColumns(colsCount);
+        layout.setRows(rowsCount);
+        System.out.println("Max width: " + maxWidth + " max height " + maxHeight + " cur width " + getWidth());
+        System.out.println("Wish rows: " + rowsCount + " wisth cols: " + colsCount);
+        System.out.println("Layout rows: " + layout.getRows() + " layout cols: " + layout.getColumns());
+
+        setPreferredSize(getPreferredSize());
+        revalidate();
+        notifyOnPathChange();
+    }
+
+    @Override
+    public void componentResized(ComponentEvent e) {
+        updateData();
+    }
+
+    @Override
+    public void componentMoved(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentShown(ComponentEvent e) {
+
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+
     }
 }
