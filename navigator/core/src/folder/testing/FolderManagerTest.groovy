@@ -3,7 +3,23 @@ package folder.testing
 import folder.FolderManager
 import folder.IFolder
 
+import javax.swing.filechooser.FileSystemView
+
 class FolderManagerTest extends GroovyTestCase {
+
+    void testCorrectRetPath() {
+        FolderManager manager = new FolderManager();
+        String path = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
+        System.out.println("Open path: " + path);
+        manager.openPath(path);
+        assertEquals("Current path equals open path", path, manager.getFullPath());
+        manager.levelUp();
+        assertEquals("Current path level up equals open path", path.substring(0, path.lastIndexOf("/")),
+                manager.getFullPath());
+        manager.levelUp();
+        assertEquals("Current path level up equals open path", "/", manager.getFullPath());
+    }
+
     void testOpenPath() {
         FolderManager manager = new FolderManager();
         manager.openPath("../../testData/folder");

@@ -112,6 +112,15 @@ public class FTPClientWrapper {
         }
     }
 
+    public boolean levelUp() {
+        try {
+            return ftp.changeToParentDirectory();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
 
     public void setCredentials(String login, String pass) {
         this.login = login;
@@ -139,6 +148,10 @@ public class FTPClientWrapper {
             return false;
         }
         return true;
+    }
+
+    public String getFtpPath() {
+//        return ftp.;
     }
 
 }

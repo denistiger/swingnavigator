@@ -10,7 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
-public class FoldersPanel extends JPanel implements ComponentListener {
+public class FoldersPanel extends JPanel implements ComponentListener/*, Scrollable*/ {
     private FolderManager folderManager;
     private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
@@ -27,14 +27,15 @@ public class FoldersPanel extends JPanel implements ComponentListener {
         pathListenerList = new LinkedList<>();
         folderButtons = new Vector<>();
 
-        layout = new GridLayout(1, 1);
+        layout = new GridLayout(0, 1, 1, 1);
         setLayout(layout);
 
-        setMaximumSize(new Dimension(800, Integer.MAX_VALUE));
-        setPreferredSize(new Dimension(800, 700));
+//        setMaximumSize(new Dimension(800, Integer.MAX_VALUE));
+//        setPreferredSize(new Dimension(800, 700));
         folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
         addComponentListener(this);
         processNewPath();
+
     }
 
     private void openFolder(IFolder folder) {
@@ -80,7 +81,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
                 folderButtons.add(folderButton);
             }
         }
-        updateData();
+        updateData(-1);
     }
 
     private void notifyOnPathChange() {
@@ -129,7 +130,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
         notifyOnPathChange();
     }
 
-    private void updateData() {
+    public void updateData(int maxPanelWidth) {
         removeAll();
 
         double maxWidth = 10, maxHeight = 10;
@@ -142,7 +143,19 @@ public class FoldersPanel extends JPanel implements ComponentListener {
             }
         }
 
-        int actualWidth = Math.max(getWidth(), 100);
+        if (maxPanelWidth == -1) {
+            maxPanelWidth = getWidth();
+        }
+
+        System.out.println("Actual width " + getWidth() );
+
+//        Container parent = getParent();
+//        if (parent != null) {
+//            System.out.println(parent.getClass());
+//            System.out.println(parent.getParent().getClass());
+//        }
+
+        int actualWidth = Math.max(maxPanelWidth, 100);
         int actualHeight = Math.max(getHeight(), 100);
         int colsCount = (int)(actualWidth / maxWidth);
         int rowsCountByButtonsCount = folderButtons.size() / colsCount + (folderButtons.size() % colsCount == 0 ? 0 : 1);
@@ -157,34 +170,51 @@ public class FoldersPanel extends JPanel implements ComponentListener {
 //        setLayout(boxLayout);
 //        add(internalPanel);
 
+        layout.setColumns(colsCount);
+        layout.setRows(rowsCountByButtonsCount);
+
+        Dimension buttonSize = new Dimension((int)maxWidth, (int)maxHeight);
+
         int count = 0;
         for (FolderButton folderButton : folderButtons) {
+            folderButton.setMaximumSize(buttonSize);
+            folderButton.setMinimumSize(buttonSize);
             add(folderButton);
             count++;
         }
 
-        emptyItems = new LinkedList<>();
 
-        while (count < layout.getColumns() * layout.getRows()) {
-            JPanel empty = new JPanel();
-            emptyItems.add(empty);
-            add(empty);
-            count++;
-        }
-        layout.setColumns(colsCount);
-        layout.setRows(rowsCount);
-        System.out.println("Max width: " + maxWidth + " max height " + maxHeight + " cur width " + getWidth());
-        System.out.println("Wish rows: " + rowsCount + " wisth cols: " + colsCount);
-        System.out.println("Layout rows: " + layout.getRows() + " layout cols: " + layout.getColumns());
+//        emptyItems = new LinkedList<>();
+//
+//        while (count < layout.getColumns() * layout.getRows()) {
+//            JPanel empty = new JPanel();
+//            emptyItems.add(empty);
+//            add(empty);
+//            count++;
+//        }
+//        System.out.println("Items count: " + count);
+//        System.out.println("Max width: " + maxWidth + " max height " + maxHeight + " cur width " + getWidth());
+//        System.out.println("Wish rows: " + rowsCount + " wisth cols: " + colsCount);
+//        System.out.println("Layout rows: " + layout.getRows() + " layout cols: " + layout.getColumns());
+//
+//        System.out.println("Get VGap:" + layout.getVgap());
 
-        setPreferredSize(getPreferredSize());
+//        setSize(layout.getColumns() * Math.maxWidth, layout.getRows() * maxHeight);
+//        layout.setVgap(0);
+//        layout.setHgap(0);
+
+        setPreferredSize(new Dimension(buttonSize.width * layout.getColumns(), buttonSize.height * layout.getRows()));
+        setMaximumSize(new Dimension(buttonSize.width * layout.getColumns(), buttonSize.height * layout.getRows()));
+        setMinimumSize(new Dimension(buttonSize.width * layout.getColumns(), buttonSize.height * layout.getRows()));
+//        setSize(new Dimension(buttonSize.width * layout.getColumns(), buttonSize.height * layout.getRows()));
+        System.out.println("Current width: " + getWidth() + " " + getHeight());
         revalidate();
         notifyOnPathChange();
     }
 
     @Override
     public void componentResized(ComponentEvent e) {
-        updateData();
+//        updateData();
     }
 
     @Override
@@ -201,4 +231,29 @@ public class FoldersPanel extends JPanel implements ComponentListener {
     public void componentHidden(ComponentEvent e) {
 
     }
+
+//    @Override
+//    public Dimension getPreferredScrollableViewportSize() {
+//        return super.getPreferredSize();
+//    }
+//
+//    @Override
+//    public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
+//        return 16;
+//    }
+//
+//    @Override
+//    public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
+//        return 16;
+//    }
+//
+//    @Override
+//    public boolean getScrollableTracksViewportWidth() {
+//        return true;
+//    }
+//
+//    @Override
+//    public boolean getScrollableTracksViewportHeight() {
+//        return false;
+//    }
 }

@@ -8,7 +8,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FTPFolder implements IFolder {
+public class FTPFolder implements IFolder, ILevelUp {
 
     FTPClientWrapper ftp;
     String localFTPPath;
@@ -106,7 +106,17 @@ public class FTPFolder implements IFolder {
     }
 
     @Override
+    public String getAbsolutePath() {
+        return null;
+    }
+
+    @Override
     public InputStream getInputStream() {
         return null;
+    }
+
+    @Override
+    public boolean levelUp() {
+        return ftp.levelUp();
     }
 }

@@ -1,5 +1,6 @@
 package folder;
 
+import java.io.File;
 import java.util.*;
 
 public class FolderManager {
@@ -19,6 +20,48 @@ public class FolderManager {
         ftpToFolderStatus.put(FTPClientWrapper.FTPStatus.ERROR, OpenFolderStatus.FTP_CONNECTION_ERROR);
     }
 
+    private class PathUtils {
+        private String path, pathPrefix;
+        private Character separator;
+        private int pathBegin;
+
+        public PathUtils(String path) {
+            this.path = path;
+            separator = '/';
+            if (!path.contains("/") && path.contains("\\")) {
+                separator = '\\';
+            }
+            if (path.lastIndexOf(separator) != path.length() - 1) {
+                path += separator;
+            }
+            pathBegin = path.indexOf("//") + 2;
+            pathPrefix = path.substring(0, pathBegin);
+            if (path.lastIndexOf(separator) == path.length() - 1) {
+                path = path.substring(0, path.length() - 1);
+            }
+        }
+
+        public void push(String name) {
+            path += name + separator;
+        }
+
+        public String pop() {
+            int sepPos = path.lastIndexOf(separator);
+            if (sepPos == -1) {
+                String out = path;
+                path = "";
+                return path;
+            }
+            String res = path.substring(sepPos + 1);
+            path = path.substring(0, sepPos);
+            return res;
+        }
+
+        public String getPath() {
+            return path;
+        }
+    }
+
     private Stack<IFolder> inDepthFolderStack;
 
     private String basePath = "";
@@ -29,9 +72,13 @@ public class FolderManager {
 
     public OpenFolderStatus openPath(String path) {
         cleanStack();
+        PathUtils initialPath = new PathUtils(path);
+        initialPath.pop();
+        basePath = initialPath.getPath();
         IFolderFactory factory = new UniversalFolderFactory();
         Map<String, Object> params = new HashMap<>();
         params.put(IFolderFactory.FILEPATH, path);
+
         try {
             IFolder folder = factory.createIFolder(params);
             if (folder == null) {
@@ -71,12 +118,21 @@ public class FolderManager {
         inDepthFolderStack.push(folder);
     }
 
-    public boolean levelUp() {
-        if (inDepthFolderStack.size() < 2) {
-            return false;
+    public OpenFolderStatus levelUp() {
+        if (inDepthFolderStack.size() == 0) {
+            return OpenFolderStatus.ERROR;
+        }
+        if (inDepthFolderStack.size() == 1) {
+            IFolder folder = inDepthFolderStack.peek();
+            if (folder instanceof ILevelUp) {
+                return ((ILevelUp) folder).levelUp() ? OpenFolderStatus.SUCCESS : OpenFolderStatus.ERROR;
+            }
+            String absolutePath = folder.getAbsolutePath();
+            File file = new File(absolutePath);
+            return openPath(file.getParent());
         }
         inDepthFolderStack.pop();
-        return true;
+        return OpenFolderStatus.SUCCESS;
     }
 
     public List<IFolder> getFoldersAtPath() {
@@ -99,11 +155,11 @@ public class FolderManager {
     }
 
     public String getFullPath() {
-        return getRelativePath();
-//        if (inDepthFolderStack.empty()) {
-//            return basePath;
-//        }
-//        return basePath + "/" + getRelativePath();
+//        return getRelativePath();
+        if (inDepthFolderStack.empty()) {
+            return basePath;
+        }
+        return basePath + "/" + getRelativePath();
     }
 
 

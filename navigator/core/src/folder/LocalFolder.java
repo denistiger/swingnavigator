@@ -5,16 +5,31 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
 
-public class LocalFolder implements IFolder {
+public class LocalFolder implements IFolder, ILevelUp {
 
     private File file;
 
-
-    public class NotALocalFolderException extends Exception {
-
+    @Override
+    public boolean levelUp() {
+        File prev = file;
+        try {
+            initFromFile(file.getParentFile());
+            return true;
+        } catch (NotALocalFolderException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        file = prev;
+        return false;
     }
 
-    public LocalFolder(File file) throws FileNotFoundException, NotALocalFolderException {
+    @Override
+    public String getAbsolutePath() {
+        return file.getAbsolutePath();
+    }
+
+    private void initFromFile(File file) throws NotALocalFolderException, FileNotFoundException {
         this.file = file;
         if (!this.file.exists()) {
             throw new FileNotFoundException();
@@ -22,6 +37,14 @@ public class LocalFolder implements IFolder {
         if (!this.file.isDirectory()) {
             throw new NotALocalFolderException();
         }
+    }
+
+    public class NotALocalFolderException extends Exception {
+
+    }
+
+    public LocalFolder(File file) throws FileNotFoundException, NotALocalFolderException {
+        initFromFile(file);
     }
 
     public LocalFolder(String path) throws FileNotFoundException, NotALocalFolderException {

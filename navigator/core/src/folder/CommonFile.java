@@ -10,6 +10,11 @@ public class CommonFile implements IFolder {
 
     private File file;
 
+    @Override
+    public String getAbsolutePath() {
+        return file.getAbsolutePath();
+    }
+
     public class NotACommonFileException extends Exception {
 
     }
