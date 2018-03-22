@@ -150,8 +150,10 @@ public class FTPClientWrapper {
         return true;
     }
 
-    public String getFtpPath() {
-//        return ftp.;
+    public String getAbsolutePath() {
+        String addr = ftp.getRemoteAddress().getCanonicalHostName();
+        System.out.print(addr);
+        return addr;
     }
 
 }

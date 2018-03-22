@@ -71,6 +71,11 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
     }
 
     @Override
+    public String getAbsolutePath() {
+        return null;
+    }
+
+    @Override
     public InputStream getInputStream() {
         try {
             resetStream();

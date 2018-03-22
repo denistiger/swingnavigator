@@ -64,8 +64,6 @@ public class FolderManager {
 
     private Stack<IFolder> inDepthFolderStack;
 
-    private String basePath = "";
-
     public FolderManager() {
         inDepthFolderStack = new Stack<>();
     }
@@ -74,7 +72,6 @@ public class FolderManager {
         cleanStack();
         PathUtils initialPath = new PathUtils(path);
         initialPath.pop();
-        basePath = initialPath.getPath();
         IFolderFactory factory = new UniversalFolderFactory();
         Map<String, Object> params = new HashMap<>();
         params.put(IFolderFactory.FILEPATH, path);
@@ -142,24 +139,19 @@ public class FolderManager {
         return inDepthFolderStack.peek().getItems();
     }
 
-    private String getRelativePath() {
-        String path = "";
-        if (inDepthFolderStack.empty()) {
-            return path;
-        }
-        for (IFolder folder : inDepthFolderStack) {
-            // TODO fix / separator
-            path += folder.getName() + "/";
-        }
-        return path.substring(0, path.length() - 1);
-    }
-
     public String getFullPath() {
-//        return getRelativePath();
-        if (inDepthFolderStack.empty()) {
-            return basePath;
+        boolean firstFolder = true;
+        String path = "";
+        for (IFolder folder : inDepthFolderStack) {
+            if (firstFolder) {
+                path = folder.getAbsolutePath();
+                firstFolder = false;
+            }
+            else {
+                path += "/" + folder.getName();
+            }
         }
-        return basePath + "/" + getRelativePath();
+        return path;
     }
 
 

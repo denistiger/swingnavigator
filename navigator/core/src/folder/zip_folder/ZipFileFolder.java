@@ -39,6 +39,11 @@ public class ZipFileFolder extends AbstractZipFolder {
     }
 
     @Override
+    public String getAbsolutePath() {
+        return null;
+    }
+
+    @Override
     public InputStream getInputStream() {
         if (zipEntryData.getInZipPath().compareTo("") == 0) {
             return null;
