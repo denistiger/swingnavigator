@@ -23,10 +23,12 @@ public class FTPClientWrapper {
     }
 
     private FTPClient ftp = null;
-    private String login = "anonymous";
+    private static final String DEFAULT_LOGIN = "anonymous";
+    private String login = DEFAULT_LOGIN;
     private String pass = "";
     private String ftpPath;
-    private int ftpPort = 2121;
+    private static final int DEFAULT_FTP_PORT = 21;
+    private int ftpPort = DEFAULT_FTP_PORT;
 
     public FTPClientWrapper(String ftpPath) {
         this.ftpPath = ftpPath;
@@ -150,9 +152,21 @@ public class FTPClientWrapper {
         return true;
     }
 
-    public String getAbsolutePath() {
-        String addr = ftp.getRemoteAddress().getCanonicalHostName();
-        System.out.print(addr);
+    public String getFTPPath() {
+        String addr = "ftp://";
+        if (!pass.isEmpty() || login.compareTo(DEFAULT_LOGIN) !=0) {
+            addr += login;
+            if (!pass.isEmpty()) {
+                addr += ":" + pass;
+            }
+            addr += "@";
+        }
+        addr += ftpPath;
+        if (ftpPort != DEFAULT_FTP_PORT) {
+            addr += ":" + Integer.toString(ftpPort);
+        }
+//        addr += "/";
+        System.out.println(addr);
         return addr;
     }
 

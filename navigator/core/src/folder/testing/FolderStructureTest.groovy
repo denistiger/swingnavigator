@@ -11,7 +11,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     }
 
     void testFTPNonZip() {
-        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
         iFolder.setCredentials("anonymous","")
         iFolder.connect()
         String res = TestUtils.linuxFormat(iFolder, "", false)
@@ -32,7 +32,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
     }
 
     void testFTPZip() {
-        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
         iFolder.setCredentials("anonymous","")
         iFolder.connect()
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder.zip"), "", false)
@@ -93,7 +93,7 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
 //    }
 
     void testFTPNonZipArch() {
-        FTPFolder iFolder = new FTPFolder("127.0.0.1")
+        FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
         iFolder.setCredentials("anonymous","")
         iFolder.connect()
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder"), "", true)

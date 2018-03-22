@@ -107,12 +107,21 @@ public class FTPFolder implements IFolder, ILevelUp {
 
     @Override
     public String getAbsolutePath() {
-        return null;
+        String path = ftp.getFTPPath();
+        if (!localFTPPath.isEmpty()) {
+            path += "/" + localFTPPath;
+        }
+        return path;
     }
 
     @Override
     public InputStream getInputStream() {
-        return null;
+        try {
+            return ftp.retrieveFileStream(localFTPPath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override
