@@ -7,6 +7,7 @@ public class FolderManager {
 
     public enum OpenFolderStatus {
         SUCCESS,
+        HALF_PATH_OPENED,
         ERROR,
         FTP_CONNECTION_ERROR,
         FTP_CREDENTIALS_NEEDED
@@ -69,9 +70,29 @@ public class FolderManager {
     }
 
     public OpenFolderStatus openPath(String path) {
+
+        PathUtils curPath = new PathUtils(path);
+        LinkedList<String> foldersToOpen = new LinkedList<>();
+
+        while (curPath.getPath().length() > 0) {
+            OpenFolderStatus status = openPathSimple(curPath.getPath());
+            if (getFoldersAtPath() != null) {
+                for (String folderName : foldersToOpen) {
+                    if (!openFolder(folderName)) {
+                        // Open as much as we can and consider it as success.
+                        return OpenFolderStatus.HALF_PATH_OPENED;
+                    }
+                }
+                return status;
+            }
+            foldersToOpen.add(curPath.pop());
+        }
+        return OpenFolderStatus.ERROR;
+
+    }
+
+    private OpenFolderStatus openPathSimple(String path) {
         cleanStack();
-        PathUtils initialPath = new PathUtils(path);
-        initialPath.pop();
         IFolderFactory factory = new UniversalFolderFactory();
         Map<String, Object> params = new HashMap<>();
         params.put(IFolderFactory.FILEPATH, path);
@@ -113,6 +134,20 @@ public class FolderManager {
 
     public void openFolder(IFolder folder) {
         inDepthFolderStack.push(folder);
+    }
+
+    public boolean openFolder(String folderName) {
+        List<IFolder> folders = getFoldersAtPath();
+        if (folders == null) {
+            return false;
+        }
+        for (IFolder folder : folders) {
+            if (folder.getName().compareTo(folderName) == 0) {
+                openFolder(folder);
+                return true;
+            }
+        }
+        return false;
     }
 
     public OpenFolderStatus levelUp() {

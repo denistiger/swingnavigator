@@ -30,6 +30,7 @@ public class FTPFolder implements IFolder, ILevelUp {
 
     public FTPFolder(String ftpPath, int ftpPort, String localFTPPath) {
         this.localFTPPath = localFTPPath;
+        stripLocalFTPPath();
         type = FolderTypes.FOLDER;
         ftp = new FTPClientWrapper(ftpPath, ftpPort);
     }
@@ -37,8 +38,21 @@ public class FTPFolder implements IFolder, ILevelUp {
     public FTPFolder(FTPClientWrapper client, String prefix, FolderTypes type, String name) {
         ftp = client;
         localFTPPath = prefix;
+        stripLocalFTPPath();
         this.type = type;
         this.name = name;
+    }
+
+    private void stripLocalFTPPath() {
+        while (localFTPPath.contains("//")) {
+            localFTPPath = localFTPPath.replaceAll("//", "/");
+        }
+        while (localFTPPath.startsWith("/")) {
+            localFTPPath = localFTPPath.substring(1);
+        }
+        while (localFTPPath.endsWith("/")) {
+            localFTPPath = localFTPPath.substring(0, localFTPPath.length() - 1);
+        }
     }
 
     public void setCredentials(String login, String pass) {
@@ -70,11 +84,11 @@ public class FTPFolder implements IFolder, ILevelUp {
             if (files.length == 0) {
                 System.out.println("No FTP files. Reply code is: " + ftp.getReplyCode());
             }
-            if (files.length == 1){
-                if (files[0].getName().compareTo(getName()) == 0) {
-                    return null;
-                }
-            }
+//            if (files.length == 1){
+//                if (files[0].getName().compareTo(getName()) == 0) {
+//                    return null;
+//                }
+//            }
             for (FTPFile file : files) {
                 if (file.isDirectory()) {
                     items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
