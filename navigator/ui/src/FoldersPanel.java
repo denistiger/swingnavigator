@@ -45,7 +45,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
 
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
-        if (folders != null && folders.size() > 0) {
+        if (folders != null /*&& folders.size() > 0*/) {
             folderButtons = new Vector<>();
             for (IFolder folder : folders) {
                 FolderButton folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
