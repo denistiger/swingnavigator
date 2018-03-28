@@ -140,6 +140,13 @@ public class FTPFolder implements IFolder, ILevelUp {
 
     @Override
     public boolean levelUp() {
-        return ftp.levelUp();
+        dropCache();
+        if (localFTPPath.isEmpty()) {
+            return ftp.levelUp();
+        }
+        PathUtils pathUtils = new PathUtils(localFTPPath);
+        pathUtils.pop();
+        localFTPPath = pathUtils.getPath();
+        return true;
     }
 }

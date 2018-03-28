@@ -138,6 +138,18 @@ class FolderManagerTest extends GroovyTestCase {
         checkOpenFTPPathWithFolder(manager);
     }
 
+    void testFTPLevelUp() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://127.0.0.1:2121/folder/top2/sub2");
+        assertEquals("Start path for ftp.", "ftp://127.0.0.1:2121/folder/top2/sub2", manager.getFullPath());
+        manager.levelUp();
+        assertEquals("Level up step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2", manager.getFullPath());
+        manager.levelUp();
+        assertEquals("Level up step two path for ftp.", "ftp://127.0.0.1:2121/folder", manager.getFullPath());
+        manager.openFolder("top2");
+        assertEquals("Level down step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2", manager.getFullPath());
+    }
+
     void testOpenFTPPathMultiple() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://anonymous@127.0.0.1:2121/folder");
