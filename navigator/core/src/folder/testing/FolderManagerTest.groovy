@@ -41,6 +41,15 @@ class FolderManagerTest extends GroovyTestCase {
         assertEquals("Go one level deeper", origin, res);
     }
 
+
+    void testOpenFolderInZipOnFTP() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://127.0.0.1:2121/folder/folder_in.zip/top2");
+        assertEquals("Opened folder in zip that is placed on FTP.", "ftp://127.0.0.1:2121/folder/folder_in.zip/top2", manager.getFullPath());
+
+
+    }
+
     void testOpenFTPPath() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://anonymous@127.0.0.1:2121");

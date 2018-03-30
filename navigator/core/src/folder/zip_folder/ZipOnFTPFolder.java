@@ -79,7 +79,13 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
     public InputStream getInputStream() {
         try {
             resetStream();
-            return zipStream;
+            ZipEntry entry = zipStream.getNextEntry();
+            while (entry != null) {
+                if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0) {
+                    return zipStream;
+                }
+                entry = zipStream.getNextEntry();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -43,7 +43,7 @@ public class FolderManager {
                 }
                 return status;
             }
-            foldersToOpen.add(curPath.pop());
+            foldersToOpen.addFirst(curPath.pop());
         }
         return OpenFolderStatus.ERROR;
 
