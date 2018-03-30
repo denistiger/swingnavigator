@@ -12,28 +12,14 @@ public class JPanelScrollableFolders extends JPanel implements Scrollable, Compo
     @Override
     public void setBounds(int x, int y, int width, int height)
     {
-        System.out.println("Set bounds: " + width + " " + height);
         super.setBounds(x, y, width, height);
-        foldersPanel.updateData(width - 10);
+        foldersPanel.updateData(width);
     }
 
     public JPanelScrollableFolders(FoldersPanel foldersPanel1 ) {
         this.foldersPanel = foldersPanel1;
         bottomStretchPanel = new JPanel();
-        bottomStretchPanel.setBackground(Color.RED);
         rightStretchPanel = new JPanel();
-        rightStretchPanel.setBackground(Color.BLUE);
-        rightStretchPanel.setMinimumSize(new Dimension(150, 40));
-
-//        setLayout(new F);
-
-//        add(foldersPanel);
-//        add(rightStretchPanel);
-
-//        setLayout(new BorderLayout());
-//        add(this.foldersPanel, BorderLayout.CENTER);
-//        add(bottomStretchPanel, BorderLayout.PAGE_END);
-//        add(rightStretchPanel, BorderLayout.LINE_END);
 
         GroupLayout groupLayout = new GroupLayout(this);
         setLayout(groupLayout);
@@ -58,18 +44,17 @@ public class JPanelScrollableFolders extends JPanel implements Scrollable, Compo
 
     @Override
     public Dimension getPreferredScrollableViewportSize() {
-        System.out.println("New preffered size: " + super.getPreferredSize());
         return super.getPreferredSize();
     }
 
     @Override
     public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
-        return 16;
+        return 128;
     }
 
     @Override
     public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
-        return 16;
+        return 128;
     }
 
     @Override

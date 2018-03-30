@@ -8,7 +8,7 @@ public class FolderButton extends JLabel {
     private static int MAX_LINE_LENGTH = 12;
     private static int MAX_LINES = 3;
 
-    private static String toMultilineHTML(String filename) {
+    public static String toMultilineHTML(String filename) {
         String res = "<html><center>";
         int lineCount = 0;
         while (filename.length() > MAX_LINE_LENGTH && lineCount < MAX_LINES - 1) {
@@ -16,14 +16,14 @@ public class FolderButton extends JLabel {
             filename = filename.substring(MAX_LINE_LENGTH);
             lineCount++;
         }
-        if (filename.length() < MAX_LINE_LENGTH) {
+        if (filename.length() <= MAX_LINE_LENGTH) {
             res += filename;
         }
         else {
-            res += filename.substring(0, MAX_LINE_LENGTH - 3) + "...";
+            // "..." for two symbols width. So we allow 13 symbols in the last line.
+            res += filename.substring(0, MAX_LINE_LENGTH - 2) + "...";
         }
         res += "</center></html>";
-//        res += filename.substring(0, Math.min(MAX_LINE_LENGTH, filename.length())) + "</center></html>";
         return res;
     }
 

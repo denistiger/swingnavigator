@@ -75,39 +75,13 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
 
         add(upPanel);
 
-//        add(pathLabel, BorderLayout.LINE_START);
-//        add(pathText, BorderLayout.CENTER);
-//        add(levelUpButton, BorderLayout.LINE_END);
-
         stretchPanel = new JPanelScrollableFolders(foldersPanel);
-//        groupLayout.setVerticalGroup(groupLayout.createSequentialGroup().addComponent(foldersPanel, 200, 400, Short.MAX_VALUE));
-//        groupLayout.setHorizontalGroup(groupLayout.createSequentialGroup().addComponent(foldersPanel, 200, 400, Short.MAX_VALUE));
-//        groupLayout.setAutoCreateContainerGaps(false);
-//        groupLayout.setAutoCreateGaps(false);
-
-
-//        stretchPanel.add(foldersPanel, BorderLayout.PAGE_START);
-////        stretchPanel.add(rightStretchPanel, BorderLayout.LINE_END);
-//        stretchPanel.add(bottomStretchPanel, BorderLayout.PAGE_END);
-
-//        stretchPanel.add(rightStretchPanel, BorderLayout.LINE_END);
-
-//        foldersPanel.setPreferredSize(new Dimension(0, 2000));
-
 
         JScrollPane scrollPane = new JScrollPane(stretchPanel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
         scrollPane.setPreferredSize(new Dimension(800, 600));
-
-//        scrollPane.add(foldersPanel);
-//        scrollPane.add(stretchPanel);
-//        scrollPane.setBounds(0, 0, 800, 600);
-//        foldersPanel.setPreferredSize(new Dimension(780, 0));
-//        JPanel contentPane = new JPanel(null);
-//        contentPane.setPreferredSize(new Dimension(850, 630));
-//        contentPane.add(scrollPane);
 
         add(scrollPane);
 
