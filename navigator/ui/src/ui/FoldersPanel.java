@@ -1,3 +1,5 @@
+package ui;
+
 import folder.FolderManager;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;

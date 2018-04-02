@@ -1,3 +1,5 @@
+package ui
+
 class FolderButtonTest extends groovy.util.GroovyTestCase {
     void testHTMLConverter() {
         assertEquals("<html><center>012345</center></html>", FolderButton.toMultilineHTML("012345"));

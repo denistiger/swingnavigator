@@ -1,3 +1,5 @@
+package ui;
+
 import folder.IFolder;
 
 import javax.swing.*;
