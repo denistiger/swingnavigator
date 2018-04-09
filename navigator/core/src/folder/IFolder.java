@@ -18,6 +18,8 @@ public interface IFolder {
     String getName();
     String getAbsolutePath();
 
+    boolean isFileSystemPath();
+
     // TODO may be use byte[] getData()
     InputStream getInputStream();
 }

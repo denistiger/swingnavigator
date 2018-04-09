@@ -5,8 +5,8 @@ public class PathUtils {
     private Character separator;
     private int pathBegin;
 
-    public PathUtils(String path) {
-        this.path = path;
+    public PathUtils(String path1) {
+        this.path = path1;
         separator = '/';
         if (!path.contains("/") && path.contains("\\")) {
             separator = '\\';
@@ -16,7 +16,7 @@ public class PathUtils {
         }
         pathBegin = path.indexOf("//") + 2;
         pathPrefix = path.substring(0, pathBegin);
-        if (path.lastIndexOf(separator) == path.length() - 1) {
+        if (path.lastIndexOf(separator) == path.length() - 1 && path.length() > 1) {
             path = path.substring(0, path.length() - 1);
         }
     }

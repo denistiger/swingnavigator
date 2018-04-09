@@ -132,7 +132,7 @@ public class FolderManager {
         return inDepthFolderStack.peek().getItems();
     }
 
-    public String getFullPath() {
+    public String getFullPathOld() {
         boolean firstFolder = true;
         String path = "";
         for (IFolder folder : inDepthFolderStack) {
@@ -142,6 +142,23 @@ public class FolderManager {
             }
             else {
                 path += "/" + folder.getName();
+            }
+        }
+        return path;
+    }
+
+    public String getFullPath() {
+        boolean useAbsolutePath = true;
+        String path = "";
+        for (IFolder folder : inDepthFolderStack) {
+            if (useAbsolutePath) {
+                path = folder.getAbsolutePath();
+            }
+            else {
+                path += "/" + folder.getName();
+            }
+            if (!folder.isFileSystemPath()) {
+                useAbsolutePath = false;
             }
         }
         return path;

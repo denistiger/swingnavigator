@@ -15,8 +15,10 @@ import java.util.zip.ZipInputStream;
 public class ZipFileFolder extends AbstractZipFolder {
 
     private ZipFile zipFile;
+    private File file;
 
     public ZipFileFolder(File file) throws Exception {
+        this.file = file;
         zipEntryData = new ZipEntryData("", file.getName(), FolderTypes.ZIP);
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
         factory = new ZipFolderFactory(zipFile);
@@ -40,7 +42,12 @@ public class ZipFileFolder extends AbstractZipFolder {
 
     @Override
     public String getAbsolutePath() {
-        return null;
+        return file.getAbsolutePath();
+    }
+
+    @Override
+    public boolean isFileSystemPath() {
+        return false;
     }
 
     @Override

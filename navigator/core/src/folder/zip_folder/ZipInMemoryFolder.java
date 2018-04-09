@@ -47,6 +47,11 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
     }
 
     @Override
+    public boolean isFileSystemPath() {
+        return false;
+    }
+
+    @Override
     public InputStream getInputStream() {
         if (zipData == null) {
             return null;

@@ -15,6 +15,11 @@ public class CommonFile implements IFolder {
         return file.getAbsolutePath();
     }
 
+    @Override
+    public boolean isFileSystemPath() {
+        return true;
+    }
+
     public class NotACommonFileException extends Exception {
 
     }

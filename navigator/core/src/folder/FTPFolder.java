@@ -129,6 +129,11 @@ public class FTPFolder implements IFolder, ILevelUp {
     }
 
     @Override
+    public boolean isFileSystemPath() {
+        return false;
+    }
+
+    @Override
     public InputStream getInputStream() {
         try {
             return ftp.retrieveFileStream(localFTPPath);

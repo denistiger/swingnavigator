@@ -19,6 +19,8 @@ public class LocalFolder implements IFolder, ILevelUp {
             e.printStackTrace();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+        } catch (NullInitializedFolderException e) {
+            e.printStackTrace();
         }
         file = prev;
         return false;
@@ -29,7 +31,15 @@ public class LocalFolder implements IFolder, ILevelUp {
         return file.getAbsolutePath();
     }
 
-    private void initFromFile(File file) throws NotALocalFolderException, FileNotFoundException {
+    @Override
+    public boolean isFileSystemPath() {
+        return true;
+    }
+
+    private void initFromFile(File file) throws NotALocalFolderException, FileNotFoundException, NullInitializedFolderException {
+        if (file == null) {
+            throw new NullInitializedFolderException();
+        }
         this.file = file;
         if (!this.file.exists()) {
             throw new FileNotFoundException();
@@ -43,11 +53,15 @@ public class LocalFolder implements IFolder, ILevelUp {
 
     }
 
-    public LocalFolder(File file) throws FileNotFoundException, NotALocalFolderException {
+    public class NullInitializedFolderException extends Exception {
+
+    }
+
+    public LocalFolder(File file) throws FileNotFoundException, NotALocalFolderException, NullInitializedFolderException {
         initFromFile(file);
     }
 
-    public LocalFolder(String path) throws FileNotFoundException, NotALocalFolderException {
+    public LocalFolder(String path) throws FileNotFoundException, NotALocalFolderException, NullInitializedFolderException {
         this(new File(path));
     }
     @Override

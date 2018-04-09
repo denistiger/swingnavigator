@@ -46,9 +46,19 @@ class FolderManagerTest extends GroovyTestCase {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://127.0.0.1:2121/folder/folder_in.zip/top2");
         assertEquals("Opened folder in zip that is placed on FTP.", "ftp://127.0.0.1:2121/folder/folder_in.zip/top2", manager.getFullPath());
-
-
     }
+
+
+//    void testOpenZipPath() {
+//        FolderManager manager = new FolderManager();
+//        manager.openPath("../../testData/folder");
+//        manager.openFolder("folder_in.zip");
+//        manager.openFolder("top2");
+//        assertEquals("Absolute path with folder in zip",
+//                "/home/denis/IdeaProjects/swingnavigator/testData/folder/folder_in.zip/top2",
+//                        manager.getFullPath());
+//    }
+
 
     void testOpenFTPPath() {
         FolderManager manager = new FolderManager();
