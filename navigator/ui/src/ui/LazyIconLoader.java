@@ -6,6 +6,8 @@ import folder.file_preview.IFilePreviewListener;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.function.Predicate;
 
 public class LazyIconLoader implements Runnable{
@@ -26,8 +28,14 @@ public class LazyIconLoader implements Runnable{
     @Override
     public void run() {
         FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
+        Executor pool = Executors.newFixedThreadPool(8);
         for (FilePreviewData filePreviewData : filePreviewDataList) {
-            filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreview(filePreviewData.folder));
+            pool.execute(new Runnable() {
+                @Override
+                public void run() {
+                    filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreview(filePreviewData.folder));
+                }
+            });
             if (stop == true) {
                 break;
             }
