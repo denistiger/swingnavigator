@@ -49,6 +49,15 @@ public class FolderManager {
 
     }
 
+    public IFolder getCurrentFolder() {
+        if (inDepthFolderStack != null && !inDepthFolderStack.isEmpty()) {
+            return inDepthFolderStack.peek();
+        }
+        else {
+            return null;
+        }
+    }
+
     private OpenFolderStatus openPathSimple(String path) {
         cleanStack();
         IFolderFactory factory = new UniversalFolderFactory();
@@ -130,21 +139,6 @@ public class FolderManager {
             return new ArrayList<>();
         }
         return inDepthFolderStack.peek().getItems();
-    }
-
-    public String getFullPathOld() {
-        boolean firstFolder = true;
-        String path = "";
-        for (IFolder folder : inDepthFolderStack) {
-            if (firstFolder) {
-                path = folder.getAbsolutePath();
-                firstFolder = false;
-            }
-            else {
-                path += "/" + folder.getName();
-            }
-        }
-        return path;
     }
 
     public String getFullPath() {

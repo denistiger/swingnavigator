@@ -9,8 +9,7 @@ import java.io.InputStream;
 
 public class FilePreviewImage implements IFilePreview {
 
-    @Override
-    public ImageIcon getFilePreview(IFolder file) {
+    private ImageIcon readImage(IFolder file) {
         InputStream inputStream = file.getInputStream();
         try {
             byte[] imageData = IOUtils.readFully(inputStream, -1, true);
@@ -21,5 +20,23 @@ public class FilePreviewImage implements IFilePreview {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public ImageIcon getFilePreview(IFolder file) {
+        ImageIcon imageIcon = readImage(file);
+        if (imageIcon != null) {
+            ImageUtils.resizeImageIconProportional(imageIcon, ICON_WIDTH, ICON_HEIGHT);
+        }
+        return imageIcon;
+    }
+
+    @Override
+    public ImageIcon getFilePreviewLarge(IFolder file) {
+        ImageIcon imageIcon = readImage(file);
+        if (imageIcon != null) {
+            ImageUtils.resizeImageIconProportional(imageIcon, LARGE_ICON_WIDTH, LARGE_ICON_HEIGHT);
+        }
+        return imageIcon;
     }
 }

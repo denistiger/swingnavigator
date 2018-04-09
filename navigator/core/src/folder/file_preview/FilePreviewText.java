@@ -67,8 +67,7 @@ public class FilePreviewText implements IFilePreview {
         return new Point2i(maxWidth, maxHeight);
     }
 
-    @Override
-    public ImageIcon getFilePreview(IFolder file) {
+    private ImageIcon getFileImageIcon(IFolder file) {
         String[] text = getText(file);
         Font font = new Font("Arial", Font.PLAIN, 12);
         Point2i maxLineSize = getMaxTextDimensions(text, font);
@@ -99,5 +98,18 @@ public class FilePreviewText implements IFilePreview {
         }
         g2d.dispose();
         return new ImageIcon(img);
+    }
+    @Override
+    public ImageIcon getFilePreview(IFolder file) {
+        ImageIcon imageIcon = getFileImageIcon(file);
+        ImageUtils.resizeImageIconProportional(imageIcon, ICON_WIDTH, ICON_HEIGHT);
+        return imageIcon;
+    }
+
+    @Override
+    public ImageIcon getFilePreviewLarge(IFolder file) {
+        ImageIcon imageIcon = getFileImageIcon(file);
+        ImageUtils.resizeImageIconProportional(imageIcon, LARGE_ICON_WIDTH, LARGE_ICON_HEIGHT);
+        return imageIcon;
     }
 }

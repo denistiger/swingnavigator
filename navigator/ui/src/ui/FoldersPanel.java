@@ -18,10 +18,12 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
     private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
     private Vector<FolderButton> folderButtons;
+    private ImageIcon imageIcon;
 
     private BoxLayout layout;
 
     private LazyIconLoader lazyIconLoader;
+
 
 
     public FoldersPanel() {
@@ -29,6 +31,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
         previewGenerator = new FilePreviewGenerator();
         pathListenerList = new LinkedList<>();
         folderButtons = new Vector<>();
+        imageIcon = null;
 
         layout = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(layout);
@@ -47,6 +50,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
         if (folders != null) {
+            imageIcon = null;
             folderButtons = new Vector<>();
             if (lazyIconLoader != null) {
                 lazyIconLoader.stop();
@@ -91,9 +95,19 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
                 });
                 folderButtons.add(folderButton);
             }
+            lazyIconLoader.start();
+            setUpFolderButtonDimensions();
         }
-        lazyIconLoader.start();
-        setUpFolderButtonDimensions();
+        else {
+            IFolder file = folderManager.getCurrentFolder();
+            if (file == null) {
+                return;
+            }
+            imageIcon = previewGenerator.getFilePreviewLarge(file);
+            if (imageIcon != null) {
+                folderButtons.clear();
+            }
+        }
         updateData(-1);
     }
 
@@ -170,6 +184,12 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
                 linePanel.add(Box.createHorizontalGlue());
                 add(linePanel);
 //            add(Box.createRigidArea(new Dimension(5, 5)));
+            }
+        }
+        else {
+            if (imageIcon != null) {
+                JLabel imageLabel = new JLabel(imageIcon);
+                add(imageLabel);
             }
         }
         revalidate();

@@ -25,17 +25,30 @@ public class FilePreviewGenerator implements IFilePreview {
         return LAZY_PREVIEW.getFilePreview(file);
     }
 
-    @Override
-    public ImageIcon getFilePreview(IFolder file) {
+    private ImageIcon getFilePreviewImageIcon(IFolder file) {
         IFilePreview filePreview = FILE_PREVIEW_MAP.get(file.getType());
         if (filePreview != null) {
-            ImageIcon imageIcon = filePreview.getFilePreview(file);
-            if (imageIcon != null) {
-                ImageUtils.resizeImageIcon(imageIcon, ICON_WIDTH, ICON_HEIGHT);
-                return imageIcon;
-            }
+            return filePreview.getFilePreview(file);
         }
         return DEFAULT_PREVIEW.getFilePreview(file);
+    }
+
+    @Override
+    public ImageIcon getFilePreview(IFolder file) {
+        ImageIcon imageIcon = getFilePreviewImageIcon(file);
+        if (imageIcon != null) {
+            ImageUtils.resizeImageIconProportional(imageIcon, ICON_WIDTH, ICON_HEIGHT);
+        }
+        return imageIcon;
+    }
+
+    @Override
+    public ImageIcon getFilePreviewLarge(IFolder file) {
+        ImageIcon imageIcon = getFilePreviewImageIcon(file);
+        if (imageIcon != null) {
+            ImageUtils.resizeImageIconProportional(imageIcon, LARGE_ICON_WIDTH, LARGE_ICON_HEIGHT);
+        }
+        return imageIcon;
     }
 
 }
