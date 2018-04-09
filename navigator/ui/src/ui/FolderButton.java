@@ -1,10 +1,11 @@
 package ui;
 
 import folder.IFolder;
+import folder.file_preview.IFilePreviewListener;
 
 import javax.swing.*;
 
-public class FolderButton extends JLabel {
+public class FolderButton extends JLabel implements IFilePreviewListener {
     private IFolder folder;
 
     private static int MAX_LINE_LENGTH = 12;
@@ -41,5 +42,10 @@ public class FolderButton extends JLabel {
 
     public IFolder getFolder() {
         return folder;
+    }
+
+    @Override
+    public void setPreviewIcon(ImageIcon icon) {
+        setIcon(icon);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class FilePreviewGenerator implements IFilePreview {
     private static final Map<IFolder.FolderTypes, IFilePreview> FILE_PREVIEW_MAP;
-    private static final IFilePreview DEFAULT_PREVIEW;
+    private static final IFilePreview DEFAULT_PREVIEW, LAZY_PREVIEW;
     static {
         FILE_PREVIEW_MAP = new HashMap<>();
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.IMAGE, new FilePreviewImage());
@@ -18,6 +18,11 @@ public class FilePreviewGenerator implements IFilePreview {
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.FOLDER,
                 new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/FolderIcon512.png")));
         DEFAULT_PREVIEW = new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/Question512.png"));
+        LAZY_PREVIEW = new FilePreviewNoPreview(FilePreviewGenerator.class.getResource("images/ClockIcon512.png"));
+    }
+
+    public ImageIcon getLazyLoadIcon(IFolder file) {
+        return LAZY_PREVIEW.getFilePreview(file);
     }
 
     @Override

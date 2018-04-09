@@ -1,6 +1,8 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.plaf.ListUI;
+import javax.swing.plaf.metal.MetalLookAndFeel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,8 +14,6 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
     private JButton levelUpButton;
     private FoldersPanel foldersPanel;
     private JPanel stretchPanel;
-
-
 
     public FolderNavigatorUI() {
         initComponents();
@@ -95,6 +95,27 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
     }
 
     public static void main(String[] args) {
+//        try {
+//            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+//            MetalLookAndFeel.setCurrentTheme(new ColorTheme());
+//        }
+//        catch (UnsupportedLookAndFeelException e) {
+//            System.out.println(e.getStackTrace());
+//            // handle exception
+//        }
+//        catch (ClassNotFoundException e) {
+//            System.out.println(e.getStackTrace());
+//            // handle exception
+//        }
+//        catch (InstantiationException e) {
+//            System.out.println(e.getStackTrace());
+//            // handle exception
+//        }
+//        catch (IllegalAccessException e) {
+//            System.out.println(e.getStackTrace());
+//            // handle exception
+//        }
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FolderNavigatorUI().setVisible(true);

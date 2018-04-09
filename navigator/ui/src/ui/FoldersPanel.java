@@ -21,6 +21,8 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
 
     private BoxLayout layout;
 
+    private LazyIconLoader lazyIconLoader;
+
 
     public FoldersPanel() {
         folderManager = new FolderManager();
@@ -46,8 +48,19 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
         List<IFolder> folders = folderManager.getFoldersAtPath();
         if (folders != null) {
             folderButtons = new Vector<>();
+            if (lazyIconLoader != null) {
+                lazyIconLoader.stop();
+            }
+            lazyIconLoader = new LazyIconLoader();
             for (IFolder folder : folders) {
-                FolderButton folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
+                FolderButton folderButton;
+                if (folder.getType() == IFolder.FolderTypes.IMAGE || folder.getType() == IFolder.FolderTypes.TEXT_FILE) {
+                    folderButton = new FolderButton(folder, previewGenerator.getLazyLoadIcon(folder));
+                    lazyIconLoader.addListener(folderButton, folder);
+                }
+                else {
+                    folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
+                }
                 folderButton.addMouseListener(new MouseListener() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
@@ -79,6 +92,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
                 folderButtons.add(folderButton);
             }
         }
+        lazyIconLoader.start();
         setUpFolderButtonDimensions();
         updateData(-1);
     }
