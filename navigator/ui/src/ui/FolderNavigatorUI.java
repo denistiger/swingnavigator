@@ -1,19 +1,20 @@
 package ui;
 
 import javax.swing.*;
-import javax.swing.plaf.ListUI;
-import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class FolderNavigatorUI extends JFrame implements PathListener {
+public class FolderNavigatorUI extends JFrame {
 
     private JLabel pathLabel;
     private JTextField pathText;
     private JButton levelUpButton;
-    private FoldersPanel foldersPanel;
-    private JPanel stretchPanel;
+    FolderNavigatorBL folderNavigatorBL;
 
     public FolderNavigatorUI() {
         initComponents();
@@ -34,29 +35,38 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
         }
         UIManager.put("swing.boldMetal", Boolean.FALSE);
 
-        foldersPanel = new FoldersPanel();
-        foldersPanel.addPathListener(this);
-
         Font font = new Font("ARIAL", Font.BOLD, 20);
 
         pathLabel = new JLabel("Address");
         pathLabel.setFont(font);
 
-        pathText = new JTextField(foldersPanel.getCurrentPath());
+        pathText = new JTextField();
         pathText.setFont(font);
-        pathText.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setNewAddress(e);
-            }
-        });
+
+//        KeyListener keyListener = new KeyListener() {
+//            public void keyPressed(KeyEvent keyEvent) {
+//            }
+//
+//            public void keyReleased(KeyEvent keyEvent) {
+//            }
+//
+//            public void keyTyped(KeyEvent keyEvent) {
+//                if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
+//                    setNewAddress();
+//                }
+//                else {
+//                    filterFolders();
+//                }
+//            }
+//        };
+
 
         levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
         levelUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                foldersPanel.levelUp();
+                folderNavigatorBL.levelUp();
             }
         });
 
@@ -77,22 +87,16 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
 
         add(upPanel);
 
-        stretchPanel = new JPanelScrollableFolders(foldersPanel);
+        JPanel mainPanel = new JPanel();
+        add(mainPanel);
 
-        JScrollPane scrollPane = new JScrollPane(stretchPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText);
 
-        scrollPane.setPreferredSize(new Dimension(800, 600));
-
-        add(scrollPane);
+//        add(scrollPane);
 
         pack();
     }
 
-    private void setNewAddress(ActionEvent e) {
-        foldersPanel.openPath(pathText.getText());
-    }
 
     public static void main(String[] args) {
 //        try {
@@ -121,12 +125,6 @@ public class FolderNavigatorUI extends JFrame implements PathListener {
                 new FolderNavigatorUI().setVisible(true);
             }
         });
-    }
-
-    @Override
-    public void setPath(String path) {
-        pathText.setText(path);
-        repaint();
     }
 
 }

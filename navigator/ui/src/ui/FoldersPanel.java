@@ -13,24 +13,23 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
-public class FoldersPanel extends JPanel implements ComponentListener/*, Scrollable*/ {
+public class FoldersPanel extends JPanel implements ComponentListener {
     private FolderManager folderManager;
     private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
-    private Vector<FolderButton> folderButtons;
+    private Vector<FolderButton> folderButtons, folderButtonsFiltered;
     private ImageIcon imageIcon;
 
     private BoxLayout layout;
 
     private LazyIconLoader lazyIconLoader;
 
-
-
     public FoldersPanel() {
         folderManager = new FolderManager();
         previewGenerator = new FilePreviewGenerator();
         pathListenerList = new LinkedList<>();
         folderButtons = new Vector<>();
+        folderButtonsFiltered = new Vector<>();
         imageIcon = null;
 
         layout = new BoxLayout(this, BoxLayout.Y_AXIS);
@@ -39,7 +38,11 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
         folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
         addComponentListener(this);
         processNewPath();
+    }
 
+    public void setFolderButtons(Vector<FolderButton> folderButtons) {
+        this.folderButtonsFiltered = folderButtons;
+        updateData(-1);
     }
 
     private void openFolder(IFolder folder) {
@@ -95,6 +98,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
                 });
                 folderButtons.add(folderButton);
             }
+            folderButtonsFiltered = folderButtons;
             lazyIconLoader.start();
             setUpFolderButtonDimensions();
         }
@@ -106,6 +110,21 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
             imageIcon = previewGenerator.getFilePreviewLarge(file);
             if (imageIcon != null) {
                 folderButtons.clear();
+            }
+        }
+        updateData(-1);
+        notifyOnPathChange();
+    }
+
+    public void filterByPrefix(String prefix) {
+        if (prefix.isEmpty()) {
+            folderButtonsFiltered = folderButtons;
+            return;
+        }
+        folderButtonsFiltered = new Vector<>();
+        for (FolderButton folderButton : folderButtons) {
+            if (folderButton.getFolder().getName().startsWith(prefix)) {
+                folderButtonsFiltered.add(folderButton);
             }
         }
         updateData(-1);
@@ -136,13 +155,18 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
     }
 
     public void openPath(String path) {
-        folderManager.openPath(path);
+        if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() == 1) {
+            folderManager.openFolder(folderButtonsFiltered.firstElement().getFolder());
+        }
+        else {
+            folderManager.openPath(path);
+        }
         processNewPath();
     }
 
     private void setUpFolderButtonDimensions() {
         int maxWidth = 10, maxHeight = 10;
-        for (FolderButton folderButton : folderButtons) {
+        for (FolderButton folderButton : folderButtonsFiltered) {
             if (folderButton.getPreferredSize().getWidth() > maxWidth) {
                 maxWidth = (int)folderButton.getPreferredSize().getWidth();
             }
@@ -150,7 +174,7 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
                 maxHeight = (int)folderButton.getPreferredSize().getHeight();
             }
         }
-        for (FolderButton folderButton : folderButtons) {
+        for (FolderButton folderButton : folderButtonsFiltered) {
             folderButton.setMinimumSize(new Dimension(maxWidth, maxHeight));
             folderButton.setPreferredSize(new Dimension(maxWidth, maxHeight));
             folderButton.setMaximumSize(new Dimension(maxWidth, maxHeight));
@@ -166,12 +190,12 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
             maxPanelWidth = getWidth();
         }
 
-        if (!folderButtons.isEmpty()) {
+        if (!folderButtonsFiltered.isEmpty()) {
             final int rigid_area_width = 5;
             int actualWidth = Math.max(maxPanelWidth, 100);
-            int colsCount = actualWidth / ((int)folderButtons.elementAt(0).getMaximumSize().getWidth() + rigid_area_width);
+            int colsCount = actualWidth / ((int)folderButtonsFiltered.elementAt(0).getMaximumSize().getWidth() + rigid_area_width);
 
-            Iterator<FolderButton> folderButtonIterator = folderButtons.iterator();
+            Iterator<FolderButton> folderButtonIterator = folderButtonsFiltered.iterator();
             while (folderButtonIterator.hasNext()) {
                 JPanel linePanel = new JPanel();
                 BoxLayout lineLayout = new BoxLayout(linePanel, BoxLayout.X_AXIS);
@@ -193,7 +217,6 @@ public class FoldersPanel extends JPanel implements ComponentListener/*, Scrolla
             }
         }
         revalidate();
-        notifyOnPathChange();
     }
 
     @Override
