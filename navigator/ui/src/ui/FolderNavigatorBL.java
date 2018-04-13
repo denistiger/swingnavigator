@@ -90,11 +90,31 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private void filterFolders() {
         String enteredPath = pathText.getText();
         String currentPath = getCurrentPath();
+
+        if (enteredPath.compareTo(currentPath) == 0) {
+            return;
+        }
+
+        if (currentPath.startsWith(enteredPath)) {
+            if (currentPath.length() == 1 + enteredPath.length()) {
+                return;
+            }
+            folderManager.levelUp();
+            if (enteredPath.startsWith(folderManager.getFullPath())) {
+                processNewPath();
+                return;
+            }
+            else {
+                folderManager.openPath(currentPath);
+                return;
+            }
+        }
+
         if (!enteredPath.startsWith(currentPath) || enteredPath.length() <= currentPath.length()) {
             return;
         }
 
-        String filter = enteredPath.substring(currentPath.length() + 1);
+        String filter = enteredPath.substring(currentPath.length());
         filterByPrefix(filter);
     }
 
