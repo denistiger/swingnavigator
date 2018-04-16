@@ -91,13 +91,13 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         String enteredPath = pathText.getText();
         String currentPath = getCurrentPath();
 
-        if (enteredPath.compareTo(currentPath) == 0) {
+        if (enteredPath.compareTo(currentPath) == 0 || enteredPath.length() == 0) {
             return;
         }
 
         if (currentPath.startsWith(enteredPath)) {
             if (currentPath.length() == 1 + enteredPath.length()) {
-                return;
+                enteredPath = enteredPath.substring(0, enteredPath.length() - 1);
             }
             folderManager.levelUp();
             if (enteredPath.startsWith(folderManager.getFullPath())) {
@@ -120,7 +120,13 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
     @Override
     public void setPath(String path) {
-        pathText.setText(path);
+        Runnable setPathText = new Runnable() {
+            @Override
+            public void run() {
+                pathText.setText(path);
+            }
+        };
+        SwingUtilities.invokeLater(setPathText);
     }
 
 

@@ -100,7 +100,9 @@ public class FolderManager {
     }
 
     public void openFolder(IFolder folder) {
-        inDepthFolderStack.push(folder);
+        if (inDepthFolderStack.empty() || folder != inDepthFolderStack.peek()) {
+            inDepthFolderStack.push(folder);
+        }
     }
 
     public boolean openFolder(String folderName) {
@@ -153,6 +155,13 @@ public class FolderManager {
             }
             if (!folder.isFileSystemPath()) {
                 useAbsolutePath = false;
+            }
+        }
+
+        if (!path.endsWith("/") && !path.endsWith("\\")) {
+            List<IFolder> subFolders = getFoldersAtPath();
+            if (subFolders != null && !subFolders.isEmpty()) {
+                path += "/";
             }
         }
         return path;
