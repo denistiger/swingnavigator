@@ -3,6 +3,7 @@ package ui;
 import folder.FolderManager;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
+import ui.FilePreview.FilePreviewPanelFactory;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -19,6 +20,8 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private JPanel mainPanel;
     private JTextField pathText;
     private FoldersPanel foldersPanel;
+    private JScrollPane foldersScrollPane;
+    private JComponent previousPanel;
 
     private Vector<FolderButton> folderButtonsFiltered;
     private ImageIcon imageIcon;
@@ -73,12 +76,13 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
         JPanel stretchPanel = new JPanelScrollableFolders(foldersPanel);
 
-        JScrollPane scrollPane = new JScrollPane(stretchPanel);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        foldersScrollPane = new JScrollPane(stretchPanel);
+        foldersScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-        scrollPane.setPreferredSize(new Dimension(800, 600));
+        foldersScrollPane.setPreferredSize(new Dimension(800, 600));
 
-        mainPanel.add(scrollPane);
+        previousPanel = null;
+//        changeMainPanelContentPane(foldersScrollPane);
 
         processNewPath();
     }
@@ -90,6 +94,12 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private void filterFolders() {
         String enteredPath = pathText.getText();
         String currentPath = getCurrentPath();
+
+        if (enteredPath.compareTo(currentPath) == 0 ||
+                folderButtonsFiltered.size() != folderButtonsGenerator.getFolderButtons().size()) {
+            filterByPrefix("");
+            return;
+        }
 
         if (enteredPath.compareTo(currentPath) == 0 || enteredPath.length() == 0) {
             return;
@@ -169,20 +179,32 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         processNewPath();
     }
 
+    private void changeMainPanelContentPane(JComponent panel) {
+        if (previousPanel == panel) {
+            return;
+        }
+        if (previousPanel != null) {
+            mainPanel.remove(previousPanel);
+        }
+        previousPanel = panel;
+        mainPanel.add(previousPanel);
+    }
+
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
         if (folders != null) {
             imageIcon = null;
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
             foldersPanel.setFolderButtons(folderButtonsFiltered);
-            //TODO Switch to foldersPanel mode;
+            changeMainPanelContentPane(foldersScrollPane);
         }
         else {
             IFolder file = folderManager.getCurrentFolder();
             if (file == null) {
                 return;
             }
-            imageIcon = previewGenerator.getFilePreviewLarge(file);
+            changeMainPanelContentPane(FilePreviewPanelFactory.createFilePreviewPanel(file));
+//            imageIcon = previewGenerator.getFilePreviewLarge(file);
             //TODO Switch to file preview mode;
         }
         notifyOnPathChange();
@@ -192,12 +214,13 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         Vector<FolderButton> folderButtons = folderButtonsGenerator.getFolderButtons();
         if (prefix.isEmpty()) {
             folderButtonsFiltered = folderButtons;
-            return;
         }
-        folderButtonsFiltered = new Vector<>();
-        for (FolderButton folderButton : folderButtons) {
-            if (folderButton.getFolder().getName().startsWith(prefix)) {
-                folderButtonsFiltered.add(folderButton);
+        else {
+            folderButtonsFiltered = new Vector<>();
+            for (FolderButton folderButton : folderButtons) {
+                if (folderButton.getFolder().getName().startsWith(prefix)) {
+                    folderButtonsFiltered.add(folderButton);
+                }
             }
         }
         foldersPanel.setFolderButtons(folderButtonsFiltered);
