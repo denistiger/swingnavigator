@@ -4,6 +4,8 @@ import folder.FolderManager;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
 import ui.file_preview.FilePreviewPanelFactory;
+import ui.folder_button.FolderButton;
+import ui.folder_button.FolderButtonsGenerator;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
