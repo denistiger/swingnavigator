@@ -3,7 +3,7 @@ package ui;
 import folder.FolderManager;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
-import ui.FilePreview.FilePreviewPanelFactory;
+import ui.file_preview.FilePreviewPanelFactory;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Vector;
 
 public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private JPanel mainPanel;
@@ -23,8 +22,7 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private JScrollPane foldersScrollPane;
     private JComponent previousPanel;
 
-    private Vector<FolderButton> folderButtonsFiltered;
-    private ImageIcon imageIcon;
+    private List<FolderButton> folderButtonsFiltered;
     private FolderManager folderManager;
     private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
@@ -37,8 +35,7 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         folderManager = new FolderManager();
         previewGenerator = new FilePreviewGenerator();
         pathListenerList = new LinkedList<>();
-        folderButtonsFiltered = new Vector<>();
-        imageIcon = null;
+        folderButtonsFiltered = new LinkedList<>();
         folderButtonsGenerator = new FolderButtonsGenerator(this);
         folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
 
@@ -171,7 +168,7 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
     public void openPath(String path) {
         if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() == 1) {
-            folderManager.openFolder(folderButtonsFiltered.firstElement().getFolder());
+            folderManager.openFolder(folderButtonsFiltered.get(0).getFolder());
         }
         else {
             folderManager.openPath(path);
@@ -193,9 +190,8 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
         if (folders != null) {
-            imageIcon = null;
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
-            foldersPanel.setFolderButtons(folderButtonsFiltered);
+            setFolderButtons();
             changeMainPanelContentPane(foldersScrollPane);
         }
         else {
@@ -211,19 +207,26 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     }
 
     public void filterByPrefix(String prefix) {
-        Vector<FolderButton> folderButtons = folderButtonsGenerator.getFolderButtons();
+        List<FolderButton> folderButtons = folderButtonsGenerator.getFolderButtons();
         if (prefix.isEmpty()) {
             folderButtonsFiltered = folderButtons;
         }
         else {
-            folderButtonsFiltered = new Vector<>();
+            folderButtonsFiltered = new LinkedList<>();
             for (FolderButton folderButton : folderButtons) {
                 if (folderButton.getFolder().getName().startsWith(prefix)) {
                     folderButtonsFiltered.add(folderButton);
                 }
             }
         }
-        foldersPanel.setFolderButtons(folderButtonsFiltered);
+        setFolderButtons();
+    }
+
+    private void setFolderButtons() {
+        List<JLabel> folderButtons = new LinkedList<>();
+        folderButtons.add(folderButtonsGenerator.getFolderButtonLevelUp());
+        folderButtons.addAll(folderButtonsFiltered);
+        foldersPanel.setFolderButtons(folderButtons);
     }
 
 }

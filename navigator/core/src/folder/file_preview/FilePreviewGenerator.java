@@ -25,6 +25,10 @@ public class FilePreviewGenerator implements IFilePreview {
         return LAZY_PREVIEW.getFilePreview(file);
     }
 
+    public ImageIcon getEmptyFolderPreview() {
+        return FILE_PREVIEW_MAP.get(IFolder.FolderTypes.FOLDER).getFilePreview(null);
+    }
+
     private IFilePreview getFilePreviewGenerator(IFolder file) {
         IFilePreview filePreview = FILE_PREVIEW_MAP.get(file.getType());
         if (filePreview != null) {

@@ -1,4 +1,4 @@
-package ui.FilePreview;
+package ui.file_preview;
 
 import folder.IFolder;
 

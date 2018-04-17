@@ -3,33 +3,41 @@ package ui;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
 
 public class FolderButtonsGenerator {
 
     private LazyIconLoader lazyIconLoader;
-    private Vector<FolderButton> folderButtons;
+    private List<FolderButton> folderButtons;
     private FilePreviewGenerator previewGenerator;
     private IOpenFolderListener iOpenFolderListener;
+    private FolderButtonLevelUp folderButtonLevelUp;
 
     FolderButtonsGenerator(IOpenFolderListener iOpenFolderListener) {
         this.iOpenFolderListener = iOpenFolderListener;
         lazyIconLoader = null;
-        folderButtons = new Vector<>();
+        folderButtons = new LinkedList<>();
         previewGenerator = new FilePreviewGenerator();
+        folderButtonLevelUp = new FolderButtonLevelUp();
+        folderButtonLevelUp.addOpenFolderListener(iOpenFolderListener);
     }
 
-    Vector<FolderButton> getFolderButtons() {
+    List<FolderButton> getFolderButtons() {
         return folderButtons;
     }
 
+    public FolderButtonLevelUp getFolderButtonLevelUp() {
+        return folderButtonLevelUp;
+    }
 
-    Vector<FolderButton> createFolderButtons(List<IFolder> folders) {
-        folderButtons = new Vector<>();
+    List<FolderButton> createFolderButtons(List<IFolder> folders) {
+        folderButtons = new LinkedList<>();
         if (lazyIconLoader != null) {
             lazyIconLoader.stop();
         }
@@ -43,34 +51,7 @@ public class FolderButtonsGenerator {
             else {
                 folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
             }
-            folderButton.addMouseListener(new MouseListener() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    if (e.getClickCount() == 2) {
-                        iOpenFolderListener.openFolder(folderButton.getFolder());
-                    }
-                }
-
-                @Override
-                public void mousePressed(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseReleased(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-
-                }
-            });
+            folderButton.addOpenFolderListener(iOpenFolderListener);
             folderButtons.add(folderButton);
         }
         lazyIconLoader.start();
@@ -78,22 +59,30 @@ public class FolderButtonsGenerator {
         return folderButtons;
     }
 
+    private void setUpFolderButtonDimension(JLabel folderButton, Dimension maxDimension) {
+        folderButton.setMinimumSize(maxDimension);
+        folderButton.setPreferredSize(maxDimension);
+        folderButton.setMaximumSize(maxDimension);
+        folderButton.setAlignmentY(Component.TOP_ALIGNMENT);
+        folderButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+    }
+
+    private void updateMaxDimension(JLabel folderButton, Dimension maxDimension) {
+        maxDimension.width = Math.max( (int)folderButton.getPreferredSize().getWidth(), maxDimension.width);
+        maxDimension.height = Math.max( (int)folderButton.getPreferredSize().getHeight(), maxDimension.height);
+    }
+
     private void setUpFolderButtonDimensions() {
-        int maxWidth = 10, maxHeight = 10;
+        Dimension maxDimension = new Dimension(10, 10);
+
         for (FolderButton folderButton : folderButtons) {
-            if (folderButton.getPreferredSize().getWidth() > maxWidth) {
-                maxWidth = (int)folderButton.getPreferredSize().getWidth();
-            }
-            if (folderButton.getPreferredSize().getHeight() > maxHeight) {
-                maxHeight = (int)folderButton.getPreferredSize().getHeight();
-            }
+            updateMaxDimension(folderButton, maxDimension);
         }
+        updateMaxDimension(folderButtonLevelUp, maxDimension);
+
         for (FolderButton folderButton : folderButtons) {
-            folderButton.setMinimumSize(new Dimension(maxWidth, maxHeight));
-            folderButton.setPreferredSize(new Dimension(maxWidth, maxHeight));
-            folderButton.setMaximumSize(new Dimension(maxWidth, maxHeight));
-            folderButton.setAlignmentY(Component.TOP_ALIGNMENT);
-            folderButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+            setUpFolderButtonDimension(folderButton, maxDimension);
         }
+        setUpFolderButtonDimension(folderButtonLevelUp, maxDimension);
     }
 }

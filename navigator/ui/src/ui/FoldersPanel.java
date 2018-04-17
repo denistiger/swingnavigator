@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Iterator;
-import java.util.Vector;
+import java.util.List;
 
 public class FoldersPanel extends JPanel implements ComponentListener {
 
     private BoxLayout layout;
 
-    private Vector<FolderButton> folderButtonsDisplayed;
+    private List<JLabel> folderButtonsDisplayed;
 
     public FoldersPanel() {
 
@@ -20,7 +20,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
         addComponentListener(this);
     }
 
-    public void setFolderButtons(Vector<FolderButton> folderButtons) {
+    public void setFolderButtons(List<JLabel> folderButtons) {
         this.folderButtonsDisplayed = folderButtons;
         updateData(-1);
     }
@@ -35,29 +35,22 @@ public class FoldersPanel extends JPanel implements ComponentListener {
         if (!folderButtonsDisplayed.isEmpty()) {
             final int rigid_area_width = 5;
             int actualWidth = Math.max(maxPanelWidth, 100);
-            int colsCount = actualWidth / ((int) folderButtonsDisplayed.elementAt(0).getMaximumSize().getWidth() + rigid_area_width);
+            int colsCount = actualWidth /
+                    ((int) folderButtonsDisplayed.get(0).getMaximumSize().getWidth() + rigid_area_width);
 
-            Iterator<FolderButton> folderButtonIterator = folderButtonsDisplayed.iterator();
+            Iterator<JLabel> folderButtonIterator = folderButtonsDisplayed.iterator();
             while (folderButtonIterator.hasNext()) {
                 JPanel linePanel = new JPanel();
                 BoxLayout lineLayout = new BoxLayout(linePanel, BoxLayout.X_AXIS);
                 linePanel.setLayout(lineLayout);
                 for (int j = 0; j < colsCount && folderButtonIterator.hasNext(); ++j) {
-                    FolderButton button = folderButtonIterator.next();
-                    linePanel.add(button);
+                    linePanel.add(folderButtonIterator.next());
                     linePanel.add(Box.createRigidArea(new Dimension(rigid_area_width, 5)));
                 }
                 linePanel.add(Box.createHorizontalGlue());
                 add(linePanel);
-//            add(Box.createRigidArea(new Dimension(5, 5)));
             }
         }
-//        else {
-//            if (imageIcon != null) {
-//                JLabel imageLabel = new JLabel(imageIcon);
-//                add(imageLabel);
-//            }
-//        }
         revalidate();
     }
 

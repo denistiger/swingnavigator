@@ -5,8 +5,7 @@ import folder.file_preview.IFilePreviewListener;
 
 import javax.swing.*;
 
-public class FolderButton extends JLabel implements IFilePreviewListener {
-    private IFolder folder;
+public class FolderButton extends FolderButtonSkeleton implements IFilePreviewListener {
 
     private static int MAX_LINE_LENGTH = 12;
     private static int MAX_LINES = 3;
@@ -31,17 +30,10 @@ public class FolderButton extends JLabel implements IFilePreviewListener {
     }
 
     public FolderButton(IFolder folder, ImageIcon icon) {
-        super(FolderButton.toMultilineHTML(folder.getName()), icon, JLabel.CENTER);
-        setHorizontalTextPosition(JLabel.CENTER);
-        setVerticalTextPosition(JLabel.BOTTOM);
-        setVerticalAlignment(JLabel.TOP);
-        this.folder = folder;
-        setMinimumSize(getPreferredSize());
-        setMaximumSize(getPreferredSize());
-    }
-
-    public IFolder getFolder() {
-        return folder;
+        setText(FolderButton.toMultilineHTML(folder.getName()));
+        setIcon(icon);
+        setButtonAlignment();
+        setFolder(folder);
     }
 
     @Override
