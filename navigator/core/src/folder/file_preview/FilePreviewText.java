@@ -100,7 +100,7 @@ public class FilePreviewText implements IFilePreview {
         return new ImageIcon(img);
     }
     @Override
-    public ImageIcon getFilePreview(IFolder file) {
+    public ImageIcon getFilePreviewSmall(IFolder file) {
         ImageIcon imageIcon = getFileImageIcon(file);
         ImageUtils.resizeImageIconProportional(imageIcon, ICON_WIDTH, ICON_HEIGHT);
         return imageIcon;

@@ -22,11 +22,11 @@ public class FilePreviewGenerator implements IFilePreview {
     }
 
     public ImageIcon getLazyLoadIcon(IFolder file) {
-        return LAZY_PREVIEW.getFilePreview(file);
+        return LAZY_PREVIEW.getFilePreviewSmall(file);
     }
 
     public ImageIcon getEmptyFolderPreview() {
-        return FILE_PREVIEW_MAP.get(IFolder.FolderTypes.FOLDER).getFilePreview(null);
+        return FILE_PREVIEW_MAP.get(IFolder.FolderTypes.FOLDER).getFilePreviewSmall(null);
     }
 
     private IFilePreview getFilePreviewGenerator(IFolder file) {
@@ -38,8 +38,8 @@ public class FilePreviewGenerator implements IFilePreview {
     }
 
     @Override
-    public ImageIcon getFilePreview(IFolder file) {
-        return getFilePreviewGenerator(file).getFilePreview(file);
+    public ImageIcon getFilePreviewSmall(IFolder file) {
+        return getFilePreviewGenerator(file).getFilePreviewSmall(file);
     }
 
     @Override

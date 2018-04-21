@@ -94,8 +94,8 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         String enteredPath = pathText.getText();
         String currentPath = getCurrentPath();
 
-        if (enteredPath.compareTo(currentPath) == 0 ||
-                folderButtonsFiltered.size() != folderButtonsGenerator.getFolderButtons().size()) {
+        if (enteredPath.compareTo(currentPath) == 0 /*||
+                folderButtonsFiltered.size() != folderButtonsGenerator.getFolderButtons().size()*/) {
             filterByPrefix("");
             return;
         }

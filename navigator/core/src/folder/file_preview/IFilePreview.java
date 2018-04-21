@@ -9,6 +9,6 @@ interface IFilePreview {
     int ICON_HEIGHT = 64;
     int LARGE_ICON_WIDTH = 1024;
     int LARGE_ICON_HEIGHT = 1024;
-    ImageIcon getFilePreview(IFolder file);
+    ImageIcon getFilePreviewSmall(IFolder file);
     ImageIcon getFilePreviewLarge(IFolder file);
 }

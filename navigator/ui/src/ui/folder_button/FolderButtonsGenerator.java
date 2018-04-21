@@ -48,7 +48,7 @@ public class FolderButtonsGenerator {
                 lazyIconLoader.addListener(folderButton, folder);
             }
             else {
-                folderButton = new FolderButton(folder, previewGenerator.getFilePreview(folder));
+                folderButton = new FolderButton(folder, previewGenerator.getFilePreviewSmall(folder));
             }
             folderButton.addOpenFolderListener(iOpenFolderListener);
             folderButtons.add(folderButton);

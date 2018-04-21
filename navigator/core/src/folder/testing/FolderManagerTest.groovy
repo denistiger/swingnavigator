@@ -11,9 +11,9 @@ class FolderManagerTest extends GroovyTestCase {
         FolderManager manager = new FolderManager();
         String path = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
         manager.openPath(path);
-        assertEquals("Current path equals open path", path, manager.getFullPath());
+        assertEquals("Current path equals open path", path + "/", manager.getFullPath());
         manager.levelUp();
-        assertEquals("Current path level up equals open path", path.substring(0, path.lastIndexOf("/")),
+        assertEquals("Current path level up equals open path", path.substring(0, path.lastIndexOf("/")) + "/",
                 manager.getFullPath());
         manager.levelUp();
         assertEquals("Current path level up equals open path", "/", manager.getFullPath());
@@ -45,8 +45,24 @@ class FolderManagerTest extends GroovyTestCase {
     void testOpenFolderInZipOnFTP() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://127.0.0.1:2121/folder/folder_in.zip/top2");
-        assertEquals("Opened folder in zip that is placed on FTP.", "ftp://127.0.0.1:2121/folder/folder_in.zip/top2", manager.getFullPath());
+        assertEquals("Opened folder in zip that is placed on FTP.",
+                "ftp://127.0.0.1:2121/folder/folder_in.zip/top2/", manager.getFullPath());
     }
+
+    void testOpenWrongFolderFTP() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://127.0.0.1:2121/folder/fld2");
+        assertEquals("Opened one level up folder that is placed on FTP.",
+                "ftp://127.0.0.1:2121/folder/", manager.getFullPath());
+    }
+
+    void testOpenWrongFolder() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("../../testData/folder/fld2");
+        assertEquals("Opened one level up folder that is placed on local disk.",
+                System.getProperty("user.dir") + "/../../testData/folder/", manager.getFullPath());
+    }
+
 
 
 //    void testOpenZipPath() {
@@ -111,9 +127,9 @@ class FolderManagerTest extends GroovyTestCase {
     void testFTPPathSlash() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://127.0.0.1:2121/");
-        assertEquals("No additional slash should be in path", "ftp://127.0.0.1:2121", manager.getFullPath());
+        assertEquals("No additional slash should be in path", "ftp://127.0.0.1:2121/", manager.getFullPath());
         manager.openPath("ftp://127.0.0.1:2121/folder///top1/");
-        assertEquals("Middle slash in ftp path should be cut off", "ftp://127.0.0.1:2121/folder/top1", manager.getFullPath());
+        assertEquals("Middle slash in ftp path should be cut off", "ftp://127.0.0.1:2121/folder/top1/", manager.getFullPath());
     }
 
     void checkOpenFTPPathWithFolder(FolderManager manager) {
@@ -141,13 +157,13 @@ class FolderManagerTest extends GroovyTestCase {
         assertEquals("Return status for closed port", FolderManager.OpenFolderStatus.FTP_CONNECTION_ERROR, status);
         status = manager.openPath("ftp://127.0.0.1:2121/folder123");
         assertEquals("Return status for wrong folder", FolderManager.OpenFolderStatus.HALF_PATH_OPENED, status);
-        assertEquals("Opened only root ftp folder", "ftp://127.0.0.1:2121", manager.getFullPath());
+        assertEquals("Opened only root ftp folder", "ftp://127.0.0.1:2121/", manager.getFullPath());
         List<IFolder> folders = manager.getFoldersAtPath();
         assertEquals("Folders list for missing folder should be from the first existing level", 2, folders.size());
-        status = manager.openPath("ftp://127.0.0.1:2121/folder");
+        status = manager.openPath("ftp://127.0.0.1:2121/folder/");
         assertEquals("Return status for correct folder", FolderManager.OpenFolderStatus.SUCCESS, status);
 
-        status = manager.openPath("ftp://user:123213@127.0.0.1:2121/folder");
+        status = manager.openPath("ftp://user:123213@127.0.0.1:2121/folder/");
         assertEquals("Return status for wrong credentials", FolderManager.OpenFolderStatus.FTP_CREDENTIALS_NEEDED, status);
     }
 
@@ -160,13 +176,13 @@ class FolderManagerTest extends GroovyTestCase {
     void testFTPLevelUp() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://127.0.0.1:2121/folder/top2/sub2");
-        assertEquals("Start path for ftp.", "ftp://127.0.0.1:2121/folder/top2/sub2", manager.getFullPath());
+        assertEquals("Start path for ftp.", "ftp://127.0.0.1:2121/folder/top2/sub2/", manager.getFullPath());
         manager.levelUp();
-        assertEquals("Level up step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2", manager.getFullPath());
+        assertEquals("Level up step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2/", manager.getFullPath());
         manager.levelUp();
-        assertEquals("Level up step two path for ftp.", "ftp://127.0.0.1:2121/folder", manager.getFullPath());
+        assertEquals("Level up step two path for ftp.", "ftp://127.0.0.1:2121/folder/", manager.getFullPath());
         manager.openFolder("top2");
-        assertEquals("Level down step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2", manager.getFullPath());
+        assertEquals("Level down step one path for ftp.", "ftp://127.0.0.1:2121/folder/top2/", manager.getFullPath());
     }
 
     void testOpenFTPPathMultiple() {

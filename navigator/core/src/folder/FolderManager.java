@@ -32,8 +32,12 @@ public class FolderManager {
         PathUtils curPath = new PathUtils(path);
         LinkedList<String> foldersToOpen = new LinkedList<>();
 
+        OpenFolderStatus status = OpenFolderStatus.ERROR;
         while (curPath.getPath().length() > 0) {
-            OpenFolderStatus status = openPathSimple(curPath.getPath());
+            status = openPathSimple(curPath.getPath());
+            if (status == OpenFolderStatus.FTP_CONNECTION_ERROR || status == OpenFolderStatus.FTP_CREDENTIALS_NEEDED) {
+                return status;
+            }
             if (getFoldersAtPath() != null) {
                 for (String folderName : foldersToOpen) {
                     if (!openFolder(folderName)) {
@@ -45,8 +49,7 @@ public class FolderManager {
             }
             foldersToOpen.addFirst(curPath.pop());
         }
-        return OpenFolderStatus.ERROR;
-
+        return status;
     }
 
     public IFolder getCurrentFolder() {
@@ -138,7 +141,7 @@ public class FolderManager {
 
     public List<IFolder> getFoldersAtPath() {
         if (inDepthFolderStack.empty()) {
-            return new ArrayList<>();
+            return null;
         }
         return inDepthFolderStack.peek().getItems();
     }
@@ -160,7 +163,7 @@ public class FolderManager {
 
         if (!path.endsWith("/") && !path.endsWith("\\")) {
             List<IFolder> subFolders = getFoldersAtPath();
-            if (subFolders != null && !subFolders.isEmpty()) {
+            if (subFolders != null /*&& !subFolders.isEmpty()*/) {
                 path += "/";
             }
         }

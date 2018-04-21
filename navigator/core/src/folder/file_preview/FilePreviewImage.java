@@ -23,7 +23,7 @@ public class FilePreviewImage implements IFilePreview {
     }
 
     @Override
-    public ImageIcon getFilePreview(IFolder file) {
+    public ImageIcon getFilePreviewSmall(IFolder file) {
         ImageIcon imageIcon = readImage(file);
         if (imageIcon != null) {
             ImageUtils.resizeImageIconProportional(imageIcon, ICON_WIDTH, ICON_HEIGHT);

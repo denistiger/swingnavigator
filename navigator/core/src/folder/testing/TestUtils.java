@@ -36,7 +36,7 @@ public class TestUtils {
             fileOutput.write(data);
             fileOutput.close();
         }
-        ImageIcon imageIcon = previewGenerator.getFilePreview(file);
+        ImageIcon imageIcon = previewGenerator.getFilePreviewSmall(file);
         File outputfile = new File(path + ".png");
         try {
             Image image = imageIcon.getImage();

@@ -165,8 +165,6 @@ public class FTPClientWrapper {
         if (ftpPort != DEFAULT_FTP_PORT) {
             addr += ":" + Integer.toString(ftpPort);
         }
-//        addr += "/";
-        System.out.println(addr);
         return addr;
     }
 
