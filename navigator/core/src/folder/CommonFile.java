@@ -6,26 +6,14 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
 
-public class CommonFile implements IFolder {
-
-    private File file;
-
-    @Override
-    public String getAbsolutePath() {
-        return file.getAbsolutePath();
-    }
-
-    @Override
-    public boolean isFileSystemPath() {
-        return true;
-    }
+public class CommonFile extends FileSystemEntity {
 
     public class NotACommonFileException extends Exception {
 
     }
 
-    public CommonFile(File file) throws NotACommonFileException {
-        this.file = file;
+    public CommonFile(File file) throws NotACommonFileException, FileNotFoundException, NullInitializedFolderException {
+        super(file);
         if (!this.file.isFile()) {
             throw new NotACommonFileException();
         }
@@ -39,10 +27,6 @@ public class CommonFile implements IFolder {
     @Override
     public FolderTypes getType() {
         return FileTypeGetter.getFileType(file.getName());
-    }
-
-    public String getName() {
-        return file.getName();
     }
 
     @Override

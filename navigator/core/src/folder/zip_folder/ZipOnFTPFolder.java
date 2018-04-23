@@ -1,9 +1,6 @@
 package folder.zip_folder;
 
-import folder.FTPClientWrapper;
-import folder.FileTypeGetter;
-import folder.IFolder;
-import folder.IFolderFactory;
+import folder.*;
 
 import thirdparty.IOUtils;
 
@@ -15,7 +12,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class ZipOnFTPFolder extends AbstractZipFolder {
+public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath {
 
     FTPClientWrapper ftpClient;
     String ftpPath;
@@ -149,5 +146,10 @@ public class ZipOnFTPFolder extends AbstractZipFolder {
             closeStream();
         }
         return zipEntryData.getData();
+    }
+
+    @Override
+    public void prependDirectoryToPath(String workingDirectory) {
+        ftpPath = workingDirectory + "/" + ftpPath;
     }
 }

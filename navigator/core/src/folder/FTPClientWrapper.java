@@ -152,6 +152,15 @@ public class FTPClientWrapper {
         return true;
     }
 
+    public String getWorkingDirectory() {
+        try {
+            return ftp.printWorkingDirectory();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public String getFTPPath() {
         String addr = "ftp://";
         if (!pass.isEmpty() || login.compareTo(DEFAULT_LOGIN) !=0) {

@@ -1,10 +1,9 @@
 package folder.zip_folder;
 
-import folder.FileTypeGetter;
-import folder.IFolder;
-import folder.IFolderFactory;
+import folder.*;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
@@ -12,7 +11,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
-public class ZipFileFolder extends AbstractZipFolder {
+public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 
     private ZipFile zipFile;
     private File file;
@@ -59,6 +58,20 @@ public class ZipFileFolder extends AbstractZipFolder {
             InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(zipEntryData.getInZipPath()));
             return inputStream;
         } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public IFolder levelUp() {
+        try {
+            return new LocalFolder(file.getParentFile());
+        } catch (FileSystemEntity.NotALocalFolderException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (FileSystemEntity.NullInitializedFolderException e) {
             e.printStackTrace();
         }
         return null;

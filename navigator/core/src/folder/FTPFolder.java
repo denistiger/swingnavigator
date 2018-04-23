@@ -8,13 +8,14 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FTPFolder implements IFolder, ILevelUp {
+public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
 
-    FTPClientWrapper ftp;
-    String localFTPPath;
-    FolderTypes type;
-    String name;
-    List<IFolder> items = null;
+    private FTPClientWrapper ftp;
+    private String localFTPPath;
+    private FolderTypes type;
+    private String name = null;
+    private List<IFolder> items = null;
+    private FTPFolder parent = null;
 
     public FTPFolder(String ftpPath) {
         localFTPPath = "";
@@ -35,12 +36,25 @@ public class FTPFolder implements IFolder, ILevelUp {
         ftp = new FTPClientWrapper(ftpPath, ftpPort);
     }
 
-    public FTPFolder(FTPClientWrapper client, String prefix, FolderTypes type, String name) {
+    public FTPFolder(FTPFolder parent, FTPClientWrapper client, String prefix, FolderTypes type, String name) {
         ftp = client;
         localFTPPath = prefix;
         stripLocalFTPPath();
         this.type = type;
         this.name = name;
+        this.parent = parent;
+    }
+
+    @Override
+    public void prependDirectoryToPath(String workingDirectory) {
+        localFTPPath = workingDirectory + "/" + localFTPPath;
+        if (items != null) {
+            for (IFolder folder : items) {
+                if (folder instanceof IPrependFTPPath) {
+                    ((IPrependFTPPath) folder).prependDirectoryToPath(workingDirectory);
+                }
+            }
+        }
     }
 
     private void stripLocalFTPPath() {
@@ -91,13 +105,13 @@ public class FTPFolder implements IFolder, ILevelUp {
 //            }
             for (FTPFile file : files) {
                 if (file.isDirectory()) {
-                    items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
+                    items.add(new FTPFolder(this, ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                             FolderTypes.FOLDER, file.getName()));
                 }else if (FileTypeGetter.getFileType(file.getName()) == FolderTypes.ZIP) {
                     items.add(new ZipOnFTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                             file.getName()));
                 }else {
-                    items.add(new FTPFolder(ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
+                    items.add(new FTPFolder(this, ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
                             FileTypeGetter.getFileType(file.getName()), file.getName()));
                 }
             }
@@ -116,6 +130,15 @@ public class FTPFolder implements IFolder, ILevelUp {
 
     @Override
     public String getName() {
+        if (name != null) {
+            return name;
+        }
+        if (!localFTPPath.isEmpty()) {
+            name = new PathUtils(localFTPPath).pop();
+        }
+        else {
+            name = ftp.getWorkingDirectory();
+        }
         return name;
     }
 
@@ -144,14 +167,23 @@ public class FTPFolder implements IFolder, ILevelUp {
     }
 
     @Override
-    public boolean levelUp() {
-        dropCache();
-        if (localFTPPath.isEmpty()) {
-            return ftp.levelUp();
+    public IFolder levelUp() {
+
+        if (parent != null) {
+            return parent;
         }
-        PathUtils pathUtils = new PathUtils(localFTPPath);
-        pathUtils.pop();
-        localFTPPath = pathUtils.getPath();
-        return true;
+
+        if (!localFTPPath.isEmpty()) {
+            PathUtils pathUtils = new PathUtils(localFTPPath);
+            pathUtils.pop();
+            String newLocalFTPPath = pathUtils.getPath();
+            return new FTPFolder(null, ftp, newLocalFTPPath, FolderTypes.FOLDER, null);
+        }
+
+        if (!ftp.levelUp()) {
+            return null;
+        }
+        prependDirectoryToPath(getName());
+        return new FTPFolder(null, ftp, "", FolderTypes.FOLDER, null);
     }
 }

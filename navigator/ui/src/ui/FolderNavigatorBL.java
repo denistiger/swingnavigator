@@ -3,7 +3,9 @@ package ui;
 import folder.FolderManager;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
+import ui.file_preview.FilePreviewPanel;
 import ui.file_preview.FilePreviewPanelFactory;
+import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
 import ui.folder_button.FolderButtonsGenerator;
 
@@ -22,20 +24,20 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private JTextField pathText;
     private FoldersPanel foldersPanel;
     private JScrollPane foldersScrollPane;
-    private JComponent previousPanel;
+    private GenericPreviewPanel previewPanel;
 
     private List<FolderButton> folderButtonsFiltered;
     private FolderManager folderManager;
-    private FilePreviewGenerator previewGenerator;
     private List<PathListener> pathListenerList;
     private FolderButtonsGenerator folderButtonsGenerator;
 
+    final static String FOLDERS_PANEL = "Folders grid panel";
+    final static String PREVIEW_PANEL = "Files preview widget";
 
     public FolderNavigatorBL(JPanel mainPanel, JTextField pathText) {
         this.mainPanel = mainPanel;
 
         folderManager = new FolderManager();
-        previewGenerator = new FilePreviewGenerator();
         pathListenerList = new LinkedList<>();
         folderButtonsFiltered = new LinkedList<>();
         folderButtonsGenerator = new FolderButtonsGenerator(this);
@@ -70,8 +72,9 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         pathText.getDocument().addDocumentListener(documentListener);
 
 
-        BorderLayout borderLayout = new BorderLayout();
-        mainPanel.setLayout(borderLayout);
+//        BorderLayout borderLayout = new BorderLayout();
+//        mainPanel.setLayout(borderLayout);
+
 
         JPanel stretchPanel = new JPanelScrollableFolders(foldersPanel);
 
@@ -80,7 +83,12 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
         foldersScrollPane.setPreferredSize(new Dimension(800, 600));
 
-        previousPanel = null;
+        previewPanel = new GenericPreviewPanel();
+
+        mainPanel.setLayout(new CardLayout());
+        mainPanel.add(foldersScrollPane, FOLDERS_PANEL);
+        mainPanel.add(previewPanel, PREVIEW_PANEL);
+
 //        changeMainPanelContentPane(foldersScrollPane);
 
         processNewPath();
@@ -178,15 +186,20 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         processNewPath();
     }
 
-    private void changeMainPanelContentPane(JComponent panel) {
-        if (previousPanel == panel) {
-            return;
-        }
-        if (previousPanel != null) {
-            mainPanel.remove(previousPanel);
-        }
-        previousPanel = panel;
-        mainPanel.add(previousPanel);
+    private void changeMainPanelContentPane(String mainPanelItem) {
+        CardLayout cardLayout = (CardLayout)(mainPanel.getLayout());
+        cardLayout.show(mainPanel, mainPanelItem);
+
+//        if (previousPanel == panel) {
+//            return;
+//        }
+//        if (previousPanel != null) {
+//            mainPanel.remove(previousPanel);
+//        }
+//        previousPanel = panel;
+//        mainPanel.add(previousPanel);
+//        previousPanel.repaint();
+//        mainPanel.invalidate();
     }
 
     private void processNewPath() {
@@ -194,14 +207,15 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         if (folders != null) {
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
             setFolderButtons();
-            changeMainPanelContentPane(foldersScrollPane);
+            changeMainPanelContentPane(FOLDERS_PANEL);
         }
         else {
             IFolder file = folderManager.getCurrentFolder();
             if (file == null) {
                 return;
             }
-            changeMainPanelContentPane(FilePreviewPanelFactory.createFilePreviewPanel(file));
+            previewPanel.openFileInFolder(file, folderManager.getParent());
+            changeMainPanelContentPane(PREVIEW_PANEL);
 //            imageIcon = previewGenerator.getFilePreviewLarge(file);
             //TODO Switch to file preview mode;
         }

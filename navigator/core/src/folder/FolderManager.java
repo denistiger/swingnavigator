@@ -21,10 +21,10 @@ public class FolderManager {
         ftpToFolderStatus.put(FTPClientWrapper.FTPStatus.ERROR, OpenFolderStatus.FTP_CONNECTION_ERROR);
     }
 
-    private Stack<IFolder> inDepthFolderStack;
+    private Deque<IFolder> inDepthFolderStack;
 
     public FolderManager() {
-        inDepthFolderStack = new Stack<>();
+        inDepthFolderStack = new LinkedList<>();
     }
 
     public OpenFolderStatus openPath(String path) {
@@ -82,7 +82,7 @@ public class FolderManager {
                     return status;
                 }
             }
-            inDepthFolderStack.push(folder);
+            inDepthFolderStack.addLast(folder);
             return OpenFolderStatus.SUCCESS;
         } catch (CommonFile.NotACommonFileException e) {
             return OpenFolderStatus.FTP_CONNECTION_ERROR;
@@ -94,7 +94,7 @@ public class FolderManager {
 
     private void cleanStack() {
         IFolder folder = null;
-        while (!inDepthFolderStack.empty()) {
+        while (!inDepthFolderStack.isEmpty()) {
             folder = inDepthFolderStack.pop();
         }
         if (folder != null && folder.getClass() == FTPFolder.class) {
@@ -103,8 +103,8 @@ public class FolderManager {
     }
 
     public void openFolder(IFolder folder) {
-        if (inDepthFolderStack.empty() || folder != inDepthFolderStack.peek()) {
-            inDepthFolderStack.push(folder);
+        if (inDepthFolderStack.isEmpty() || folder != inDepthFolderStack.getLast()) {
+            inDepthFolderStack.addLast(folder);
         }
     }
 
@@ -122,28 +122,55 @@ public class FolderManager {
         return false;
     }
 
+    public IFolder getParent() {
+        if (inDepthFolderStack.size() == 0) {
+            return null;
+        }
+        if (inDepthFolderStack.size() > 1) {
+            Iterator<IFolder> iterator = inDepthFolderStack.descendingIterator();
+            iterator.next();
+            return iterator.next();
+        }
+
+        IFolder folder = inDepthFolderStack.getFirst();
+        if (folder instanceof ILevelUp) {
+            IFolder levelUpFolder = ((ILevelUp) folder).levelUp();
+            if (levelUpFolder == null) {
+                return null;
+            }
+            // Some optimization - do not find parent multiple times.
+            inDepthFolderStack.addFirst(levelUpFolder);
+            return levelUpFolder;
+        }
+        return null;
+    }
+
     public OpenFolderStatus levelUp() {
         if (inDepthFolderStack.size() == 0) {
             return OpenFolderStatus.ERROR;
         }
         if (inDepthFolderStack.size() == 1) {
-            IFolder folder = inDepthFolderStack.peek();
+            IFolder folder = inDepthFolderStack.getLast();
             if (folder instanceof ILevelUp) {
-                return ((ILevelUp) folder).levelUp() ? OpenFolderStatus.SUCCESS : OpenFolderStatus.ERROR;
+                IFolder levelUpFolder = ((ILevelUp) folder).levelUp();
+                if (levelUpFolder == null) {
+                    return OpenFolderStatus.ERROR;
+                }
+                inDepthFolderStack.removeLast();
+                inDepthFolderStack.addLast(levelUpFolder);
+                return OpenFolderStatus.SUCCESS;
             }
-            String absolutePath = folder.getAbsolutePath();
-            File file = new File(absolutePath);
-            return openPath(file.getParent());
+            return OpenFolderStatus.ERROR;
         }
-        inDepthFolderStack.pop();
+        inDepthFolderStack.removeLast();
         return OpenFolderStatus.SUCCESS;
     }
 
     public List<IFolder> getFoldersAtPath() {
-        if (inDepthFolderStack.empty()) {
+        if (inDepthFolderStack.isEmpty()) {
             return null;
         }
-        return inDepthFolderStack.peek().getItems();
+        return inDepthFolderStack.getLast().getItems();
     }
 
     public String getFullPath() {
