@@ -244,7 +244,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     private void setFolderButtons() {
-        List<JLabel> folderButtons = new LinkedList<>();
+        List<FolderButtonSkeleton> folderButtons = new LinkedList<>();
         folderButtons.add(folderButtonsGenerator.getFolderButtonLevelUp());
         folderButtons.addAll(folderButtonsFiltered);
         foldersPanel.setFolderButtons(folderButtons);
