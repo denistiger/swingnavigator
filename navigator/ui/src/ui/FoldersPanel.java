@@ -1,5 +1,7 @@
 package ui;
 
+import ui.folder_button.FolderButtonSkeleton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -10,7 +12,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
 
     private BoxLayout layout;
 
-    private List<JLabel> folderButtonsDisplayed;
+    private List<FolderButtonSkeleton> folderButtonsDisplayed;
 
     public FoldersPanel() {
 
@@ -20,7 +22,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
         addComponentListener(this);
     }
 
-    public void setFolderButtons(List<JLabel> folderButtons) {
+    public void setFolderButtons(List<FolderButtonSkeleton> folderButtons) {
         this.folderButtonsDisplayed = folderButtons;
         updateData(-1);
     }
@@ -38,7 +40,7 @@ public class FoldersPanel extends JPanel implements ComponentListener {
             int colsCount = actualWidth /
                     ((int) folderButtonsDisplayed.get(0).getMaximumSize().getWidth() + rigid_area_width);
 
-            Iterator<JLabel> folderButtonIterator = folderButtonsDisplayed.iterator();
+            Iterator<FolderButtonSkeleton> folderButtonIterator = folderButtonsDisplayed.iterator();
             while (folderButtonIterator.hasNext()) {
                 JPanel linePanel = new JPanel();
                 BoxLayout lineLayout = new BoxLayout(linePanel, BoxLayout.X_AXIS);

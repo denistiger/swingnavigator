@@ -4,10 +4,7 @@ import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
 public class FolderNavigatorUI extends JFrame {
 
@@ -43,6 +40,8 @@ public class FolderNavigatorUI extends JFrame {
         pathText = new JTextField();
         pathText.setFont(font);
 
+
+
 //        KeyListener keyListener = new KeyListener() {
 //            public void keyPressed(KeyEvent keyEvent) {
 //            }
@@ -74,7 +73,33 @@ public class FolderNavigatorUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("Folder Navigator");
 
-        getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
+        JPanel basePanel = new JPanel();
+        basePanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
+
+//        basePanel.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK),
+//                );
+
+        basePanel.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
+                .put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK), "gotKey");
+
+        AbstractAction gotKey = new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Got key!");
+            }
+        };
+
+        basePanel.getActionMap().put("gotKey", gotKey);
+
+        Action doNothing = new AbstractAction() {
+            public void actionPerformed(ActionEvent e) {
+                //do nothing
+            }
+        };
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK), "doNothing");
+        pathText.getActionMap().put("doNothing", doNothing);
+
+        basePanel.getInputMap().put(KeyStroke.getKeyStroke("Space"), "gotKey");
 
         JPanel upPanel = new JPanel();
         upPanel.setLayout(new BoxLayout(upPanel, BoxLayout.X_AXIS));
@@ -85,10 +110,12 @@ public class FolderNavigatorUI extends JFrame {
         pathText.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
         levelUpButton.setMaximumSize(new Dimension(150, 50));
 
-        add(upPanel);
+        basePanel.add(upPanel);
 
         JPanel mainPanel = new JPanel();
-        add(mainPanel);
+        basePanel.add(mainPanel);
+
+        add(basePanel);
 
         folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText);
 

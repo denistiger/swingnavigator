@@ -6,10 +6,8 @@ import folder.file_preview.FilePreviewGenerator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
+import java.awt.im.spi.InputMethod;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -118,6 +116,26 @@ public class GenericPreviewPanel extends FilePreviewPanel {
 
         setLayout(borderLayout);
         add(topPanelWithSpace, BorderLayout.PAGE_START);
+
+
+        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+                .addKeyEventDispatcher(new KeyEventDispatcher() {
+
+                    private long when = 0;
+                    @Override
+                    public boolean dispatchKeyEvent(KeyEvent e) {
+                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - when) > 150) {
+                            when = e.getWhen();
+                            folderIterator.next();
+                        }
+                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - when) > 150) {
+                            when = e.getWhen();
+                            folderIterator.prev();
+                        }
+                        return false;
+                    }
+                });
+
     }
 
     public void updatePreviewFile() {

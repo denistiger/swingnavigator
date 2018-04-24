@@ -3,6 +3,7 @@ package ui;
 import folder.*;
 import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
+import ui.folder_button.FolderButtonSkeleton;
 import ui.folder_button.FolderButtonsGenerator;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -89,6 +91,21 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 //        changeMainPanelContentPane(foldersScrollPane);
 
         processNewPath();
+
+        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+                .addKeyEventDispatcher(new KeyEventDispatcher() {
+
+                    private long when = 0;
+                    @Override
+                    public boolean dispatchKeyEvent(KeyEvent e) {
+                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_BACK_SPACE && (e.getWhen() - when) > 500) {
+                            when = e.getWhen();
+                            levelUp();
+                        }
+                        return false;
+                    }
+                });
+
     }
 
     private void setNewAddress() {
@@ -150,6 +167,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     public void openFolder(IFolder folder) {
         folderManager.openFolder(folder);
         processNewPath();
+    }
+
+    @Override
+    public void selectFolder(FolderButtonSkeleton folderButton) {
+
     }
 
     private void notifyOnPathChange() {

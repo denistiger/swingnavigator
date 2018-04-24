@@ -28,9 +28,18 @@ public class FilePreviewText implements IFilePreview {
         byte[] data = new byte[step * (linesCount + 5)];
         try {
             int readBytes = inputStream.read(data);
+            if (readBytes <= 0) {
+                return new String[0];
+            }
             data = Arrays.copyOf(data, readBytes);
             inputStream.close();
         } catch (IOException e) {
+            System.err.println("Bad file name " + file.getName());
+            e.printStackTrace();
+            return new String[0];
+        }
+        catch (NegativeArraySizeException e) {
+            System.err.println("Bad file name " + file.getName());
             e.printStackTrace();
             return new String[0];
         }
