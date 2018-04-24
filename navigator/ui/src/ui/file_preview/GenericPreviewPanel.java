@@ -59,14 +59,51 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         curLabel = new JLabel();
         nextLabel = new JLabel();
 
+        Font font = new Font("Arial", Font.BOLD, 16);
+        prevLabel.setFont(font);
+        curLabel.setFont(font);
+        nextLabel.setFont(font);
+
+        prevLabel.setHorizontalTextPosition(JLabel.RIGHT);
+        curLabel.setHorizontalTextPosition(JLabel.CENTER);
+        nextLabel.setHorizontalTextPosition(JLabel.LEFT);
+
+        prevLabel.setVerticalTextPosition(JLabel.CENTER);
+        curLabel.setVerticalTextPosition(JLabel.CENTER);
+        nextLabel.setVerticalTextPosition(JLabel.CENTER);
+
+        prevLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+        curLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        nextLabel.setHorizontalAlignment(SwingConstants.LEFT);
+
+        prevLabel.setVerticalAlignment(SwingConstants.CENTER);
+        curLabel.setVerticalAlignment(SwingConstants.CENTER);
+        nextLabel.setVerticalAlignment(SwingConstants.CENTER);
+
+
+        JPanel prevNextPanel = new JPanel();
+        GridLayout prevNextPanelGrid = new GridLayout(1, 2);
+        prevNextPanel.setLayout(prevNextPanelGrid);
+        prevButton.setHorizontalAlignment(SwingConstants.CENTER);
+        nextButton.setHorizontalAlignment(SwingConstants.CENTER);
+
+        prevNextPanel.add(prevButton);
+        prevNextPanel.add(nextButton);
+
+        JPanel topMiddlePanel = new JPanel();
+        BoxLayout boxLayout = new BoxLayout(topMiddlePanel, BoxLayout.Y_AXIS);
+        topMiddlePanel.setLayout(boxLayout);
+        topMiddlePanel.add(curLabel);
+        topMiddlePanel.add(Box.createVerticalStrut(8));
+        topMiddlePanel.add(prevNextPanel);
+
         JPanel topPanel = new JPanel();
-        FlowLayout flowLayout = new FlowLayout();
-        topPanel.setLayout(flowLayout);
+        GridLayout gridLayout = new GridLayout(1, 3);
+        gridLayout.setHgap(15);
+        topPanel.setLayout(gridLayout);
 
         topPanel.add(prevLabel);
-        topPanel.add(prevButton);
-        topPanel.add(curLabel);
-        topPanel.add(nextButton);
+        topPanel.add(topMiddlePanel);
         topPanel.add(nextLabel);
 
         BorderLayout borderLayout = new BorderLayout();
