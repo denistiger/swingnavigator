@@ -1,9 +1,14 @@
 package ui.file_preview;
 
 import folder.IFolder;
-import ui.FolderIterator;
+import folder.FolderIterator;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,10 +29,50 @@ public class GenericPreviewPanel extends FilePreviewPanel {
     private FolderIterator folderIterator;
     private FilePreviewPanel currentPreview = null;
 
+    private JButton prevButton, nextButton;
+    private JLabel prevLabel, curLabel, nextLabel;
+
     public GenericPreviewPanel(FolderIterator folderIterator) {
         this.folderIterator = folderIterator;
+
+        nextButton = new JButton("Next >");
+        prevButton = new JButton("< Prev");
+
+        nextButton.setEnabled(false);
+        prevButton.setEnabled(false);
+
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                folderIterator.next();
+            }
+        });
+
+        prevButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                folderIterator.prev();
+            }
+        });
+
+        prevLabel = new JLabel();
+        curLabel = new JLabel();
+        nextLabel = new JLabel();
+
+        JPanel topPanel = new JPanel();
+        FlowLayout flowLayout = new FlowLayout();
+        topPanel.setLayout(flowLayout);
+
+        topPanel.add(prevLabel);
+        topPanel.add(prevButton);
+        topPanel.add(curLabel);
+        topPanel.add(nextButton);
+        topPanel.add(nextLabel);
+
         BorderLayout borderLayout = new BorderLayout();
+
         setLayout(borderLayout);
+        add(topPanel, BorderLayout.PAGE_START);
     }
 
     public void updatePreviewFile() {
@@ -41,6 +86,27 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         }
     }
 
+    private void updateTopPanel() {
+        curLabel.setText(folderIterator.getIFolder().getName());
+        if (folderIterator.hasNext()) {
+            nextLabel.setText(folderIterator.getNext().getName());
+            nextButton.setEnabled(true);
+        }
+        else {
+            nextLabel.setText("End of folder");
+            nextButton.setEnabled(false);
+        }
+
+        if (folderIterator.hasPrev()) {
+            prevLabel.setText(folderIterator.getPrev().getName());
+            prevButton.setEnabled(true);
+        }
+        else {
+            prevLabel.setText("Start of folder");
+            prevButton.setEnabled(false);
+        }
+    }
+
     @Override
     public void setPreviewFile(IFolder previewFile) throws PreviewException {
         if (currentPreview != null) {
@@ -50,7 +116,9 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         if (currentPreview == null) {
             currentPreview = unknownFilePreview;
         }
-        add(currentPreview, BorderLayout.CENTER);
+        updateTopPanel();
         currentPreview.setPreviewFile(previewFile);
+        add(currentPreview, BorderLayout.CENTER);
+        repaint();
     }
 }

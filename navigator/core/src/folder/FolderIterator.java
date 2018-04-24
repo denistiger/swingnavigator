@@ -1,7 +1,4 @@
-package ui;
-
-import folder.FolderManager;
-import folder.IFolder;
+package folder;
 
 import java.util.List;
 import java.util.Vector;
@@ -34,13 +31,22 @@ public class FolderIterator implements IFolderIterator{
     }
 
     private void resetFoldersIfNeeded() {
+        if (getFolderManagerFile().getType() == IFolder.FolderTypes.FOLDER
+                || getFolderManagerFile().getType() == IFolder.FolderTypes.ZIP) {
+            // Do not process folders in iterator
+            return;
+        }
         if (currentFolder != getFolderManagerFolder()
                 || currentFile != getFolderManagerFile()) {
             currentFolder = getFolderManagerFolder();
             currentFile = getFolderManagerFile();
             List<IFolder> folderList = getFolderFilesArray();
-            folderFilesArray = new Vector<>(folderList.size());
-            folderFilesArray.addAll(folderList);
+            folderFilesArray = new Vector<>();
+            for (IFolder folder : folderList) {
+                if (folder.getType() != IFolder.FolderTypes.FOLDER && folder.getType() != IFolder.FolderTypes.ZIP) {
+                    folderFilesArray.add(folder);
+                }
+            }
             folderFilesIdx = 0;
             for (IFolder folder : folderFilesArray) {
                 if (folder.getName().compareTo(currentFile.getName()) == 0) {
@@ -50,9 +56,9 @@ public class FolderIterator implements IFolderIterator{
             }
             if (folderFilesIdx >= folderFilesArray.size()) {
                 try {
-                    throw new Exception("Folder iterator cache is corrupted");
+                    throw new Exception("Cache is corrupted");
                 } catch (Exception e) {
-                    e.printStackTrace();
+//                    e.printStackTrace();
                 }
             }
         }
@@ -96,6 +102,22 @@ public class FolderIterator implements IFolderIterator{
             folderFilesIdx--;
             openAtCurrentIndex();
         }
+    }
+
+    @Override
+    public IFolder getNext() {
+        if (!hasNext()) {
+            return null;
+        }
+        return folderFilesArray.get(folderFilesIdx + 1);
+    }
+
+    @Override
+    public IFolder getPrev() {
+        if (!hasPrev()) {
+            return null;
+        }
+        return folderFilesArray.get(folderFilesIdx - 1);
     }
 
     @Override

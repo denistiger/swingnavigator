@@ -1,8 +1,9 @@
 package ui;
 
+import folder.FolderIterator;
 import folder.FolderManager;
 import folder.IFolder;
-import ui.file_preview.FilePreviewPanel;
+import folder.IPathChangedListener;
 import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
 import ui.folder_button.FolderButtonsGenerator;
