@@ -1,4 +1,7 @@
-package folder;
+package folder.factory;
+
+import folder.IFolder;
+import folder.ftp_folder.FTPFolder;
 
 import java.io.File;
 import java.net.MalformedURLException;

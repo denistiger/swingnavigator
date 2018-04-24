@@ -1,4 +1,4 @@
-package folder;
+package folder.ftp_folder;
 
 import org.apache.commons.net.ftp.*;
 

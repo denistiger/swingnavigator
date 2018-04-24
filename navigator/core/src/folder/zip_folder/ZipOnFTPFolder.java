@@ -2,6 +2,9 @@ package folder.zip_folder;
 
 import folder.*;
 
+import folder.factory.IFolderFactory;
+import folder.ftp_folder.FTPClientWrapper;
+import folder.ftp_folder.IPrependFTPPath;
 import thirdparty.IOUtils;
 
 import java.io.IOException;

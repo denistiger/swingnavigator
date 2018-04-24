@@ -2,9 +2,7 @@ package ui;
 
 import folder.FolderManager;
 import folder.IFolder;
-import folder.file_preview.FilePreviewGenerator;
 import ui.file_preview.FilePreviewPanel;
-import ui.file_preview.FilePreviewPanelFactory;
 import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
 import ui.folder_button.FolderButtonsGenerator;
@@ -214,7 +212,12 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
             if (file == null) {
                 return;
             }
-            previewPanel.openFileInFolder(file, folderManager.getParent());
+            previewPanel.setParentFolder(folderManager.getParent());
+            try {
+                previewPanel.setPreviewFile(file);
+            } catch (FilePreviewPanel.PreviewException e) {
+                e.printStackTrace();
+            }
             changeMainPanelContentPane(PREVIEW_PANEL);
 //            imageIcon = previewGenerator.getFilePreviewLarge(file);
             //TODO Switch to file preview mode;

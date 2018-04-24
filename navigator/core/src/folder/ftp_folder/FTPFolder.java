@@ -1,5 +1,9 @@
-package folder;
+package folder.ftp_folder;
 
+import folder.FileTypeGetter;
+import folder.IFolder;
+import folder.ILevelUp;
+import folder.PathUtils;
 import org.apache.commons.net.ftp.*;
 import folder.zip_folder.ZipOnFTPFolder;
 

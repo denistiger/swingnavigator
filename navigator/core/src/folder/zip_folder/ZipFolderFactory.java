@@ -1,7 +1,7 @@
 package folder.zip_folder;
 
 import folder.IFolder;
-import folder.IFolderFactory;
+import folder.factory.IFolderFactory;
 import thirdparty.IOUtils;
 
 import java.io.InputStream;

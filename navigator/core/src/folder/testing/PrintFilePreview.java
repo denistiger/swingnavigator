@@ -1,8 +1,8 @@
 package folder.testing;
 
-import folder.FolderFactory;
+import folder.factory.FolderFactory;
 import folder.IFolder;
-import folder.IFolderFactory;
+import folder.factory.IFolderFactory;
 
 import java.io.File;
 import java.util.HashMap;

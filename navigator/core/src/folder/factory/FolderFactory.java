@@ -1,5 +1,9 @@
-package folder;
+package folder.factory;
 
+import folder.CommonFile;
+import folder.FileTypeGetter;
+import folder.IFolder;
+import folder.LocalFolder;
 import folder.zip_folder.ZipFileFolder;
 
 import java.io.File;

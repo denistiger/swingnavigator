@@ -2,7 +2,7 @@ package folder.zip_folder;
 
 import folder.FileTypeGetter;
 import folder.IFolder;
-import folder.IFolderFactory;
+import folder.factory.IFolderFactory;
 
 import java.util.*;
 

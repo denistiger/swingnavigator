@@ -1,6 +1,7 @@
 package folder.zip_folder;
 
 import folder.*;
+import folder.factory.IFolderFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,7 +10,6 @@ import java.io.InputStream;
 import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-import java.util.zip.ZipInputStream;
 
 public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 

@@ -1,7 +1,7 @@
 package folder.zip_folder;
 
 import folder.FileTypeGetter;
-import folder.IFolderFactory;
+import folder.factory.IFolderFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

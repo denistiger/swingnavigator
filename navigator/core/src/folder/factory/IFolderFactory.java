@@ -1,4 +1,6 @@
-package folder;
+package folder.factory;
+
+import folder.IFolder;
 
 import java.util.Map;
 

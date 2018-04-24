@@ -3,7 +3,12 @@ package ui.file_preview;
 import folder.IFolder;
 
 public class UnknownFilePreviewPanel extends FilePreviewPanel {
-    public UnknownFilePreviewPanel(IFolder folder) {
-        super();
+    public UnknownFilePreviewPanel() {
+
+    }
+
+    @Override
+    public void setPreviewFile(IFolder previewFile) {
+
     }
 }

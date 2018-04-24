@@ -1,5 +1,7 @@
 package folder;
 
+import folder.factory.FolderFactory;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;

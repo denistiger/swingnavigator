@@ -1,8 +1,8 @@
 package folder.zip_folder;
 
-import folder.FTPClientWrapper;
+import folder.ftp_folder.FTPClientWrapper;
 import folder.IFolder;
-import folder.IFolderFactory;
+import folder.factory.IFolderFactory;
 
 import java.util.List;
 import java.util.Map;

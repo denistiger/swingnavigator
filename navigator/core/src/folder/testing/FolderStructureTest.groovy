@@ -1,9 +1,9 @@
 package folder.testing
 
-import folder.FTPFolder
-import folder.FolderFactory
+import folder.ftp_folder.FTPFolder
+import folder.factory.FolderFactory
 import folder.IFolder
-import folder.IFolderFactory
+import folder.factory.IFolderFactory
 
 class FolderStructureTest extends groovy.util.GroovyTestCase {
     void setUp() {

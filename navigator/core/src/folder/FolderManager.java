@@ -1,6 +1,10 @@
 package folder;
 
-import java.io.File;
+import folder.factory.IFolderFactory;
+import folder.factory.UniversalFolderFactory;
+import folder.ftp_folder.FTPClientWrapper;
+import folder.ftp_folder.FTPFolder;
+
 import java.util.*;
 
 public class FolderManager {
