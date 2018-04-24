@@ -43,7 +43,7 @@ public class FolderIterator implements IFolderIterator{
             folderFilesArray.addAll(folderList);
             folderFilesIdx = 0;
             for (IFolder folder : folderFilesArray) {
-                if (folder.getAbsolutePath().compareTo(currentFile.getAbsolutePath()) == 0) {
+                if (folder.getName().compareTo(currentFile.getName()) == 0) {
                     break;
                 }
                 folderFilesIdx++;

@@ -3,6 +3,7 @@ package ui.file_preview;
 import folder.IFolder;
 import ui.FolderIterator;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,11 +11,7 @@ public class GenericPreviewPanel extends FilePreviewPanel {
 
     private static FilePreviewPanel unknownFilePreview = new UnknownFilePreviewPanel();
     private static Map<IFolder.FolderTypes, FilePreviewPanel> previewPanelMap;
-    private FolderIterator folderIterator;
-    private FilePreviewPanel currentPreview = null;
-
-    public GenericPreviewPanel(FolderIterator folderIterator) {
-        this.folderIterator = folderIterator;
+    static {
         previewPanelMap = new HashMap<>();
         previewPanelMap.put(IFolder.FolderTypes.IMAGE, new ImagePreviewPanel());
         previewPanelMap.put(IFolder.FolderTypes.TEXT_FILE, new TextFilePreviewPanel());
@@ -22,6 +19,15 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         previewPanelMap.put(IFolder.FolderTypes.FOLDER, unknownFilePreview);
         previewPanelMap.put(IFolder.FolderTypes.ZIP, unknownFilePreview);
         previewPanelMap.put(IFolder.FolderTypes.UNKNOWN, unknownFilePreview);
+    }
+
+    private FolderIterator folderIterator;
+    private FilePreviewPanel currentPreview = null;
+
+    public GenericPreviewPanel(FolderIterator folderIterator) {
+        this.folderIterator = folderIterator;
+        BorderLayout borderLayout = new BorderLayout();
+        setLayout(borderLayout);
     }
 
     public void updatePreviewFile() {
@@ -44,7 +50,7 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         if (currentPreview == null) {
             currentPreview = unknownFilePreview;
         }
+        add(currentPreview, BorderLayout.CENTER);
         currentPreview.setPreviewFile(previewFile);
-        add(currentPreview);
     }
 }

@@ -41,7 +41,10 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 
     @Override
     public String getAbsolutePath() {
-        return file.getAbsolutePath();
+        if (file != null) {
+            return file.getAbsolutePath();
+        }
+        return "Get absolute path is not implemented for files inside Zip archive";
     }
 
     @Override

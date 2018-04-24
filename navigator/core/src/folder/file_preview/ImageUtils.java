@@ -17,10 +17,19 @@ public class ImageUtils {
         imageIcon.setImage(resizedImg);
     }
 
+    public static double getImageScaleRatio(ImageIcon imageIcon, int width, int height) {
+        return getImageScaleRatio(imageIcon.getIconWidth(), imageIcon.getIconHeight(), width, height);
+    }
+
+    public static double getImageScaleRatio(int imageWidth, int imageHeight, int width, int height) {
+        double widthRatio = (double)width / (double)imageWidth;
+        double heightRatio = (double)height / (double)imageHeight;
+        return Math.min(widthRatio, heightRatio);
+    }
+
+
     public static void resizeImageIconProportional(ImageIcon imageIcon, int width, int height) {
-        double widthRatio = (double)width / (double)imageIcon.getIconWidth();
-        double heightRatio = (double)height / (double)imageIcon.getIconHeight();
-        double ratio = Math.min(widthRatio, heightRatio);
+        double ratio = getImageScaleRatio(imageIcon, width, height);
         width = (int) (ratio * imageIcon.getIconWidth());
         height = (int) (ratio * imageIcon.getIconHeight());
         Image srcImg = imageIcon.getImage();
