@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
+public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IPathChangedListener {
     private JPanel mainPanel;
     private JTextField pathText;
     private FoldersPanel foldersPanel;
@@ -26,7 +26,7 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
     private List<FolderButton> folderButtonsFiltered;
     private FolderManager folderManager;
-    private List<PathListener> pathListenerList;
+    private List<IPathListener> pathListenerList;
     private FolderButtonsGenerator folderButtonsGenerator;
 
     final static String FOLDERS_PANEL = "Folders grid panel";
@@ -81,7 +81,8 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
         foldersScrollPane.setPreferredSize(new Dimension(800, 600));
 
-        previewPanel = new GenericPreviewPanel();
+        FolderIterator folderIterator = new FolderIterator(folderManager, this);
+        previewPanel = new GenericPreviewPanel(folderIterator);
 
         mainPanel.setLayout(new CardLayout());
         mainPanel.add(foldersScrollPane, FOLDERS_PANEL);
@@ -152,7 +153,7 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
 
     private void notifyOnPathChange() {
         String path = getCurrentPath();
-        for (PathListener pathListener : pathListenerList) {
+        for (IPathListener pathListener : pathListenerList) {
             pathListener.setPath(path);
         }
     }
@@ -162,11 +163,11 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         processNewPath();
     }
 
-    public void addPathListener(PathListener pathListener) {
+    public void addPathListener(IPathListener pathListener) {
         pathListenerList.add(pathListener);
     }
 
-    public void removePathListener(PathListener pathListener) {
+    public void removePathListener(IPathListener pathListener) {
         pathListenerList.remove(pathListener);
     }
 
@@ -187,17 +188,6 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
     private void changeMainPanelContentPane(String mainPanelItem) {
         CardLayout cardLayout = (CardLayout)(mainPanel.getLayout());
         cardLayout.show(mainPanel, mainPanelItem);
-
-//        if (previousPanel == panel) {
-//            return;
-//        }
-//        if (previousPanel != null) {
-//            mainPanel.remove(previousPanel);
-//        }
-//        previousPanel = panel;
-//        mainPanel.add(previousPanel);
-//        previousPanel.repaint();
-//        mainPanel.invalidate();
     }
 
     private void processNewPath() {
@@ -208,19 +198,8 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
             changeMainPanelContentPane(FOLDERS_PANEL);
         }
         else {
-            IFolder file = folderManager.getCurrentFolder();
-            if (file == null) {
-                return;
-            }
-            previewPanel.setParentFolder(folderManager.getParent());
-            try {
-                previewPanel.setPreviewFile(file);
-            } catch (FilePreviewPanel.PreviewException e) {
-                e.printStackTrace();
-            }
+            previewPanel.updatePreviewFile();
             changeMainPanelContentPane(PREVIEW_PANEL);
-//            imageIcon = previewGenerator.getFilePreviewLarge(file);
-            //TODO Switch to file preview mode;
         }
         notifyOnPathChange();
     }
@@ -246,6 +225,11 @@ public class FolderNavigatorBL implements PathListener, IOpenFolderListener {
         folderButtons.add(folderButtonsGenerator.getFolderButtonLevelUp());
         folderButtons.addAll(folderButtonsFiltered);
         foldersPanel.setFolderButtons(folderButtons);
+    }
+
+    @Override
+    public void folderManagerPathChanged() {
+        processNewPath();
     }
 
 }

@@ -1,6 +1,6 @@
 package ui;
 
-public interface PathListener {
+public interface IPathListener {
 
     void setPath(String path);
 }

@@ -58,7 +58,7 @@ public class FolderManager {
 
     public IFolder getCurrentFolder() {
         if (inDepthFolderStack != null && !inDepthFolderStack.isEmpty()) {
-            return inDepthFolderStack.peek();
+            return inDepthFolderStack.peekLast();
         }
         else {
             return null;
@@ -99,7 +99,7 @@ public class FolderManager {
     private void cleanStack() {
         IFolder folder = null;
         while (!inDepthFolderStack.isEmpty()) {
-            folder = inDepthFolderStack.pop();
+            folder = inDepthFolderStack.pollLast();
         }
         if (folder != null && folder.getClass() == FTPFolder.class) {
             ((FTPFolder)folder).disconnect();
