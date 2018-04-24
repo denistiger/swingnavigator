@@ -1,5 +1,5 @@
-import folder.FTPFolder;
 import folder.IFolder;
+import folder.ftp_folder.FTPFolder;
 import folder.testing.TestUtils;
 
 import java.util.List;

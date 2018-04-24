@@ -48,7 +48,7 @@ public class FileSystemEntity implements IFolder, ILevelUp{
             throw new NullInitializedFolderException();
         }
         if (!file.exists()) {
-            throw new FileNotFoundException();
+            throw new FileNotFoundException(file.getAbsolutePath());
         }
         this.file = file;
     }

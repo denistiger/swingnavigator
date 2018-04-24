@@ -1,9 +1,6 @@
 package ui;
 
-import folder.FolderIterator;
-import folder.FolderManager;
-import folder.IFolder;
-import folder.IPathChangedListener;
+import folder.*;
 import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
 import ui.folder_button.FolderButtonsGenerator;
@@ -117,7 +114,10 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                 enteredPath = enteredPath.substring(0, enteredPath.length() - 1);
             }
             folderManager.levelUp();
-            if (enteredPath.startsWith(folderManager.getFullPath())) {
+            PathUtils folderManagerPathUtils = new PathUtils(folderManager.getFullPath());
+            PathUtils enteredPathPathUtils = new PathUtils(enteredPath);
+
+            if (enteredPathPathUtils.getPath().startsWith(folderManagerPathUtils.getPath())) {
                 processNewPath();
                 return;
             }

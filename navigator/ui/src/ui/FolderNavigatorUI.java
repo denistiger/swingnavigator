@@ -99,26 +99,26 @@ public class FolderNavigatorUI extends JFrame {
 
 
     public static void main(String[] args) {
-//        try {
-//            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 //            MetalLookAndFeel.setCurrentTheme(new ColorTheme());
-//        }
-//        catch (UnsupportedLookAndFeelException e) {
-//            System.out.println(e.getStackTrace());
-//            // handle exception
-//        }
-//        catch (ClassNotFoundException e) {
-//            System.out.println(e.getStackTrace());
-//            // handle exception
-//        }
-//        catch (InstantiationException e) {
-//            System.out.println(e.getStackTrace());
-//            // handle exception
-//        }
-//        catch (IllegalAccessException e) {
-//            System.out.println(e.getStackTrace());
-//            // handle exception
-//        }
+        }
+        catch (UnsupportedLookAndFeelException e) {
+            System.out.println(e.getStackTrace());
+            // handle exception
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println(e.getStackTrace());
+            // handle exception
+        }
+        catch (InstantiationException e) {
+            System.out.println(e.getStackTrace());
+            // handle exception
+        }
+        catch (IllegalAccessException e) {
+            System.out.println(e.getStackTrace());
+            // handle exception
+        }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

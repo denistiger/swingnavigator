@@ -30,6 +30,9 @@ public class FilePreviewGenerator implements IFilePreview {
     }
 
     private IFilePreview getFilePreviewGenerator(IFolder file) {
+        if (file == null) {
+            return DEFAULT_PREVIEW;
+        }
         IFilePreview filePreview = FILE_PREVIEW_MAP.get(file.getType());
         if (filePreview != null) {
             return filePreview;

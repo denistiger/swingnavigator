@@ -2,6 +2,7 @@ package ui.file_preview;
 
 import folder.IFolder;
 import folder.FolderIterator;
+import folder.file_preview.FilePreviewGenerator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -64,9 +65,9 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         curLabel.setFont(font);
         nextLabel.setFont(font);
 
-        prevLabel.setHorizontalTextPosition(JLabel.RIGHT);
+        prevLabel.setHorizontalTextPosition(JLabel.LEFT);
         curLabel.setHorizontalTextPosition(JLabel.CENTER);
-        nextLabel.setHorizontalTextPosition(JLabel.LEFT);
+        nextLabel.setHorizontalTextPosition(JLabel.RIGHT);
 
         prevLabel.setVerticalTextPosition(JLabel.CENTER);
         curLabel.setVerticalTextPosition(JLabel.CENTER);
@@ -91,10 +92,10 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         prevNextPanel.add(nextButton);
 
         JPanel topMiddlePanel = new JPanel();
-        BoxLayout boxLayout = new BoxLayout(topMiddlePanel, BoxLayout.Y_AXIS);
-        topMiddlePanel.setLayout(boxLayout);
+        GridLayout topMiddlePanelLayout = new GridLayout(2, 1);
+        topMiddlePanel.setLayout(topMiddlePanelLayout);
         topMiddlePanel.add(curLabel);
-        topMiddlePanel.add(Box.createVerticalStrut(8));
+//        topMiddlePanel.add(Box.createVerticalStrut(8));
         topMiddlePanel.add(prevNextPanel);
 
         JPanel topPanel = new JPanel();
@@ -106,10 +107,17 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         topPanel.add(topMiddlePanel);
         topPanel.add(nextLabel);
 
+        JPanel topPanelWithSpace = new JPanel();
+        BoxLayout boxLayout = new BoxLayout(topPanelWithSpace, BoxLayout.Y_AXIS);
+        topPanelWithSpace.setLayout(boxLayout);
+        topPanelWithSpace.add(Box.createVerticalStrut(10));
+        topPanelWithSpace.add(topPanel);
+        topPanelWithSpace.add(Box.createVerticalStrut(10));
+
         BorderLayout borderLayout = new BorderLayout();
 
         setLayout(borderLayout);
-        add(topPanel, BorderLayout.PAGE_START);
+        add(topPanelWithSpace, BorderLayout.PAGE_START);
     }
 
     public void updatePreviewFile() {
@@ -125,21 +133,29 @@ public class GenericPreviewPanel extends FilePreviewPanel {
 
     private void updateTopPanel() {
         curLabel.setText(folderIterator.getIFolder().getName());
+
+        FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
+
         if (folderIterator.hasNext()) {
             nextLabel.setText(folderIterator.getNext().getName());
+            nextLabel.setIcon(previewGenerator.getFilePreviewSmall(folderIterator.getNext()));
             nextButton.setEnabled(true);
         }
         else {
             nextLabel.setText("End of folder");
+            nextLabel.setIcon(previewGenerator.getFilePreviewSmall(null));
             nextButton.setEnabled(false);
         }
 
+
         if (folderIterator.hasPrev()) {
             prevLabel.setText(folderIterator.getPrev().getName());
+            prevLabel.setIcon(previewGenerator.getFilePreviewSmall(folderIterator.getPrev()));
             prevButton.setEnabled(true);
         }
         else {
             prevLabel.setText("Start of folder");
+            prevLabel.setIcon(previewGenerator.getFilePreviewSmall(null));
             prevButton.setEnabled(false);
         }
     }
