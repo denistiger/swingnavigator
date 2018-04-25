@@ -31,6 +31,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
         findSelectionIndex();
         updateData(-1);
+        scrollToShowSelectedFolder();
     }
 
     private void setDefaultSelection() {
@@ -90,7 +91,6 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
             colsCount = 1;
         }
         revalidate();
-        scrollToShowSelectedFolder();
     }
 
     @Override
