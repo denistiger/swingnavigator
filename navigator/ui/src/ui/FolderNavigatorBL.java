@@ -251,8 +251,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     public void openPath(String path) {
-        if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() == 1) {
-            folderManager.openFolder(folderButtonsFiltered.get(0).getFolder());
+        if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
+            folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
         }
         else {
             folderManager.openPath(path);

@@ -84,6 +84,8 @@ public class FolderNavigatorUI extends JFrame {
         };
         pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_DOWN_MASK), "doNothing");
         pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, InputEvent.CTRL_DOWN_MASK), "doNothing");
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0), "doNothing");
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0), "doNothing");
         pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "doNothing");
         pathText.getActionMap().put("doNothing", doNothing);
 
