@@ -20,18 +20,6 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
         this.zipEntryData = new ZipEntryData("", zipEntryData.getName(), FolderTypes.ZIP, zipData);
         this.zipData = zipData;
         factory = new ZipInMemoryFactory(this.zipData);
-        InputStream stream = new ByteArrayInputStream(this.zipData);
-        ZipInputStream zipInputStream = new ZipInputStream(stream);
-        List<ZipEntryData> zipEntries = new ArrayList<>();
-        while (true) {
-            ZipEntry entry = zipInputStream.getNextEntry();
-            if (entry == null) {
-                break;
-            }
-            zipEntries.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
-        }
-        zipEntries.sort(Comparator.naturalOrder());
-        initChildren(zipEntries);
     }
 
     public ZipInMemoryFolder(byte[] zipData, ZipEntryData entry, List<ZipEntryData> zipEntries, IFolderFactory factory ) throws Exception {
@@ -39,6 +27,7 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
         this.zipData = zipData;
         this.factory = factory;
         initChildren(zipEntries);
+        initialized = true;
     }
 
     @Override
@@ -53,6 +42,14 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
 
     @Override
     public InputStream getInputStream() {
+        if (!initialized) {
+            try {
+                init();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
         if (zipData == null) {
             return null;
         }
@@ -75,5 +72,22 @@ public class ZipInMemoryFolder extends AbstractZipFolder {
             er.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    protected void init() throws Exception {
+        InputStream stream = new ByteArrayInputStream(this.zipData);
+        ZipInputStream zipInputStream = new ZipInputStream(stream);
+        List<ZipEntryData> zipEntries = new ArrayList<>();
+        while (true) {
+            ZipEntry entry = zipInputStream.getNextEntry();
+            if (entry == null) {
+                break;
+            }
+            zipEntries.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
+        }
+        zipEntries.sort(Comparator.naturalOrder());
+        initChildren(zipEntries);
+        initialized = true;
     }
 }

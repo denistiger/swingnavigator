@@ -12,10 +12,20 @@ public abstract class AbstractZipFolder implements IFolder {
     protected ZipEntryData zipEntryData;
     protected IFolderFactory factory = null;
     protected List<IFolder> children = null;
+    protected boolean initialized = false;
 
+    protected abstract void init() throws Exception;
 
     @Override
     public List<IFolder> getItems() {
+        if (!initialized) {
+            try {
+                init();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
         if (!FileTypeGetter.isFolderType(getType())) {
             assert children == null || children.size() == 0;
             return null;

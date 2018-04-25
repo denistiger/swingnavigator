@@ -26,7 +26,6 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         this.ftpPath = ftpPath;
         this.zipEntryData = new ZipEntryData("", name, FolderTypes.ZIP);
         this.factory = new ZipOnFTPFactory(ftpClient, ftpPath);
-        initChildren();
     }
 
     public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, ZipEntryData zipEntryData, List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
@@ -35,6 +34,7 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         this.zipEntryData = zipEntryData;
         this.ftpPath = ftpPath;
         initChildren(entries);
+        initialized = true;
     }
 
     public void closeStream() {
@@ -66,6 +66,12 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
     }
 
     @Override
+    protected void init() throws Exception {
+        initChildren();
+        initialized = true;
+    }
+
+    @Override
     public IFolder.FolderTypes getType() {
         return zipEntryData.getType();
     }
@@ -83,6 +89,9 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
     @Override
     public InputStream getInputStream() {
         try {
+            if (!initialized) {
+                init();
+            }
             resetStream();
             ZipEntry entry = zipStream.getNextEntry();
             while (entry != null) {
@@ -92,6 +101,8 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
                 entry = zipStream.getNextEntry();
             }
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;

@@ -20,15 +20,6 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
         this.file = file;
         zipEntryData = new ZipEntryData("", file.getName(), FolderTypes.ZIP);
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
-        factory = new ZipFolderFactory(zipFile);
-        Enumeration<? extends ZipEntry> entries = zipFile.entries();
-        List<ZipEntryData> zipEntries = new ArrayList<>();
-        while (entries.hasMoreElements()) {
-            ZipEntry entry = entries.nextElement();
-            zipEntries.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
-        }
-        zipEntries.sort(Comparator.naturalOrder());
-        initChildren(zipEntries);
     }
 
 
@@ -37,6 +28,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
         zipFile = file;
         this.factory = factory;
         initChildren(zipEntries);
+        initialized = true;
     }
 
     @Override
@@ -47,6 +39,19 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
         return "Get absolute path is not implemented for files inside Zip archive";
     }
 
+    protected void init() throws Exception {
+        factory = new ZipFolderFactory(zipFile);
+        Enumeration<? extends ZipEntry> entries = zipFile.entries();
+        List<ZipEntryData> zipEntries = new ArrayList<>();
+        while (entries.hasMoreElements()) {
+            ZipEntry entry = entries.nextElement();
+            zipEntries.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
+        }
+        zipEntries.sort(Comparator.naturalOrder());
+        initChildren(zipEntries);
+        initialized = true;
+    }
+
     @Override
     public boolean isFileSystemPath() {
         return false;
@@ -54,6 +59,14 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 
     @Override
     public InputStream getInputStream() {
+        if (!initialized) {
+            try {
+                init();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
         if (zipEntryData.getInZipPath().compareTo("") == 0) {
             return null;
         }
