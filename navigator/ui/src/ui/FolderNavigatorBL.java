@@ -178,12 +178,14 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             if (currentPath.length() == 1 + enteredPath.length()) {
                 enteredPath = enteredPath.substring(0, enteredPath.length() - 1);
             }
+            IFolder currentFolder = folderManager.getCurrentFolder();
             folderManager.levelUp();
             PathUtils folderManagerPathUtils = new PathUtils(folderManager.getFullPath());
             PathUtils enteredPathPathUtils = new PathUtils(enteredPath);
 
             if (enteredPathPathUtils.getPath().startsWith(folderManagerPathUtils.getPath())) {
                 processNewPath();
+                foldersPanelSelection.setSelection(currentFolder.getName());
                 return;
             }
             else {
@@ -230,8 +232,10 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     public void levelUp() {
+        IFolder currentFolder = folderManager.getCurrentFolder();
         folderManager.levelUp();
         processNewPath();
+        foldersPanelSelection.setSelection(currentFolder.getName());
     }
 
     public void addPathListener(IPathListener pathListener) {

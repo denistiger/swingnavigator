@@ -28,7 +28,7 @@ public class LazyIconLoader implements Runnable{
     @Override
     public void run() {
         FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
-        Executor pool = Executors.newFixedThreadPool(8);
+        Executor pool = Executors.newFixedThreadPool(4);
         for (FilePreviewData filePreviewData : filePreviewDataList) {
             pool.execute(new Runnable() {
                 @Override

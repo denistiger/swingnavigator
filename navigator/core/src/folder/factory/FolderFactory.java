@@ -30,6 +30,9 @@ public class FolderFactory implements IFolderFactory {
 
     public List<IFolder> createIFolderList(File[] files) {
         List<IFolder> list = new ArrayList<>();
+        if (files == null) {
+            return list;
+        }
         // TODO learn lambda
         for (File file : files) {
             Map<String, Object> params = new HashMap<>();

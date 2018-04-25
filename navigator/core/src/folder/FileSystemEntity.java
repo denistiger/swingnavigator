@@ -29,6 +29,9 @@ public class FileSystemEntity implements IFolder, ILevelUp{
         } catch (NullInitializedFolderException e) {
             e.printStackTrace();
         }
+//        if (System.getProperty("os.name").startsWith("Windows")) {
+//            return new LocalFolder()
+//        }
         return null;
     }
 

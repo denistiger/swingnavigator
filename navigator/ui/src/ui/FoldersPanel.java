@@ -90,6 +90,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
             colsCount = 1;
         }
         revalidate();
+        scrollToShowSelectedFolder();
     }
 
     @Override
@@ -114,20 +115,51 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
     @Override
     public void setSelection(FolderButtonSkeleton folderButtonSkeleton) {
+        if (folderButtonSelection != null) {
+            folderButtonSelection.setSelected(false);
+        }
         folderButtonSelection = folderButtonSkeleton;
         findSelectionIndex();
         updateSelectionForNewIndex();
+    }
+
+    @Override
+    public void setSelection(String folderName) {
+        for (FolderButtonSkeleton folderButtonSkeleton : folderButtonsDisplayed) {
+            if (folderButtonSkeleton.getFolder() != null
+                    && folderButtonSkeleton.getFolder().getName().compareTo(folderName) == 0) {
+                setSelection(folderButtonSkeleton);
+                return;
+            }
+        }
+    }
+
+    private void scrollToShowSelectedFolder() {
+        Rectangle rect = getVisibleRect();
+        int row = selectionIndex / colsCount;
+        int buttonHeight = folderButtonsDisplayed.get(0).getHeight();
+        int minY = row * buttonHeight;
+        int maxY = (row + 1) * buttonHeight;
+        if (rect.y > minY) {
+            rect.y = minY;
+            scrollRectToVisible(rect);
+        }
+        if (rect.y + rect.height < maxY) {
+            rect.y = maxY - rect.height;
+            scrollRectToVisible(rect);
+        }
     }
 
     private void updateSelectionForNewIndex() {
         folderButtonSelection.setSelected(false);
         folderButtonSelection = folderButtonsDisplayed.get(selectionIndex);
         folderButtonSelection.setSelected(true);
+        scrollToShowSelectedFolder();
     }
 
     @Override
     public void next() {
-        if (selectionIndex < folderButtonsDisplayed.size() && selectionIndex != -1) {
+        if (selectionIndex < folderButtonsDisplayed.size() - 1 && selectionIndex != -1) {
             selectionIndex++;
             updateSelectionForNewIndex();
         }
