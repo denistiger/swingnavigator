@@ -28,9 +28,12 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     private FolderManager folderManager;
     private List<IPathListener> pathListenerList;
     private FolderButtonsGenerator folderButtonsGenerator;
+    private IFoldersPanelSelection foldersPanelSelection;
+    private FolderIterator folderIterator;
 
     final static String FOLDERS_PANEL = "Folders grid panel";
     final static String PREVIEW_PANEL = "Files preview widget";
+    private String panelMode;
 
     public FolderNavigatorBL(JPanel mainPanel, JTextField pathText) {
         this.mainPanel = mainPanel;
@@ -42,6 +45,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         folderManager.openPath(FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath());
 
         foldersPanel = new FoldersPanel();
+        foldersPanelSelection = foldersPanel;
         addPathListener(this);
 
         this.pathText = pathText;
@@ -81,7 +85,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
         foldersScrollPane.setPreferredSize(new Dimension(800, 600));
 
-        FolderIterator folderIterator = new FolderIterator(folderManager, this);
+        folderIterator = new FolderIterator(folderManager, this);
         previewPanel = new GenericPreviewPanel(folderIterator);
 
         mainPanel.setLayout(new CardLayout());
@@ -95,13 +99,57 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         KeyboardFocusManager.getCurrentKeyboardFocusManager()
                 .addKeyEventDispatcher(new KeyEventDispatcher() {
 
-                    private long when = 0;
+                    private long whenHighFreq = 0;
+                    private long whenLowFreq = 0;
+                    private int lowFreqMs = 500;
+                    private int highFreqMs = 150;
                     @Override
                     public boolean dispatchKeyEvent(KeyEvent e) {
-                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_BACK_SPACE && (e.getWhen() - when) > 500) {
-                            when = e.getWhen();
+                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_BACK_SPACE
+                                && (e.getWhen() - whenLowFreq) > lowFreqMs) {
+                            whenLowFreq = e.getWhen();
                             levelUp();
                         }
+                        if (e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(PREVIEW_PANEL) == 0) {
+                                folderIterator.next();
+                            }
+                            else {
+                                foldersPanelSelection.next();
+                            }
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(PREVIEW_PANEL) == 0) {
+                                folderIterator.prev();
+                            }
+                            else {
+                                foldersPanelSelection.prev();
+                            }
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_UP && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.up();
+                            }
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_DOWN && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.down();
+                            }
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_ENTER && (e.getWhen() - whenLowFreq) > lowFreqMs) {
+                            whenLowFreq = e.getWhen();
+                            if (pathText.getText().compareTo(getCurrentPath()) == 0) {
+                                foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
+                            }
+                            else {
+                                setNewAddress();
+                            }
+                        }
+
                         return false;
                     }
                 });
@@ -171,7 +219,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     @Override
     public void selectFolder(FolderButtonSkeleton folderButton) {
-
+        foldersPanelSelection.setSelection(folderButton);
     }
 
     private void notifyOnPathChange() {
@@ -219,10 +267,12 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
             setFolderButtons();
             changeMainPanelContentPane(FOLDERS_PANEL);
+            panelMode = FOLDERS_PANEL;
         }
         else {
             previewPanel.updatePreviewFile();
             changeMainPanelContentPane(PREVIEW_PANEL);
+            panelMode = PREVIEW_PANEL;
         }
         notifyOnPathChange();
     }

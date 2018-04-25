@@ -10,6 +10,8 @@ import java.awt.event.MouseListener;
 
 public abstract class FolderButtonSkeleton extends JLabel {
     private IFolder folder;
+    private static Font fontBase = new Font("Arial", Font.PLAIN, 12);
+    private static Font fontSelected = new Font("Arial", Font.BOLD, 12);
 
     public FolderButtonSkeleton() {
         folder = null;
@@ -22,6 +24,22 @@ public abstract class FolderButtonSkeleton extends JLabel {
         setVerticalAlignment(JLabel.TOP);
         setMinimumSize(getPreferredSize());
         setMaximumSize(getPreferredSize());
+
+        setSelected(false);
+    }
+
+    public void setSelected(boolean selected) {
+        if (selected) {
+            setOpaque(true);
+            setBackground(new Color(142, 180, 212));
+            setForeground(Color.WHITE);
+            setFont(fontSelected);
+        }
+        else {
+            setForeground(Color.BLACK);
+            setFont(fontBase);
+            setOpaque(false);
+        }
     }
 
     protected void setFolder(IFolder folder) {
@@ -32,17 +50,21 @@ public abstract class FolderButtonSkeleton extends JLabel {
         return folder;
     }
 
+    public void notifyIOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
+        if (getFolder() != null) {
+            iOpenFolderListener.openFolder(getFolder());
+        }
+        else {
+            iOpenFolderListener.levelUp();
+        }
+    }
+
     public void addOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2) {
-                    if (getFolder() != null) {
-                        iOpenFolderListener.openFolder(getFolder());
-                    }
-                    else {
-                        iOpenFolderListener.levelUp();
-                    }
+                    notifyIOpenFolderListener(iOpenFolderListener);
                 }
                 if (e.getClickCount() == 1) {
                     iOpenFolderListener.selectFolder(FolderButtonSkeleton.this);

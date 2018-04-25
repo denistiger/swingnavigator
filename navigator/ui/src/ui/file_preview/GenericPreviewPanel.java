@@ -118,23 +118,23 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         add(topPanelWithSpace, BorderLayout.PAGE_START);
 
 
-        KeyboardFocusManager.getCurrentKeyboardFocusManager()
-                .addKeyEventDispatcher(new KeyEventDispatcher() {
-
-                    private long when = 0;
-                    @Override
-                    public boolean dispatchKeyEvent(KeyEvent e) {
-                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - when) > 150) {
-                            when = e.getWhen();
-                            folderIterator.next();
-                        }
-                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - when) > 150) {
-                            when = e.getWhen();
-                            folderIterator.prev();
-                        }
-                        return false;
-                    }
-                });
+//        KeyboardFocusManager.getCurrentKeyboardFocusManager()
+//                .addKeyEventDispatcher(new KeyEventDispatcher() {
+//
+//                    private long when = 0;
+//                    @Override
+//                    public boolean dispatchKeyEvent(KeyEvent e) {
+//                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - when) > 150) {
+//                            when = e.getWhen();
+//                            folderIterator.next();
+//                        }
+//                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - when) > 150) {
+//                            when = e.getWhen();
+//                            folderIterator.prev();
+//                        }
+//                        return false;
+//                    }
+//                });
 
     }
 

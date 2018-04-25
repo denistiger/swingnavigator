@@ -76,30 +76,16 @@ public class FolderNavigatorUI extends JFrame {
         JPanel basePanel = new JPanel();
         basePanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
 
-//        basePanel.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK),
-//                );
-
-        basePanel.getInputMap(JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT)
-                .put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK), "gotKey");
-
-        AbstractAction gotKey = new AbstractAction() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Got key!");
-            }
-        };
-
-        basePanel.getActionMap().put("gotKey", gotKey);
 
         Action doNothing = new AbstractAction() {
             public void actionPerformed(ActionEvent e) {
                 //do nothing
             }
         };
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_MASK), "doNothing");
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_DOWN_MASK), "doNothing");
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, InputEvent.CTRL_DOWN_MASK), "doNothing");
+        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "doNothing");
         pathText.getActionMap().put("doNothing", doNothing);
-
-        basePanel.getInputMap().put(KeyStroke.getKeyStroke("Space"), "gotKey");
 
         JPanel upPanel = new JPanel();
         upPanel.setLayout(new BoxLayout(upPanel, BoxLayout.X_AXIS));
@@ -118,8 +104,6 @@ public class FolderNavigatorUI extends JFrame {
         add(basePanel);
 
         folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText);
-
-//        add(scrollPane);
 
         pack();
     }
