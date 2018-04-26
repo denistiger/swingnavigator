@@ -11,7 +11,7 @@ public class FullScreenImagePreview extends JFrame{
     private ImagePreviewPanel previewPanel;
 
     public FullScreenImagePreview(ImagePreviewPanel imagePreviewPanel, IFullScreenListener fullScreenListener) {
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setSize(getToolkit().getScreenSize());
         setUndecorated(true);
         setTitle("Full Screen Image Preview");
         setVisible(false);
