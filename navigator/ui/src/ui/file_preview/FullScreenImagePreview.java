@@ -9,13 +9,15 @@ import java.awt.event.KeyListener;
 public class FullScreenImagePreview extends JFrame{
 
     private ImagePreviewPanel previewPanel;
+    private Color initialColor;
 
     public FullScreenImagePreview(ImagePreviewPanel imagePreviewPanel, IFullScreenListener fullScreenListener) {
         setSize(getToolkit().getScreenSize());
         setUndecorated(true);
         setTitle("Full Screen Image Preview");
         setVisible(false);
-        this.previewPanel = imagePreviewPanel;
+        previewPanel = imagePreviewPanel;
+        initialColor = previewPanel.getBackground();
         BorderLayout borderLayout = new BorderLayout();
         setLayout(borderLayout);
 
@@ -32,6 +34,12 @@ public class FullScreenImagePreview extends JFrame{
     }
 
     public void showPreview(boolean showPreview) {
+        if (showPreview) {
+            previewPanel.setBackground(Color.BLACK);
+        }
+        else {
+            previewPanel.setBackground(initialColor);
+        }
         setVisible(showPreview);
         repaint();
     }

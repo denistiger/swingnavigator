@@ -198,7 +198,7 @@ public class FolderManager {
                 path += "/";
             }
         }
-        path = path.replaceAll("\\\\", "\\"); // Fix Windows returns \\ after disk label
+        path = path.replaceAll("\\\\+", "\\\\"); // Fix Windows returns \\ after disk label
         return path;
     }
 

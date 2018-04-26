@@ -15,11 +15,11 @@ public class FolderFactory implements IFolderFactory {
         Object fileObj = params.get(FILE);
         File file = (File) fileObj;
         try {
-            if (file.isDirectory()) {
-                return new LocalFolder(file);
-            }
             if (FileTypeGetter.getFileType(file.getName()) == IFolder.FolderTypes.ZIP) {
                 return new ZipFileFolder(file);
+            }
+            if (file.isDirectory()) {
+                return new LocalFolder(file);
             }
             return new CommonFile(file);
         } catch (Exception er) {

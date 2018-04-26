@@ -19,7 +19,6 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
     public ZipFileFolder(File file) throws Exception {
         this.file = file;
         zipEntryData = new ZipEntryData("", file.getName(), FolderTypes.ZIP);
-        zipFile = new ZipFile(file, ZipFile.OPEN_READ);
     }
 
 
@@ -40,6 +39,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
     }
 
     protected void init() throws Exception {
+        zipFile = new ZipFile(file, ZipFile.OPEN_READ);
         factory = new ZipFolderFactory(zipFile);
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         List<ZipEntryData> zipEntries = new ArrayList<>();
