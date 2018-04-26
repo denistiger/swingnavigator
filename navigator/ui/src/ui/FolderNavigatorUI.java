@@ -40,26 +40,6 @@ public class FolderNavigatorUI extends JFrame {
         pathText = new JTextField();
         pathText.setFont(font);
 
-
-
-//        KeyListener keyListener = new KeyListener() {
-//            public void keyPressed(KeyEvent keyEvent) {
-//            }
-//
-//            public void keyReleased(KeyEvent keyEvent) {
-//            }
-//
-//            public void keyTyped(KeyEvent keyEvent) {
-//                if(keyEvent.getKeyCode() == KeyEvent.VK_ENTER) {
-//                    setNewAddress();
-//                }
-//                else {
-//                    filterFolders();
-//                }
-//            }
-//        };
-
-
         levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
         levelUpButton.addActionListener(new ActionListener() {
@@ -105,7 +85,7 @@ public class FolderNavigatorUI extends JFrame {
 
         add(basePanel);
 
-        folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText);
+        folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText, levelUpButton);
 
         pack();
     }

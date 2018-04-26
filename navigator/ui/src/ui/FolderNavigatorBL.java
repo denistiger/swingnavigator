@@ -20,6 +20,7 @@ import java.util.List;
 public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IPathChangedListener {
     private JPanel mainPanel;
     private JTextField pathText;
+    private JButton levelUpButton;
     private FoldersPanel foldersPanel;
     private JScrollPane foldersScrollPane;
     private GenericPreviewPanel previewPanel;
@@ -35,8 +36,9 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     final static String PREVIEW_PANEL = "Files preview widget";
     private String panelMode;
 
-    public FolderNavigatorBL(JPanel mainPanel, JTextField pathText) {
+    public FolderNavigatorBL(JPanel mainPanel, JTextField pathText, JButton levelUpButton) {
         this.mainPanel = mainPanel;
+        this.levelUpButton = levelUpButton;
 
         folderManager = new FolderManager();
         pathListenerList = new LinkedList<>();
@@ -267,6 +269,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     private void processNewPath() {
         List<IFolder> folders = folderManager.getFoldersAtPath();
+        levelUpButton.setEnabled(folderManager.getParent() != null);
         if (folders != null) {
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
             setFolderButtons();
@@ -299,7 +302,9 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     private void setFolderButtons() {
         List<FolderButtonSkeleton> folderButtons = new LinkedList<>();
-        folderButtons.add(folderButtonsGenerator.getFolderButtonLevelUp());
+        if (folderManager.getParent() != null) {
+            folderButtons.add(folderButtonsGenerator.getFolderButtonLevelUp());
+        }
         folderButtons.addAll(folderButtonsFiltered);
         foldersPanel.setFolderButtons(folderButtons);
     }

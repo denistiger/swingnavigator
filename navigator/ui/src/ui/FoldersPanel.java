@@ -36,7 +36,11 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
     private void setDefaultSelection() {
         if (!folderButtonsDisplayed.isEmpty()) {
-            selectionIndex = Math.min(1, folderButtonsDisplayed.size() - 1);
+            selectionIndex = 0;
+            // Do not select .. levelUp folder by default
+            if (folderButtonsDisplayed.size() > 1 && folderButtonsDisplayed.get(0).getFolder() == null) {
+                selectionIndex = 1;
+            }
             folderButtonSelection = folderButtonsDisplayed.get(selectionIndex);
             folderButtonSelection.setSelected(true);
         }
