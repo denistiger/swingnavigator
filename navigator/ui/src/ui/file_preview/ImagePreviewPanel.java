@@ -12,7 +12,8 @@ import java.awt.image.ImageObserver;
 import java.io.IOException;
 
 public class ImagePreviewPanel extends FilePreviewPanel {
-    BufferedImage bufferedImage = null;
+
+    private BufferedImage bufferedImage = null;
 
     public ImagePreviewPanel() {
     }

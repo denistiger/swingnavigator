@@ -11,13 +11,14 @@ import java.awt.im.spi.InputMethod;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GenericPreviewPanel extends FilePreviewPanel {
+public class GenericPreviewPanel extends FilePreviewPanel implements IFullScreenListener{
 
     private static FilePreviewPanel unknownFilePreview = new UnknownFilePreviewPanel();
+    private static ImagePreviewPanel imagePreviewPanel = new ImagePreviewPanel();
     private static Map<IFolder.FolderTypes, FilePreviewPanel> previewPanelMap;
     static {
         previewPanelMap = new HashMap<>();
-        previewPanelMap.put(IFolder.FolderTypes.IMAGE, new ImagePreviewPanel());
+        previewPanelMap.put(IFolder.FolderTypes.IMAGE, imagePreviewPanel);
         previewPanelMap.put(IFolder.FolderTypes.TEXT_FILE, new TextFilePreviewPanel());
         previewPanelMap.put(IFolder.FolderTypes.OTHER_FILE, unknownFilePreview);
         previewPanelMap.put(IFolder.FolderTypes.FOLDER, unknownFilePreview);
@@ -27,12 +28,20 @@ public class GenericPreviewPanel extends FilePreviewPanel {
 
     private FolderIterator folderIterator;
     private FilePreviewPanel currentPreview = null;
+    private boolean isFullScreen = false;
 
     private JButton prevButton, nextButton;
     private JLabel prevLabel, curLabel, nextLabel;
 
+    private FullScreenImagePreview fullScreenImagePreview;
+
+
     public GenericPreviewPanel(FolderIterator folderIterator) {
         this.folderIterator = folderIterator;
+        fullScreenImagePreview = new FullScreenImagePreview(
+                (ImagePreviewPanel)previewPanelMap.get(IFolder.FolderTypes.IMAGE),
+                this);
+        fullScreenImagePreview.setVisible(false);
 
         nextButton = new JButton("Next >");
         prevButton = new JButton("< Prev");
@@ -117,25 +126,26 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         setLayout(borderLayout);
         add(topPanelWithSpace, BorderLayout.PAGE_START);
 
+    }
 
-//        KeyboardFocusManager.getCurrentKeyboardFocusManager()
-//                .addKeyEventDispatcher(new KeyEventDispatcher() {
-//
-//                    private long when = 0;
-//                    @Override
-//                    public boolean dispatchKeyEvent(KeyEvent e) {
-//                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - when) > 150) {
-//                            when = e.getWhen();
-//                            folderIterator.next();
-//                        }
-//                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - when) > 150) {
-//                            when = e.getWhen();
-//                            folderIterator.prev();
-//                        }
-//                        return false;
-//                    }
-//                });
+    public boolean isFullScreen() {
+        return isFullScreen;
+    }
 
+    public void setFullScreen(boolean fullScreenMode) {
+        if (imagePreviewPanel == currentPreview) {
+            isFullScreen = fullScreenMode;
+            if (fullScreenMode) {
+                remove(imagePreviewPanel);
+                fullScreenImagePreview.add(imagePreviewPanel, BorderLayout.CENTER);
+            } else {
+                fullScreenImagePreview.remove(imagePreviewPanel);
+                add(imagePreviewPanel, BorderLayout.CENTER);
+            }
+            fullScreenImagePreview.showPreview(isFullScreen());
+            imagePreviewPanel.revalidate();
+            repaint();
+        }
     }
 
     public void updatePreviewFile() {
@@ -189,7 +199,20 @@ public class GenericPreviewPanel extends FilePreviewPanel {
         }
         updateTopPanel();
         currentPreview.setPreviewFile(previewFile);
-        add(currentPreview, BorderLayout.CENTER);
+
+        if (previewFile.getType() == IFolder.FolderTypes.IMAGE && isFullScreen()) {
+            fullScreenImagePreview.showPreview(true);
+        }
+        else {
+            fullScreenImagePreview.showPreview(false);
+            add(currentPreview, BorderLayout.CENTER);
+        }
+
         repaint();
+    }
+
+    @Override
+    public void exitFullScreen() {
+        setFullScreen(false);
     }
 }

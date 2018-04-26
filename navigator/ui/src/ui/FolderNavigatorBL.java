@@ -151,6 +151,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                                 setNewAddress();
                             }
                         }
+                        if (e.getKeyCode() == KeyEvent.VK_F && e.isControlDown() && (e.getWhen() - whenLowFreq) > lowFreqMs) {
+                            whenLowFreq = e.getWhen();
+                            previewPanel.setFullScreen(panelMode.compareTo(FOLDERS_PANEL) == 0 ?
+                                    false : !previewPanel.isFullScreen());
+                        }
 
                         return false;
                     }
@@ -271,6 +276,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         List<IFolder> folders = folderManager.getFoldersAtPath();
         levelUpButton.setEnabled(folderManager.getParent() != null);
         if (folders != null) {
+            previewPanel.setFullScreen(false);
             folderButtonsFiltered = folderButtonsGenerator.createFolderButtons(folders);
             setFolderButtons();
             changeMainPanelContentPane(FOLDERS_PANEL);
