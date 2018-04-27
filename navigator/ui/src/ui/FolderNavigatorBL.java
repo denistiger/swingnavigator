@@ -173,7 +173,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
         if (enteredPath.compareTo(currentPath) == 0 /*||
                 folderButtonsFiltered.size() != folderButtonsGenerator.getFolderButtons().size()*/) {
-            filterByPrefix("");
+            filterBySubString("");
             return;
         }
 
@@ -206,7 +206,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         }
 
         String filter = enteredPath.substring(currentPath.length());
-        filterByPrefix(filter);
+        filterBySubString(filter);
     }
 
     @Override
@@ -290,15 +290,15 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         notifyOnPathChange();
     }
 
-    public void filterByPrefix(String prefix) {
+    public void filterBySubString(String substring) {
         List<FolderButton> folderButtons = folderButtonsGenerator.getFolderButtons();
-        if (prefix.isEmpty()) {
+        if (substring.isEmpty()) {
             folderButtonsFiltered = folderButtons;
         }
         else {
             folderButtonsFiltered = new LinkedList<>();
             for (FolderButton folderButton : folderButtons) {
-                if (folderButton.getFolder().getName().startsWith(prefix)) {
+                if (folderButton.getFolder().getName().toLowerCase().contains(substring)) {
                     folderButtonsFiltered.add(folderButton);
                 }
             }
