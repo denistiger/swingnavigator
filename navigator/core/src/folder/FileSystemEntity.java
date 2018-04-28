@@ -1,6 +1,7 @@
 package folder;
 
 import folder.factory.FolderFactory;
+import folder.factory.TopLevelFolderFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -21,6 +22,9 @@ public class FileSystemEntity implements IFolder, ILevelUp{
     @Override
     public IFolder levelUp() {
         try {
+            if (file.getParentFile() == null) {
+                return new TopLevelFolderFactory().createIFolder(null);
+            }
             return new LocalFolder(file.getParentFile());
         } catch (NotALocalFolderException e) {
             e.printStackTrace();
@@ -28,10 +32,9 @@ public class FileSystemEntity implements IFolder, ILevelUp{
             e.printStackTrace();
         } catch (NullInitializedFolderException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-//        if (System.getProperty("os.name").startsWith("Windows")) {
-//            return new LocalFolder()
-//        }
         return null;
     }
 
