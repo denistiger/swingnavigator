@@ -142,6 +142,18 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                                 foldersPanelSelection.down();
                             }
                         }
+                        if (e.getKeyCode() == KeyEvent.VK_PAGE_DOWN && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.pageDown();
+                            }
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_PAGE_UP && (e.getWhen() - whenHighFreq) > highFreqMs) {
+                            whenHighFreq = e.getWhen();
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.pageUp();
+                            }
+                        }
                         if (e.getKeyCode() == KeyEvent.VK_ENTER && (e.getWhen() - whenLowFreq) > lowFreqMs) {
                             whenLowFreq = e.getWhen();
                             if (pathText.getText().compareTo(getCurrentPath()) == 0) {
@@ -283,8 +295,9 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             panelMode = FOLDERS_PANEL;
         }
         else {
-            folderButtonsGenerator.removeFolderButtons();
-            folderButtonsFiltered = null;
+            folderButtonsGenerator.setBackgroundMode(true);
+//            folderButtonsGenerator.removeFolderButtons();
+//            folderButtonsFiltered = null;
             previewPanel.updatePreviewFile();
             changeMainPanelContentPane(PREVIEW_PANEL);
             panelMode = PREVIEW_PANEL;

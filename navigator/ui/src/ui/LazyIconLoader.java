@@ -24,6 +24,7 @@ public class LazyIconLoader implements Runnable{
 
     private List<FilePreviewData> filePreviewDataList = new LinkedList<>();
     private volatile boolean stop = false;
+    private volatile boolean backgroundMode = false;
 
     @Override
     public void run() {
@@ -34,6 +35,14 @@ public class LazyIconLoader implements Runnable{
                 @Override
                 public void run() {
                     if (stop == false) {
+                        if (backgroundMode) {
+                            try {
+                                // Use less resources.
+                                Thread.sleep(1000);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
                         filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreviewSmall(filePreviewData.folder));
                     }
                 }
@@ -45,8 +54,13 @@ public class LazyIconLoader implements Runnable{
         stop = true;
     }
 
+    public void setBackgroundMode(boolean backgroundMode) {
+        this.backgroundMode = backgroundMode;
+    }
+
     public void start() {
         stop = false;
+        setBackgroundMode(false);
         new Thread(this).start();
     }
 

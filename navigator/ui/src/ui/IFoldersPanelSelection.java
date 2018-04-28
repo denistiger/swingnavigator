@@ -9,5 +9,7 @@ public interface IFoldersPanelSelection {
     void prev();
     void up();
     void down();
+    void pageUp();
+    void pageDown();
     FolderButtonSkeleton getSelection();
 }

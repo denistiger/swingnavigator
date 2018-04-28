@@ -7,6 +7,7 @@ import ui.LazyIconLoader;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -42,7 +43,30 @@ public class FolderButtonsGenerator {
         }
     }
 
+    public void setBackgroundMode(boolean backgroundMode) {
+        lazyIconLoader.setBackgroundMode(backgroundMode);
+    }
+
+    private boolean isSameFolder(List<IFolder> folders) {
+        if (folders.size() != folderButtons.size()) {
+            return false;
+        }
+        Iterator<FolderButton> folderButtonIterator = folderButtons.iterator();
+        Iterator<IFolder> folderIterator = folders.iterator();
+        while (folderButtonIterator.hasNext() && folderIterator.hasNext()) {
+            if (folderButtonIterator.next().getFolder().getAbsolutePath().compareTo(
+                    folderIterator.next().getAbsolutePath()) != 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public List<FolderButton> createFolderButtons(List<IFolder> folders) {
+        if (isSameFolder(folders)) {
+            setBackgroundMode(false);
+            return folderButtons;
+        }
         folderButtons = new LinkedList<>();
         if (lazyIconLoader != null) {
             lazyIconLoader.stop();

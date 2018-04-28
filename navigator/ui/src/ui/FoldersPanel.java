@@ -138,6 +138,15 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
         }
     }
 
+    private int getVisibleRowsCount() {
+        if (folderButtonsDisplayed.isEmpty()) {
+            return 1;
+        }
+        int buttonHeight = folderButtonsDisplayed.get(0).getHeight();
+        Rectangle rect = getVisibleRect();
+        return (int) (rect.getHeight() / buttonHeight);
+    }
+
     private void scrollToShowSelectedFolder() {
         if (folderButtonsDisplayed.isEmpty()) {
             return;
@@ -187,6 +196,35 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
             updateSelectionForNewIndex();
         }
 
+    }
+
+    @Override
+    public void pageUp() {
+        if (selectionIndex == -1) {
+            return;
+        }
+        int rowsRemaining = selectionIndex / colsCount;
+        int selectedStep = Math.min(rowsRemaining, getVisibleRowsCount()) * colsCount;
+        if (selectedStep == 0) {
+            return;
+        }
+        selectionIndex -= selectedStep;
+        updateSelectionForNewIndex();
+    }
+
+    @Override
+    public void pageDown() {
+        if (selectionIndex == -1) {
+            return;
+        }
+        int foldersRemaining = folderButtonsDisplayed.size() - selectionIndex - 1;
+        int rowsRemaining = foldersRemaining / colsCount;
+        int selectedStep = Math.min(rowsRemaining, getVisibleRowsCount()) * colsCount;
+        if (selectedStep == 0) {
+            return;
+        }
+        selectionIndex += selectedStep;
+        updateSelectionForNewIndex();
     }
 
     @Override
