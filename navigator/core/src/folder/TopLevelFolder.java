@@ -32,8 +32,16 @@ public class TopLevelFolder implements IFolder {
     }
 
     @Override
+    public Character getSeparator() {
+        if (folders != null && !folders.isEmpty()) {
+            return folders.get(0).getSeparator();
+        }
+        return '/';
+    }
+
+    @Override
     public boolean isFileSystemPath() {
-        return false;
+        return true;
     }
 
     @Override

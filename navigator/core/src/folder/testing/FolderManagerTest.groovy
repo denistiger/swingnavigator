@@ -9,14 +9,18 @@ class FolderManagerTest extends GroovyTestCase {
 
     void testCorrectRetPath() {
         FolderManager manager = new FolderManager();
-        String path = FileSystemView.getFileSystemView().getHomeDirectory().getAbsolutePath();
+        File homeDir = FileSystemView.getFileSystemView().getHomeDirectory();
+        String path = homeDir.getAbsolutePath();
         manager.openPath(path);
-        assertEquals("Current path equals open path", path + "/", manager.getFullPath());
+        Character sep = homeDir.separatorChar;
+        assertEquals("Current path equals open path", path + sep, manager.getFullPath());
         manager.levelUp();
-        assertEquals("Current path level up equals open path", path.substring(0, path.lastIndexOf("/")) + "/",
-                manager.getFullPath());
+        path = path.substring(0, path.lastIndexOf(String.valueOf(sep))) + sep;
+        assertEquals("Current path level up equals open path", path, manager.getFullPath());
+        path = path.substring(0, path.length() - 1);
+        path = path.substring(0, path.lastIndexOf(String.valueOf(sep))) + sep;
         manager.levelUp();
-        assertEquals("Current path level up equals open path", "/", manager.getFullPath());
+        assertEquals("Current path level up equals open path", path, manager.getFullPath());
     }
 
     void testOpenPath() {
@@ -59,8 +63,10 @@ class FolderManagerTest extends GroovyTestCase {
     void testOpenWrongFolder() {
         FolderManager manager = new FolderManager();
         manager.openPath("../../testData/folder/fld2");
+        Character sep = manager.currentFolder.getSeparator();
         assertEquals("Opened one level up folder that is placed on local disk.",
-                System.getProperty("user.dir") + "/../../testData/folder/", manager.getFullPath());
+                System.getProperty("user.dir") + sep + ".." + sep + ".." + sep
+                        + "testData" + sep + "folder" + sep, manager.getFullPath());
     }
 
 

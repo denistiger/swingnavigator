@@ -1,9 +1,8 @@
 package folder;
 
 public class PathUtils {
-    private String path, pathPrefix;
+    private String path;
     private Character separator;
-    private int pathBegin;
 
     public PathUtils(String path1) {
         this.path = path1;
@@ -14,8 +13,6 @@ public class PathUtils {
         if (path.lastIndexOf(separator) != path.length() - 1) {
             path += separator;
         }
-        pathBegin = path.indexOf("//") + 2;
-        pathPrefix = path.substring(0, pathBegin);
         if (path.lastIndexOf(separator) == path.length() - 1 && path.length() > 1) {
             path = path.substring(0, path.length() - 1);
         }

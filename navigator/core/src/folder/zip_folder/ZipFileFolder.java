@@ -38,6 +38,11 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
         return "Get absolute path is not implemented for files inside Zip archive";
     }
 
+    @Override
+    public Character getSeparator() {
+        return file.separatorChar;
+    }
+
     protected void init() throws Exception {
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
         factory = new ZipFolderFactory(zipFile);

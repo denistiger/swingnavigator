@@ -76,5 +76,8 @@ public abstract class AbstractZipFolder implements IFolder {
         } while (iter.hasNext());
     }
 
-
+    @Override
+    public Character getSeparator() {
+        return '/';
+    }
 }

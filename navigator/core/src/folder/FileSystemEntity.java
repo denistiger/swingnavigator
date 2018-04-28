@@ -44,6 +44,11 @@ public class FileSystemEntity implements IFolder, ILevelUp{
     }
 
     @Override
+    public Character getSeparator() {
+        return file.separatorChar;
+    }
+
+    @Override
     public boolean isFileSystemPath() {
         return true;
     }
@@ -80,7 +85,11 @@ public class FileSystemEntity implements IFolder, ILevelUp{
 
     @Override
     public String getName() {
-        return file.getName();
+        if (!file.getName().isEmpty()) {
+            return file.getName();
+        }
+        // For C:\
+        return file.getPath();
     }
 
     @Override

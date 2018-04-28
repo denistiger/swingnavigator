@@ -17,6 +17,7 @@ public interface IFolder {
     FolderTypes getType();
     String getName();
     String getAbsolutePath();
+    Character getSeparator();
 
     boolean isFileSystemPath();
 

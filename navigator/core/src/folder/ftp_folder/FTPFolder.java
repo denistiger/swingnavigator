@@ -156,6 +156,11 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
     }
 
     @Override
+    public Character getSeparator() {
+        return '/';
+    }
+
+    @Override
     public boolean isFileSystemPath() {
         return false;
     }
