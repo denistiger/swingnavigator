@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.Semaphore;
 
 public class FTPClientWrapper {
 
@@ -29,6 +30,7 @@ public class FTPClientWrapper {
     private String ftpPath;
     private static final int DEFAULT_FTP_PORT = 21;
     private int ftpPort = DEFAULT_FTP_PORT;
+    private Semaphore semaphore = new Semaphore(1);
 
     public FTPClientWrapper(String ftpPath) {
         this.ftpPath = ftpPath;
@@ -43,6 +45,7 @@ public class FTPClientWrapper {
 
     public FTPFile[] listFiles(String onFtpPath) {
         try {
+            semaphore.acquire();
             connect();
             if (!ftp.changeWorkingDirectory(onFtpPath)) {
                 return null;
@@ -50,14 +53,27 @@ public class FTPClientWrapper {
             return ftp.listFiles(onFtpPath);
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            semaphore.release();
         }
         return null;
     }
 
     public InputStream retrieveFileStream(String onFtpPath) throws IOException {
-        connect();
-        ftp.setFileType(FTP.BINARY_FILE_TYPE);
-        return ftp.retrieveFileStream(onFtpPath);
+        try {
+            semaphore.acquire();
+            connect();
+            ftp.setFileType(FTP.BINARY_FILE_TYPE);
+            return ftp.retrieveFileStream(onFtpPath);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            semaphore.release();
+        }
+        return null;
     }
 
     public int getReplyCode() {
@@ -114,14 +130,14 @@ public class FTPClientWrapper {
         }
     }
 
-    public boolean levelUp() {
-        try {
-            return ftp.changeToParentDirectory();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
+//    public boolean levelUp() {
+//        try {
+//            return ftp.changeToParentDirectory();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return false;
+//        }
+//    }
 
 
     public void setCredentials(String login, String pass) {

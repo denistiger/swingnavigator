@@ -51,7 +51,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
 
     @Override
     public void prependDirectoryToPath(String workingDirectory) {
-        localFTPPath = workingDirectory + "/" + localFTPPath;
+        localFTPPath = workingDirectory + getSeparator() + localFTPPath;
         if (items != null) {
             for (IFolder folder : items) {
                 if (folder instanceof IPrependFTPPath) {
@@ -141,7 +141,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
             name = new PathUtils(localFTPPath).pop();
         }
         else {
-            name = ftp.getWorkingDirectory();
+            name = "";
         }
         return name;
     }
@@ -150,7 +150,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
     public String getAbsolutePath() {
         String path = ftp.getFTPPath();
         if (!localFTPPath.isEmpty()) {
-            path += "/" + localFTPPath;
+            path += getSeparator() + localFTPPath;
         }
         return path;
     }
@@ -186,13 +186,15 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
             PathUtils pathUtils = new PathUtils(localFTPPath);
             pathUtils.pop();
             String newLocalFTPPath = pathUtils.getPath();
-            return new FTPFolder(null, ftp, newLocalFTPPath, FolderTypes.FOLDER, null);
+            parent = new FTPFolder(null, ftp, newLocalFTPPath, FolderTypes.FOLDER, null);
+            return parent;
         }
+        return null;
 
-        if (!ftp.levelUp()) {
-            return null;
-        }
-        prependDirectoryToPath(getName());
-        return new FTPFolder(null, ftp, "", FolderTypes.FOLDER, null);
+//        if (!ftp.levelUp()) {
+//            return null;
+//        }
+//        prependDirectoryToPath(getName());
+//        return new FTPFolder(null, ftp, "", FolderTypes.FOLDER, null);
     }
 }

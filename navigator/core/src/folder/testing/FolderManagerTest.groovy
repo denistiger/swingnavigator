@@ -53,6 +53,16 @@ class FolderManagerTest extends GroovyTestCase {
                 "ftp://127.0.0.1:2121/folder/folder_in.zip/top2/", manager.getFullPath());
     }
 
+    void testFTPAbsolutePath() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("ftp://127.0.0.1:2121");
+        assertEquals("Returned path is the same as initial",
+                "ftp://127.0.0.1:2121/", manager.getFullPath());
+        manager.openFolder("folder")
+        assertEquals("Returned path is the same as initial",
+                "ftp://127.0.0.1:2121/folder/", manager.getFullPath());
+    }
+
     void testOpenWrongFolderFTP() {
         FolderManager manager = new FolderManager();
         manager.openPath("ftp://127.0.0.1:2121/folder/fld2");

@@ -27,7 +27,7 @@ public class PathUtils {
         if (sepPos == -1) {
             String out = path;
             path = "";
-            return path;
+            return out;
         }
         String res = path.substring(sepPos + 1);
         path = path.substring(0, sepPos);

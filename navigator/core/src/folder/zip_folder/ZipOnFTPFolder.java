@@ -78,7 +78,11 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
 
     @Override
     public String getAbsolutePath() {
-        return null;
+        String path = ftpClient.getFTPPath();
+        if (!ftpPath.isEmpty()) {
+            path += getSeparator() + ftpPath;
+        }
+        return path;
     }
 
     @Override
