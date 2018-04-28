@@ -33,12 +33,11 @@ public class LazyIconLoader implements Runnable{
             pool.execute(new Runnable() {
                 @Override
                 public void run() {
-                    filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreviewSmall(filePreviewData.folder));
+                    if (stop == false) {
+                        filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreviewSmall(filePreviewData.folder));
+                    }
                 }
             });
-            if (stop == true) {
-                break;
-            }
         }
     }
 

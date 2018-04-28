@@ -45,9 +45,4 @@ public class FilePreviewGenerator implements IFilePreview {
         return getFilePreviewGenerator(file).getFilePreviewSmall(file);
     }
 
-    @Override
-    public ImageIcon getFilePreviewLarge(IFolder file) {
-        return getFilePreviewGenerator(file).getFilePreviewLarge(file);
-    }
-
 }

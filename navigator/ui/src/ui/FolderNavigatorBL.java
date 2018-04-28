@@ -283,6 +283,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             panelMode = FOLDERS_PANEL;
         }
         else {
+            folderButtonsGenerator.removeFolderButtons();
+            folderButtonsFiltered = null;
             previewPanel.updatePreviewFile();
             changeMainPanelContentPane(PREVIEW_PANEL);
             panelMode = PREVIEW_PANEL;
@@ -298,7 +300,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         else {
             folderButtonsFiltered = new LinkedList<>();
             for (FolderButton folderButton : folderButtons) {
-                if (folderButton.getFolder().getName().toLowerCase().contains(substring)) {
+                if (folderButton.getFolder().getName().toLowerCase().contains(substring.toLowerCase())) {
                     folderButtonsFiltered.add(folderButton);
                 }
             }

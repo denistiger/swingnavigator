@@ -115,10 +115,4 @@ public class FilePreviewText implements IFilePreview {
         return imageIcon;
     }
 
-    @Override
-    public ImageIcon getFilePreviewLarge(IFolder file) {
-        ImageIcon imageIcon = getFileImageIcon(file);
-        ImageUtils.resizeImageIconProportional(imageIcon, LARGE_ICON_WIDTH, LARGE_ICON_HEIGHT);
-        return imageIcon;
-    }
 }

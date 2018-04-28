@@ -31,12 +31,4 @@ public class FilePreviewImage implements IFilePreview {
         return imageIcon;
     }
 
-    @Override
-    public ImageIcon getFilePreviewLarge(IFolder file) {
-        ImageIcon imageIcon = readImage(file);
-        if (imageIcon != null) {
-            ImageUtils.resizeImageIconProportional(imageIcon, LARGE_ICON_WIDTH, LARGE_ICON_HEIGHT);
-        }
-        return imageIcon;
-    }
 }

@@ -139,6 +139,9 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
     }
 
     private void scrollToShowSelectedFolder() {
+        if (folderButtonsDisplayed.isEmpty()) {
+            return;
+        }
         Rectangle rect = getVisibleRect();
         int row = selectionIndex / colsCount;
         int buttonHeight = folderButtonsDisplayed.get(0).getHeight();
