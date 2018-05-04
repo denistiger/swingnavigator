@@ -37,12 +37,18 @@ public class PasswordManager {
         }
     }
 
+
     public String getLogin() {
         return login;
     }
 
     public String getPassword() {
         return password;
+    }
+
+    public void reset() {
+        login = DEFAULT_LOGIN;
+        password = DEFAULT_PASSWORD;
     }
 
 }

@@ -270,23 +270,35 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     public void openPath(String path) {
-//        PasswordDialog passwordDialog = new PasswordDialog((JFrame) SwingUtilities.getWindowAncestor(mainPanel), folderManager.getPasswordManager());
-//        passwordDialog.setVisible(true);
-
+        folderManager.getPasswordManager().reset();
         if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
             folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
         }
         else {
-            FolderManager.OpenFolderStatus folderStatus = folderManager.openPath(path);
-            switch (folderStatus) {
-                case FTP_CONNECTION_ERROR:
-                    JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(mainPanel), "Failed to connect to FTP server",
-                            "FTP error", JOptionPane.ERROR_MESSAGE);
-                    break;
-                case FTP_CREDENTIALS_NEEDED:
-                    PasswordDialog passwordDialog1 = new PasswordDialog((JFrame) SwingUtilities.getWindowAncestor(mainPanel), folderManager.getPasswordManager());
-                    passwordDialog1.setVisible(true);
-                    break;
+            boolean notSucceed = true;
+            FolderManager.OpenFolderStatus folderStatus = FolderManager.OpenFolderStatus.ERROR;
+            String prevPath = folderManager.getFullPath();
+            while (notSucceed) {
+                notSucceed = false;
+                folderStatus = folderManager.openPath(path);
+                switch (folderStatus) {
+                    case FTP_CONNECTION_ERROR:
+                        JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(mainPanel),
+                                "Failed to connect to FTP server",
+                                "FTP error", JOptionPane.ERROR_MESSAGE);
+                        break;
+                    case FTP_CREDENTIALS_NEEDED:
+                        PasswordDialog passwordDialog = new PasswordDialog(
+                                (JFrame) SwingUtilities.getWindowAncestor(mainPanel), folderManager.getPasswordManager());
+                        if (passwordDialog.credentialsAreSet()) {
+                            notSucceed = true;
+                        }
+                        break;
+                }
+            }
+            if (folderStatus != FolderManager.OpenFolderStatus.SUCCESS &&
+                    folderStatus != FolderManager.OpenFolderStatus.HALF_PATH_OPENED) {
+                folderManager.openPath(prevPath);
             }
         }
         processNewPath();
@@ -309,8 +321,6 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         }
         else {
             folderButtonsGenerator.setBackgroundMode(true);
-//            folderButtonsGenerator.removeFolderButtons();
-//            folderButtonsFiltered = null;
             previewPanel.updatePreviewFile();
             changeMainPanelContentPane(PREVIEW_PANEL);
             panelMode = PREVIEW_PANEL;

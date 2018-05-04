@@ -27,7 +27,7 @@ public class UniversalFolderFactory implements IFolderFactory {
                     PasswordManager passwordManager = (PasswordManager) params.get(PASSWORDMANAGER);
                     folder.setPasswordManager(passwordManager);
                     String userInfo = url.getUserInfo();
-                    if (userInfo != null) {
+                    if (userInfo != null && passwordManager.isDefaultCredentials()) {
                         String[] userInfoSplit = userInfo.split(":", 2);
                         if (userInfoSplit.length > 0) {
                             passwordManager.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
