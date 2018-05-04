@@ -270,11 +270,24 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     public void openPath(String path) {
+//        PasswordDialog passwordDialog = new PasswordDialog((JFrame) SwingUtilities.getWindowAncestor(mainPanel), folderManager.getPasswordManager());
+//        passwordDialog.setVisible(true);
+
         if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
             folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
         }
         else {
-            folderManager.openPath(path);
+            FolderManager.OpenFolderStatus folderStatus = folderManager.openPath(path);
+            switch (folderStatus) {
+                case FTP_CONNECTION_ERROR:
+                    JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(mainPanel), "Failed to connect to FTP server",
+                            "FTP error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                case FTP_CREDENTIALS_NEEDED:
+                    PasswordDialog passwordDialog1 = new PasswordDialog((JFrame) SwingUtilities.getWindowAncestor(mainPanel), folderManager.getPasswordManager());
+                    passwordDialog1.setVisible(true);
+                    break;
+            }
         }
         processNewPath();
     }

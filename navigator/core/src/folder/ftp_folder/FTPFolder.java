@@ -1,9 +1,6 @@
 package folder.ftp_folder;
 
-import folder.FileTypeGetter;
-import folder.IFolder;
-import folder.ILevelUp;
-import folder.PathUtils;
+import folder.*;
 import org.apache.commons.net.ftp.*;
 import folder.zip_folder.ZipOnFTPFolder;
 
@@ -49,6 +46,10 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
         this.parent = parent;
     }
 
+    public void setPasswordManager(PasswordManager passwordManager) {
+        ftp.setPasswordManager(passwordManager);
+    }
+
     @Override
     public void prependDirectoryToPath(String workingDirectory) {
         localFTPPath = workingDirectory + getSeparator() + localFTPPath;
@@ -73,19 +74,11 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
         }
     }
 
-    public void setCredentials(String login, String pass) {
-        ftp.setCredentials(login, pass);
-    }
-
     public FTPClientWrapper.FTPStatus connect() {
         return ftp.connect();
     }
     public void disconnect() {
         ftp.disconnect();
-    }
-
-    public void dropCache() {
-        items = null;
     }
 
     @Override
@@ -102,11 +95,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
             if (files.length == 0) {
                 System.out.println("No FTP files. Reply code is: " + ftp.getReplyCode());
             }
-//            if (files.length == 1){
-//                if (files[0].getName().compareTo(getName()) == 0) {
-//                    return null;
-//                }
-//            }
+
             for (FTPFile file : files) {
                 if (file.isDirectory()) {
                     items.add(new FTPFolder(this, ftp, localFTPPath.isEmpty() ? file.getName() : localFTPPath + "/" + file.getName(),
@@ -191,10 +180,5 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
         }
         return null;
 
-//        if (!ftp.levelUp()) {
-//            return null;
-//        }
-//        prependDirectoryToPath(getName());
-//        return new FTPFolder(null, ftp, "", FolderTypes.FOLDER, null);
     }
 }

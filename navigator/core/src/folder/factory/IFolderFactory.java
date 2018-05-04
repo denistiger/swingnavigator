@@ -11,6 +11,7 @@ public interface IFolderFactory {
     String CHILDENTRIES = "ChildEntries";
     String FILE = "File";
     String FILEPATH = "FilePath";
+    String PASSWORDMANAGER = "PasswordManager";
 
     IFolder createIFolder(Map<String, Object> params) throws Exception;
 

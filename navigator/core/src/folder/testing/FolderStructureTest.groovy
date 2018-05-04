@@ -1,5 +1,6 @@
 package folder.testing
 
+import folder.PasswordManager
 import folder.ftp_folder.FTPFolder
 import folder.factory.FolderFactory
 import folder.IFolder
@@ -12,7 +13,8 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
 
     void testFTPNonZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
-        iFolder.setCredentials("anonymous","")
+        PasswordManager passwordManager = new PasswordManager();
+        iFolder.setPasswordManager(passwordManager);
         iFolder.connect()
         String res = TestUtils.linuxFormat(iFolder, "", false)
         String origin = TestUtils.getTestFile("../../testOutput/folder.txt")
@@ -33,7 +35,8 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
 
     void testFTPZip() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
-        iFolder.setCredentials("anonymous","")
+        PasswordManager passwordManager = new PasswordManager();
+        iFolder.setPasswordManager(passwordManager);
         iFolder.connect()
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder.zip"), "", false)
         String origin = TestUtils.getTestFile("../../testOutput/folderZip.txt")
@@ -85,7 +88,8 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
 
 //    void testTele2FTP() {
 //        FTPFolder iFolder = new FTPFolder("speedtest.tele2.net", 21)
-//        iFolder.setCredentials("anonymous","")
+//        PasswordManager passwordManager = new PasswordManager();
+//        iFolder.setPasswordManager(passwordManager);
 //        iFolder.connect()
 //        String res = linuxFormat(iFolder, "", true)
 //        System.out.println(res)
@@ -94,7 +98,8 @@ class FolderStructureTest extends groovy.util.GroovyTestCase {
 
     void testFTPNonZipArch() {
         FTPFolder iFolder = new FTPFolder("127.0.0.1", 2121)
-        iFolder.setCredentials("anonymous","")
+        PasswordManager passwordManager = new PasswordManager();
+        iFolder.setPasswordManager(passwordManager);
         iFolder.connect()
         String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder"), "", true)
         IFolder iFolder1 = getUnZipFolder()

@@ -1,4 +1,5 @@
 import folder.IFolder;
+import folder.PasswordManager;
 import folder.ftp_folder.FTPFolder;
 import folder.testing.TestUtils;
 
@@ -57,7 +58,8 @@ public class DebugTests implements Runnable {
             }
             for (int i = 0; i < 10; ++i) {
                 FTPFolder iFolder = new FTPFolder("127.0.0.1");
-                iFolder.setCredentials("anonymous","");
+                PasswordManager passwordManager = new PasswordManager();
+                iFolder.setPasswordManager(passwordManager);
                 iFolder.connect();
                 String res = TestUtils.linuxFormat(TestUtils.getByName(iFolder, "folder"), "", true);
                 System.out.println(res);

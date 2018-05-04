@@ -26,9 +26,11 @@ public class FolderManager {
     }
 
     private Deque<IFolder> inDepthFolderStack;
+    private PasswordManager passwordManager;
 
     public FolderManager() {
         inDepthFolderStack = new LinkedList<>();
+        passwordManager = new PasswordManager();
     }
 
     public OpenFolderStatus openPath(String path) {
@@ -65,11 +67,16 @@ public class FolderManager {
         }
     }
 
+    public PasswordManager getPasswordManager() {
+        return passwordManager;
+    }
+
     private OpenFolderStatus openPathSimple(String path) {
         cleanStack();
         IFolderFactory factory = new UniversalFolderFactory();
         Map<String, Object> params = new HashMap<>();
         params.put(IFolderFactory.FILEPATH, path);
+        params.put(IFolderFactory.PASSWORDMANAGER, passwordManager);
 
         try {
             IFolder folder = factory.createIFolder(params);

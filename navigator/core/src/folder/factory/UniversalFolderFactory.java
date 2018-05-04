@@ -1,6 +1,7 @@
 package folder.factory;
 
 import folder.IFolder;
+import folder.PasswordManager;
 import folder.ftp_folder.FTPFolder;
 
 import java.io.File;
@@ -23,11 +24,13 @@ public class UniversalFolderFactory implements IFolderFactory {
                 if (url.getProtocol().compareTo("ftp") == 0) {
                     int port = url.getPort() == -1 ? 21 : url.getPort();
                     FTPFolder folder = new FTPFolder(url.getHost(), port, url.getPath());
+                    PasswordManager passwordManager = (PasswordManager) params.get(PASSWORDMANAGER);
+                    folder.setPasswordManager(passwordManager);
                     String userInfo = url.getUserInfo();
                     if (userInfo != null) {
                         String[] userInfoSplit = userInfo.split(":", 2);
                         if (userInfoSplit.length > 0) {
-                            folder.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
+                            passwordManager.setCredentials(userInfoSplit[0], userInfoSplit.length > 1 ? userInfoSplit[1] : "");
                         }
                     }
                     return folder;

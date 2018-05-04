@@ -1,5 +1,6 @@
 package folder.ftp_folder;
 
+import folder.PasswordManager;
 import org.apache.commons.net.ftp.*;
 
 import java.io.IOException;
@@ -24,10 +25,8 @@ public class FTPClientWrapper {
     }
 
     private FTPClient ftp = null;
-    private static final String DEFAULT_LOGIN = "anonymous";
-    private String login = DEFAULT_LOGIN;
-    private String pass = "";
     private String ftpPath;
+    private PasswordManager passwordManager;
     private static final int DEFAULT_FTP_PORT = 21;
     private int ftpPort = DEFAULT_FTP_PORT;
     private Semaphore semaphore = new Semaphore(1);
@@ -41,6 +40,10 @@ public class FTPClientWrapper {
         this.ftpPath = ftpPath;
         this.ftpPort = ftpPort;
         init();
+    }
+
+    public void setPasswordManager(PasswordManager passwordManager) {
+        this.passwordManager = passwordManager;
     }
 
     public FTPFile[] listFiles(String onFtpPath) {
@@ -92,7 +95,7 @@ public class FTPClientWrapper {
         disconnect();
         try {
             ftp.connect(ftpPath);
-            ftp.login(login, pass);
+            ftp.login(passwordManager.getLogin(), passwordManager.getPassword());
 
             reply = ftp.getReplyCode();
 
@@ -130,30 +133,6 @@ public class FTPClientWrapper {
         }
     }
 
-//    public boolean levelUp() {
-//        try {
-//            return ftp.changeToParentDirectory();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
-
-
-    public void setCredentials(String login, String pass) {
-        this.login = login;
-        this.pass = pass;
-    }
-
-//    private boolean login() {
-//        try {
-//            return ftp.login(login, pass);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//    }
-
     public boolean authenticated() {
         try {
             ftp.listFiles("");
@@ -179,10 +158,10 @@ public class FTPClientWrapper {
 
     public String getFTPPath() {
         String addr = "ftp://";
-        if (!pass.isEmpty() || login.compareTo(DEFAULT_LOGIN) !=0) {
-            addr += login;
-            if (!pass.isEmpty()) {
-                addr += ":" + pass;
+        if (!passwordManager.isDefaultCredentials()) {
+            addr += passwordManager.getLogin();
+            if (!passwordManager.getPassword().isEmpty()) {
+                addr += ":" + passwordManager.getPassword();
             }
             addr += "@";
         }
