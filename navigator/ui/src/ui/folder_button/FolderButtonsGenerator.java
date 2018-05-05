@@ -3,7 +3,7 @@ package ui.folder_button;
 import folder.IFolder;
 import folder.file_preview.FilePreviewGenerator;
 import ui.IOpenFolderListener;
-import ui.LazyIconLoader;
+import folder.file_preview.LazyIconLoader;
 
 import javax.swing.*;
 import java.awt.*;
