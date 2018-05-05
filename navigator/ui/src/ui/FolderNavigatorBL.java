@@ -101,72 +101,81 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         KeyboardFocusManager.getCurrentKeyboardFocusManager()
                 .addKeyEventDispatcher(new KeyEventDispatcher() {
 
-                    private long whenHighFreq = 0;
-                    private long whenLowFreq = 0;
-                    private int lowFreqMs = 500;
-                    private int highFreqMs = 150;
+                    private long lastKeyEventTime = 0;
+                    private static final int WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS = 0;
                     @Override
                     public boolean dispatchKeyEvent(KeyEvent e) {
-                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_BACK_SPACE
-                                && (e.getWhen() - whenLowFreq) > lowFreqMs) {
-                            whenLowFreq = e.getWhen();
-                            levelUp();
+                        if (e.getID() != KeyEvent.KEY_PRESSED) {
+                            return false;
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_RIGHT && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.isControlDown() && e.getKeyCode() == KeyEvent.VK_BACK_SPACE &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
+                            levelUp();
+                            lastKeyEventTime = System.currentTimeMillis();
+                        }
+                        if (e.getKeyCode() == KeyEvent.VK_RIGHT &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(PREVIEW_PANEL) == 0) {
                                 folderIterator.next();
                             }
                             else {
                                 foldersPanelSelection.next();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_LEFT && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_LEFT &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(PREVIEW_PANEL) == 0) {
                                 folderIterator.prev();
                             }
                             else {
                                 foldersPanelSelection.prev();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_UP && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_UP &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
                                 foldersPanelSelection.up();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_DOWN && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_DOWN &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
                                 foldersPanelSelection.down();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_PAGE_DOWN && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_PAGE_DOWN &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
                                 foldersPanelSelection.pageDown();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_PAGE_UP && (e.getWhen() - whenHighFreq) > highFreqMs) {
-                            whenHighFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_PAGE_UP &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
                                 foldersPanelSelection.pageUp();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_ENTER && (e.getWhen() - whenLowFreq) > lowFreqMs) {
-                            whenLowFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_ENTER &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (pathText.getText().compareTo(getCurrentPath()) == 0) {
                                 foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
                             }
                             else {
                                 setNewAddress();
                             }
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
-                        if (e.getKeyCode() == KeyEvent.VK_F && e.isControlDown() && (e.getWhen() - whenLowFreq) > lowFreqMs) {
-                            whenLowFreq = e.getWhen();
+                        if (e.getKeyCode() == KeyEvent.VK_F && e.isControlDown() &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             previewPanel.setFullScreen(panelMode.compareTo(FOLDERS_PANEL) == 0 ?
                                     false : !previewPanel.isFullScreen());
+                            lastKeyEventTime = System.currentTimeMillis();
                         }
 
                         return false;
