@@ -8,8 +8,9 @@ import java.awt.event.*;
 
 public class FolderNavigatorUI extends JFrame {
 
-    private JLabel pathLabel;
-    private JTextField pathText;
+    private EditablePathManager editablePathManager;
+//    private JLabel pathLabel;
+//    private JTextField pathText;
     private JButton levelUpButton;
     FolderNavigatorBL folderNavigatorBL;
 
@@ -32,13 +33,9 @@ public class FolderNavigatorUI extends JFrame {
         }
         UIManager.put("swing.boldMetal", Boolean.FALSE);
 
+        editablePathManager = new EditablePathManager();
+
         Font font = new Font("ARIAL", Font.BOLD, 20);
-
-        pathLabel = new JLabel("Address");
-        pathLabel.setFont(font);
-
-        pathText = new JTextField();
-        pathText.setFont(font);
 
         levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
@@ -57,25 +54,14 @@ public class FolderNavigatorUI extends JFrame {
         basePanel.setLayout(new BoxLayout(basePanel, BoxLayout.Y_AXIS));
 
 
-        Action doNothing = new AbstractAction() {
-            public void actionPerformed(ActionEvent e) {
-                //do nothing
-            }
-        };
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.CTRL_DOWN_MASK), "doNothing");
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, InputEvent.CTRL_DOWN_MASK), "doNothing");
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0), "doNothing");
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0), "doNothing");
-        pathText.getInputMap().put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), "doNothing");
-        pathText.getActionMap().put("doNothing", doNothing);
-
         JPanel upPanel = new JPanel();
         upPanel.setLayout(new BoxLayout(upPanel, BoxLayout.X_AXIS));
-        upPanel.add(pathLabel);
-        upPanel.add(pathText);
+
+
+        upPanel.add(editablePathManager.getPathPanel());
+//        upPanel.add(pathLabel);
+//        upPanel.add(pathText);
         upPanel.add(levelUpButton);
-        pathLabel.setMaximumSize(new Dimension(150, 50));
-        pathText.setMaximumSize(new Dimension(Integer.MAX_VALUE, 50));
         levelUpButton.setMaximumSize(new Dimension(150, 50));
 
         basePanel.add(upPanel);
@@ -85,7 +71,7 @@ public class FolderNavigatorUI extends JFrame {
 
         add(basePanel);
 
-        folderNavigatorBL = new FolderNavigatorBL(mainPanel, pathText, levelUpButton);
+        folderNavigatorBL = new FolderNavigatorBL(mainPanel, editablePathManager, levelUpButton);
 
         pack();
     }

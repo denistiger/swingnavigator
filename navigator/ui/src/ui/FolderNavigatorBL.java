@@ -18,8 +18,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IPathChangedListener {
+
+    private enum KeyListenMode {
+        NAVIGATION,
+        ENTER_ADDRESS,
+        NOT_LISTENING
+    }
+
     private JPanel mainPanel;
-    private JTextField pathText;
+    private EditablePathManager editablePathManager;
     private JButton levelUpButton;
     private FoldersPanel foldersPanel;
     private JScrollPane foldersScrollPane;
@@ -36,9 +43,10 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     final static String PREVIEW_PANEL = "Files preview widget";
     private String panelMode;
 
-    public FolderNavigatorBL(JPanel mainPanel, JTextField pathText, JButton levelUpButton) {
+    public FolderNavigatorBL(JPanel mainPanel, EditablePathManager editablePathManager, JButton levelUpButton) {
         this.mainPanel = mainPanel;
         this.levelUpButton = levelUpButton;
+        this.editablePathManager = editablePathManager;
 
         folderManager = new FolderManager();
         pathListenerList = new LinkedList<>();
@@ -50,9 +58,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         foldersPanelSelection = foldersPanel;
         addPathListener(this);
 
-        this.pathText = pathText;
-        this.pathText.setText(getCurrentPath());
-        pathText.addActionListener(new ActionListener() {
+        editablePathManager.setPath(getCurrentPath());
+        editablePathManager.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setNewAddress();
@@ -73,7 +80,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             }
         };
 
-        pathText.getDocument().addDocumentListener(documentListener);
+        // TODO switch to own listener.
+        editablePathManager.addDocumentListener(documentListener);
 
 
 //        BorderLayout borderLayout = new BorderLayout();
@@ -163,7 +171,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                         }
                         if (e.getKeyCode() == KeyEvent.VK_ENTER &&
                                 (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
-                            if (pathText.getText().compareTo(getCurrentPath()) == 0) {
+                            if (editablePathManager.getPath().compareTo(getCurrentPath()) == 0) {
                                 foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
                             }
                             else {
@@ -185,11 +193,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     private void setNewAddress() {
-        openPath(pathText.getText());
+        openPath(editablePathManager.getPath());
     }
 
     private void filterFolders() {
-        String enteredPath = pathText.getText();
+        String enteredPath = editablePathManager.getPath();
         String currentPath = getCurrentPath();
 
         if (enteredPath.compareTo(currentPath) == 0 /*||
@@ -235,7 +243,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         Runnable setPathText = new Runnable() {
             @Override
             public void run() {
-                pathText.setText(path);
+                editablePathManager.setPath(path);
             }
         };
         SwingUtilities.invokeLater(setPathText);
