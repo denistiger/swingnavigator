@@ -2,9 +2,7 @@ package ui.file_preview;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 
 public class FullScreenImagePreview extends JFrame{
 
@@ -16,6 +14,7 @@ public class FullScreenImagePreview extends JFrame{
         setUndecorated(true);
         setTitle("Full Screen Image Preview");
         setVisible(false);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         previewPanel = imagePreviewPanel;
         initialColor = previewPanel.getBackground();
         BorderLayout borderLayout = new BorderLayout();
@@ -24,14 +23,15 @@ public class FullScreenImagePreview extends JFrame{
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                if ((int)e.getKeyChar() == 8 /*Backspace*/ ||
-                        (int)e.getKeyChar() == 27 /*Esc*/) {
+                if (e.getKeyCode() == KeyEvent.VK_BACK_SPACE ||
+                        e.getKeyCode() == KeyEvent.VK_ESCAPE) {
                     fullScreenListener.exitFullScreen();
                 }
             }
 
         });
     }
+
 
     public void showPreview(boolean showPreview) {
         if (showPreview) {
