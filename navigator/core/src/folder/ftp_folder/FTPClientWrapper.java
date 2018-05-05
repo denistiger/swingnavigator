@@ -122,12 +122,13 @@ public class FTPClientWrapper {
         try {
             ftp.logout();
         } catch(IOException e) {
-//            e.printStackTrace();
+            e.printStackTrace();
         } finally {
             if(ftp.isConnected()) {
                 try {
                     ftp.disconnect();
                 } catch(IOException ioe) {
+                    ioe.printStackTrace();
                 }
             }
         }

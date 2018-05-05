@@ -8,6 +8,7 @@ public class PasswordManager {
     private static String DEFAULT_PASSWORD = "";
     private String login = DEFAULT_LOGIN;
     private String password = DEFAULT_PASSWORD;
+    private boolean isDefaultCredentials = true;
     private List<ICredentialsListener> credentialsListeners;
 
     public interface ICredentialsListener {
@@ -19,10 +20,11 @@ public class PasswordManager {
     }
 
     public boolean isDefaultCredentials() {
-        if (login.compareTo(DEFAULT_LOGIN) == 0 && password.compareTo(DEFAULT_PASSWORD) == 0) {
-            return true;
-        }
-        return false;
+        return isDefaultCredentials;
+//        if (login.compareTo(DEFAULT_LOGIN) == 0 && password.compareTo(DEFAULT_PASSWORD) == 0) {
+//            return true;
+//        }
+//        return false;
     }
 
     public void addListener(ICredentialsListener credentialsListener) {
@@ -30,6 +32,7 @@ public class PasswordManager {
     }
 
     public void setCredentials(String login, String password) {
+        isDefaultCredentials = false;
         this.login = login;
         this.password = password;
         for (ICredentialsListener credentialsListener : credentialsListeners) {
@@ -49,6 +52,7 @@ public class PasswordManager {
     public void reset() {
         login = DEFAULT_LOGIN;
         password = DEFAULT_PASSWORD;
+        isDefaultCredentials = true;
     }
 
 }

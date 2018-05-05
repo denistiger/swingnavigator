@@ -166,7 +166,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                                 foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
                             }
                             else {
-                                setNewAddress();
+                                openPath(editablePathManager.getPath());
                             }
                             lastKeyEventTime = System.currentTimeMillis();
                         }
@@ -278,8 +278,12 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     }
 
     public void openPath(String path) {
+        openPath(path, false);
+    }
+
+    public void openPath(String path, boolean forceOpenByPath) {
         folderManager.getPasswordManager().reset();
-        if (path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
+        if (!forceOpenByPath && path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
             folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
         }
         else {
@@ -289,6 +293,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
             while (notSucceed) {
                 notSucceed = false;
                 folderStatus = folderManager.openPath(path);
+                KeyListenMode keyListenModeBackup = keyListenMode;
+                keyListenMode = KeyListenMode.NOT_LISTENING;
                 switch (folderStatus) {
                     case FTP_CONNECTION_ERROR:
                         JOptionPane.showMessageDialog(SwingUtilities.getWindowAncestor(mainPanel),
@@ -303,6 +309,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                         }
                         break;
                 }
+                keyListenMode = keyListenModeBackup;
             }
             if (folderStatus != FolderManager.OpenFolderStatus.SUCCESS &&
                     folderStatus != FolderManager.OpenFolderStatus.HALF_PATH_OPENED) {
@@ -368,7 +375,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     @Override
     public void newPathEntered() {
-        setNewAddress();
+        openPath(editablePathManager.getPath(), true);
     }
 
     @Override
