@@ -1,8 +1,6 @@
-package ui;
+package folder.file_preview;
 
 import folder.IFolder;
-import folder.file_preview.FilePreviewGenerator;
-import folder.file_preview.IFilePreviewListener;
 
 import java.util.LinkedList;
 import java.util.List;
