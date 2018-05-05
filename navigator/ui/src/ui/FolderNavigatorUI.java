@@ -39,12 +39,6 @@ public class FolderNavigatorUI extends JFrame {
 
         levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
-        levelUpButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                folderNavigatorBL.levelUp();
-            }
-        });
 
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);

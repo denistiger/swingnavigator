@@ -17,13 +17,16 @@ import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
 
-public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IPathChangedListener {
+public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IPathChangedListener,
+        EditablePathManager.IPathEditListener {
 
     private enum KeyListenMode {
         NAVIGATION,
         ENTER_ADDRESS,
         NOT_LISTENING
     }
+
+    private KeyListenMode keyListenMode = KeyListenMode.NAVIGATION;
 
     private JPanel mainPanel;
     private EditablePathManager editablePathManager;
@@ -59,29 +62,14 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         addPathListener(this);
 
         editablePathManager.setPath(getCurrentPath());
-        editablePathManager.addActionListener(new ActionListener() {
+        editablePathManager.addListener(this);
+
+        this.levelUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                setNewAddress();
+                levelUp();
             }
         });
-
-        DocumentListener documentListener = new DocumentListener() {
-            public void changedUpdate(DocumentEvent e) {
-                filterFolders();
-            }
-
-            public void removeUpdate(DocumentEvent e) {
-                filterFolders();
-            }
-
-            public void insertUpdate(DocumentEvent e) {
-                filterFolders();
-            }
-        };
-
-        // TODO switch to own listener.
-        editablePathManager.addDocumentListener(documentListener);
 
 
 //        BorderLayout borderLayout = new BorderLayout();
@@ -113,6 +101,9 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                     private static final int WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS = 0;
                     @Override
                     public boolean dispatchKeyEvent(KeyEvent e) {
+                        if (keyListenMode != KeyListenMode.NAVIGATION) {
+                            return false;
+                        }
                         if (e.getID() != KeyEvent.KEY_PRESSED) {
                             return false;
                         }
@@ -374,5 +365,21 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     public void folderManagerPathChanged() {
         processNewPath();
     }
+
+    @Override
+    public void newPathEntered() {
+        setNewAddress();
+    }
+
+    @Override
+    public void pathAppended() {
+        filterFolders();
+    }
+
+    @Override
+    public void setEditableMode(boolean editableMode) {
+        keyListenMode = editableMode ? KeyListenMode.ENTER_ADDRESS : KeyListenMode.NAVIGATION;
+    }
+
 
 }
