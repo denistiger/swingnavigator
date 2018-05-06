@@ -17,6 +17,24 @@ public class ImageUtils {
         imageIcon.setImage(resizedImg);
     }
 
+    public static ImageIcon combinedIcon(ImageIcon baseIcon, ImageIcon overlayIcon) {
+        double cutOff = 0.2;
+        Image baseImage = baseIcon.getImage();
+        Image overlayImg = overlayIcon.getImage();
+        BufferedImage resImg = new BufferedImage(baseIcon.getIconWidth(), baseIcon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = resImg.createGraphics();
+
+        g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        g2.drawImage(baseImage, 0, 0, baseIcon.getIconWidth(), baseIcon.getIconHeight(), null);
+        g2.drawImage(overlayImg, (int)(baseIcon.getIconWidth() * cutOff), (int)(baseIcon.getIconHeight() * cutOff),
+                (int)(baseIcon.getIconWidth() * (1.0 - 2 * cutOff)), (int)(baseIcon.getIconHeight() * (1.0 - 2 * cutOff)),
+                null);
+        g2.dispose();
+        ImageIcon imageIcon = new ImageIcon();
+        imageIcon.setImage(resImg);
+        return imageIcon;
+    }
+
     public static double getImageScaleRatio(ImageIcon imageIcon, int width, int height) {
         return getImageScaleRatio(imageIcon.getIconWidth(), imageIcon.getIconHeight(), width, height);
     }

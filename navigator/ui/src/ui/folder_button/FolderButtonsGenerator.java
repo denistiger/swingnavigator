@@ -74,7 +74,8 @@ public class FolderButtonsGenerator {
         lazyIconLoader = new LazyIconLoader();
         for (IFolder folder : folders) {
             FolderButton folderButton;
-            if (folder.getType() == IFolder.FolderTypes.IMAGE || folder.getType() == IFolder.FolderTypes.TEXT_FILE) {
+            if (folder.getType() == IFolder.FolderTypes.IMAGE || folder.getType() == IFolder.FolderTypes.TEXT_FILE
+                    || folder.getType() == IFolder.FolderTypes.ZIP || folder.getType() == IFolder.FolderTypes.FOLDER) {
                 folderButton = new FolderButton(folder, previewGenerator.getLazyLoadIcon(folder));
                 lazyIconLoader.addListener(folderButton, folder);
             }

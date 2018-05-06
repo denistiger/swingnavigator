@@ -15,6 +15,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 
     private ZipFile zipFile;
     private File file;
+    private String parentZipPath = null;
 
     public ZipFileFolder(File file) throws Exception {
         this.file = file;
@@ -22,8 +23,10 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
     }
 
 
-    public ZipFileFolder(ZipFile file, ZipEntryData entry, List<ZipEntryData> zipEntries, IFolderFactory factory ) throws Exception {
+    public ZipFileFolder(ZipFile file, ZipEntryData entry, List<ZipEntryData> zipEntries, IFolderFactory factory,
+                         String parentZipPath ) throws Exception {
         this.zipEntryData = entry;
+        this.parentZipPath = parentZipPath;
         zipFile = file;
         this.factory = factory;
         initChildren(zipEntries);
@@ -35,7 +38,8 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
         if (file != null) {
             return file.getAbsolutePath();
         }
-        return "Get absolute path is not implemented for files inside Zip archive";
+        return parentZipPath + "/" + zipEntryData.getInZipPath();
+        //"Get absolute path is not implemented for files inside Zip archive";
     }
 
     @Override
@@ -45,7 +49,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
 
     protected void init() throws Exception {
         zipFile = new ZipFile(file, ZipFile.OPEN_READ);
-        factory = new ZipFolderFactory(zipFile);
+        factory = new ZipFolderFactory(zipFile, file.getAbsolutePath());
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         List<ZipEntryData> zipEntries = new ArrayList<>();
         while (entries.hasMoreElements()) {

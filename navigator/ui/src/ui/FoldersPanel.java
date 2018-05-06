@@ -73,7 +73,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
         if (!folderButtonsDisplayed.isEmpty()) {
             final int rigid_area_width = 5;
-            int actualWidth = Math.max(maxPanelWidth, 100);
+            int actualWidth = Math.max(maxPanelWidth, 300);
             colsCount = actualWidth /
                     ((int) folderButtonsDisplayed.get(0).getMaximumSize().getWidth() + rigid_area_width);
 
