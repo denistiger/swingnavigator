@@ -61,14 +61,14 @@ public class ImageUtils {
 
     public static void resizeImageIconProportional(ImageIcon imageIcon, int width, int height) {
         double ratio = getImageScaleRatio(imageIcon, width, height);
-        width = (int) (ratio * imageIcon.getIconWidth());
-        height = (int) (ratio * imageIcon.getIconHeight());
+        int iconWidth = (int) (ratio * imageIcon.getIconWidth());
+        int iconHeight = (int) (ratio * imageIcon.getIconHeight());
         Image srcImg = imageIcon.getImage();
         BufferedImage resizedImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = resizedImg.createGraphics();
 
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-        g2.drawImage(srcImg, 0, 0, width, height, null);
+        g2.drawImage(srcImg, (width - iconWidth) / 2, (height - iconHeight) / 2, iconWidth, iconHeight, null);
         g2.dispose();
         imageIcon.setImage(resizedImg);
     }
