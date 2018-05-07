@@ -74,6 +74,19 @@ public abstract class AbstractZipFolder implements IFolder {
             }
             zipEntry = currentZipEntry;
         } while (iter.hasNext());
+        ArrayList<IFolder> sortedChildren = new ArrayList<>();
+        sortedChildren.ensureCapacity(children.size());
+        for (IFolder folder : children) {
+            if (folder.getType() == FolderTypes.FOLDER) {
+                sortedChildren.add(folder);
+            }
+        }
+        for (IFolder folder : children) {
+            if (folder.getType() != FolderTypes.FOLDER) {
+                sortedChildren.add(folder);
+            }
+        }
+        children = sortedChildren;
     }
 
     @Override
