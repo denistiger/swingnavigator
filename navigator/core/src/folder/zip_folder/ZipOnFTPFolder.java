@@ -82,6 +82,9 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         if (!ftpPath.isEmpty()) {
             path += getSeparator() + ftpPath;
         }
+        if (!zipEntryData.getInZipPath().isEmpty()) {
+            path += getSeparator() + zipEntryData.getInZipPath();
+        }
         return path;
     }
 

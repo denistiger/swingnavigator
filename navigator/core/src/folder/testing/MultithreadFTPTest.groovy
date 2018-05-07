@@ -30,8 +30,10 @@ class MultithreadFTPTest extends GroovyTestCase {
         LazyIconLoader lazyIconLoader = new LazyIconLoader();
 
         List<IFolder> folders = folderManager.getFoldersAtPath();
-        for (IFolder folder : folders) {
-            lazyIconLoader.addListener(previewListener, folder);
+        for (int i = 0; i < 50; ++i) {
+            for (IFolder folder : folders) {
+                lazyIconLoader.addListener(previewListener, folder);
+            }
         }
         lazyIconLoader.start();
 //        for (IFolder folder : folders) {

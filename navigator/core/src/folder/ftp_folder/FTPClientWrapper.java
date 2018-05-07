@@ -79,7 +79,6 @@ public class FTPClientWrapper {
 
     public InputStream retrieveFileStream(String onFtpPath) throws IOException {
         FTPClient ftp = getFTPClient();
-        System.out.println("retrieve file stream: " + Thread.currentThread().getId());
         connect(ftp);
         ftp.setFileType(FTP.BINARY_FILE_TYPE);
         return ftp.retrieveFileStream(onFtpPath);
