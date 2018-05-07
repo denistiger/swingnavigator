@@ -34,9 +34,9 @@ class MultithreadFTPTest extends GroovyTestCase {
             lazyIconLoader.addListener(previewListener, folder);
         }
         lazyIconLoader.start();
-        for (IFolder folder : folders) {
-            lazyIconLoader.addListener(previewListener, folder);
-        }
+//        for (IFolder folder : folders) {
+//            lazyIconLoader.addListener(previewListener, folder);
+//        }
         for (IFolder folder : folders) {
             if (folder.getType() == IFolder.FolderTypes.IMAGE) {
                 BufferedImage image = ImageIO.read(folder.getInputStream());
