@@ -3,6 +3,7 @@ package folder.zip_folder;
 import folder.*;
 import folder.factory.IFolderFactory;
 import folder.factory.ZipFolderFactory;
+import folder.ILevelUp;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,7 +13,7 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class ZipFileFolder extends AbstractZipFolder implements ILevelUp{
+public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
 
     private ZipFile zipFile;
     private File file;

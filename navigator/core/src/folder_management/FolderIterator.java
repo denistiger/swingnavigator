@@ -1,4 +1,6 @@
-package folder;
+package folder_management;
+
+import folder.IFolder;
 
 import java.util.List;
 import java.util.Vector;

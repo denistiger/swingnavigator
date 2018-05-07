@@ -1,4 +1,4 @@
-package folder.file_preview;
+package file_preview;
 
 import folder.IFolder;
 

@@ -1,7 +1,7 @@
 package ui.folder_button;
 
 import folder.IFolder;
-import folder.file_preview.IFilePreviewListener;
+import file_preview.IFilePreviewListener;
 
 import javax.swing.*;
 

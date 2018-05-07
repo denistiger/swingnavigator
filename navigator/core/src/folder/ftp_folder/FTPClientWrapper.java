@@ -1,7 +1,6 @@
 package folder.ftp_folder;
 
-import folder.PasswordManager;
-import org.apache.commons.net.DefaultSocketFactory;
+import folder_management.PasswordManager;
 import org.apache.commons.net.ftp.*;
 
 import java.io.IOException;

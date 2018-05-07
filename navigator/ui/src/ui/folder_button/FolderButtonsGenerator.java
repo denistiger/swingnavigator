@@ -1,9 +1,9 @@
 package ui.folder_button;
 
 import folder.IFolder;
-import folder.file_preview.FilePreviewGenerator;
+import file_preview.FilePreviewGenerator;
 import ui.IOpenFolderListener;
-import folder.file_preview.LazyIconLoader;
+import file_preview.LazyIconLoader;
 
 import javax.swing.*;
 import java.awt.*;

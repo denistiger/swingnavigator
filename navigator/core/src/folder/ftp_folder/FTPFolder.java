@@ -1,6 +1,8 @@
 package folder.ftp_folder;
 
 import folder.*;
+import folder.ILevelUp;
+import folder_management.PasswordManager;
 import org.apache.commons.net.ftp.*;
 import folder.zip_folder.ZipOnFTPFolder;
 

@@ -1,13 +1,12 @@
 package ui.file_preview;
 
 import folder.IFolder;
-import folder.FolderIterator;
-import folder.file_preview.FilePreviewGenerator;
+import folder_management.FolderIterator;
+import file_preview.FilePreviewGenerator;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.im.spi.InputMethod;
 import java.util.HashMap;
 import java.util.Map;
 

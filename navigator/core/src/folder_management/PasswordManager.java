@@ -1,4 +1,4 @@
-package folder;
+package folder_management;
 
 import java.util.LinkedList;
 import java.util.List;

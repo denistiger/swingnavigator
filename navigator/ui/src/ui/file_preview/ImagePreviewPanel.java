@@ -1,14 +1,11 @@
 package ui.file_preview;
 
 import folder.IFolder;
-import folder.file_preview.FilePreviewGenerator;
-import folder.file_preview.ImageUtils;
+import file_preview.ImageUtils;
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.awt.image.ImageObserver;
 import java.io.IOException;
 
 public class ImagePreviewPanel extends FilePreviewPanel {

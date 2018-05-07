@@ -18,7 +18,9 @@
 	xsi:schemaLocation="
 	   http://mina.apache.org/ftpserver/spring/v1 http://mina.apache.org/ftpserver/ftpserver-1.0.xsd	
 	   "
-	id="myServer">
+	id="myServer"
+	max-logins="500"
+	max-anon-logins="500">
 	<listeners>
 		<nio-listener name="default" port="2121">
 		    <ssl>

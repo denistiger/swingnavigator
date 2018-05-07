@@ -1,5 +1,9 @@
-package folder;
+package folder_management;
 
+import folder.CommonFile;
+import folder.IFolder;
+import folder.ILevelUp;
+import folder.PathUtils;
 import folder.factory.IFolderFactory;
 import folder.factory.UniversalFolderFactory;
 import folder.ftp_folder.FTPClientWrapper;

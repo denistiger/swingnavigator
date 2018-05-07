@@ -8,7 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.List;
 
-public class FileSystemEntity implements IFolder, ILevelUp{
+public class FileSystemEntity implements IFolder, ILevelUp {
     protected File file;
 
     public class NotALocalFolderException extends Exception {

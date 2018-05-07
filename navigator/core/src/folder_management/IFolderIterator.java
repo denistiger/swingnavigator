@@ -1,4 +1,6 @@
-package folder;
+package folder_management;
+
+import folder.IFolder;
 
 public interface IFolderIterator {
     boolean hasNext();

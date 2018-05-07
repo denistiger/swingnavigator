@@ -1,6 +1,6 @@
 package ui;
 
-import folder.PasswordManager;
+import folder_management.PasswordManager;
 
 import javax.swing.*;
 import java.awt.*;

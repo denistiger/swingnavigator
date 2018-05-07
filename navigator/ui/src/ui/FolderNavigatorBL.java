@@ -1,14 +1,15 @@
 package ui;
 
 import folder.*;
+import folder_management.FolderIterator;
+import folder_management.FolderManager;
+import folder_management.IPathChangedListener;
 import ui.file_preview.GenericPreviewPanel;
 import ui.folder_button.FolderButton;
 import ui.folder_button.FolderButtonSkeleton;
 import ui.folder_button.FolderButtonsGenerator;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
 import java.awt.event.ActionEvent;

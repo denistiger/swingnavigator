@@ -1,6 +1,6 @@
 package ui.folder_button;
 
-import folder.file_preview.FilePreviewGenerator;
+import file_preview.FilePreviewGenerator;
 
 public class FolderButtonLevelUp extends FolderButtonSkeleton {
 

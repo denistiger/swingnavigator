@@ -1,7 +1,7 @@
 package folder.factory;
 
 import folder.IFolder;
-import folder.PasswordManager;
+import folder_management.PasswordManager;
 import folder.ftp_folder.FTPFolder;
 
 import java.io.File;
