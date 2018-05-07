@@ -72,7 +72,7 @@ public class FolderButtonsGenerator {
             lazyIconLoader.stop();
         }
         else {
-            lazyIconLoader = new LazyIconLoader();
+            lazyIconLoader = new LazyIconLoader(previewGenerator);
         }
         for (IFolder folder : folders) {
             FolderButton folderButton;

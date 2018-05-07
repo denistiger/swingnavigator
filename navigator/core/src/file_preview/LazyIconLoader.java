@@ -24,10 +24,14 @@ public class LazyIconLoader implements Runnable{
     private volatile boolean stop = false;
     private volatile boolean backgroundMode = false;
     private Executor pool = Executors.newFixedThreadPool(4);
+    private FilePreviewGenerator filePreviewGenerator;
+
+    public LazyIconLoader(FilePreviewGenerator filePreviewGenerator) {
+        this.filePreviewGenerator = filePreviewGenerator;
+    }
 
     @Override
     public void run() {
-        FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
         for (FilePreviewData filePreviewData : filePreviewDataList) {
             pool.execute(new Runnable() {
                 @Override
@@ -41,7 +45,8 @@ public class LazyIconLoader implements Runnable{
                                 e.printStackTrace();
                             }
                         }
-                        filePreviewData.filePreviewListener.setPreviewIcon(previewGenerator.getFilePreviewSmall(filePreviewData.folder));
+                        filePreviewData.filePreviewListener.setPreviewIcon(
+                                filePreviewGenerator.getFilePreviewSmall(filePreviewData.folder));
                     }
                 }
             });

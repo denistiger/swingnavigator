@@ -1,5 +1,6 @@
 package testing
 
+import file_preview.FilePreviewGenerator
 import folder_management.FolderManager
 import folder.IFolder
 import file_preview.IFilePreviewListener
@@ -8,6 +9,7 @@ import file_preview.LazyIconLoader
 import javax.imageio.ImageIO
 import javax.swing.ImageIcon
 import java.awt.image.BufferedImage
+import java.util.concurrent.Semaphore
 
 class MultithreadFTPTest extends GroovyTestCase {
     class PreviewListener implements IFilePreviewListener {
@@ -16,19 +18,40 @@ class MultithreadFTPTest extends GroovyTestCase {
 
         @Override
         void setPreviewIcon(ImageIcon icon) {
-            previewCount++;
+            ++previewCount;
             System.out.println("Got preview for icon dimensions " + icon.getIconWidth() + " " + icon.getIconHeight());
         }
     }
 
-    void testMultipleIcons() {
+    void testMultipleIconsFTP() {
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder");
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/");
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/");
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/");
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder/top2/top2.zip/sub1/");
+        checkMultipleIcons("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/sub1/");
+    }
+
+    void testMultipleIconsDisk() {
+        checkMultipleIcons("../../testData/folder.zip/folder");
+        checkMultipleIcons("../../testData/folder.zip/folder/folder_in.zip/");
+        checkMultipleIcons("../../testData/folder.zip/folder/folder_in.zip/top2/");
+        checkMultipleIcons("../../testData/folder.zip/folder/folder_in.zip/top2/top2.zip/");
+        checkMultipleIcons("../../testData/folder.zip/folder/top2/top2.zip/sub1/");
+        checkMultipleIcons("../../testData/folder.zip/folder/folder_in.zip/top2/top2.zip/sub1/");
+    }
+
+    void checkMultipleIcons(String path) {
+        System.out.println("Start test 'checkMultipleIcons' for path " + path);
         FolderManager folderManager = new FolderManager();
-        folderManager.openPath("ftp://127.0.0.1:2121/folder.zip/folder");
+        folderManager.openPath(path);
         PreviewListener previewListener = new PreviewListener();
-        LazyIconLoader lazyIconLoader = new LazyIconLoader();
+        FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
+        LazyIconLoader lazyIconLoader = new LazyIconLoader(previewGenerator);
 
         List<IFolder> folders = folderManager.getFoldersAtPath();
-        for (int i = 0; i < 50; ++i) {
+        int stepsCount = 3;
+        for (int i = 0; i < stepsCount; ++i) {
             for (IFolder folder : folders) {
                 lazyIconLoader.addListener(previewListener, folder);
             }
@@ -44,7 +67,7 @@ class MultithreadFTPTest extends GroovyTestCase {
                         + image.getHeight());
             }
         }
-        Thread.sleep(5000);
-        assert(previewListener.previewCount == folders.size() * 2);
+        Thread.sleep(3000);
+        assert(previewListener.previewCount == folders.size() * stepsCount);
     }
 }

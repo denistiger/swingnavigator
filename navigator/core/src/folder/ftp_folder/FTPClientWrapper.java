@@ -18,7 +18,7 @@ public class FTPClientWrapper {
         WRONG_CREDENTIALS
     }
 
-    private static Map<Integer, FTPStatus> ftpCodeToStatus;
+    private static final Map<Integer, FTPStatus> ftpCodeToStatus;
 
     static {
         ftpCodeToStatus = new TreeMap<>();
@@ -26,14 +26,15 @@ public class FTPClientWrapper {
     }
 
     private Map<Long, FTPClient> ftpClients = new HashMap<>();
-    private String ftpPath;
+    private final String ftpPath;
     private PasswordManager passwordManager;
     private static final int DEFAULT_FTP_PORT = 21;
-    private int ftpPort = DEFAULT_FTP_PORT;
+    private final int ftpPort;
     private Semaphore semaphore = new Semaphore(1);
 
     public FTPClientWrapper(String ftpPath) {
         this.ftpPath = ftpPath;
+        ftpPort = DEFAULT_FTP_PORT;
     }
 
     public FTPClientWrapper(String ftpPath, int ftpPort) {
@@ -49,6 +50,7 @@ public class FTPClientWrapper {
         try {
             semaphore.acquire();
             long threadId = Thread.currentThread().getId();
+//            System.out.println("Thread id is " + threadId);
             if (!ftpClients.containsKey(threadId)) {
                 ftpClients.put(threadId, createFTPClient());
             }

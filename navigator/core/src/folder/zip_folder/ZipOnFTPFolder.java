@@ -6,6 +6,7 @@ import folder.factory.IFolderFactory;
 import folder.factory.ZipOnFTPFactory;
 import folder.ftp_folder.FTPClientWrapper;
 import folder.ftp_folder.IPrependFTPPath;
+import org.testng.internal.collections.Pair;
 import thirdparty.IOUtils;
 
 import java.io.IOException;
@@ -20,7 +21,7 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
 
     FTPClientWrapper ftpClient;
     String ftpPath;
-    ZipInputStream zipStream = null;
+//    ZipInputStream zipStream = null;
 
     public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) throws Exception {
         this.ftpClient = ftpClient;
@@ -39,16 +40,8 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         initialized = true;
     }
 
-    public void closeStream() {
-        try {
-            zipStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     private void initChildren() throws Exception {
-        resetStream();
+        ZipInputStream zipStream = resetStream();
         List<ZipEntryData> listNames = new ArrayList<>();
         while (true) {
             ZipEntry entry = zipStream.getNextEntry();
@@ -64,7 +57,11 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         }
         listNames.sort(Comparator.naturalOrder());
         initChildren(listNames);
-        closeStream();
+        try {
+            zipStream.close();
+        } catch (IOException er) {
+            er.printStackTrace();
+        }
     }
 
     @Override
@@ -101,7 +98,7 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
             if (!initialized) {
                 init();
             }
-            resetStream();
+            ZipInputStream zipStream = resetStream();
             ZipEntry entry = zipStream.getNextEntry();
             while (entry != null) {
                 if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0) {
@@ -118,10 +115,10 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
     }
 
 
-    void resetStream() throws IOException {
+    ZipInputStream resetStream() throws IOException {
         try {
             InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
-            zipStream = new ZipInputStream(inputStream);
+            return new ZipInputStream(inputStream);
         } catch (IOException e) {
             System.out.println("Fail with path: " + ftpPath);
             e.printStackTrace();
@@ -134,16 +131,16 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         }
     }
 
-    private ZipEntry getZipEntry() {
+    private Pair<ZipEntry, ZipInputStream> getZipEntryAndStream() {
         try {
-            resetStream();
+            ZipInputStream zipStream = resetStream();
             while (true) {
                 ZipEntry entry = zipStream.getNextEntry();
                 if (entry == null) {
                     return null;
                 }
                 if (entry.getName().compareTo(zipEntryData.getInZipPath()) == 0) {
-                    return entry;
+                    return new Pair<>(entry, zipStream);
                 }
             }
         } catch (IOException e) {
@@ -156,17 +153,24 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         if (zipEntryData.getData() != null) {
             return zipEntryData.getData();
         }
+        Pair<ZipEntry, ZipInputStream> entryAndStream = null;
         try {
-            ZipEntry entry = getZipEntry();
-            if (entry == null) {
+            entryAndStream = getZipEntryAndStream();
+            if (entryAndStream == null) {
                 return null;
             }
-            zipEntryData.setData(IOUtils.readFully(zipStream, -1, true));
+            zipEntryData.setData(IOUtils.readFully(entryAndStream.second(), -1, true));
         } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
-            closeStream();
+            try {
+                if (entryAndStream != null && entryAndStream.second() != null) {
+                    entryAndStream.second().close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         return zipEntryData.getData();
     }
