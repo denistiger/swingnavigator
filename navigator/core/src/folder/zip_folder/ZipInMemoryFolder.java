@@ -2,6 +2,7 @@ package folder.zip_folder;
 
 import folder.FileTypeGetter;
 import folder.factory.IFolderFactory;
+import folder.factory.ZipInMemoryFactory;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;

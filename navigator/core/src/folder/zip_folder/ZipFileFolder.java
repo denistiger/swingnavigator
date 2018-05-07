@@ -2,6 +2,7 @@ package folder.zip_folder;
 
 import folder.*;
 import folder.factory.IFolderFactory;
+import folder.factory.ZipFolderFactory;
 
 import java.io.File;
 import java.io.FileNotFoundException;

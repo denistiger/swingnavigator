@@ -3,6 +3,7 @@ package folder.zip_folder;
 import folder.*;
 
 import folder.factory.IFolderFactory;
+import folder.factory.ZipOnFTPFactory;
 import folder.ftp_folder.FTPClientWrapper;
 import folder.ftp_folder.IPrependFTPPath;
 import thirdparty.IOUtils;
