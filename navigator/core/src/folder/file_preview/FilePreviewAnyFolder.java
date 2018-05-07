@@ -29,6 +29,7 @@ public class FilePreviewAnyFolder implements IFilePreview {
         for (IFolder folder : folders) {
             if (folder.getType() == IFolder.FolderTypes.IMAGE) {
                 imagePreview = imagePreviewGenerator.getFilePreviewSmall(folder);
+                break;
             }
         }
         if (imagePreview == null) {
