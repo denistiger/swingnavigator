@@ -15,24 +15,36 @@ import java.util.zip.ZipInputStream;
 public class ZipInMemoryFolder extends AbstractZipFolder {
 
     private final byte[] zipData;
+    private String zipFileAbsolutePath;
 
-    public ZipInMemoryFolder(byte[] zipData, ZipEntryData zipEntryData) throws Exception {
+    public ZipInMemoryFolder(byte[] zipData, ZipEntryData zipEntryData,
+                             String parentZipFileAbsolutePath, String inZipPath) throws Exception {
         this.zipEntryData = new ZipEntryData("", zipEntryData.getName(), FolderTypes.ZIP, zipData);
         this.zipData = zipData;
-        factory = new ZipInMemoryFactory(this.zipData);
+        this.zipFileAbsolutePath = parentZipFileAbsolutePath + inZipPath + getSeparator();
+        factory = new ZipInMemoryFactory(this.zipData, getAbsolutePath());
     }
 
-    public ZipInMemoryFolder(byte[] zipData, ZipEntryData entry, List<ZipEntryData> zipEntries, IFolderFactory factory ) throws Exception {
+    public ZipInMemoryFolder(byte[] zipData, ZipEntryData zipEntryData, String zipFileAbsolutePath) throws Exception {
+        this.zipEntryData = new ZipEntryData("", zipEntryData.getName(), FolderTypes.ZIP, zipData);
+        this.zipData = zipData;
+        this.zipFileAbsolutePath = zipFileAbsolutePath + getSeparator();
+        factory = new ZipInMemoryFactory(this.zipData, getAbsolutePath());
+    }
+
+    public ZipInMemoryFolder(byte[] zipData, ZipEntryData entry, List<ZipEntryData> zipEntries,
+                             IFolderFactory factory, String zipFileAbsolutePath ) throws Exception {
         this.zipEntryData = entry;
         this.zipData = zipData;
         this.factory = factory;
+        this.zipFileAbsolutePath = zipFileAbsolutePath + zipEntryData.getInZipPath();
         initChildren(zipEntries);
         initialized = true;
     }
 
     @Override
     public String getAbsolutePath() {
-        return null;
+        return zipFileAbsolutePath;
     }
 
     @Override

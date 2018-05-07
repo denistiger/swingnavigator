@@ -30,7 +30,7 @@ public class ZipFolderFactory implements IFolderFactory {
         else {
             InputStream stream = zipFile.getInputStream(zipFile.getEntry(thisEntry.getInZipPath()));
             byte[] zipData = IOUtils.readFully(stream, -1, true);
-            return new ZipInMemoryFolder(zipData, thisEntry);
+            return new ZipInMemoryFolder(zipData, thisEntry, zipFileAbsolutePath);
         }
     }
 }

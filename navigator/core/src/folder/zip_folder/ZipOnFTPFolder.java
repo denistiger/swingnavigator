@@ -28,7 +28,8 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
         this.factory = new ZipOnFTPFactory(ftpClient, ftpPath);
     }
 
-    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, ZipEntryData zipEntryData, List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
+    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, ZipEntryData zipEntryData,
+                          List<ZipEntryData> entries, IFolderFactory factory) throws Exception {
         this.ftpClient = ftpClient;
         this.factory = factory;
         this.zipEntryData = zipEntryData;

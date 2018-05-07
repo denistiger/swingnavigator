@@ -57,7 +57,6 @@ class FolderManagerTest extends GroovyTestCase {
         manager.openPath("ftp://127.0.0.1:2121/folder/folder_in.zip/top2");
         assertEquals("Opened folder in zip that is placed on FTP.",
                 "ftp://127.0.0.1:2121/folder/folder_in.zip/top2/", manager.getCurrentFolder().getAbsolutePath());
-
     }
 
 
@@ -68,6 +67,27 @@ class FolderManagerTest extends GroovyTestCase {
                 "ftp://127.0.0.1:2121/folder/folder_in.zip/top2/", manager.getFullPath());
     }
 
+    void testPath(String pathToOpen, FolderManager folderManager) {
+        folderManager.openPath(pathToOpen);
+        assertEquals("Opened zip folder in zip that is placed on FTP.",
+                pathToOpen, folderManager.getCurrentFolder().getAbsolutePath());
+    }
+
+    void testOpenFolderZipInZipOnFTP() {
+        FolderManager manager = new FolderManager();
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top0/4.jpg", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top0/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top0/sub2/7.jpg", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top0/sub2/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top0/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/sub0/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/sub0/3.jpg", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/sub2/", manager);
+        testPath("ftp://127.0.0.1:2121/folder.zip/folder/folder_in.zip/top2/top2.zip/sub1/4.jpg", manager);
+    }
 
     void testFTPAbsolutePath() {
         FolderManager manager = new FolderManager();

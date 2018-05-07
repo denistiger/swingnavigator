@@ -23,11 +23,11 @@ public class LazyIconLoader implements Runnable{
     private List<FilePreviewData> filePreviewDataList = new LinkedList<>();
     private volatile boolean stop = false;
     private volatile boolean backgroundMode = false;
+    private Executor pool = Executors.newFixedThreadPool(4);
 
     @Override
     public void run() {
         FilePreviewGenerator previewGenerator = new FilePreviewGenerator();
-        Executor pool = Executors.newFixedThreadPool(4);
         for (FilePreviewData filePreviewData : filePreviewDataList) {
             pool.execute(new Runnable() {
                 @Override

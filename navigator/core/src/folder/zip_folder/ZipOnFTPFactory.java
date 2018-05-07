@@ -27,7 +27,8 @@ public class ZipOnFTPFactory implements IFolderFactory {
         else {
             ZipOnFTPFolder iFolder = new ZipOnFTPFolder(ftpClient, ftpPath, thisEntry, entries, this);
             byte[] zipData = iFolder.getEntryData();
-            return new ZipInMemoryFolder(zipData, thisEntry);
+            return new ZipInMemoryFolder(zipData, thisEntry,
+                    iFolder.getAbsolutePath() /*+ iFolder.getSeparator() + thisEntry.getInZipPath()*/);
         }
 
     }

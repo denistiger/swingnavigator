@@ -202,7 +202,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         }
 
         if (currentPath.startsWith(enteredPath)) {
-            if (currentPath.length() == 1 + enteredPath.length()) {
+            if (currentPath.length() == 1 + enteredPath.length() /*check for / in the end*/) {
                 enteredPath = enteredPath.substring(0, enteredPath.length() - 1);
             }
             IFolder currentFolder = folderManager.getCurrentFolder();

@@ -14,9 +14,11 @@ import java.util.zip.ZipInputStream;
 public class ZipInMemoryFactory implements IFolderFactory {
 
     private final byte[] zipData;
+    private final String zipFileAbsolutePath;
 
-    public ZipInMemoryFactory(byte[] zipData) {
+    public ZipInMemoryFactory(byte[] zipData, String zipFileAbsolutePath) {
         this.zipData = zipData;
+        this.zipFileAbsolutePath = zipFileAbsolutePath;
     }
 
     @Override
@@ -24,7 +26,7 @@ public class ZipInMemoryFactory implements IFolderFactory {
         ZipEntryData thisEntry = (ZipEntryData) params.get(THISENTRY);
         List<ZipEntryData> entries = (List<ZipEntryData>) params.get(CHILDENTRIES);
         if (thisEntry.getType() != IFolder.FolderTypes.ZIP) {
-            return new ZipInMemoryFolder(zipData, thisEntry, entries, this);
+            return new ZipInMemoryFolder(zipData, thisEntry, entries, this, zipFileAbsolutePath);
         }
         else {
             assert entries == null || entries.isEmpty();
@@ -42,7 +44,7 @@ public class ZipInMemoryFactory implements IFolderFactory {
                 }
             }
             if (entryZipData != null) {
-                return new ZipInMemoryFolder(entryZipData, thisEntry);
+                return new ZipInMemoryFolder(entryZipData, thisEntry, zipFileAbsolutePath, thisEntry.getInZipPath());
             }
         }
         return null;
