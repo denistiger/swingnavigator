@@ -138,6 +138,9 @@ public class EditablePathManager {
             }
         });
 
+        editAddressButton.setFocusable(false);
+        goButton.setFocusable(false);
+        cancelButton.setFocusable(false);
     }
 
     private void undoDeprecatedAction() {
@@ -202,6 +205,7 @@ public class EditablePathManager {
         for (IPathEditListener pathEditListener : pathEditListeners) {
             pathEditListener.setEditableMode(editingMode);
         }
+        pathTextField.requestFocus();
     }
 
     private void initDisabledKeyStrokesList() {

@@ -39,6 +39,7 @@ public class FolderNavigatorUI extends JFrame {
 
         levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
+        levelUpButton.setFocusable(false);
 
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -53,8 +54,6 @@ public class FolderNavigatorUI extends JFrame {
 
 
         upPanel.add(editablePathManager.getPathPanel());
-//        upPanel.add(pathLabel);
-//        upPanel.add(pathText);
         upPanel.add(levelUpButton);
         levelUpButton.setMaximumSize(new Dimension(150, 50));
 
