@@ -26,9 +26,22 @@ public class ImageUtils {
 
         g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
         g2.drawImage(baseImage, 0, 0, baseIcon.getIconWidth(), baseIcon.getIconHeight(), null);
-        g2.drawImage(overlayImg, (int)(baseIcon.getIconWidth() * cutOff), (int)(baseIcon.getIconHeight() * cutOff),
-                (int)(baseIcon.getIconWidth() * (1.0 - 2 * cutOff)), (int)(baseIcon.getIconHeight() * (1.0 - 2 * cutOff)),
-                null);
+
+        int startX = (int)(baseIcon.getIconWidth() * cutOff);
+        int startY = (int)(baseIcon.getIconHeight() * cutOff);
+        int width = (int)(baseIcon.getIconWidth() * (1.0 - 2 * cutOff));
+        int height = (int)(baseIcon.getIconHeight() * (1.0 - 2 * cutOff));
+
+        double scaleX = (double)overlayIcon.getIconWidth() / (double) width;
+        double scaleY = (double)overlayIcon.getIconHeight() / (double) height;
+        double scale = Math.max(scaleX, scaleY);
+        int iconWidth = (int) (overlayIcon.getIconWidth() / scale);
+        int iconHeight = (int) (overlayIcon.getIconHeight() / scale);
+
+        startX += (width - iconWidth) / 2;
+        startY += (height - iconHeight) / 2;
+
+        g2.drawImage(overlayImg, startX, startY, iconWidth, iconHeight,null);
         g2.dispose();
         ImageIcon imageIcon = new ImageIcon();
         imageIcon.setImage(resImg);
