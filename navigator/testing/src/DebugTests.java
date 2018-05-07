@@ -1,7 +1,7 @@
 import folder.IFolder;
-import folder.PasswordManager;
+import folder_management.PasswordManager;
 import folder.ftp_folder.FTPFolder;
-import folder.testing.TestUtils;
+import testing.TestUtils;
 
 import java.util.List;
 
