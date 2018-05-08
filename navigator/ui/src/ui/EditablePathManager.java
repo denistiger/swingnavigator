@@ -5,6 +5,7 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -214,9 +215,16 @@ public class EditablePathManager {
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, InputEvent.CTRL_DOWN_MASK));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, InputEvent.SHIFT_DOWN_MASK));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, InputEvent.SHIFT_DOWN_MASK));
+        disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT,
+                InputEvent.SHIFT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK));
+        disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT,
+                InputEvent.SHIFT_DOWN_MASK | InputEvent.CTRL_DOWN_MASK));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_LEFT, 0));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_HOME, 0));
+        disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_END, 0));
+        disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_HOME, InputEvent.SHIFT_DOWN_MASK));
+        disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_END, InputEvent.SHIFT_DOWN_MASK));
         disabledKeyStrokes.add(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0));
 
         Action doNothing = new AbstractAction() {

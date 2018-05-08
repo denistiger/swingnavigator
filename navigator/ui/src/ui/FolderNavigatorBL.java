@@ -161,6 +161,23 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                             }
                             lastKeyEventTime = System.currentTimeMillis();
                         }
+
+                        if (e.getKeyCode() == KeyEvent.VK_END &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.end();
+                            }
+                            lastKeyEventTime = System.currentTimeMillis();
+                        }
+
+                        if (e.getKeyCode() == KeyEvent.VK_HOME &&
+                                (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
+                            if (panelMode.compareTo(FOLDERS_PANEL) == 0) {
+                                foldersPanelSelection.begin();
+                            }
+                            lastKeyEventTime = System.currentTimeMillis();
+                        }
+
                         if (e.getKeyCode() == KeyEvent.VK_ENTER &&
                                 (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (editablePathManager.getPath().compareTo(getCurrentPath()) == 0) {

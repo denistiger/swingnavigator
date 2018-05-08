@@ -153,7 +153,8 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
         }
         Rectangle rect = getVisibleRect();
         int row = selectionIndex / colsCount;
-        int buttonHeight = folderButtonsDisplayed.get(0).getHeight();
+        int buttonHeight = folderButtonsDisplayed.get(0).getHeight() + 2; // +2 for borders?
+
         int minY = row * buttonHeight;
         int maxY = (row + 1) * buttonHeight;
         if (rect.y > minY) {
@@ -185,6 +186,14 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
     public void prev() {
         if (selectionIndex > 0) {
             selectionIndex--;
+            updateSelectionForNewIndex();
+        }
+    }
+
+    @Override
+    public void up() {
+        if (selectionIndex >= colsCount) {
+            selectionIndex -= colsCount;
             updateSelectionForNewIndex();
         }
     }
@@ -228,11 +237,15 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
     }
 
     @Override
-    public void up() {
-        if (selectionIndex >= colsCount) {
-            selectionIndex -= colsCount;
-            updateSelectionForNewIndex();
-        }
+    public void begin() {
+        selectionIndex = 0;
+        updateSelectionForNewIndex();
+    }
+
+    @Override
+    public void end() {
+        selectionIndex = folderButtonsDisplayed.size() - 1;
+        updateSelectionForNewIndex();
     }
 
     @Override

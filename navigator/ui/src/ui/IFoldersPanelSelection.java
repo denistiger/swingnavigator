@@ -11,5 +11,7 @@ public interface IFoldersPanelSelection {
     void down();
     void pageUp();
     void pageDown();
+    void begin();
+    void end();
     FolderButtonSkeleton getSelection();
 }
