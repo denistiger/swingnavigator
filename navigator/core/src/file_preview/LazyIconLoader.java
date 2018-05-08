@@ -2,13 +2,16 @@ package file_preview;
 
 import folder.IFolder;
 
+import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Semaphore;
 import java.util.function.Predicate;
 
-public class LazyIconLoader implements Runnable{
+public class LazyIconLoader {
 
     private class FilePreviewData {
         public IFilePreviewListener filePreviewListener;
@@ -20,50 +23,83 @@ public class LazyIconLoader implements Runnable{
         }
     }
 
-    private List<FilePreviewData> filePreviewDataList = new LinkedList<>();
+    private Deque<FilePreviewData> filePreviewDataList = new LinkedList<>();
     private volatile boolean stop = false;
     private volatile boolean backgroundMode = false;
-    private Executor pool = Executors.newFixedThreadPool(4);
     private FilePreviewGenerator filePreviewGenerator;
-    private Thread currentThread = null;
+    private Semaphore semaphore = new Semaphore(1);
+    private ArrayList<Thread> threadPull;
 
     public LazyIconLoader(FilePreviewGenerator filePreviewGenerator) {
         this.filePreviewGenerator = filePreviewGenerator;
+        threadPull = new ArrayList<>();
+        for (int i = 0; i < 4; ++i){
+            threadPull.add(new Thread(new PreviewLoader()));
+        }
+        for (Thread thread : threadPull) {
+            thread.start();
+        }
     }
 
-    @Override
-    public void run() {
-        for (FilePreviewData filePreviewData : filePreviewDataList) {
-            pool.execute(new Runnable() {
-                @Override
-                public void run() {
-                    if (stop == false) {
-                        if (backgroundMode) {
-                            try {
-                                // Use less resources.
-                                Thread.sleep(1000);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        filePreviewData.filePreviewListener.setPreviewIcon(
-                                filePreviewGenerator.getFilePreviewSmall(filePreviewData.folder));
+    private class PreviewLoader implements Runnable {
+
+        @Override
+        public void run() {
+            while (true) {
+                if (stop) {
+                    try {
+                        Thread.sleep(40);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    continue;
+                }
+                if (backgroundMode) {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
                 }
-            });
+                FilePreviewData filePreviewData = null;
+                try {
+                    semaphore.acquire();
+                    if (!filePreviewDataList.isEmpty()) {
+                        filePreviewData = filePreviewDataList.pollFirst();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    semaphore.release();
+                }
+                if (filePreviewData != null) {
+                    filePreviewData.filePreviewListener.setPreviewIcon(
+                            filePreviewGenerator.getFilePreviewSmall(filePreviewData.folder));
+                }
+                else {
+                    try {
+                        Thread.sleep(40);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+
+            }
         }
     }
 
     public void stop() {
         stop = true;
         try {
-            if (currentThread != null) {
-                currentThread.join();
-            }
+            semaphore.acquire();
+            filePreviewDataList.clear();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        filePreviewDataList.clear();
+        finally {
+            semaphore.release();
+        }
     }
 
     public void setBackgroundMode(boolean backgroundMode) {
@@ -73,12 +109,18 @@ public class LazyIconLoader implements Runnable{
     public void start() {
         stop = false;
         setBackgroundMode(false);
-        currentThread = new Thread(this);
-        currentThread.start();
     }
 
     public void addListener(IFilePreviewListener filePreviewListener, IFolder folder) {
-        filePreviewDataList.add(new FilePreviewData(filePreviewListener, folder));
+        try {
+            semaphore.acquire();
+            filePreviewDataList.add(new FilePreviewData(filePreviewListener, folder));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            semaphore.release();
+        }
     }
 
     public void removeListener(IFilePreviewListener filePreviewListener1) {

@@ -62,7 +62,9 @@ class MultithreadFTPTest extends GroovyTestCase {
 //        }
         for (IFolder folder : folders) {
             if (folder.getType() == IFolder.FolderTypes.IMAGE) {
-                BufferedImage image = ImageIO.read(folder.getInputStream());
+                InputStream inputStream = folder.getInputStream();
+                BufferedImage image = ImageIO.read(inputStream);
+                inputStream.close();
                 System.out.println("Got full image " + folder.getName() + " dimensions: " + image.getWidth() + " "
                         + image.getHeight());
             }

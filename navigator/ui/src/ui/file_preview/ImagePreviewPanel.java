@@ -7,6 +7,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class ImagePreviewPanel extends FilePreviewPanel {
 
@@ -39,7 +40,9 @@ public class ImagePreviewPanel extends FilePreviewPanel {
             throw new PreviewException("Not an image");
         }
         try {
-            bufferedImage = ImageIO.read(previewFile.getInputStream());
+            InputStream inputStream = previewFile.getInputStream();
+            bufferedImage = ImageIO.read(inputStream);
+            inputStream.close();
         } catch (IOException e) {
             bufferedImage = null;
             e.printStackTrace();

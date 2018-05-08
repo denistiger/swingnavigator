@@ -30,6 +30,7 @@ public class TextFilePreviewPanel extends FilePreviewPanel {
         try {
             // TODO Return notification on large file. Read only first 10 000 000 bytes.
             byte[] data = IOUtils.readFully(inputStream, 1000000, false);
+            inputStream.close();
             textArea.setText(new String(data));
             textArea.setCaretPosition(0);
         } catch (IOException e) {

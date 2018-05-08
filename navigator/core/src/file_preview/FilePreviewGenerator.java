@@ -38,6 +38,7 @@ public class FilePreviewGenerator implements IFilePreview {
             return;
         }
         if (foldersCache.size() > MAX_CACHE_SIZE) {
+            System.out.println("Cache is cleared");
             foldersCache.clear();
         }
         foldersCache.put(file.getAbsolutePath(), imageIcon);

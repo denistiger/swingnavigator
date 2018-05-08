@@ -32,7 +32,6 @@ public class FilePreviewText implements IFilePreview {
                 return new String[0];
             }
             data = Arrays.copyOf(data, readBytes);
-            inputStream.close();
         } catch (IOException e) {
             System.err.println("Bad file name " + file.getName());
             e.printStackTrace();
@@ -42,6 +41,13 @@ public class FilePreviewText implements IFilePreview {
             System.err.println("Bad file name " + file.getName());
             e.printStackTrace();
             return new String[0];
+        }
+        finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         String origin = new String(data);
         origin = origin.replace("\r", "");
