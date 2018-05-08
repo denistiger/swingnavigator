@@ -5,12 +5,14 @@ import folder.IFolder;
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 public class FilePreviewGenerator implements IFilePreview {
     private static final int MAX_CACHE_SIZE = 10000;
     private static final Map<IFolder.FolderTypes, IFilePreview> FILE_PREVIEW_MAP, LAZY_PREVEW_MAP;
     private static final IFilePreview DEFAULT_PREVIEW, LAZY_PREVIEW;
     private static final Map<String, ImageIcon> foldersCache = new HashMap<>();
+    private static Semaphore semaphore = new Semaphore(1);
     static {
         FILE_PREVIEW_MAP = new HashMap<>();
         FILE_PREVIEW_MAP.put(IFolder.FolderTypes.IMAGE, new FilePreviewImage());
@@ -73,11 +75,27 @@ public class FilePreviewGenerator implements IFilePreview {
 
     @Override
     public ImageIcon getFilePreviewSmall(IFolder file) {
-        if (file != null && foldersCache.containsKey(file.getAbsolutePath())) {
-            return foldersCache.get(file.getAbsolutePath());
+        try {
+            semaphore.acquire();
+            if (file != null && foldersCache.containsKey(file.getAbsolutePath())) {
+                return foldersCache.get(file.getAbsolutePath());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            semaphore.release();
         }
         ImageIcon imageIcon = getFilePreviewGenerator(file).getFilePreviewSmall(file);
-        addToCache(file, imageIcon);
+        try {
+            semaphore.acquire();
+            addToCache(file, imageIcon);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        finally {
+            semaphore.release();
+        }
         return imageIcon;
     }
 
