@@ -25,6 +25,7 @@ public class LazyIconLoader implements Runnable{
     private volatile boolean backgroundMode = false;
     private Executor pool = Executors.newFixedThreadPool(4);
     private FilePreviewGenerator filePreviewGenerator;
+    private Thread currentThread = null;
 
     public LazyIconLoader(FilePreviewGenerator filePreviewGenerator) {
         this.filePreviewGenerator = filePreviewGenerator;
@@ -55,6 +56,14 @@ public class LazyIconLoader implements Runnable{
 
     public void stop() {
         stop = true;
+        try {
+            if (currentThread != null) {
+                currentThread.join();
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        filePreviewDataList.clear();
     }
 
     public void setBackgroundMode(boolean backgroundMode) {
@@ -64,7 +73,8 @@ public class LazyIconLoader implements Runnable{
     public void start() {
         stop = false;
         setBackgroundMode(false);
-        new Thread(this).start();
+        currentThread = new Thread(this);
+        currentThread.start();
     }
 
     public void addListener(IFilePreviewListener filePreviewListener, IFolder folder) {
