@@ -3,18 +3,20 @@ package file_preview;
 import folder.IFolder;
 import thirdparty.IOUtils;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class FilePreviewImage implements IFilePreview {
 
-    private ImageIcon readImage(IFolder file) {
+    public ImageIcon readImage(IFolder file) {
         InputStream inputStream = file.getInputStream();
         try {
-            byte[] imageData = IOUtils.readFully(inputStream, -1, true);
+            Image image = ImageIO.read(inputStream);
             inputStream.close();
-            ImageIcon imageIcon = new ImageIcon(imageData);
+            ImageIcon imageIcon = new ImageIcon(image);
             return imageIcon;
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,8 +1,11 @@
 package file_preview;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class ImageUtils {
 
@@ -15,6 +18,23 @@ public class ImageUtils {
         g2.drawImage(srcImg, 0, 0, width, height, null);
         g2.dispose();
         imageIcon.setImage(resizedImg);
+    }
+
+    public static boolean saveIconToDisk(ImageIcon icon, String path) {
+        Image img = icon.getImage();
+
+        BufferedImage bi = new BufferedImage(img.getWidth(null),
+                img.getHeight(null),BufferedImage.TYPE_4BYTE_ABGR);
+
+        Graphics2D g2 = bi.createGraphics();
+        g2.drawImage(img, 0, 0, null);
+        g2.dispose();
+        try {
+            return ImageIO.write(bi, "jpg", new File(path));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
     public static ImageIcon combinedIcon(ImageIcon baseIcon, ImageIcon overlayIcon) {

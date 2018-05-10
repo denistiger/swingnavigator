@@ -1,5 +1,6 @@
 package testing
 
+import file_preview.ImageUtils
 import folder_management.FolderManager
 import folder.IFolder
 import file_preview.FilePreviewImage
@@ -22,6 +23,22 @@ class FilePreviewImageTest extends GroovyTestCase {
 
         }
     }
+
+    void testBMPImagePreview() {
+        FolderManager manager = new FolderManager();
+        manager.openPath("../../testImages/");
+        List<IFolder> folders = manager.getFoldersAtPath();
+        assertEquals("Images count is 15", 15, folders.size());
+        for (IFolder folder : folders) {
+            assert(folder.type == IFolder.FolderTypes.IMAGE);
+            FilePreviewImage imagePreview = new FilePreviewImage();
+            ImageIcon icon = imagePreview.readImage(folder);
+            assertTrue ("Icon is not null", icon != null);
+            assertTrue ("Icon 64+ pixels width and height",
+                    icon.getIconWidth() >= 64 && icon.getIconHeight() >= 64);
+        }
+    }
+
 
     void testGetFilePreviewImageInZip() {
         FolderManager manager = new FolderManager();
