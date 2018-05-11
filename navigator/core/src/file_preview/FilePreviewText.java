@@ -1,6 +1,7 @@
 package file_preview;
 
 import folder.IFolder;
+import thirdparty.IOUtils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,38 +24,32 @@ public class FilePreviewText implements IFilePreview {
 
     private String[] getText(IFolder file) {
         InputStream inputStream = file.getInputStream();
-        final int step = 20;
-        final int linesCount = 15;
-        byte[] data = new byte[step * (linesCount + 5)];
+        final int step = 16;
+        final int linesCount = 6;
+        byte[] data;
         try {
-            int readBytes = inputStream.read(data);
-            if (readBytes <= 0) {
-                return new String[0];
-            }
-            data = Arrays.copyOf(data, readBytes);
+            data = IOUtils.readFully(inputStream, step * (linesCount + 5), false);
+            inputStream.close();
         } catch (IOException e) {
-            System.err.println("Bad file name " + file.getName());
             e.printStackTrace();
             return new String[0];
-        }
-        catch (NegativeArraySizeException e) {
-            System.err.println("Bad file name " + file.getName());
-            e.printStackTrace();
-            return new String[0];
-        }
-        finally {
-            try {
-                inputStream.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
         String origin = new String(data);
-        origin = origin.replace("\r", "");
+        origin = origin.replaceAll("\r", "");
+        origin = origin.replaceAll("\t", " ");
+        while (origin.contains("  ")) {
+            origin = origin.replaceAll("  ", " ");
+        }
         String[] originLines = origin.split("\n");
         List<String> resLines = new ArrayList<>();
         for (String st : originLines) {
             while (st.length() > 0 && resLines.size() < linesCount) {
+                if (st.startsWith(" ")) {
+                    st = st.substring(1);
+                    if (st.length() == 0) {
+                        break;
+                    }
+                }
                 resLines.add(st.substring(0, Math.min(step, st.length())));
                 st = st.substring(Math.min(step, st.length()));
             }

@@ -1,6 +1,5 @@
 package folder;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +39,10 @@ public class FileTypeGetter {
         typesMap.put("pro", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("profile", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("json", IFolder.FolderTypes.TEXT_FILE);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(typesMap.keySet());
     }
 
 

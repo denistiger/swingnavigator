@@ -11,8 +11,9 @@ import java.io.InputStream;
 public class TextFilePreviewPanel extends FilePreviewPanel {
 
     private JTextArea textArea;
+    private static final int MAX_DISPLAYED_SYMBOLS = 1000000;
 
-    public TextFilePreviewPanel() {
+    TextFilePreviewPanel() {
         textArea = new JTextArea();
         textArea.setEditable(false);
         textArea.setLineWrap(true);
@@ -28,11 +29,13 @@ public class TextFilePreviewPanel extends FilePreviewPanel {
     public void setPreviewFile(IFolder previewFile) {
         InputStream inputStream = previewFile.getInputStream();
         try {
-            // TODO Return notification on large file. Read only first 10 000 000 bytes.
-            byte[] data = IOUtils.readFully(inputStream, 1000000, false);
+            byte[] data = IOUtils.readFully(inputStream, MAX_DISPLAYED_SYMBOLS, false);
             inputStream.close();
             textArea.setText(new String(data));
             textArea.setCaretPosition(0);
+            if (data.length == MAX_DISPLAYED_SYMBOLS) {
+                textArea.append("\n\n Only first " + MAX_DISPLAYED_SYMBOLS + " were loaded for optimization purpose.");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

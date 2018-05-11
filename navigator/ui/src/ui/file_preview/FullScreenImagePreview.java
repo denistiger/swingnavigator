@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class FullScreenImagePreview extends JFrame{
+class FullScreenImagePreview extends JFrame{
 
     private ImagePreviewPanel previewPanel;
     private Color initialColor;
 
-    public FullScreenImagePreview(ImagePreviewPanel imagePreviewPanel, IFullScreenListener fullScreenListener) {
+    FullScreenImagePreview(ImagePreviewPanel imagePreviewPanel, IFullScreenListener fullScreenListener) {
         setSize(getToolkit().getScreenSize());
         setUndecorated(true);
         setTitle("Full Screen Image Preview");
@@ -33,7 +33,7 @@ public class FullScreenImagePreview extends JFrame{
     }
 
 
-    public void showPreview(boolean showPreview) {
+    void showPreview(boolean showPreview) {
         if (showPreview) {
             previewPanel.setBackground(Color.BLACK);
         }
