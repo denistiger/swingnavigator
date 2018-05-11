@@ -5,9 +5,9 @@ import folder.IFolder;
 import javax.swing.*;
 
 public abstract class FilePreviewPanel extends JPanel {
-    public static class PreviewException extends Exception {
+    static class PreviewException extends Exception {
 
-        public PreviewException(String message) {
+        PreviewException(String message) {
             super(message);
         }
     }

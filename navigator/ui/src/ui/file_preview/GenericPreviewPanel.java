@@ -6,7 +6,6 @@ import file_preview.FilePreviewGenerator;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,19 +47,9 @@ public class GenericPreviewPanel extends FilePreviewPanel implements IFullScreen
         nextButton.setEnabled(false);
         prevButton.setEnabled(false);
 
-        nextButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                folderIterator.next();
-            }
-        });
+        nextButton.addActionListener(e -> folderIterator.next());
 
-        prevButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                folderIterator.prev();
-            }
-        });
+        prevButton.addActionListener(e -> folderIterator.prev());
 
         prevLabel = new JLabel();
         curLabel = new JLabel();
@@ -101,7 +90,6 @@ public class GenericPreviewPanel extends FilePreviewPanel implements IFullScreen
         GridLayout topMiddlePanelLayout = new GridLayout(2, 1);
         topMiddlePanel.setLayout(topMiddlePanelLayout);
         topMiddlePanel.add(curLabel);
-//        topMiddlePanel.add(Box.createVerticalStrut(8));
         topMiddlePanel.add(prevNextPanel);
 
         JPanel topPanel = new JPanel();

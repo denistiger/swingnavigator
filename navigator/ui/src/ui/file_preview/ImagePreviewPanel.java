@@ -13,7 +13,7 @@ public class ImagePreviewPanel extends FilePreviewPanel {
 
     private BufferedImage bufferedImage = null;
 
-    public ImagePreviewPanel() {
+    ImagePreviewPanel() {
     }
 
     @Override

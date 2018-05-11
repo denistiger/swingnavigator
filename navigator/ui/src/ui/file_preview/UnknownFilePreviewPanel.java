@@ -9,7 +9,7 @@ public class UnknownFilePreviewPanel extends FilePreviewPanel {
 
     private JLabel label;
 
-    public UnknownFilePreviewPanel() {
+    UnknownFilePreviewPanel() {
         label = new JLabel("No file preview");
         label.setFont(new Font("Arial Black", Font.BOLD, 30));
         add(label);
