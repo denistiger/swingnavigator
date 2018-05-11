@@ -1,20 +1,12 @@
 package ui;
 
 import javax.swing.*;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 import java.awt.*;
-import java.awt.event.*;
 
 public class FolderNavigatorUI extends JFrame {
 
-    private EditablePathManager editablePathManager;
-//    private JLabel pathLabel;
-//    private JTextField pathText;
-    private JButton levelUpButton;
-    FolderNavigatorBL folderNavigatorBL;
 
-    public FolderNavigatorUI() {
+    FolderNavigatorUI() {
         initComponents();
     }
 
@@ -22,22 +14,19 @@ public class FolderNavigatorUI extends JFrame {
 
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (UnsupportedLookAndFeelException e) {
+        }
+        catch (UnsupportedLookAndFeelException | ClassNotFoundException |
+                InstantiationException | IllegalAccessException e)
+        {
             e.printStackTrace();
         }
         UIManager.put("swing.boldMetal", Boolean.FALSE);
 
-        editablePathManager = new EditablePathManager();
+        EditablePathManager editablePathManager = new EditablePathManager();
 
         Font font = new Font("ARIAL", Font.BOLD, 20);
 
-        levelUpButton = new JButton("Level Up");
+        JButton levelUpButton = new JButton("Level Up");
         levelUpButton.setFont(font);
         levelUpButton.setFocusable(false);
 
@@ -64,39 +53,14 @@ public class FolderNavigatorUI extends JFrame {
 
         add(basePanel);
 
-        folderNavigatorBL = new FolderNavigatorBL(mainPanel, editablePathManager, levelUpButton);
+        new FolderNavigatorBL(mainPanel, editablePathManager, levelUpButton);
 
         pack();
     }
 
 
     public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-//            MetalLookAndFeel.setCurrentTheme(new ColorTheme());
-        }
-        catch (UnsupportedLookAndFeelException e) {
-            System.out.println(e.getStackTrace());
-            // handle exception
-        }
-        catch (ClassNotFoundException e) {
-            System.out.println(e.getStackTrace());
-            // handle exception
-        }
-        catch (InstantiationException e) {
-            System.out.println(e.getStackTrace());
-            // handle exception
-        }
-        catch (IllegalAccessException e) {
-            System.out.println(e.getStackTrace());
-            // handle exception
-        }
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FolderNavigatorUI().setVisible(true);
-            }
-        });
+        java.awt.EventQueue.invokeLater(() -> new FolderNavigatorUI().setVisible(true));
     }
 
 }

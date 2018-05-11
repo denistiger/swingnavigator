@@ -18,10 +18,6 @@ public class PathUtils {
         }
     }
 
-    public void push(String name) {
-        path += name + separator;
-    }
-
     public String pop() {
         int sepPos = path.lastIndexOf(separator);
         if (sepPos == -1) {

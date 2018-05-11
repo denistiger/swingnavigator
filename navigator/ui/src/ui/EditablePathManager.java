@@ -5,11 +5,10 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 
-public class EditablePathManager {
+class EditablePathManager {
 
     public interface IPathEditListener {
         void newPathEntered();
@@ -20,7 +19,6 @@ public class EditablePathManager {
     private static final int PANEL_HEIGHT = 50;
 
     private JPanel mainPanel, buttonsPanel;
-    private JLabel pathLabel;
     private JTextField pathTextField;
     private boolean editingMode = false;
 
@@ -43,39 +41,24 @@ public class EditablePathManager {
 
         Font font = new Font("ARIAL", Font.BOLD, 20);
 
-        pathLabel = new JLabel("Address");
+        JLabel pathLabel = new JLabel("Address");
         pathLabel.setFont(font);
         pathLabel.setMaximumSize(new Dimension(150, PANEL_HEIGHT));
 
         editAddressButton = new JButton("Edit Address");
         editAddressButton.setFont(font);
 
-        editAddressButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                allowAddressEditing(true);
-            }
-        });
+        editAddressButton.addActionListener(e -> allowAddressEditing(true));
 
         goButton = new JButton("Go Address:");
         goButton.setFont(font);
 
-        goButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                openPath();
-            }
-        });
+        goButton.addActionListener(e -> openPath());
 
         cancelButton = new JButton("Reset");
         cancelButton.setFont(font);
 
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                reset();
-            }
-        });
+        cancelButton.addActionListener(e -> reset());
 
         pathTextField = new JTextField();
         pathTextField.setFont(font);
@@ -103,12 +86,9 @@ public class EditablePathManager {
         };
         pathTextField.getDocument().addDocumentListener(documentListener);
 
-        pathTextField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (editingMode) {
-                    openPath();
-                }
+        pathTextField.addActionListener(e -> {
+            if (editingMode) {
+                openPath();
             }
         });
 
@@ -188,7 +168,7 @@ public class EditablePathManager {
         mainPanel.revalidate();
     }
 
-    public void addListener(IPathEditListener pathEditListener) {
+    void addListener(IPathEditListener pathEditListener) {
         pathEditListeners.add(pathEditListener);
     }
 
@@ -247,15 +227,15 @@ public class EditablePathManager {
         }
     }
 
-    public void setPath(String path) {
+    void setPath(String path) {
         pathTextField.setText(path);
     }
 
-    public String getPath() {
+    String getPath() {
         return pathTextField.getText();
     }
 
-    public JPanel getPathPanel() {
+    JPanel getPathPanel() {
         return mainPanel;
     }
 }

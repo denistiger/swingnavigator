@@ -13,11 +13,11 @@ public abstract class FolderButtonSkeleton extends JLabel {
     private static Font fontBase = new Font("Arial", Font.PLAIN, 12);
     private static Font fontSelected = new Font("Arial", Font.BOLD, 12);
 
-    public FolderButtonSkeleton() {
+    FolderButtonSkeleton() {
         folder = null;
     }
 
-    public void setButtonAlignment() {
+    void setButtonAlignment() {
         setHorizontalAlignment(JLabel.CENTER);
         setHorizontalTextPosition(JLabel.CENTER);
         setVerticalTextPosition(JLabel.BOTTOM);
@@ -59,7 +59,7 @@ public abstract class FolderButtonSkeleton extends JLabel {
         }
     }
 
-    public void addOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
+    void addOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
         addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

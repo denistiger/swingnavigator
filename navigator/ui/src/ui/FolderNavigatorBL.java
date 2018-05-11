@@ -12,8 +12,6 @@ import ui.folder_button.FolderButtonsGenerator;
 import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.List;
@@ -33,7 +31,6 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     private EditablePathManager editablePathManager;
     private JButton levelUpButton;
     private FoldersPanel foldersPanel;
-    private JScrollPane foldersScrollPane;
     private GenericPreviewPanel previewPanel;
 
     private List<FolderButton> folderButtonsFiltered;
@@ -43,11 +40,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     private IFoldersPanelSelection foldersPanelSelection;
     private FolderIterator folderIterator;
 
-    final static String FOLDERS_PANEL = "Folders grid panel";
-    final static String PREVIEW_PANEL = "Files preview widget";
+    private final static String FOLDERS_PANEL = "Folders grid panel";
+    private final static String PREVIEW_PANEL = "Files preview widget";
     private String panelMode;
 
-    public FolderNavigatorBL(JPanel mainPanel, EditablePathManager editablePathManager, JButton levelUpButton) {
+    FolderNavigatorBL(JPanel mainPanel, EditablePathManager editablePathManager, JButton levelUpButton) {
         this.mainPanel = mainPanel;
         this.levelUpButton = levelUpButton;
         this.editablePathManager = editablePathManager;
@@ -65,21 +62,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         editablePathManager.setPath(getCurrentPath());
         editablePathManager.addListener(this);
 
-        this.levelUpButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                levelUp();
-            }
-        });
-
-
-//        BorderLayout borderLayout = new BorderLayout();
-//        mainPanel.setLayout(borderLayout);
-
+        this.levelUpButton.addActionListener(e -> levelUp());
 
         JPanel stretchPanel = new JPanelScrollableFolders(foldersPanel);
 
-        foldersScrollPane = new JScrollPane(stretchPanel);
+        JScrollPane foldersScrollPane = new JScrollPane(stretchPanel);
         foldersScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         foldersScrollPane.setPreferredSize(new Dimension(800, 600));
@@ -190,8 +177,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                         }
                         if (e.getKeyCode() == KeyEvent.VK_F && e.isControlDown() &&
                                 (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
-                            previewPanel.setFullScreen(panelMode.compareTo(FOLDERS_PANEL) == 0 ?
-                                    false : !previewPanel.isFullScreen());
+                            previewPanel.setFullScreen(
+                                    panelMode.compareTo(FOLDERS_PANEL) != 0 && !previewPanel.isFullScreen());
                             lastKeyEventTime = System.currentTimeMillis();
                         }
 
@@ -201,16 +188,11 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     }
 
-    private void setNewAddress() {
-        openPath(editablePathManager.getPath());
-    }
-
     private void filterFolders() {
         String enteredPath = editablePathManager.getPath();
         String currentPath = getCurrentPath();
 
-        if (enteredPath.compareTo(currentPath) == 0 /*||
-                folderButtonsFiltered.size() != folderButtonsGenerator.getFolderButtons().size()*/) {
+        if (enteredPath.compareTo(currentPath) == 0) {
             filterBySubString("");
             return;
         }
@@ -249,15 +231,9 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
 
     @Override
     public void setPath(String path) {
-        Runnable setPathText = new Runnable() {
-            @Override
-            public void run() {
-                editablePathManager.setPath(path);
-            }
-        };
+        Runnable setPathText = () -> editablePathManager.setPath(path);
         SwingUtilities.invokeLater(setPathText);
     }
-
 
     public void openFolder(IFolder folder) {
         folderManager.openFolder(folder);
@@ -283,23 +259,19 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         foldersPanelSelection.setSelection(currentFolder.getName());
     }
 
-    public void addPathListener(IPathListener pathListener) {
+    private void addPathListener(IPathListener pathListener) {
         pathListenerList.add(pathListener);
     }
 
-    public void removePathListener(IPathListener pathListener) {
-        pathListenerList.remove(pathListener);
-    }
-
-    public String getCurrentPath() {
+    private String getCurrentPath() {
         return folderManager.getFullPath();
     }
 
-    public void openPath(String path) {
+    private void openPath(String path) {
         openPath(path, false);
     }
 
-    public void openPath(String path, boolean forceOpenByPath) {
+    private void openPath(String path, boolean forceOpenByPath) {
         folderManager.getPasswordManager().reset();
         if (!forceOpenByPath && path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
             folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
@@ -361,7 +333,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         notifyOnPathChange();
     }
 
-    public void filterBySubString(String substring) {
+    private void filterBySubString(String substring) {
         List<FolderButton> folderButtons = folderButtonsGenerator.getFolderButtons();
         if (substring.isEmpty()) {
             folderButtonsFiltered = folderButtons;

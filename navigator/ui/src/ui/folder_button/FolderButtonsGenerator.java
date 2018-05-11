@@ -36,13 +36,6 @@ public class FolderButtonsGenerator {
         return folderButtonLevelUp;
     }
 
-    public void removeFolderButtons() {
-        folderButtons = new LinkedList<>();
-        if (lazyIconLoader != null) {
-            lazyIconLoader.stop();
-        }
-    }
-
     public void setBackgroundMode(boolean backgroundMode) {
         lazyIconLoader.setBackgroundMode(backgroundMode);
     }

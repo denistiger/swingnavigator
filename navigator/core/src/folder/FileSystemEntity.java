@@ -26,13 +26,7 @@ public class FileSystemEntity implements IFolder, ILevelUp {
                 return new TopLevelFolderFactory().createIFolder(null);
             }
             return new LocalFolder(file.getParentFile());
-        } catch (NotALocalFolderException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (NullInitializedFolderException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        } catch (NotALocalFolderException | FileNotFoundException | NullInitializedFolderException e) {
             e.printStackTrace();
         }
         return null;
@@ -45,7 +39,7 @@ public class FileSystemEntity implements IFolder, ILevelUp {
 
     @Override
     public Character getSeparator() {
-        return file.separatorChar;
+        return File.separatorChar;
     }
 
     @Override
@@ -64,13 +58,10 @@ public class FileSystemEntity implements IFolder, ILevelUp {
         this.file = file;
     }
 
-    public FileSystemEntity(File file) throws FileNotFoundException, NullInitializedFolderException {
+    FileSystemEntity(File file) throws FileNotFoundException, NullInitializedFolderException {
         initFromFile(file);
     }
 
-    public FileSystemEntity(String path) throws FileNotFoundException, NullInitializedFolderException {
-        this(new File(path));
-    }
     @Override
     public List<IFolder> getItems() {
         File[] files = file.listFiles();

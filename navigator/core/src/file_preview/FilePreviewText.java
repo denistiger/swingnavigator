@@ -9,13 +9,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class FilePreviewText implements IFilePreview {
 
     private class Point2i {
-        public int width, height;
+        int width, height;
         Point2i (int width, int height) {
             this.width = width;
             this.height = height;
@@ -37,18 +36,14 @@ public class FilePreviewText implements IFilePreview {
         String origin = new String(data);
         origin = origin.replaceAll("\r", "");
         origin = origin.replaceAll("\t", " ");
-        while (origin.contains("  ")) {
-            origin = origin.replaceAll("  ", " ");
-        }
+        origin = origin.replaceAll("\\s{2,}", " ");
         String[] originLines = origin.split("\n");
         List<String> resLines = new ArrayList<>();
         for (String st : originLines) {
             while (st.length() > 0 && resLines.size() < linesCount) {
-                if (st.startsWith(" ")) {
-                    st = st.substring(1);
-                    if (st.length() == 0) {
-                        break;
-                    }
+                st = st.trim();
+                if (st.length() == 0) {
+                    break;
                 }
                 resLines.add(st.substring(0, Math.min(step, st.length())));
                 st = st.substring(Math.min(step, st.length()));
@@ -84,11 +79,10 @@ public class FilePreviewText implements IFilePreview {
         int lineHeight = maxLineSize.height;
         int lineWidth = maxLineSize.width;
         int heightInterval = 1 + lineHeight / 4;
-        int widthBorder = heightInterval;
         int heightStep = heightInterval + lineHeight;
         int totalHeight = heightInterval + heightStep * text.length;
 
-        BufferedImage img = new BufferedImage(2 * widthBorder + lineWidth, totalHeight, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage img = new BufferedImage(2 * heightInterval + lineWidth, totalHeight, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = img.createGraphics();
         g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -104,7 +98,7 @@ public class FilePreviewText implements IFilePreview {
         g2d.fill(new Rectangle(0, 0, img.getWidth(), img.getHeight()));
         g2d.setColor(Color.BLACK);
         for (int i = 0; i < text.length; ++i) {
-            g2d.drawString(text[i], widthBorder, fm.getAscent() + heightInterval + heightStep * i);
+            g2d.drawString(text[i], heightInterval, fm.getAscent() + heightInterval + heightStep * i);
         }
         g2d.dispose();
         return new ImageIcon(img);

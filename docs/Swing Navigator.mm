@@ -52,7 +52,7 @@
 <node COLOR="#00b439" CREATED="1526030089872" ID="ID_1258897921" MODIFIED="1526033616576" TEXT="Text file by extension">
 <edge STYLE="bezier" WIDTH="thin"/>
 <font NAME="SansSerif" SIZE="16"/>
-<node COLOR="#990000" CREATED="1526030262329" ID="ID_1285568547" MODIFIED="1526033616576" TEXT="css, qsi, py, qss, java, bat, sh, xml, thrift, json, cpp, c, mtl, ini, cfg, in, profile, h, pro, txt, obj, cmake, cmd">
+<node COLOR="#990000" CREATED="1526030262329" ID="ID_1285568547" MODIFIED="1526038415495" TEXT="css, qsi, py, qss, java, bat, sh, xml, thrift, json, cpp, c, mtl, ini, cfg, in, profile, h, pro, txt, obj, cmake, cmd, htm, html">
 <font NAME="SansSerif" SIZE="14"/>
 </node>
 </node>

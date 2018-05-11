@@ -10,23 +10,20 @@ import java.util.List;
 
 public class FoldersPanel extends JPanel implements ComponentListener, IFoldersPanelSelection {
 
-    private BoxLayout layout;
-
     private List<FolderButtonSkeleton> folderButtonsDisplayed;
-
     private FolderButtonSkeleton folderButtonSelection = null;
     private int selectionIndex;
     private int colsCount;
 
-    public FoldersPanel() {
+    FoldersPanel() {
 
-        layout = new BoxLayout(this, BoxLayout.Y_AXIS);
+        BoxLayout layout = new BoxLayout(this, BoxLayout.Y_AXIS);
         setLayout(layout);
 
         addComponentListener(this);
     }
 
-    public void setFolderButtons(List<FolderButtonSkeleton> folderButtons) {
+    void setFolderButtons(List<FolderButtonSkeleton> folderButtons) {
         this.folderButtonsDisplayed = folderButtons;
 
         findSelectionIndex();
@@ -64,7 +61,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
         }
     }
 
-    public void updateData(int maxPanelWidth) {
+    void updateData(int maxPanelWidth) {
         removeAll();
 
         if (maxPanelWidth == -1) {
@@ -99,7 +96,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
     @Override
     public void componentResized(ComponentEvent e) {
-//        updateData();
+
     }
 
     @Override

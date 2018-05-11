@@ -33,7 +33,6 @@ public class FolderFactory implements IFolderFactory {
         if (files == null) {
             return list;
         }
-        // TODO learn lambda
         for (File file : files) {
             Map<String, Object> params = new HashMap<>();
             params.put(FILE, file);
@@ -42,17 +41,14 @@ public class FolderFactory implements IFolderFactory {
                 list.add(folder);
             }
         }
-        list.sort(new Comparator<IFolder>() {
-            @Override
-            public int compare(IFolder iFolder, IFolder t1) {
-                if (iFolder.getType() == IFolder.FolderTypes.FOLDER && t1.getType() != IFolder.FolderTypes.FOLDER) {
-                    return -1;
-                }
-                if (iFolder.getType() != IFolder.FolderTypes.FOLDER && t1.getType() == IFolder.FolderTypes.FOLDER) {
-                    return 1;
-                }
-                return iFolder.getName().compareTo(t1.getName());
+        list.sort((IFolder iFolder, IFolder t1) -> {
+            if (iFolder.getType() == IFolder.FolderTypes.FOLDER && t1.getType() != IFolder.FolderTypes.FOLDER) {
+                return -1;
             }
+            if (iFolder.getType() != IFolder.FolderTypes.FOLDER && t1.getType() == IFolder.FolderTypes.FOLDER) {
+                return 1;
+            }
+            return iFolder.getName().compareTo(t1.getName());
         });
         return list;
     }

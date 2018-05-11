@@ -21,6 +21,5 @@ public interface IFolder {
 
     boolean isFileSystemPath();
 
-    // TODO may be use byte[] getData()
     InputStream getInputStream();
 }

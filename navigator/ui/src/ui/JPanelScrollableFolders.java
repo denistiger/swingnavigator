@@ -8,7 +8,6 @@ import java.awt.event.ComponentListener;
 public class JPanelScrollableFolders extends JPanel implements Scrollable, ComponentListener{
 
     private FoldersPanel foldersPanel;
-    private JPanel bottomStretchPanel, rightStretchPanel;
 
     @Override
     public void setBounds(int x, int y, int width, int height)
@@ -17,10 +16,10 @@ public class JPanelScrollableFolders extends JPanel implements Scrollable, Compo
         foldersPanel.updateData(width);
     }
 
-    public JPanelScrollableFolders(FoldersPanel foldersPanel1 ) {
+    JPanelScrollableFolders(FoldersPanel foldersPanel1 ) {
         this.foldersPanel = foldersPanel1;
-        bottomStretchPanel = new JPanel();
-        rightStretchPanel = new JPanel();
+        JPanel bottomStretchPanel = new JPanel();
+        JPanel rightStretchPanel = new JPanel();
 
         GroupLayout groupLayout = new GroupLayout(this);
         setLayout(groupLayout);

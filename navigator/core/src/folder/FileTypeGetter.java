@@ -39,6 +39,8 @@ public class FileTypeGetter {
         typesMap.put("pro", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("profile", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("json", IFolder.FolderTypes.TEXT_FILE);
+        typesMap.put("htm", IFolder.FolderTypes.TEXT_FILE);
+        typesMap.put("html", IFolder.FolderTypes.TEXT_FILE);
     }
 
     public static void main(String[] args) {

@@ -10,7 +10,7 @@ import java.util.Map;
 public class TopLevelFolderFactory implements IFolderFactory{
 
     @Override
-    public IFolder createIFolder(Map<String, Object> params) throws Exception {
+    public IFolder createIFolder(Map<String, Object> params) {
         List<IFolder> folders = new FolderFactory().createIFolderList(File.listRoots());
         if (folders.size() < 2) {
             return null;

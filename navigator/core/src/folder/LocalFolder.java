@@ -15,10 +15,6 @@ public class LocalFolder extends FileSystemEntity {
         }
     }
 
-    public LocalFolder(String path) throws FileNotFoundException, NotALocalFolderException, NullInitializedFolderException {
-        this(new File(path));
-    }
-
     @Override
     public FolderTypes getType() {
         return FolderTypes.FOLDER;

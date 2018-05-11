@@ -4,22 +4,18 @@ import folder_management.PasswordManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class PasswordDialog {
+class PasswordDialog {
 
     private PasswordManager passwordManager;
-    private JButton okButton, cancelButton;
     private JTextField loginText;
     private JPasswordField passwordText;
-
     private JDialog dialog;
     private boolean credentialsAreSet = false;
 
-    public PasswordDialog(JFrame parent, PasswordManager passwordManager) {
+    PasswordDialog(JFrame parent, PasswordManager passwordManager) {
         dialog = new JDialog(parent, "Credentials are needed");
         dialog.setModal(true);
         this.passwordManager = passwordManager;
@@ -87,23 +83,15 @@ public class PasswordDialog {
         BoxLayout hButtonsLayout = new BoxLayout(buttonsPanel, BoxLayout.X_AXIS);
         buttonsPanel.setLayout(hButtonsLayout);
 
-        okButton = new JButton("Login");
+        JButton okButton = new JButton("Login");
         okButton.setFont(font);
-        okButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setCredentials();
-                closeDialog();
-            }
+        okButton.addActionListener(e -> {
+            setCredentials();
+            closeDialog();
         });
-        cancelButton = new JButton("Cancel");
+        JButton cancelButton = new JButton("Cancel");
         cancelButton.setFont(font);
-        cancelButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                closeDialog();
-            }
-        });
+        cancelButton.addActionListener(e -> closeDialog());
 
         buttonsPanel.add(okButton);
         buttonsPanel.add(cancelButton);
@@ -134,7 +122,7 @@ public class PasswordDialog {
         dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
-    public boolean credentialsAreSet() {
+    boolean credentialsAreSet() {
         return credentialsAreSet;
     }
 
