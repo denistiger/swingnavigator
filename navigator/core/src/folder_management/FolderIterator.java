@@ -60,7 +60,7 @@ public class FolderIterator implements IFolderIterator{
                 try {
                     throw new Exception("Cache is corrupted");
                 } catch (Exception e) {
-//                    e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         }
@@ -69,19 +69,13 @@ public class FolderIterator implements IFolderIterator{
     @Override
     public boolean hasNext() {
         resetFoldersIfNeeded();
-        if (folderFilesIdx < folderFilesArray.size() - 1) {
-            return true;
-        }
-        return false;
+        return folderFilesIdx < folderFilesArray.size() - 1;
     }
 
     @Override
     public boolean hasPrev() {
         resetFoldersIfNeeded();
-        if (folderFilesIdx > 0) {
-            return true;
-        }
-        return false;
+        return  folderFilesIdx > 0;
     }
 
     private void openAtCurrentIndex() {

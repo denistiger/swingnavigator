@@ -32,8 +32,7 @@ public class CommonFile extends FileSystemEntity {
     @Override
     public InputStream getInputStream() {
         try {
-            InputStream inputStream = new FileInputStream(file);
-            return inputStream;
+            return new FileInputStream(file);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

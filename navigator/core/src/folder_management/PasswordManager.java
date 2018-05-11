@@ -1,8 +1,8 @@
 package folder_management;
 
 public class PasswordManager {
-    private static String DEFAULT_LOGIN = "anonymous";
-    private static String DEFAULT_PASSWORD = "";
+    private static final String DEFAULT_LOGIN = "anonymous";
+    private static final String DEFAULT_PASSWORD = "";
     private String login = DEFAULT_LOGIN;
     private String password = DEFAULT_PASSWORD;
     private boolean isDefaultCredentials = true;

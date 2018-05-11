@@ -1,7 +1,6 @@
 package folder.factory;
 
 import folder.IFolder;
-import folder.factory.IFolderFactory;
 import folder.zip_folder.ZipEntryData;
 import folder.zip_folder.ZipInMemoryFolder;
 import thirdparty.IOUtils;

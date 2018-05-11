@@ -32,17 +32,17 @@ public class FTPClientWrapper {
     private final int ftpPort;
     private Semaphore semaphore = new Semaphore(1);
 
-    public FTPClientWrapper(String ftpPath) {
+    FTPClientWrapper(String ftpPath) {
         this.ftpPath = ftpPath;
         ftpPort = DEFAULT_FTP_PORT;
     }
 
-    public FTPClientWrapper(String ftpPath, int ftpPort) {
+    FTPClientWrapper(String ftpPath, int ftpPort) {
         this.ftpPath = ftpPath;
         this.ftpPort = ftpPort;
     }
 
-    public void setPasswordManager(PasswordManager passwordManager) {
+    void setPasswordManager(PasswordManager passwordManager) {
         this.passwordManager = passwordManager;
     }
 
@@ -50,7 +50,6 @@ public class FTPClientWrapper {
         try {
             semaphore.acquire();
             long threadId = Thread.currentThread().getId();
-//            System.out.println("Thread id is " + threadId);
             if (!ftpClients.containsKey(threadId)) {
                 ftpClients.put(threadId, createFTPClient());
             }
@@ -64,7 +63,7 @@ public class FTPClientWrapper {
         return null;
     }
 
-    public FTPFile[] listFiles(String onFtpPath) {
+    FTPFile[] listFiles(String onFtpPath) {
         try {
             FTPClient ftp = getFTPClient();
             connect(ftp);
@@ -85,7 +84,7 @@ public class FTPClientWrapper {
         return ftp.retrieveFileStream(onFtpPath);
     }
 
-    public int getReplyCode() {
+    int getReplyCode() {
         return getFTPClient().getReplyCode();
     }
 
@@ -97,7 +96,7 @@ public class FTPClientWrapper {
         return ftp;
     }
 
-    public FTPStatus connect() {
+    FTPStatus connect() {
         return connect(getFTPClient());
     }
 
@@ -125,18 +124,17 @@ public class FTPClientWrapper {
         }
         return FTPStatus.SUCCESS;
     }
-    public void disconnect() {
+    void disconnect() {
         disconnect(getFTPClient());
     }
 
-    public void disconnect(FTPClient ftp) {
+    private void disconnect(FTPClient ftp) {
         if (ftp == null) {
             return;
         }
         try {
             ftp.logout();
-        } catch(IOException e) {
-//            e.printStackTrace();
+        } catch(IOException ignored) {
         } finally {
             if(ftp.isConnected()) {
                 try {
@@ -147,29 +145,6 @@ public class FTPClientWrapper {
             }
         }
     }
-
-//    public boolean authenticated() {
-//        try {
-//            ftp.listFiles("");
-//            int code = ftp.getReplyCode();
-//            if (FTPReply.isNegativePermanent(code) || FTPReply.isPositiveIntermediate(code)){
-//                return false;
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return false;
-//        }
-//        return true;
-//    }
-
-//    public String getWorkingDirectory() {
-//        try {
-//            return ftp.printWorkingDirectory();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//        return null;
-//    }
 
     public String getFTPPath() {
         String addr = "ftp://";

@@ -57,9 +57,6 @@ public class FileTypeGetter {
     }
 
     public static boolean isFolderType(IFolder.FolderTypes type) {
-        if (type == IFolder.FolderTypes.FOLDER || type == IFolder.FolderTypes.ZIP) {
-            return true;
-        }
-        return false;
+        return  type == IFolder.FolderTypes.FOLDER || type == IFolder.FolderTypes.ZIP;
     }
 }

@@ -6,7 +6,7 @@ import java.awt.*;
 public class FolderNavigatorUI extends JFrame {
 
 
-    FolderNavigatorUI() {
+    private FolderNavigatorUI() {
         initComponents();
     }
 

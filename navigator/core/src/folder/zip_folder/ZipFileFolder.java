@@ -19,7 +19,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
     private File file;
     private String parentZipPath = null;
 
-    public ZipFileFolder(File file) throws Exception {
+    public ZipFileFolder(File file) {
         this.file = file;
         zipEntryData = new ZipEntryData("", file.getName(), FolderTypes.ZIP);
     }
@@ -41,12 +41,11 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
             return file.getAbsolutePath();
         }
         return parentZipPath + "/" + zipEntryData.getInZipPath();
-        //"Get absolute path is not implemented for files inside Zip archive";
     }
 
     @Override
     public Character getSeparator() {
-        return file.separatorChar;
+        return File.separatorChar;
     }
 
     protected void init() throws Exception {
@@ -82,8 +81,7 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
             return null;
         }
         try {
-            InputStream inputStream = zipFile.getInputStream(zipFile.getEntry(zipEntryData.getInZipPath()));
-            return inputStream;
+            return zipFile.getInputStream(zipFile.getEntry(zipEntryData.getInZipPath()));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -94,11 +92,8 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
     public IFolder levelUp() {
         try {
             return new LocalFolder(file.getParentFile());
-        } catch (FileSystemEntity.NotALocalFolderException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (FileSystemEntity.NullInitializedFolderException e) {
+        } catch (FileSystemEntity.NotALocalFolderException | FileNotFoundException |
+                FileSystemEntity.NullInitializedFolderException e) {
             e.printStackTrace();
         }
         return null;

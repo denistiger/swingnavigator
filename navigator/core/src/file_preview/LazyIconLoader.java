@@ -5,19 +5,15 @@ import folder.IFolder;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.function.Predicate;
 
 public class LazyIconLoader {
 
     private class FilePreviewData {
-        public IFilePreviewListener filePreviewListener;
+        IFilePreviewListener filePreviewListener;
         public IFolder folder;
 
-        public FilePreviewData(IFilePreviewListener filePreviewListener, IFolder folder) {
+        FilePreviewData(IFilePreviewListener filePreviewListener, IFolder folder) {
             this.filePreviewListener = filePreviewListener;
             this.folder = folder;
         }
@@ -28,11 +24,10 @@ public class LazyIconLoader {
     private volatile boolean backgroundMode = false;
     private FilePreviewGenerator filePreviewGenerator;
     private Semaphore semaphore = new Semaphore(1);
-    private ArrayList<Thread> threadPull;
 
     public LazyIconLoader(FilePreviewGenerator filePreviewGenerator) {
         this.filePreviewGenerator = filePreviewGenerator;
-        threadPull = new ArrayList<>();
+        ArrayList<Thread> threadPull = new ArrayList<>();
         for (int i = 0; i < 4; ++i){
             threadPull.add(new Thread(new PreviewLoader()));
         }
@@ -45,6 +40,9 @@ public class LazyIconLoader {
 
         @Override
         public void run() {
+            // Technical solution - needs to have the same threads during the whole time program is up.
+            // This is needed to maintain the same ftp clients one for each thread.
+            // This allows safely use their InputStreams.
             while (true) {
                 if (stop) {
                     try {
@@ -83,8 +81,6 @@ public class LazyIconLoader {
                         e.printStackTrace();
                     }
                 }
-
-
             }
         }
     }
@@ -122,10 +118,5 @@ public class LazyIconLoader {
             semaphore.release();
         }
     }
-
-    public void removeListener(IFilePreviewListener filePreviewListener1) {
-        Predicate<FilePreviewData> previewDataPredicate = p -> p.filePreviewListener == filePreviewListener1;
-        filePreviewDataList.removeIf(previewDataPredicate);
-   }
 
 }

@@ -19,11 +19,10 @@ import java.util.zip.ZipInputStream;
 
 public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath {
 
-    FTPClientWrapper ftpClient;
-    String ftpPath;
-//    ZipInputStream zipStream = null;
+    private FTPClientWrapper ftpClient;
+    private String ftpPath;
 
-    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) throws Exception {
+    public ZipOnFTPFolder(FTPClientWrapper ftpClient, String ftpPath, String name) {
         this.ftpClient = ftpClient;
         this.ftpPath = ftpPath;
         this.zipEntryData = new ZipEntryData("", name, FolderTypes.ZIP);
@@ -106,8 +105,6 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
                 }
                 entry = zipStream.getNextEntry();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -115,16 +112,11 @@ public class ZipOnFTPFolder extends AbstractZipFolder implements IPrependFTPPath
     }
 
 
-    ZipInputStream resetStream() throws IOException {
+    private ZipInputStream resetStream() throws IOException {
         try {
             InputStream inputStream = ftpClient.retrieveFileStream(ftpPath);
             return new ZipInputStream(inputStream);
-        } catch (IOException e) {
-            System.out.println("Fail with path: " + ftpPath);
-            e.printStackTrace();
-            throw e;
-        }
-        catch (NullPointerException e) {
+        } catch (IOException | NullPointerException e) {
             System.out.println("Fail with path: " + ftpPath);
             e.printStackTrace();
             throw e;

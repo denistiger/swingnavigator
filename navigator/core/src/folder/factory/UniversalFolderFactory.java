@@ -35,7 +35,8 @@ public class UniversalFolderFactory implements IFolderFactory {
                     }
                     return folder;
                 }
-            } catch (MalformedURLException er) {
+            }
+            catch (MalformedURLException er) {
 
             }
             catch (Exception er){

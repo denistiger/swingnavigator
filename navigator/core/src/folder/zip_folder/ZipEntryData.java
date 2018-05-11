@@ -3,13 +3,14 @@ package folder.zip_folder;
 import folder.IFolder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ZipEntryData implements Comparable<ZipEntryData>{
     private static final String[] zipPathSeparator = {"/", "\\\\"};
 
     private String inZipPath;
-    private String[] inZipSplitPath;
+    private String[] inZipSplitPath = new String[0];
     private String name;
     private IFolder.FolderTypes type;
     private byte[] data = null;
@@ -30,9 +31,7 @@ public class ZipEntryData implements Comparable<ZipEntryData>{
         List<String> res = new ArrayList<>();
         for (String st : split1) {
             String[] splitSt = st.split(String.valueOf(zipPathSeparator[1]));
-            for (String st1 : splitSt) {
-                res.add(st1);
-            }
+            res.addAll(Arrays.asList(splitSt));
         }
         String[] split = new String[res.size()];
         res.toArray(split);
@@ -46,7 +45,7 @@ public class ZipEntryData implements Comparable<ZipEntryData>{
         return "";
     }
 
-    public ZipEntryData(String inZipPath, String name, IFolder.FolderTypes type, byte[] data) {
+    ZipEntryData(String inZipPath, String name, IFolder.FolderTypes type, byte[] data) {
         this(inZipPath, name, type);
         setData(data);
     }

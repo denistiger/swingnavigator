@@ -39,7 +39,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
         ftp = new FTPClientWrapper(ftpPath, ftpPort);
     }
 
-    public FTPFolder(FTPFolder parent, FTPClientWrapper client, String prefix, FolderTypes type, String name) {
+    private FTPFolder(FTPFolder parent, FTPClientWrapper client, String prefix, FolderTypes type, String name) {
         ftp = client;
         localFTPPath = prefix;
         stripLocalFTPPath();
@@ -110,8 +110,6 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
                             FileTypeGetter.getFileType(file.getName()), file.getName()));
                 }
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -1,15 +1,12 @@
 package file_preview;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
 public class ImageUtils {
 
-    public static void resizeImageIcon(ImageIcon imageIcon, int width, int height) {
+    static void resizeImageIcon(ImageIcon imageIcon, int width, int height) {
         Image srcImg = imageIcon.getImage();
         BufferedImage resizedImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2 = resizedImg.createGraphics();
@@ -20,24 +17,7 @@ public class ImageUtils {
         imageIcon.setImage(resizedImg);
     }
 
-    public static boolean saveIconToDisk(ImageIcon icon, String path) {
-        Image img = icon.getImage();
-
-        BufferedImage bi = new BufferedImage(img.getWidth(null),
-                img.getHeight(null),BufferedImage.TYPE_4BYTE_ABGR);
-
-        Graphics2D g2 = bi.createGraphics();
-        g2.drawImage(img, 0, 0, null);
-        g2.dispose();
-        try {
-            return ImageIO.write(bi, "jpg", new File(path));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
-    public static ImageIcon combinedIcon(ImageIcon baseIcon, ImageIcon overlayIcon) {
+    static ImageIcon combinedIcon(ImageIcon baseIcon, ImageIcon overlayIcon) {
         double cutOff = 0.2;
         Image baseImage = baseIcon.getImage();
         Image overlayImg = overlayIcon.getImage();
@@ -68,7 +48,7 @@ public class ImageUtils {
         return imageIcon;
     }
 
-    public static double getImageScaleRatio(ImageIcon imageIcon, int width, int height) {
+    private static double getImageScaleRatio(ImageIcon imageIcon, int width, int height) {
         return getImageScaleRatio(imageIcon.getIconWidth(), imageIcon.getIconHeight(), width, height);
     }
 
@@ -79,7 +59,7 @@ public class ImageUtils {
     }
 
 
-    public static void resizeImageIconProportional(ImageIcon imageIcon, int width, int height) {
+    static void resizeImageIconProportional(ImageIcon imageIcon, int width, int height) {
         double ratio = getImageScaleRatio(imageIcon, width, height);
         int iconWidth = (int) (ratio * imageIcon.getIconWidth());
         int iconHeight = (int) (ratio * imageIcon.getIconHeight());

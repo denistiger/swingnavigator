@@ -3,7 +3,6 @@ package folder;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.List;
 
 public class LocalFolder extends FileSystemEntity {
 

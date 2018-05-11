@@ -10,7 +10,7 @@ public class FilePreviewAnyFolder implements IFilePreview {
     private IFilePreview defaultFilePreviewGenerator;
     private static IFilePreview imagePreviewGenerator = new FilePreviewImage();
 
-    public FilePreviewAnyFolder(IFilePreview defaultFilePreviewGenerator) {
+    FilePreviewAnyFolder(IFilePreview defaultFilePreviewGenerator) {
         this.defaultFilePreviewGenerator = defaultFilePreviewGenerator;
     }
 

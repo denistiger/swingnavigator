@@ -9,10 +9,10 @@ import java.util.*;
 
 public abstract class AbstractZipFolder implements IFolder {
 
-    protected ZipEntryData zipEntryData;
+    ZipEntryData zipEntryData;
     protected IFolderFactory factory = null;
-    protected List<IFolder> children = null;
-    protected boolean initialized = false;
+    private List<IFolder> children = null;
+    boolean initialized = false;
 
     protected abstract void init() throws Exception;
 
@@ -43,7 +43,7 @@ public abstract class AbstractZipFolder implements IFolder {
         return zipEntryData.getType();
     }
 
-    protected void initChildren(List<ZipEntryData> entries) throws Exception {
+    void initChildren(List<ZipEntryData> entries) throws Exception {
         children = new ArrayList<>();
         if (entries.isEmpty()) {
             return;

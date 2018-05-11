@@ -190,14 +190,15 @@ public class FolderManager {
 
     public String getFullPath() {
         boolean useAbsolutePath = true;
-        String path = "";
         IFolder prevFolder = null;
+        StringBuilder stringBuilder = new StringBuilder();
         for (IFolder folder : inDepthFolderStack) {
             if (useAbsolutePath) {
-                path = folder.getAbsolutePath();
+                stringBuilder = new StringBuilder(folder.getAbsolutePath());
             }
             else {
-                path += prevFolder.getSeparator() + folder.getName();
+                stringBuilder.append(prevFolder.getSeparator());
+                stringBuilder.append(folder.getName());
             }
             if (!folder.isFileSystemPath()) {
                 useAbsolutePath = false;
@@ -205,12 +206,13 @@ public class FolderManager {
             prevFolder = folder;
         }
 
-        if (!path.isEmpty() && prevFolder != null && !path.endsWith(String.valueOf(prevFolder.getSeparator()))
+        if (!stringBuilder.toString().isEmpty() && prevFolder != null &&
+                !stringBuilder.toString().endsWith(String.valueOf(prevFolder.getSeparator()))
                 && prevFolder.getItems() != null) {
-                path += prevFolder.getSeparator();
+            stringBuilder.append(prevFolder.getSeparator());
         }
-        path = path.replaceAll("\\\\+", "\\\\"); // Fix Windows returns \\ after disk label
-        return path;
+        // Fix Windows returns \\ after disk label
+        return stringBuilder.toString().replaceAll("\\\\+", "\\\\");
     }
 
 

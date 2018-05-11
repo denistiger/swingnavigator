@@ -79,10 +79,11 @@ public class FilePreviewText implements IFilePreview {
         int lineHeight = maxLineSize.height;
         int lineWidth = maxLineSize.width;
         int heightInterval = 1 + lineHeight / 4;
+        int widthInterval = heightInterval;
         int heightStep = heightInterval + lineHeight;
         int totalHeight = heightInterval + heightStep * text.length;
 
-        BufferedImage img = new BufferedImage(2 * heightInterval + lineWidth, totalHeight, BufferedImage.TYPE_INT_ARGB);
+        BufferedImage img = new BufferedImage(2 * widthInterval + lineWidth, totalHeight, BufferedImage.TYPE_INT_ARGB);
         Graphics2D g2d = img.createGraphics();
         g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_QUALITY);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
@@ -98,7 +99,7 @@ public class FilePreviewText implements IFilePreview {
         g2d.fill(new Rectangle(0, 0, img.getWidth(), img.getHeight()));
         g2d.setColor(Color.BLACK);
         for (int i = 0; i < text.length; ++i) {
-            g2d.drawString(text[i], heightInterval, fm.getAscent() + heightInterval + heightStep * i);
+            g2d.drawString(text[i], widthInterval, fm.getAscent() + heightInterval + heightStep * i);
         }
         g2d.dispose();
         return new ImageIcon(img);

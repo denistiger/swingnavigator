@@ -14,7 +14,7 @@ public class FolderButton extends FolderButtonSkeleton implements IFilePreviewLi
         int lineCount = 0;
         StringBuilder stringBuilder = new StringBuilder("<html><center>");
         while (filename.length() > MAX_LINE_LENGTH && lineCount < MAX_LINES - 1) {
-            stringBuilder.append(filename.substring(0, MAX_LINE_LENGTH));
+            stringBuilder.append(filename, 0, MAX_LINE_LENGTH);
             stringBuilder.append("<br>");
             filename = filename.substring(MAX_LINE_LENGTH);
             lineCount++;
@@ -24,7 +24,7 @@ public class FolderButton extends FolderButtonSkeleton implements IFilePreviewLi
         }
         else {
             // "..." for two symbols width. So we allow 13 symbols in the last line.
-            stringBuilder.append(filename.substring(0, MAX_LINE_LENGTH - 2));
+            stringBuilder.append(filename, 0, MAX_LINE_LENGTH - 2);
             stringBuilder.append("...");
         }
         stringBuilder.append("</center></html>");
