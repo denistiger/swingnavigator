@@ -2,6 +2,7 @@ package folder.zip_folder;
 
 import folder.FileTypeGetter;
 import folder.IFolder;
+import folder.factory.FolderFactory;
 import folder.factory.IFolderFactory;
 
 import java.util.*;
@@ -74,19 +75,7 @@ public abstract class AbstractZipFolder implements IFolder {
             }
             zipEntry = currentZipEntry;
         } while (iter.hasNext());
-        ArrayList<IFolder> sortedChildren = new ArrayList<>();
-        sortedChildren.ensureCapacity(children.size());
-        for (IFolder folder : children) {
-            if (folder.getType() == FolderTypes.FOLDER) {
-                sortedChildren.add(folder);
-            }
-        }
-        for (IFolder folder : children) {
-            if (folder.getType() != FolderTypes.FOLDER) {
-                sortedChildren.add(folder);
-            }
-        }
-        children = sortedChildren;
+        new FolderFactory().sortIFoldersList(children);
     }
 
     @Override

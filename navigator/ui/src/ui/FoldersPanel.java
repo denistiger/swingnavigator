@@ -50,7 +50,7 @@ public class FoldersPanel extends JPanel implements ComponentListener, IFoldersP
 
     private void findSelectionIndex() {
         selectionIndex = -1;
-        if (folderButtonSelection != null) {
+        if (folderButtonSelection != null && folderButtonSelection.getFolder() != null) {
             selectionIndex = folderButtonsDisplayed.indexOf(folderButtonSelection);
         }
         if (selectionIndex == -1) {

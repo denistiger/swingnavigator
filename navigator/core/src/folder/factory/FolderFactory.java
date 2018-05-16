@@ -11,6 +11,18 @@ import java.util.*;
 
 public class FolderFactory implements IFolderFactory {
 
+    public void sortIFoldersList(List<IFolder> iFolders) {
+        iFolders.sort((IFolder iFolder, IFolder t1) -> {
+            if (iFolder.getType() == IFolder.FolderTypes.FOLDER && t1.getType() != IFolder.FolderTypes.FOLDER) {
+                return -1;
+            }
+            if (iFolder.getType() != IFolder.FolderTypes.FOLDER && t1.getType() == IFolder.FolderTypes.FOLDER) {
+                return 1;
+            }
+            return iFolder.getName().toLowerCase().compareTo(t1.getName().toLowerCase());
+        });
+    }
+
     public IFolder createIFolder(Map<String, Object> params) {
         Object fileObj = params.get(FILE);
         File file = (File) fileObj;
@@ -41,15 +53,7 @@ public class FolderFactory implements IFolderFactory {
                 list.add(folder);
             }
         }
-        list.sort((IFolder iFolder, IFolder t1) -> {
-            if (iFolder.getType() == IFolder.FolderTypes.FOLDER && t1.getType() != IFolder.FolderTypes.FOLDER) {
-                return -1;
-            }
-            if (iFolder.getType() != IFolder.FolderTypes.FOLDER && t1.getType() == IFolder.FolderTypes.FOLDER) {
-                return 1;
-            }
-            return iFolder.getName().compareTo(t1.getName());
-        });
+        sortIFoldersList(list);
         return list;
     }
 

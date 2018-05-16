@@ -2,6 +2,7 @@ package folder.ftp_folder;
 
 import folder.*;
 import folder.ILevelUp;
+import folder.factory.FolderFactory;
 import folder_management.PasswordManager;
 import org.apache.commons.net.ftp.*;
 import folder.zip_folder.ZipOnFTPFolder;
@@ -113,6 +114,7 @@ public class FTPFolder implements IFolder, ILevelUp, IPrependFTPPath {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        new FolderFactory().sortIFoldersList(items);
         return items;
     }
 

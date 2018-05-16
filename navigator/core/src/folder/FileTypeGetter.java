@@ -16,6 +16,7 @@ public class FileTypeGetter {
         typesMap.put("jpeg", IFolder.FolderTypes.IMAGE);
         typesMap.put("gif", IFolder.FolderTypes.IMAGE);
         typesMap.put("tiff", IFolder.FolderTypes.IMAGE);
+        typesMap.put("tif", IFolder.FolderTypes.IMAGE);
         typesMap.put("txt", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("java", IFolder.FolderTypes.TEXT_FILE);
         typesMap.put("cpp", IFolder.FolderTypes.TEXT_FILE);

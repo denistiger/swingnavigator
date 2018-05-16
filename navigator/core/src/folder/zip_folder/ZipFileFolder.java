@@ -54,7 +54,14 @@ public class ZipFileFolder extends AbstractZipFolder implements ILevelUp {
         Enumeration<? extends ZipEntry> entries = zipFile.entries();
         List<ZipEntryData> zipEntries = new ArrayList<>();
         while (entries.hasMoreElements()) {
-            ZipEntry entry = entries.nextElement();
+            ZipEntry entry;
+            try {
+                entry = entries.nextElement();
+            }
+            catch (java.lang.IllegalArgumentException er) {
+                er.printStackTrace();
+                continue;
+            }
             zipEntries.add(new ZipEntryData(entry.getName(), null, entry.isDirectory() ? FolderTypes.FOLDER : FileTypeGetter.getFileType(entry.getName())));
         }
         zipEntries.sort(Comparator.naturalOrder());

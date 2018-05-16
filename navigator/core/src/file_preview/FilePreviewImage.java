@@ -15,8 +15,13 @@ public class FilePreviewImage implements IFilePreview {
         try {
             Image image = ImageIO.read(inputStream);
             inputStream.close();
+            if (image == null) {
+                System.err.println("No image for " + file.getAbsolutePath());
+                return null;
+            }
             return new ImageIcon(image);
         } catch (IOException e) {
+            System.err.println("Fail with icon for file " + file.getAbsolutePath());
             e.printStackTrace();
         }
         return null;

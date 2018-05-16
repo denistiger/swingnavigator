@@ -168,7 +168,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                         if (e.getKeyCode() == KeyEvent.VK_ENTER &&
                                 (e.getWhen() - lastKeyEventTime) > WAIT_TIME_AFTER_LAST_PROCESSED_EVENT_MS) {
                             if (editablePathManager.getPath().compareTo(getCurrentPath()) == 0) {
-                                foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
+                                openSelectedFolder();
                             }
                             else {
                                 openPath(editablePathManager.getPath());
@@ -185,7 +185,10 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                         return false;
                     }
                 });
+    }
 
+    private void openSelectedFolder() {
+        foldersPanelSelection.getSelection().notifyIOpenFolderListener(FolderNavigatorBL.this);
     }
 
     private void filterFolders() {
@@ -274,7 +277,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
     private void openPath(String path, boolean forceOpenByPath) {
         folderManager.getPasswordManager().reset();
         if (!forceOpenByPath && path.startsWith(folderManager.getFullPath()) && folderButtonsFiltered.size() > 0) {
-            folderManager.openFolder(foldersPanelSelection.getSelection().getFolder());
+            openSelectedFolder();
         }
         else {
             boolean notSucceed = true;
@@ -305,8 +308,8 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
                     folderStatus != FolderManager.OpenFolderStatus.HALF_PATH_OPENED) {
                 folderManager.openPath(prevPath);
             }
+            processNewPath();
         }
-        processNewPath();
     }
 
     private void changeMainPanelContentPane(String mainPanelItem) {

@@ -1,6 +1,7 @@
 package ui.folder_button;
 
 import file_preview.FilePreviewGenerator;
+import ui.IOpenFolderListener;
 
 class FolderButtonLevelUp extends FolderButtonSkeleton {
 
@@ -10,4 +11,10 @@ class FolderButtonLevelUp extends FolderButtonSkeleton {
         setIcon(previewGenerator.getEmptyFolderPreview());
         setButtonAlignment();
     }
+
+    @Override
+    public void notifyIOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
+        iOpenFolderListener.levelUp();
+    }
+
 }

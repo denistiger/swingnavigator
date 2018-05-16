@@ -24,7 +24,6 @@ public abstract class FolderButtonSkeleton extends JLabel {
         setVerticalAlignment(JLabel.TOP);
         setMinimumSize(getPreferredSize());
         setMaximumSize(getPreferredSize());
-
         setSelected(false);
     }
 
@@ -51,12 +50,7 @@ public abstract class FolderButtonSkeleton extends JLabel {
     }
 
     public void notifyIOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
-        if (getFolder() != null) {
-            iOpenFolderListener.openFolder(getFolder());
-        }
-        else {
-            iOpenFolderListener.levelUp();
-        }
+        iOpenFolderListener.openFolder(getFolder());
     }
 
     void addOpenFolderListener(IOpenFolderListener iOpenFolderListener) {
