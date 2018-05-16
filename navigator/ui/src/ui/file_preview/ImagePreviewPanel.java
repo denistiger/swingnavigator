@@ -39,13 +39,21 @@ public class ImagePreviewPanel extends FilePreviewPanel {
         if (previewFile.getType() != IFolder.FolderTypes.IMAGE) {
             throw new PreviewException("Not an image");
         }
+        InputStream inputStream = previewFile.getInputStream();
         try {
-            InputStream inputStream = previewFile.getInputStream();
             bufferedImage = ImageIO.read(inputStream);
-            inputStream.close();
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
             bufferedImage = null;
+            System.err.println("Failed to read image " + previewFile.getAbsolutePath() );
             e.printStackTrace();
+            throw new PreviewException("Failed to read image.");
+        }
+        finally {
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 

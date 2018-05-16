@@ -185,7 +185,13 @@ public class GenericPreviewPanel extends FilePreviewPanel implements IFullScreen
             currentPreview = unknownFilePreview;
         }
         updateTopPanel();
-        currentPreview.setPreviewFile(previewFile);
+        try {
+            currentPreview.setPreviewFile(previewFile);
+        }
+        catch (PreviewException er) {
+            currentPreview = unknownFilePreview;
+            currentPreview.setPreviewFile(previewFile);
+        }
 
         if (previewFile.getType() == IFolder.FolderTypes.IMAGE && isFullScreen()) {
             fullScreenImagePreview.showPreview(true);

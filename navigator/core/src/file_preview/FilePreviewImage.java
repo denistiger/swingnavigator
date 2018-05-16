@@ -20,7 +20,7 @@ public class FilePreviewImage implements IFilePreview {
                 return null;
             }
             return new ImageIcon(image);
-        } catch (IOException e) {
+        } catch (IOException | IllegalArgumentException e) {
             System.err.println("Fail with icon for file " + file.getAbsolutePath());
             e.printStackTrace();
         }

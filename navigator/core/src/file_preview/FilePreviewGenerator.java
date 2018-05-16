@@ -88,6 +88,9 @@ public class FilePreviewGenerator implements IFilePreview {
             semaphore.release();
         }
         ImageIcon imageIcon = getFilePreviewGenerator(file).getFilePreviewSmall(file);
+        if (imageIcon == null) {
+            imageIcon = DEFAULT_PREVIEW.getFilePreviewSmall(file);
+        }
         try {
             semaphore.acquire();
             addToCache(file, imageIcon);
