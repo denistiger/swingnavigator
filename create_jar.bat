@@ -1,4 +1,4 @@
-rem @echo off
+@echo off
 rd /s /q swingnavigator
 mkdir swingnavigator
 xcopy out\production\ui\ui swingnavigator\ui /E /H /K /I
@@ -15,14 +15,12 @@ for /D /r org %%x in ("*") do (
     set f=0
     for %%s in (%%x\*.class) do (
 	if !f! EQU 0 (
-        	echo %%s
 		set cutoff=%%x
 	        set files_list=!files_list! !cutoff:~59!\*.class
 		set f=1
 	)
     )
 )
-echo !files_list!
 "%JAVA_HOME%\bin\jar.exe" cvfe swingnavigator.jar ui.FolderNavigatorUI ui\*.class ui\folder_button\*.class ui\file_preview\*.class folder\*.class folder_management/*.class file_preview\*.class folder\ftp_folder\*.class folder\factory\*.class folder\zip_folder\*.class thirdparty\*.class file_preview\images\*.png %files_list%
 endlocal
 move swingnavigator.jar ..
