@@ -11,5 +11,14 @@
     <orderEntry type="library" name="groovy-2.4.13" level="application" />
     <orderEntry type="module" module-name="thirdparty" />
     <orderEntry type="library" name="groovy-2.4" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../third-party/chardet.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
