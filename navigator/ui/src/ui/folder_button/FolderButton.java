@@ -40,6 +40,6 @@ public class FolderButton extends FolderButtonSkeleton implements IFilePreviewLi
 
     @Override
     public void setPreviewIcon(ImageIcon icon) {
-        setIcon(icon);
+        SwingUtilities.invokeLater(() -> setIcon(icon));
     }
 }
