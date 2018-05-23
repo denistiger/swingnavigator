@@ -23,7 +23,7 @@ public class LazyIconLoader {
     private volatile boolean stop = false;
     private volatile boolean backgroundMode = false;
     private FilePreviewGenerator filePreviewGenerator;
-    private Semaphore semaphore = new Semaphore(1);
+    private final Object lock = new Object();
 
     public LazyIconLoader(FilePreviewGenerator filePreviewGenerator) {
         this.filePreviewGenerator = filePreviewGenerator;
@@ -44,78 +44,66 @@ public class LazyIconLoader {
             // This is needed to maintain the same ftp clients one for each thread.
             // This allows safely use their InputStreams.
             while (true) {
-                if (stop) {
-                    try {
-                        Thread.sleep(40);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                synchronized (lock) {
+                    if (stop || filePreviewDataList.isEmpty()) {
+                        try {
+                            lock.wait();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
-                    continue;
                 }
-                if (backgroundMode) {
+                boolean background;
+                synchronized (lock) {
+                    background = backgroundMode;
+                }
+                if (background) {
                     try {
+                        // Minimizing resource load.
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
                 }
                 FilePreviewData filePreviewData = null;
-                try {
-                    semaphore.acquire();
+                synchronized (lock) {
                     if (!filePreviewDataList.isEmpty()) {
                         filePreviewData = filePreviewDataList.pollFirst();
                     }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    semaphore.release();
                 }
                 if (filePreviewData != null) {
                     filePreviewData.filePreviewListener.setPreviewIcon(
                             filePreviewGenerator.getFilePreviewSmall(filePreviewData.folder));
-                }
-                else {
-                    try {
-                        Thread.sleep(40);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
                 }
             }
         }
     }
 
     public void stop() {
-        stop = true;
-        try {
-            semaphore.acquire();
+        synchronized (lock) {
+            stop = true;
             filePreviewDataList.clear();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        finally {
-            semaphore.release();
         }
     }
 
     public void setBackgroundMode(boolean backgroundMode) {
-        this.backgroundMode = backgroundMode;
+        synchronized (lock) {
+            this.backgroundMode = backgroundMode;
+        }
     }
 
     public void start() {
-        stop = false;
+        synchronized (lock) {
+            stop = false;
+            lock.notifyAll();
+        }
         setBackgroundMode(false);
     }
 
     public void addListener(IFilePreviewListener filePreviewListener, IFolder folder) {
-        try {
-            semaphore.acquire();
+        synchronized (lock) {
             filePreviewDataList.add(new FilePreviewData(filePreviewListener, folder));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        finally {
-            semaphore.release();
+            lock.notify();
         }
     }
 
