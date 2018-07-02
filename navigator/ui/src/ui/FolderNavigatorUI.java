@@ -6,11 +6,11 @@ import java.awt.*;
 public class FolderNavigatorUI extends JFrame {
 
 
-    private FolderNavigatorUI() {
-        initComponents();
+    private FolderNavigatorUI(String[] args) {
+        initComponents(args);
     }
 
-    private void initComponents() {
+    private void initComponents(String[] args) {
 
         try {
             UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
@@ -53,14 +53,17 @@ public class FolderNavigatorUI extends JFrame {
 
         add(basePanel);
 
-        new FolderNavigatorBL(mainPanel, editablePathManager, levelUpButton);
+        FolderNavigatorBL folderNavigatorBL = new FolderNavigatorBL(mainPanel, editablePathManager, levelUpButton);
+        if (args.length > 0) {
+            folderNavigatorBL.openPath(args[0]);
+        }
 
         pack();
     }
 
 
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(() -> new FolderNavigatorUI().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new FolderNavigatorUI(args).setVisible(true));
     }
 
 }

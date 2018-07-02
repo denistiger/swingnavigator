@@ -270,7 +270,7 @@ public class FolderNavigatorBL implements IPathListener, IOpenFolderListener, IP
         return folderManager.getFullPath();
     }
 
-    private void openPath(String path) {
+    public void openPath(String path) {
         openPath(path, false);
     }
 
