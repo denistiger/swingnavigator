@@ -26,10 +26,19 @@ public class FilePreviewAnyFolder implements IFilePreview {
         }
         ImageIcon imagePreview = null;
 
-        for (IFolder folder : folders) {
+        if (folders.size() > 5) {
+            IFolder folder = folders.get(folders.size() / 2);
             if (folder.getType() == IFolder.FolderTypes.IMAGE) {
                 imagePreview = imagePreviewGenerator.getFilePreviewSmall(folder);
-                break;
+            }
+        }
+
+        if (imagePreview == null) {
+            for (IFolder folder : folders) {
+                if (folder.getType() == IFolder.FolderTypes.IMAGE) {
+                    imagePreview = imagePreviewGenerator.getFilePreviewSmall(folder);
+                    break;
+                }
             }
         }
         if (imagePreview == null) {
